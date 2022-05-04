@@ -457,11 +457,10 @@ header{
 .imgSpende {
     width: 80%;
 } */
+
+
 /* --- PÁGINA  TRANSPARÊNCIA --- */
 
-:root {
-    --bs-blue: #68be65;
-}
 .text-home-financeiro{
     width: 70%;
     margin: 0 auto;
