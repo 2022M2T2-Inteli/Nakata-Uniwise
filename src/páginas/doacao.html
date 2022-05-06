@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4918f2ce61.js" crossorigin="anonymous"></script>
@@ -22,19 +22,19 @@
             <ul id="menu" class="nav nav-pills">
 
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" href="../páginas/index.html">Home</a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#">Sobre</a>
+                  <a class="nav-link" aria-current="page" href="../páginas/sobre.html">Sobre</a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#">Voluntariado</a>
+                  <a class="nav-link" aria-current="page" href="../páginas/voluntariad.html">Voluntariado</a>
                 </li>
 
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Doações</a>
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="../páginas/doacao.html" role="button" aria-expanded="false">Doações</a>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Dinheiro</a></li>
                     <li><a class="dropdown-item" href="#">Alimentos</a></li>
@@ -44,15 +44,15 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Empresas</a>
+                    <a class="nav-link" aria-current="page" href="../páginas/parceiras.html">Parceiros</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Transparência</a>
+                    <a class="nav-link" aria-current="page" href="../páginas/transparencia.html">Transparência</a>
                 </li>
             
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Contato</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="../páginas/contato.html" role="button" aria-expanded="false">Contato</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Contatos do projeto</a></li>
                   <li><a class="dropdown-item" href="#">Preciso de ajuda</a></li>
@@ -65,13 +65,13 @@
 
     <section class="principalDoacao">
             <div class="tittleDoacao">
-                <h1>Doações</h1>
+                <h1><b>Doações</b></h1>
             </div>
     </section>
 
     <section class="textHome">
       <div class="titleFirst">
-        <h2>Sua ajuda é muito importante para os nossos assistidos</h2>
+        <h3><b>Sua ajuda é muito importante para os nossos assistidos</b></h3>
     </div>
     <br>
     <div class="textOne">
@@ -79,87 +79,106 @@
     </div>
     <br>
     <section class="whySpende">
-      <div class="why">
-        <h3>Razões Para Doar</h3>
-      </div>
-      <br>
-        <div class="accordion" id="accordionExample">
-          <!-- <div class="imgSpende">
-            <img src="assets/img/spendIcon.png" alt="">
-          </div> -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                <strong>Importância</strong>
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                A doação de recursos financeiros é de grande importância para o ReVirar. O apoio da sociedade para o serviço de abordagem a pessoas de ruas pode ser feito financeiramente, é um ato de boa vontade que vai impactar muitas pessoas em situação de rua, esse impacto gera consequências positivas que vão muito além do projeto, sua ajuda pode mudar a vida de varias pessoas.
+        <div class="containerMY">
+          <h3><b>Razões Para Doar</b></h3>
+          <br>
+          <div class="containerMY1">
+            <img class="spendeIcon" src="../assets/img/spendIcon.png" alt="">
+            <div class="accordion"  id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header " id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <strong>Importância</strong>
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    A doação de recursos financeiros é de grande importância para o ReVirar. O apoio da sociedade para o serviço de abordagem a pessoas de ruas pode ser feito financeiramente, é um ato de boa vontade que vai impactar muitas pessoas em situação de rua, esse impacto gera consequências positivas que vão muito além do projeto, sua ajuda pode mudar a vida de varias pessoas.
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <strong>Colaboração</strong>
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                Ao doar para o ReVirar você colabora com a elaboração de atividades direcionadas para o desenvolvimento de reinserção social, com Lanche/alimentação, Banho e higiene pessoal, na perspectiva de construção de vínculos interpessoais e familiares que oportunizem a construção do processo de saída das ruas.
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <strong>Colaboração</strong>
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Ao doar para o ReVirar você colabora com a elaboração de atividades direcionadas para o desenvolvimento de reinserção social, com Lanche/alimentação, Banho e higiene pessoal, na perspectiva de construção de vínculos interpessoais e familiares que oportunizem a construção do processo de saída das ruas.
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <strong>Impacto</strong>
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                Ao doar para o ReVirar você vai apoiar projetos que geram valor para a sociedade, com impactos concretos para a saúde das pessoas. Alguns desses resultados são:
-                <br>
-                <br>
-                <ul class="topicS">
-                  <p>• Retorno para a família de origem;</p>
-                  <p>• Aluguel social - saída da rua;</p>
-                  <p>• Retorno da criança para genitora/aluguel social;</p>
-                  <p>• Localização da família de origem;</p>
-                  <p>• Regresso escolar;</p>
-                  <p>• Saúde preventiva/tratamento médico ambulatorial;</p>
-                  <p>• Elevação da auto estima pessoal (banho, higiene pessoal).</p>
-              </ul>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <strong>Impacto</strong>
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Ao doar para o ReVirar você vai apoiar projetos que geram valor para a sociedade, com impactos concretos para a saúde das pessoas. Alguns desses resultados são:
+                    <br>
+                    <br>
+                    <ul class="topicS">
+                      <p>• Retorno para a família de origem;</p>
+                      <p>• Aluguel social - saída da rua;</p>
+                      <p>• Retorno da criança para genitora/aluguel social;</p>
+                      <p>• Localização da família de origem;</p>
+                      <p>• Regresso escolar;</p>
+                      <p>• Saúde preventiva/tratamento médico ambulatorial;</p>
+                      <p>• Elevação da auto estima pessoal (banho, higiene pessoal).</p>
+                  </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      <div class="gambiarra">
+        <!-- CAIXA PRETA -->
+      </div>
     </section>
     <div class="money">
       <br>
       <br>
-      <h2>Doações Financeiras</h2>
+      <h2><b>Doações Financeiras</b></h2>
       <br>
       <br>
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            OPÇÃO DE PAGAMENTO 1
-          </div>
-          <div class="col order-5">
-            OPÇÃO DE PAGAMENTO 2
-          </div>
-          <div class="col order-1">
-            OPÇÃO DE PAGAMENTO 3
+      <div class="card-group">
+        <div class="card">
+          <img class="pixIcon" src="../assets/img/pixicon.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Doação por Pix</h5>
+            <p class="card-text"><h6>Fraternidade Irmã Amélia</h6>
+              <h6>CNPJ: 62.180.252/0001-05</h6></p>
+            <p class="card-text"><small class="text-muted"></small></p>
           </div>
         </div>
+        <div class="card">
+          <img class="caixaIcon" src="../assets/img/caixaicon.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Caixa Econômica Federal</h5>
+            <p class="card-text"><h6>Agência 4050</h6>
+              <h6>Conta Corrente 2006-9</h6></p>
+            <p class="card-text"><small class="text-muted"></small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="paypalIcon" src="../assets/img/paypalicon.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Doação por PayPal</h5>
+            <p class="card-text"><h6>@projetorevirar</h6></p>
+            <p class="card-text"><small class="text-muted"></small></p>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
     <br>
     <br>
     <div class="food">
-      <h2>Alimentos</h2>
+      <h2><b>Doação Alimentícia</b></h2>
     </div>
     <br>
     <br>
@@ -189,14 +208,16 @@
     <br>
     <br>
     <div class="roupas">
-      <h2>Roupas</h2>
+      <div class="roupasw">
+        <h2><b>Doação de Vestuário</b></h2>
+      </div>
       <br>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     </div>
     <br>
     <br>
     <div class="Higiene">
-      <h2>Produtos de Higiene</h2>
+      <h2><b>Doação de Produtos de Higiêne</b></h2>
     </div>
     <br>
     <ol class="list-group list-group-numbered">
@@ -229,25 +250,25 @@
       <div class="container">
         <div class="row">
             <div class="col-sm-3">
-                <h2 class="logo-image"><a href="index.html"> <img class="logo-img" src="assets/img/logo.png"> </a></h2>
+                <h2 class="logo-image"><a href="../páginas/index.html"> <img class="logo-img" src="../assets/img/logo.png"> </a></h2>
             </div>
             <div class="home2 col-sm-2">
                 <h5>Inicio</h5>
                 <ul>
-                    <li><a href="index.html"><img class="arrow" src="assets/img/arrow_icon.png"> Home</a></li>
-                    <li><a href="sobre.html"><img class="arrow" src="assets/img/arrow_icon.png">  Sobre</a></li>
-                    <li><a href="voluntariad.html"><img class="arrow" src="assets/img/arrow_icon.png">  Voluntariado</a></li>
-                    <li><a href="parceiras.html"><img class="arrow" src="assets/img/arrow_icon.png">  Empresas</a></li>
-                    <li><a href="transparencia.html"><img class="arrow" src="assets/img/arrow_icon.png">  Transparência</a></li>
+                    <li><a href="../páginas/index.html"><img class="arrow" src="../assets/img/arrow_icon.png"> Home</a></li>
+                    <li><a href="../páginas/sobre.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Sobre</a></li>
+                    <li><a href="../páginas/voluntariad.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Voluntariado</a></li>
+                    <li><a href="../páginas/parceiras.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Parceiros</a></li>
+                    <li><a href="../páginas/transparencia.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Transparência</a></li>
                 </ul>
             </div>
             <div class="home3 col-sm-2">
                 <h5>Doações</h5>
                 <ul>
-                    <li><a href="doacao.html"><img class="arrow" src="assets/img/arrow_icon.png">  Dinheiro</a></li>
-                    <li><a href="doacao.html"><img class="arrow" src="assets/img/arrow_icon.png">  Alimentos</a></li>
-                    <li><a href="doacao.html"><img class="arrow" src="assets/img/arrow_icon.png">  Roupas</a></li>
-                    <li><a href="doacao.html"><img class="arrow" src="assets/img/arrow_icon.png">  Produto de Higiêne</a></li>
+                    <li><a href="../páginas/doacao.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Dinheiro</a></li>
+                    <li><a href="../páginas/doacao.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Alimentos</a></li>
+                    <li><a href="../páginas/doacao.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Roupas</a></li>
+                    <li><a href="../páginas/doacao.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Produto de Higiêne</a></li>
                 </ul>
             </div>
             <div class="home4 col-sm-3">
@@ -262,7 +283,7 @@
                     <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                     <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
                 </div>
-                <a href="contato.html">
+                <a href="../páginas/contato.html">
                     <button type="button" class="btn btn-default">Contato</button>
                 </a>
             </div>

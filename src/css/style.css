@@ -395,7 +395,7 @@ header{
     font-size: 20px;
 }
 
-/* .why {
+.why {
     background-color: #F5D312;
     border-radius: 20px;
     height: 250px !important;
@@ -411,7 +411,7 @@ header{
 }
 
 .titleFirst {
-    color: #F5D312;
+    color: #000000;
     text-align: center;
 }
 .accordion-body, .topicS{
@@ -419,44 +419,96 @@ header{
     
 }
 
+.money {
+    text-align: center;
+}
+
+.food {
+    text-align: center;
+}
+
 .principalDoacao{
-    background-image: url('assets/img/backgroundSpend.png');
+    background-image: url('../assets/img/backgroundSpend.png');
     height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.accordion {
-    background-color: #000000;
-    border-radius: 20px;
-    height: 250px !important;
-    color: #ffffff;
+
+.containerMY {
+    background-color: yellow;
+    border-radius: 10px;
+    padding-bottom: 0px;
+    padding-top: 30px;
+    padding-left: 70px;
+    padding-right: 70px;
     text-align: center;
-    margin-left: 7%;
-    position: absolute;
-    z-index: 1;
-    padding-top: 20px;
-    padding-bottom: 100px;
-    padding-right: 187px; 
-    padding-left: 300px; 
 }
 
-.whySpende {
-    padding-bottom: 500px;
+.containerMY1 {
+    background-color: #212529;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 50px;
 }
 
-.accordion-item {
-    width: 300px;
+.gambiarra {
+    background-color: #212529;
+    padding: 50px;
+    margin-left: 70px;
+    margin-right: 70px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-.accordion-body {
-    padding-right: 55555500px;
+.card-deck img {
+    width: 10%;
 }
 
-.imgSpende {
-    width: 80%;
-} */
+.spendeIcon {
+    width: 15%;
+    padding-bottom: 5%;
+}
+
+.caixaIcon {
+    margin-top: 13px;
+    margin-bottom: 9.5px;
+    width: 60%;
+    margin-left: 60px;
+}
+
+.paypalIcon {
+    margin-top: 13px;
+    margin-bottom: 9.5px;
+    text-align: center;
+    align-items: center;
+    width: 60%;
+    margin-left: 60px;
+}
+
+.money {
+    text-align: center;
+    align-items: center;
+}
+.pixIcon {
+    width: 60%;
+    margin-left: 60px;
+}
+
+.roupasw {
+    text-align: center;
+}
+.Higiene {
+    text-align: center;
+}
+.row h5 {
+    color: rgb(0, 0, 0);
+}
+
+.tittleDoacao {
+    color: yellow;
+}
 /* --- PÁGINA  TRANSPARÊNCIA --- */
 
 :root {
@@ -546,7 +598,7 @@ header{
     color: #427aa1;
 }
 
-.card-body {
+.relatorio card-body {
     display: flex;
     align-items: center;
     flex: 1 1 auto;
