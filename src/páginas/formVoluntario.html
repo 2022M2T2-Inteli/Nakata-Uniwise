@@ -88,39 +88,47 @@
         <section>
           <div class="container my-5">
 
-        <div class="titulos">
-            <h1 id="título"> Inscreva-se </h1>
-            <h4 id="subtítulo"> Outras Categorias </h4>
-            <br>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <form>
-                    <div class="campos">
-                        <div class="campo">
-                            <label for="nome e sobrenome"> Nome Completo* </label>
-                            <input type="text" name="nomeCompleto" id="nomeCompleto" placeholder="Seu nome" required>
+            <div class="titulos">
+                <h1 id="título"> Inscreva-se </h1>
+                <br>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form>
+                        <div class="campos">
+                            <div class="campo">
+                                <label for="nomeCompleto"> Nome Completo* </label>
+                                <input type="text" name="nomeCompleto" id="nomeCompleto" placeholder="Seu nome" required>
+                            </div>
+                            
+                            <div class="campo">
+                                <label for="contato"> E-mail ou telefone* </label>
+                                <input type="email" name="contato" id="contato" placeholder="Seu contato" required>
+                            </div>
+                            
+                            <div class="campo">
+                                <label for="função"> Função desejada* </label>
+                                <select name="função" id="função" required>
+                                    <option selected disabled value="">Escolha</option>
+                                    <option value = "1"> Musicalização </option>
+                                    <option value = "2"> Assistência na cantina </option>
+                                    <option value = "3"> Cuidar da horta </option>
+                                    <option value = "4"> Organizar o bazar </option>
+                                    <option value = "5"> Organizador de atividades </option>
+                                    <option value = "6"> Educador </option>
+                                    <option value = "7"> Cabelereiro </option>
+                                </select>
+                            </div>
+                            
+                            <div class="buttonDiv">
+                                <button class="botão" type="submit">Enviar</button>
+                            </div>
                         </div>
-                        
-                        <div class="campo">
-                            <label for="contato"> E-mail ou telefone* </label>
-                            <input type="email" name="contato" id="contato" placeholder="Seu contato" required>
-                        </div>
-                        
-                        <div class="campo">
-                            <label for="função"> Função desejada* </label>
-                            <input type="text" name="função" id="função" placeholder="Sua função" required>
-                        </div>
-                        
-                        <div class="buttonDiv">
-                            <button class="botão" type="submit">Enviar</button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
         </section>
         <br>
         <br>
