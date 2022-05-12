@@ -20,7 +20,6 @@ header{
     width: 100%;
     background-color: white;
     padding: 20px 0;
-    border-bottom: 1px solid rgb(200,200,200);
     z-index: 1000 !important;
 }
 
@@ -46,7 +45,6 @@ header{
 }
 
 .active{
-    background-color: #FAF806 !important;
     color: #000 !important;
 }
 
@@ -54,7 +52,6 @@ header{
     height: auto;
     width: 100%;
     text-align: right;
-
 }
 
 .menu a{
@@ -86,7 +83,7 @@ header{
     padding: 1rem;
     box-sizing: border-box;
     justify-content: space-between;
-    background-color: #e7e7e7;
+    background-color: #FAF806;
 }
 
 #menu{
@@ -224,9 +221,110 @@ header{
 
 /* --- PÁGINA  INICIAL--- */
 
+.projectsection{
+    background-image: url(../assets/img/Fundo-Atuacao.jpg);
+    padding: 5%;
+}
+
+.projectsection1{
+    background-image: url(../assets/img/Fundo-Atuacao.jpg);
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.projectsection2{
+    background-image: url(../assets/img/Fundo-Atuacao.jpg);
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.animationHome{
+    margin: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.animation-css-home{
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+/* Mudar a cor dos icones - caso necessário */
+
+.fa-people-group{
+    font-size: 80px;
+    color: #427AA1;
+}
+.fa-user{
+    font-size: 80px;
+    color: #427AA1;
+}
+
+ .text-home-inicial{
+    width: 70%;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.text-home-inicial h1{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.text-home-inicial p{
+    font-size: 20px;
+    margin-top: 2%;
+}
+
+.text-service-home{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-menu-home{
+    font-size: 15px;
+    background-color: #427AA1;
+    color: white;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: none;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.btn-menu-home a{
+    border: none;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-menu-home a:hover{
+    background-color: #000000;
+    color: white;
+}
+
+.btn-menu-home:hover{
+    background-color: #000000;
+}
+
 .principal{
-    background-image: url('../assets/img/background.png');
-    height: 60vh;
+    background-image: url('../assets/img/oilseed-rape-2224941.jpg');
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,13 +362,32 @@ header{
     text-align: center;
 }
 
+.main_text{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.icon-link-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_text img{
+    width: 40%;
+}
+
 .text-home{
     width: 70%;
     margin: 0 auto;
-    margin-top: -5%;
     z-index: 1;
     background-color: white;
-    padding-top: 2%;
+    padding-top: 10%;
 }
 
 .text-home h1{
@@ -359,6 +476,142 @@ header{
 
 /* --- PÁGINA  SOBRE --- */
 
+.principal-sobre2{
+    background-image: url('../assets/img/Fundo-Atuacao.jpg');
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.principal-sobre{
+    background-image: url('../assets/img/Fundo-Atuacao.jpg');
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.principal-sobre h1{
+    color: rgb(0, 0, 0);
+    font-size: 45px;
+}
+
+.principal-sobre .link-sobre-nos a{
+    color: #000;
+    padding: 10px 18px;
+    display: inline-block;
+    background-color: rgb(216, 216, 216);
+    border-radius: 3px;
+    margin-top: 20px;
+    transition: 200ms;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.principal-sobre .link-sobre-nos a:hover{
+    color: #000;
+    background-color: #FAF806;
+}
+
+.text-home-sobre{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: -6%;
+    z-index: 1;
+    background-color: white;
+    padding-top: 2%;
+}
+
+.text-home-sobre h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.text-home-sobre p{
+    text-align: left;
+    font-size: 20px;
+}
+
+.text-home-sobre2{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 0%;
+    z-index: 1;
+    background-color: white;
+    padding-top: 2%;
+}
+
+.text-home-sobre2 h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.text-home-sobre2 p{
+    text-align: left;
+    font-size: 20px;
+}
+
+/* COntainer para o vídeo do YouTube ficar em um tamanho específico e responsivo */
+.video-container-sobre {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:60%;
+}
+
+.video-container-sobre::after {
+    padding-top: 70%;
+    display: block;
+    content: '';
+}
+
+.video-container-sobre iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Tornar imagens responsivas e em um padrão de tamanho específico */
+.responsive-sobre {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+/* Para a imagem aumentar de tamanho ao passar o mouse por cima */
+.grow-sobre { 
+	transition: all .2s ease-in-out; 
+}
+
+.grow-sobre:hover { 
+    	transform: scale(1.05); 
+    }
+
+/* id para deixar margens entre as imagens */
+#imageods-sobre{
+    margin-bottom: 24px;
+}
+
+/* Botão flutuante de Whatsapp */
+.whatswidget-button {
+    width: 60px;
+    height: 60px;
+    transition: 1s;
+}
+
+.whatswidget-button:hover {
+
+    transform: scale(1.5) rotate(20deg);
+}
+
+
 
 
 
@@ -445,22 +698,6 @@ input, button{
 
 }
 
-.principal-voluntariado{
-    background-image: url('../assets/img/background.png');
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.principal-voluntariado h1{
-    color: white;
-    font-size: 45px;
-}
-
-
-
 /*imagem dos voluntários*/
 
 .carousel-inner{
@@ -468,31 +705,62 @@ input, button{
     margin-bottom: 20px;
 }
 
-img{
+.Volimg{
     filter: blur(3px);
 }
 
-#titleV{
+.VolText{
     text-align: center;
 }
 
-
-
-
+.carousel-caption{
+    right: 10%;
+    left: 10%;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.7))
+}
 
 /* --- PÁGINA  PARCEIROS --- */
 
+.text-home-Parceiro{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: -5%;
+    z-index: 1;
+    background-color: white;
+    padding-top: 2%;
+}
 
+.text-home-Parceiro h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.text-home-Parceiro p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.responsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto; 
+  }
+
+  .grow { 
+    transition: all .2s ease-in-out; 
+}
+.grow:hover { 
+        transform: scale(1.05); 
+}
 
 
 /* --- PÁGINA  DOAÇÕES --- */
 .textHome{
     width: 70%;
     margin: 0 auto;
-    margin-top: -5%;
     z-index: 1;
     background-color: white;
-    padding: 2%;
+    padding: 10%;
 }
 
 .textHome h1{
@@ -523,10 +791,9 @@ img{
 .text-home-financeiro{
     width: 70%;
     margin: 0 auto;
-    margin-top: -5%;
     z-index: 1;
     background-color: white;
-    padding: 2%;
+    padding: 10%;
     line-height: 1.7rem;
     font-size: 18px;
 }
@@ -543,6 +810,48 @@ img{
     justify-content: center;
     font-size: 18px;
 }
+
+.card-text-home{
+    margin-top: 5%;
+}
+
+.aspas-home1{
+    width: 10%;
+    margin-bottom: 4%;
+}
+
+.aspas-home2 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.aspas-home2 img{
+    width: 11%;
+    margin-top: 2%;
+}
+
+.card-depoimentos{
+    border: none;
+    width: 70%;
+}
+
+.relatos-home-atendidos{
+    display: flex;
+    justify-content: center;
+}
+
+.card-nomeAtendido{
+   border: none;
+   display: flex;
+   margin-left: 5%;
+}
+
+.text-depoimento-home{
+    text-align: left !important;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 .card-login{
     width: 60%;
     display: flex;
@@ -638,21 +947,245 @@ img{
 
 /* --- PÁGINA  CONTATO --- */
 
+.text-home-Contato{
+    width: 70%;
+    margin: 0 auto;
+    z-index: 1;
+    background-color: white;
+}
+
+.text-home-Contato h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.text-home-Contato p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.contact{
+    margin-top:auto;
+    flex-basis: 60%;
+    padding: 40px 60px;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/img/Fundo-Atuacao.jpg);
+}
+
+.contact-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-left{
+    flex-basis: 60%;
+    padding: 40px 60px;
+    justify-content: center;
+    align-items: center;
+}
+.contact-right{
+    flex-basis: 60%;
+    padding: 40px 60px;
+    justify-content: center;
+    align-items: center;
+}
+.contact-left h3{
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.contact-right h3{
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+
+} 
+
+#título{
+    font-family: sans-serif;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+#subtítulo{
+    font-family: sans-serif;
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
+
+.main {
+    padding-top: 50px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    margin: 0 auto 0 auto;
+}
+
+input, button{
+    border-radius: 5px;
+}
+
+.campo{
+    margin-bottom: 1.5rem;
+}
+
+#nomeCompleto, #contato, #função{
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
 
 
+.campo label{
+    margin-bottom: 0.2em;
+    display: block;
+}
+
+.campo input[type="text"], .campo input[type="email"]{
+    padding: 0.2em;
+    display: block;
+}
+
+.buttonDiv {
+    display: flex;
+    width: 100%;
+}
+
+.botão{
+    font-size: 1.2em;
+    background: black;
+    border: 0;
+    margin-bottom: 1em;
+    color: white;
+    padding: 0.2em 0.6em;
+    margin: 0 auto;
+}
+
+.botão:hover{
+    background: darkgrey;
+
+}
+
+.form {
+    width: 75%;
+}
+
+.campos {
+    width: 100%;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+.wrapper .button {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin: 0 5px;
+    overflow: hidden;
+    background: #FAF806;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+    align-content: center;
+
+}
+.wrapper .button:hover {
+    width: 200px;
 
 
+}
+.wrapper .button .icon {
+    display: inline-block;
+    text-align: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1):hover .icon {
+    background: #4267b2;
+}
+.wrapper .button:nth-child(2):hover .icon {
+    background: #d6249f;
+}
+.wrapper .button:nth-child(3):hover .icon {
+    background: #25d366;
+}
+.wrapper .button:nth-child(4):hover .icon {
+    background: #0072b1;
+}
+.wrapper .button:nth-child(5):hover .icon {
+    background: #ff0000;
+}
+.wrapper .button .icon .i {
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon .i {
+    color: #FFF;
+}
+.wrapper .button span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1) span {
+    color: #4267b2;
+}
+.wrapper .button:nth-child(2) span {
+    color: #d6249f;
+}
+.wrapper .button:nth-child(3) span {
+    color: #25d366;
+}
+.wrapper .button:nth-child(4) span {
+    color: #0072b1;
+}
+.wrapper .button:nth-child(5) span {
+    color: #ff0000;
+}
 
 /* --- AJUSTE DE TELAS --- */
 
 @media screen and (max-width: 767px) {
+    *{
+        box-sizing: border-box;
+    }
     #myFooter {
         text-align: center;
     }
+    .projectsection1{
+        flex-direction: column;
+    }
+    .btn-menu-home{
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 2%;
+        padding-bottom: 2.5%;
+    }
+    
 }
 
 @media (max-width:320px) { 
     /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+    *{
+        box-sizing: border-box;
+    }
     .arrow{
         margin: 0 auto;
         width: 97%;
@@ -661,6 +1194,9 @@ img{
 
 @media (max-width:480px) {
     /* smartphones, Android phones, landscape iPhone */ 
+    *{
+        box-sizing: border-box;
+    }
     .arrow{
         margin: 0 auto;
         width: 4%;
@@ -670,6 +1206,9 @@ img{
 
 @media (max-width:600px) { 
     /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    *{
+        box-sizing: border-box;
+    }
     .arrow{
         margin: 0 auto;
         width: 15%;
@@ -708,6 +1247,9 @@ img{
 
 @media (max-width:801px) { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    *{
+        box-sizing: border-box;
+    }
     .arrow{
         margin: 0 auto;
         width: 9%;
@@ -733,6 +1275,9 @@ img{
 
 @media (max-width:1025px) { 
     /* big landscape tablets, laptops, and desktops */ 
+    *{
+        box-sizing: border-box;
+    }
     .arrow{
         margin: 0 auto;
         width: 7%;
@@ -743,6 +1288,9 @@ img{
 
 @media (max-width:1281px) { 
     /* hi-res laptops and desktops */ 
+    *{
+        box-sizing: border-box;
+    }
     .arrow{
         margin: 0 auto;
         width: 8%;
@@ -752,6 +1300,9 @@ img{
 }
 
 @media (max-width: 1290px) {
+    *{
+        box-sizing: border-box;
+    }
     #menu{
         display: block;
         position: absolute;

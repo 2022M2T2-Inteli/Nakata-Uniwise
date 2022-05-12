@@ -167,9 +167,31 @@
     }
 }
 
+/* PÁGINA HOME ADM */
 
+.costume{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
 
+.text-home{
+  width: 70%;
+  margin: 0 auto;
+  margin-top: -4%;
+  z-index: 1;
+  background-color: white;
+  padding-top: 2%;
+}
 
+.text-home h1{
+  text-align: center;
+  font-size: 40px;
+}
 
-
+.text-home p{
+  text-align: left;
+  font-size: 20px;
+}
 
