@@ -1288,6 +1288,8 @@ input, button{
 
 } 
 
+/* FORMULÁRIOS */
+
 #título{
     font-family: sans-serif;
     text-align: center;
@@ -1364,6 +1366,16 @@ input, button{
     width: 100%;
 
 }
+
+/* PÁGINA INICIAL ADM*/
+
+.adm_options{
+    margin-left: 50px;
+}
+
+
+/* ------ */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
 .wrapper .button {
