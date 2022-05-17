@@ -78,7 +78,7 @@
         <section>
           <div class="container my-5">
             <div class="row d-flex justify-content-center">
-                <div class="col-lg-3 col-md-6 my-5">
+                <div class="col-lg-4 col-12 my-5">
                             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -92,10 +92,10 @@
                             </div>   
                             
                             <div class="buttonDiv">
-                                <button class="botão" type="submit"> <a href="formVoluntario.html" class="botão">Inscreva-se </a></button>
+                                <button class="botão" type="submit"> <a href="form_oficinaVol.html" class="botão">Inscreva-se </a></button>
                             </div>
                 </div>
-                <div class="col-lg-3 col-md-6 my-5">
+                <div class="col-lg-4 col-12 my-5">
                             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -112,7 +112,7 @@
                                 <button class="botão" type="submit"> <a href="formVoluntario.html" class="botão">Inscreva-se </a></button>
                             </div>
                 </div>
-                <div class="col-lg-3 col-md-6 my-5">
+                <div class="col-lg-4 col-12 my-5">
                             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -129,7 +129,9 @@
                                 <button class="botão" type="submit"> <a href="formVoluntario.html" class="botão">Inscreva-se </a></button>
                             </div>
                 </div>
-                <div class="col-lg-3 col-md-6 my-5">
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 col-12 my-5">
                             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -146,9 +148,7 @@
                                 <button class="botão" type="submit"> <a href="formVoluntario.html" class="botão">Inscreva-se </a></button>
                             </div>
                 </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-3 col-md-6 my-5">
+                <div class="col-lg-4 col-12 my-5">
                             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -165,24 +165,7 @@
                                 <button class="botão" type="submit"> <a href="formVoluntario.html" class="botão">Inscreva-se </a></button>
                             </div>
                 </div>
-                <div class="col-lg-3 col-md-6 my-5">
-                            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                    <img src="../assets/img/educador.jpg" class="d-block w-100 Volimg" alt="...">
-                                    <div class="carousel-caption d-md-block">
-                                        <h4 class="VolText">Educadores</h4>
-                                    </div>
-                                    </div>
-                                
-                                </div>
-                            </div>   
-                            
-                            <div class="buttonDiv">
-                                <button class="botão" type="submit"> <a href="formVoluntario.html" class="botão">Inscreva-se </a></button>
-                            </div>
-                </div>
-                <div class="col-lg-3 col-md-6 my-5">
+                <div class="col-lg-4 col-12 my-5">
                             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -198,7 +181,6 @@
                                 <button class="botão" type="submit"> <a href="formVoluntario.html" class="botão">Inscreva-se </a></button>
                             </div>
                 </div>
-                
             </div>
           </div>
         </section>
@@ -232,7 +214,28 @@
                             </div>
                             <br>
                             <div class="buttonDiv">
-                                <button class="botão" type="submit">Enviar</button>
+                                <button type="button" class="btn btn-primary botão" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    Enviar
+                                  </button>
+                                  
+                                  <!-- Modal -->
+                                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="staticBackdropLabel">Confirmação de envio</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          Confirme o envio o seu formulário aqui!
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                          <button type="button" class="btn btn-primary">Confirmar</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                             </div>
                         </div>
                     </form>
