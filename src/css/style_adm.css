@@ -195,3 +195,108 @@
   font-size: 20px;
 }
 
+/* Formularios-controle */
+
+
+.button-formularios-controle {
+    /* Botões da página de adm */
+    background-color: #F5F9FD;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    justify-content: space-between;
+    font-size: 16px;
+    margin: 4px 2px;
+    width: 100%;
+}
+
+
+/* tipos de bordas dos botões */
+.button12-formularios-controle {border-radius: 12px;}
+.button50-formularios-controle {border-radius: 50px;}
+
+.button-formularios-controle { 
+    /* Tempo para acontecerem as trensições dos efeitos nos botões */
+	transition: all .2s ease-in-out;
+
+}
+  
+.button-formularios-controle:hover { 
+    /* Mudar cor do botão ao passar o mouse por cima */
+    background-color: #ffd9fd; 
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+
+.button-formularios-controle:active {
+    /* Mudar tamanho do botão ao clicar */
+    transform: scale(0.95);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.button-voltar {
+/* Botão voltar */
+    background-color: #000000;
+    border: none;
+    color: white;
+    padding: 10px 50px 4px 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    /* margin: 4px 2px;
+    width: 50%; */
+ 
+    margin: auto;
+
+}
+
+.button-footer {
+   position: fixed;
+    bottom: 20px;
+
+}
+
+.button-voltar:hover { 
+    /* efeito ao passar o mouse em cima do botão voltar */
+    background-color: #ff08ce; 
+    }
+
+.button-voltar { 
+    /* Tempo até acontecer o efeito de transição do botão voltar */
+        transition: all .3s ease-in-out; 
+}
+
+
+
+
+
+  .container-controle { 
+    justify-content: center;
+    position: static;   
+    display: flex;
+    margin-top: 20px;
+  }
+  
+
+
+  .text-controle{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 5%;
+    z-index: 1;
+    background-color: white;
+    padding-top: 2%;
+  }
+  
+  .text-controle{
+    text-align: center;
+    font-size: 40px;
+  }
+  
+  .text-controle p{
+    text-align: left;
+    font-size: 20px;
+  }
