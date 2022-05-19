@@ -104,6 +104,57 @@ function habilitarSimTextInput12(){
     }
 }
 
+function habilitarSimTextInput13(){
+    if (document.getElementById("inlineCheckbox13").checked){
+        $("#fieldsetDisabled13").prop("disabled",false);
+    }else{
+        $("#fieldsetDisabled13").prop("disabled",true);
+    }
+}
+
+function habilitarSimTextInput14(){
+    if (document.getElementById("inlineCheckbox14").checked){
+        $("#fieldsetDisabled14").prop("disabled",false);
+    }else{
+        $("#fieldsetDisabled14").prop("disabled",true);
+    }
+}
+
+function habilitarSimTextInput15(){
+    if (document.getElementById("inlineCheckbox15").checked){
+        $("#fieldsetDisabled15").prop("disabled",false);
+    }else{
+        $("#fieldsetDisabled15").prop("disabled",true);
+    }
+}
+
+function habilitarSimTextInput16(){
+    if (document.getElementById("inlineCheckbox16").checked){
+        $("#fieldsetDisabled16").prop("disabled",false);
+        $("#fieldsetDisabled17").prop("disabled",false);
+    }else{
+        $("#fieldsetDisabled16").prop("disabled",true);
+        $("#fieldsetDisabled17").prop("disabled",true);
+    }
+}
+
+function habilitarSimTextInput18(){
+    if (document.getElementById("inlineCheckbox18").checked){
+        $("#fieldsetDisabled18").prop("disabled",false);
+    }else{
+        $("#fieldsetDisabled18").prop("disabled",true);
+    }
+}
+
+function habilitarSimTextInput19(){
+    if (document.getElementById("flexRadioDefault19").checked){
+        $("#fieldsetDisabled19").prop("disabled",true);
+    }else{
+        $("#fieldsetDisabled19").prop("disabled",false);
+    }
+}
+
+
 window.addEventListener('DOMContentLoaded', event => {
     // Simple-DataTables
     // https://github.com/fiduswriter/Simple-DataTables/wiki
@@ -113,3 +164,5 @@ window.addEventListener('DOMContentLoaded', event => {
         new simpleDatatables.DataTable(datatablesSimple);
     }
 });
+
+

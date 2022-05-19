@@ -18,13 +18,13 @@
 header{
     position: fixed;
     width: 100%;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 20px 0;
     z-index: 1000 !important;
 }
 
 .logo{
-    color: #000;
+    color: rgb(255, 255, 255);
 }
 
 .logo h2{
@@ -37,15 +37,15 @@ header{
 }
 
 .nav-link:hover, .dropdown-item:hover{
-    color: #a59b08 !important;
+    color: #FAF806 !important;
 }
 
 .nav-link{
-    color:#000 !important;
+    color:rgb(255, 255, 255) !important;
 }
 
 .active{
-    color: #000 !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .menu{
@@ -83,7 +83,7 @@ header{
     padding: 1rem;
     box-sizing: border-box;
     justify-content: space-between;
-    background-color: #FAF806;
+    background-color: #141313;
 }
 
 #menu{
@@ -274,8 +274,6 @@ header{
 
 .text-home-inicial h1{
     font-size: 40px;
-    display: flex;
-    justify-content: center;
 }
 
 .text-home-inicial p{
@@ -283,41 +281,6 @@ header{
     margin-top: 2%;
 }
 
-.text-service-home{
-    display: flex;
-    justify-content: center;
-}
-
-.btn-menu-home{
-    font-size: 15px;
-    background-color: #427AA1;
-    color: white;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    border: none;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    justify-content: center;
-}
-
-.btn-menu-home a{
-    border: none;
-    text-decoration: none;
-    color: white;
-}
-
-.btn-menu-home a:hover{
-    background-color: #000000;
-    color: white;
-}
-
-.btn-menu-home:hover{
-    background-color: #000000;
-}
 
 .principal{
     background-image: url('../assets/img/oilseed-rape-2224941.jpg');
@@ -410,8 +373,8 @@ header{
 }
 
 .btn1{
-    background-color: rgb(255, 255, 255) !important;
-    color: rgb(0, 0, 0) !important;
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(255, 254, 254) !important;
     border: none !important;
     max-width: none !important;
 }
@@ -476,21 +439,286 @@ header{
 
 /* --- PÁGINA  SOBRE --- */
 
-.principal-sobre2{
-    background-image: url('../assets/img/Fundo-Atuacao.jpg');
-    height: 20vh;
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+}
+  
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+  
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+ }
+  
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+}
+
+.flip-card-front button{
+   background-color: #FAF806;
+   color: #000;
+   padding: 4%;
+   margin-top: 60%;
+}
+
+.flip-card-back a{
+    text-decoration: none;
+    color: white;
+}
+
+.flip-card-back a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+ .flip-card-front1 {
+    background-color: #bbb;
+    color: black;
+    background-image: url(../assets/img/cardparceiro4.png);
+}
+
+.flip-card-front2 {
+    background-color: #bbb;
+    color: black;
+    background-image: url(../assets/img/cardparceiro1.png);
+}
+
+.flip-card-front3 {
+    background-color: #bbb;
+    color: black;
+    background-image: url(../assets/img/cardparceiro2.png);
+}
+
+.flip-card-front4 {
+    background-color: #bbb;
+    color: black;
+    background-image: url(../assets/img/cardparceiro3.png);
+}
+  
+
+.flip-card-back {
+    background-color: #FAF806;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back button{
+    background-color: #000000;
+    color: white;
+    padding: 6%;
+    margin-top: 30%;
+}
+  
+.principalsobreParceiros{
+    background-image: url(../assets/img/Fundo-Atuacao.jpg);
+    padding: 2%;
+}
+
+.textcardparceiros{
+    text-align: center;
+}
+
+.principalsobre{
+    padding: 4%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.valorant2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: column;
+}
+.valorant2 a {
+    width: 100%;
+    max-width: 240px;
+    height: 54px;
+    padding: 8px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #000000;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 0 0 1px inset rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin: 10px 0;
+}
+.valorant2 a.transparent:hover > p {
+    color: white;
+}
+.valorant2 a.transparent:hover > p span.text {
+    box-shadow: 0 0 0 1px #ECE8E1;
+}
+.valorant2 a.transparent > p {
+    background: #FAF806;
+    color: #000000;
+}
+.valorant2 a:before {
+    right: 0;
+    left: initial;
+}
+.valorant2 a p {
+    margin: 0;
+    height: 54px;
+    line-height: 54px;
+    box-sizing: border-box;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.valorant2 a p span.base {
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+.valorant2 a p span.bg {
+    left: -5%;
+    position: absolute;
+    /* cor botão assinar */
+    background: black;
+    width: 0;
+    height: 100%;
+    z-index: 3;
+    transition: 0.3s ease-out all;
+    transform: skewX(-10deg);
+}
+.valorant2 a p span.text {
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.valorant2 a:hover span.bg {
+    width: 110%;
+}
+
+.carroselSobre h1{
+    text-align: center;
+}
+
+@keyframes moveObject {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-5500px);
+    }
+}
+.animate {
+    display: flex;
+    animation-name: moveObject;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.animationbox {
+    display: flex;
+    width: 100vw;
+    margin: auto;
+    overflow: hidden;
+}
+
+.parceirosPagSobre{
+    display: flex;
+    margin: auto;
+}
+
+.textsobre h1{
+    font-size: 40px !important;
+}
+
+.videosobrerevirar{
+    background-image: url(../assets/img/Fundo-Atuacao.jpg);
+    padding: 4%;
+}
+
+.videosobrerevirar h1{
+    text-align: center;
+}
+
+.videosobrerevirar h3{
+    text-align: center;
+}
+
+.videosobre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bordasobreods{
+    padding: 2%;
+}
+
+.textodssobre{
+    text-align: center;
+    font-size: 20px;
+}
+
+.textodssobre a{
+    text-decoration: none;
+    color: #427aa1;
+}
+
+.textodssobre a:hover{
+    color: black;
+}
+
+.imgonu{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.textprincipalsobre{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.textprincipalsobre img{
+    width: 100%;
+}
+
+.principal-sobre2{
+    height: 10vh;
+    display: flex;
+    align-items: left;
+    justify-content: left;
     flex-direction: column;
 }
 
 .principal-sobre{
-    background-image: url('../assets/img/Fundo-Atuacao.jpg');
     height: 50vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
     flex-direction: column;
 }
 
@@ -517,21 +745,15 @@ header{
 }
 
 .text-home-sobre{
-    width: 70%;
     margin: 0 auto;
-    margin-top: -6%;
-    z-index: 1;
     background-color: white;
-    padding-top: 2%;
 }
 
 .text-home-sobre h1{
-    text-align: center;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .text-home-sobre p{
-    text-align: left;
     font-size: 20px;
 }
 
@@ -619,26 +841,9 @@ header{
 
 /* --- PÁGINA  VOLUNTARIADO --- */
 
-#título{
-    font-family: sans-serif;
-    text-align: center;
+.titulos{
+    text-align: left;
     margin-bottom: 0.5rem;
-}
-
-#subtítulo{
-    font-family: sans-serif;
-    text-align: center;
-    margin-bottom: 0.7rem;
-}
-
-.main {
-    padding-top: 50px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50vw;
-    margin: 0 auto 0 auto;
 }
 
 input, button{
@@ -718,41 +923,6 @@ input, button{
     left: 10%;
     filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.7))
 }
-
-/* --- PÁGINA  PARCEIROS --- */
-
-.text-home-Parceiro{
-    width: 70%;
-    margin: 0 auto;
-    margin-top: -5%;
-    z-index: 1;
-    background-color: white;
-    padding-top: 2%;
-}
-
-.text-home-Parceiro h1{
-    text-align: center;
-    font-size: 40px;
-}
-
-.text-home-Parceiro p{
-    text-align: center;
-    font-size: 20px;
-}
-
-.responsive {
-    width: 100%;
-    max-width: 400px;
-    height: auto; 
-  }
-
-  .grow { 
-    transition: all .2s ease-in-out; 
-}
-.grow:hover { 
-        transform: scale(1.05); 
-}
-
 
 /* --- PÁGINA  DOAÇÕES --- */
 @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
@@ -1230,29 +1400,43 @@ input, button{
 /* --- PÁGINA  CONTATO --- */
 
 .text-home-Contato{
-    width: 70%;
-    margin: 0 auto;
-    z-index: 1;
-    background-color: white;
+    margin: auto;
 }
 
-.text-home-Contato h1{
+.text-home-Contato h4{
+    margin: auto;
     text-align: center;
-    font-size: 40px;
 }
 
-.text-home-Contato p{
-    text-align: center;
-    font-size: 20px;
+.colunaText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.larguracontato{
+    display: flex;
+    justify-content: center;
+}
+
+.TextContatoEndereco{
+    padding: 2%;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    background-color: #f3f3f3;
+    display: flex;
+}
+
+.ImgContato{
+    width: 10%;
+    object-fit:scale-down;
+    margin: 10px;
 }
 
 .contact{
     margin-top:auto;
-    flex-basis: 60%;
-    padding: 40px 60px;
     justify-content: center;
     align-items: center;
-    background-image: url(../assets/img/Fundo-Atuacao.jpg);
 }
 
 .contact-box{
@@ -1261,55 +1445,8 @@ input, button{
     align-items: center;
 }
 .contact-left{
-    flex-basis: 60%;
-    padding: 40px 60px;
     justify-content: center;
     align-items: center;
-}
-.contact-right{
-    flex-basis: 60%;
-    padding: 40px 60px;
-    justify-content: center;
-    align-items: center;
-}
-.contact-left h3{
-    color: #000;
-    font-weight: 600;
-    margin-bottom: 30px;
-    justify-content: center;
-    align-items: center;
-}
-.contact-right h3{
-    color: #000;
-    font-weight: 600;
-    margin-bottom: 30px;
-    justify-content: center;
-    align-items: center;
-
-} 
-
-/* FORMULÁRIOS */
-
-#título{
-    font-family: sans-serif;
-    text-align: center;
-    margin-bottom: 0.5rem;
-}
-
-#subtítulo{
-    font-family: sans-serif;
-    text-align: center;
-    margin-bottom: 0.7rem;
-}
-
-.main {
-    padding-top: 50px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50vw;
-    margin: 0 auto 0 auto;
 }
 
 input, button{
@@ -1320,61 +1457,23 @@ input, button{
     margin-bottom: 1.5rem;
 }
 
-#nomeCompleto, #contato, #função{
-    border-radius: 0;
-    border: 0;
-    border-bottom: 1px solid grey;
-    width: 100%;
-}
-
-
-.campo label{
-    margin-bottom: 0.2em;
-    display: block;
-}
-
-.campo input[type="text"], .campo input[type="email"]{
-    padding: 0.2em;
-    display: block;
-}
-
-.buttonDiv {
-    display: flex;
-    width: 100%;
-}
-
 .botão{
     font-size: 1.2em;
-    background: black;
+    background: #FAF806;
     border: 0;
     margin-bottom: 1em;
-    color: white;
     padding: 0.2em 0.6em;
     margin: 0 auto;
+    width: 50vh;
+    transition: 0.5s;
+    color: black;
 }
 
 .botão:hover{
-    background: darkgrey;
-
+    background: black;
+    color: white;
+    font-size: 1.3em;
 }
-
-.form {
-    width: 75%;
-}
-
-.campos {
-    width: 100%;
-
-}
-
-/* PÁGINA INICIAL ADM*/
-
-.adm_options{
-    margin-left: 50px;
-}
-
-
-/* ------ */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
@@ -1382,7 +1481,7 @@ input, button{
     display: inline-block;
     height: 60px;
     width: 60px;
-    /* float: left; */
+    float: left;
     margin: 0 5px;
     overflow: hidden;
     background: #FAF806;
@@ -1634,7 +1733,10 @@ input, button{
         display: block;
         width: 20px;
         border-top: 2px solid;
-        color: black;
+        color: rgb(255, 255, 255);
+    }
+    .nav-link{
+        color:rgb(0, 0, 0) !important;
     }
     #hamburguer::after, #hamburguer::before{
         width: 20px;
@@ -1658,6 +1760,14 @@ input, button{
     }
 }
 
+
+
+
+
+
+
+/* PÁGINA EVENTOS */
+
 .text-home-eventos{
     width: 70%;
     margin: 0 auto;
@@ -1665,35 +1775,164 @@ input, button{
     background-color: white;
     padding-top: 10%;
 }
-
 .text-home-eventos h1{
-    text-align: center;
     font-size: 40px;
 }
-
 .text-home-eventos p{
     text-align: center;
     font-size: 20px;
 }
-
 .eventos-colum{
     justify-content: space-between;
     width: 100%;
     height: 30em;
     padding-top: 5%;
 }
-
 .eventosetup{
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
-
 .fonte-eventos{
     color:#427AA1;
-    margin-top: 4%;
+    margin-top: 5%;
+}
+.space-down{
+    margin-bottom: 5%;
+}
+.titulo-eventos{
+    text-align: left;
+}
+.home-eventos{
+    text-align: center;
+}
+#linha-eventos-confraternização{
+    background-color: #FFF601;
+    height: 8px;
+    margin-right: 25rem;
+}
+#linha-eventos-decoração{
+    background-color: #FFF601;
+    height: 8px;
+    margin-right: 25rem;
+}
+#linha-eventos-palestra{
+    background-color: #FFF601;
+    height: 8px;
+    margin-right: 37rem;
+}
+#linha-eventos-futuros{
+    background-color: #FFF601;
+    height: 8px;
+    margin-right: 33rem;
+}
+
+.texteventos1, .texteventos2, .texteventos3, .texteventos4, .texteventos5, .texteventos6, .texteventos7, .texteventos8{
+    visibility: visible; 
+    animation-delay: 0.1s; 
+    animation-name: fadeInUp;
+    background-color: #dfdfdf;
+    padding: 2%;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 1px 1px 4px 4px rgb(134, 133, 133);
+    margin: 20px;
+}
+
+.fa-calendar-days{
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.fa-plus{
+    color: #000;
+}
+
+.texteventos1:hover{
+    background-image: url(../assets/img/bazareventos.jpg);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+}
+
+.texteventos2:hover{
+    background-image: url(../assets/img/kiteventos.jpg);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+}
+
+.texteventos3:hover{
+    background-image: url(../assets/img/abordagemeventos.jpg);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+}
+
+.texteventos4:hover{
+    background-image: url(../assets/img/discussaoeventos.jpg);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+}
+
+.texteventos5:hover{
+    background-image: url(../assets/img/bazareventos.jpg);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+}
+
+.texteventos6:hover{
+    background-image: url(../assets/img/abordagemeventos.jpg);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+}
+
+.texteventos7:hover{
+    background-image: url(../assets/img/festajuninaeventos.jpg);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
 }
 
 
-.space-down{
-    margin-bottom: 5%;
+.texteventos1:hover h3, .texteventos2:hover h3, .texteventos3:hover h3, .texteventos4:hover h3, .texteventos5:hover h3, .texteventos6:hover h3, .texteventos7:hover h3{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.texteventos1:hover h5, .texteventos2:hover h5, .texteventos3:hover h5, .texteventos4:hover h5, .texteventos5:hover h5, .texteventos6:hover h5, .texteventos7:hover h5{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.texteventos1 h3, .texteventos2 h3, .texteventos3 h3, .texteventos4 h3, .texteventos5 h3, .texteventos6 h3, .texteventos7 h3{
+    color: rgb(0, 0, 0) !important;
+    text-decoration: none !important;
+}
+
+.texteventos1:hover a, .texteventos2:hover a, .texteventos3:hover a, .texteventos4:hover a, .texteventos5:hover a, .texteventos6:hover a, .texteventos7:hover a{
+    width: 120px;
+    color: rgb(0, 0, 0);
+    text-decoration: none !important;
+}
+
+.btneventos {
+    width: 35px;
+    height: 40px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--dark);
+    background: #FFFFFF;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: .5s;
+    text-decoration: none;
+    padding: 2%;
+}
+
+.cardcalendareventos{
+    display: flex;
 }
 

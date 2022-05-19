@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4918f2ce61.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
     <title>Revirar</title>
 </head>
 <body>
@@ -65,215 +68,301 @@
         </ul>
     </div>
 </header>
-
 <section class="text-home-eventos">
+    <div>
+        <p>
+        <h1 class="home-eventos fs-1">Eventos</h1>
+        </p>
+        <p class="eventosetup">Os eventos da revirar são realizados com o intuito de integrar as pessoas em situação de rua à comunidade, para que se sintam como parte da sociedade. E também com o intuito de que a comunidade, principakmente ao redor do projeto possam ver a importância e impacto que o Revirar tem na vida de cada um de seus atendidos.</p>
+    </div>
+    <!-- First event -->
+    <div class="row size">
+        <div><h2 class="titulo-eventos">Confraternização 2021</h2>
+          <p id="linha-eventos-confraternização"></p>
+        </div>
+        <div class="eventos-colum">
+            <div class="atendidos-image-home">
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../assets/img/confraternização_1.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/img/confraternização_2.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/img/confraternização_3.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="text-relatos" cite="https://www.huxley.net/bnw/four.html">
+                <p>Integer sagittis ante nisi, non ullamcorper tortor suscipit id. Phasellus a tincidunt mi. Nunc
+                    tincidunt
+                    nisi vitae dui ultricies laoreet in vitae nulla. Aliquam pharetra gravida finibus. Integer eget
+                    bibendum
+                    ipsum. Vestibulum tristique risus nisl, eget pulvinar arcu volutpat id. Proin diam orci, varius
+                    a turpis at,
+                    vulputate maximus ligula.</p>
+                <p>—Aldous Huxley, <cite>Brave New World</cite></p>
+            </div>
+        </div>
+    </div>
+    <!-- Second event -->
+    <div class="row size">
+        <div><h2 class="titulo-eventos">Decoração do projeto</h2>
+          <p id="linha-eventos-decoração"></p>
+        </div>
+        <div class="eventos-colum d-flex flex-row-reverse">
+            <div class="atendidos-image-home">
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../assets/img/pinturas.1.JPG" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/img/pinturas.2.JPG" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/img/pinturas.3.JPG" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="text-relatos" cite="https://www.huxley.net/bnw/four.html">
+                <p>Integer sagittis ante nisi, non ullamcorper tortor suscipit id. Phasellus a tincidunt mi.
+                    Nunc tincidunt
+                    nisi vitae dui ultricies laoreet in vitae nulla. Aliquam pharetra gravida finibus. Integer
+                    eget bibendum
+                    ipsum. Vestibulum tristique risus nisl, eget pulvinar arcu volutpat id. Proin diam orci,
+                    varius a turpis
+                    at, vulputate maximus ligula.</p>
+                <p>—Aldous Huxley, <cite>Brave New World</cite></p>
+            </div>
+        </div>
+    </div>
+    <!-- Third event -->
+    <div class="row size">
+        <div><h2 class="titulo-eventos">Palestras</h2>
+        <p id="linha-eventos-palestra"></p>
+      </div>
+        <div class="eventos-colum">
+            <div class="atendidos-image-home">
+                <div id="carouselExampleSettings" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleSettings" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleSettings" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleSettings" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../assets/img/palestra.1.JPG" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/img/palestra.2.JPG" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../assets/img/palestra.3.JPG" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSettings"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSettings"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="text-relatos" cite="https://www.huxley.net/bnw/four.html">
+                <p>Integer sagittis ante nisi, non ullamcorper tortor suscipit id. Phasellus a tincidunt mi. Nunc
+                    tincidunt
+                    nisi vitae dui ultricies laoreet in vitae nulla. Aliquam pharetra gravida finibus. Integer eget
+                    bibendum
+                    ipsum. Vestibulum tristique risus nisl, eget pulvinar arcu volutpat id. Proin diam orci, varius
+                    a turpis at,
+                    vulputate maximus ligula.</p>
+                <p>—Aldous Huxley, <cite>Brave New World</cite></p>
+            </div>
+        </div>
+    </div>
+<br>
+  <!-- CARD EVENTOS  -->
   <div>
-      <p>
-      <h1>Eventos</h1>
-      </p>
-      <p class="eventosetup">Os eventos da revirar são realizados com o intuito de integrar as pessoas em situação de rua à comunidade, para que se sintam como parte da sociedade. E também com o intuito de que a comunidade, principakmente ao redor do projeto possam ver a importância e impacto que o Revirar tem na vida de cada um de seus atendidos.</p>
-  </div>
-
-  <!-- First event -->
-  <div class="row size">
-      <div><h1 class="titulo-eventos">Confraternização 2021</h1>
-      </div>
-      <div class="eventos-colum">
-          <div class="atendidos-image-home">
-              <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-                          class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                          aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                          aria-label="Slide 3"></button>
-                  </div>
-                  <div class="carousel-inner">
-                      <div class="carousel-item active">
-                          <img src="../assets/img/confraternização_1.jpg" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                              <div class="d-grid gap-2 col-6 mx-auto">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <img src="../assets/img/confraternização_1.jpg" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                              <div class="d-grid gap-2 col-6 mx-auto">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <img src="../assets/img/confraternização_3.jpg" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                              <div class="d-grid gap-2 col-6 mx-auto">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                      data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                      data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                  </button>
-              </div>
-          </div>
-          <div class="text-relatos" cite="https://www.huxley.net/bnw/four.html">
-              <p>Integer sagittis ante nisi, non ullamcorper tortor suscipit id. Phasellus a tincidunt mi. Nunc
-                  tincidunt
-                  nisi vitae dui ultricies laoreet in vitae nulla. Aliquam pharetra gravida finibus. Integer eget
-                  bibendum
-                  ipsum. Vestibulum tristique risus nisl, eget pulvinar arcu volutpat id. Proin diam orci, varius
-                  a turpis at,
-                  vulputate maximus ligula.</p>
-              <p>—Aldous Huxley, <cite>Brave New World</cite></p>
-          </div>
-      </div>
-  </div>
-
-  <!-- Second event -->
-  <div class="row size">
-      <div><h1 class="titulo-eventos">Decoração do projeto</h1>
-      </div>
-      <div class="eventos-colum d-flex flex-row-reverse">
-          <div class="atendidos-image-home">
-              <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0"
-                          class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"
-                          aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"
-                          aria-label="Slide 3"></button>
-                  </div>
-                  <div class="carousel-inner">
-                      <div class="carousel-item active">
-                          <img src="../assets/img/pinturas.1.JPG" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                              <div class="d-grid gap-2 col-6 mx-auto">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <img src="../assets/img/pinturas.2.JPG" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                              <div class="d-grid gap-2 col-6 mx-auto">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <img src="../assets/img/pinturas.3.JPG" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                              <div class="d-grid gap-2 col-6 mx-auto">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                      data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                      data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                  </button>
-              </div>
-          </div>
-          <div class="text-relatos" cite="https://www.huxley.net/bnw/four.html">
-              <p>Integer sagittis ante nisi, non ullamcorper tortor suscipit id. Phasellus a tincidunt mi.
-                  Nunc tincidunt
-                  nisi vitae dui ultricies laoreet in vitae nulla. Aliquam pharetra gravida finibus. Integer
-                  eget bibendum
-                  ipsum. Vestibulum tristique risus nisl, eget pulvinar arcu volutpat id. Proin diam orci,
-                  varius a turpis
-                  at, vulputate maximus ligula.</p>
-              <p>—Aldous Huxley, <cite>Brave New World</cite></p>
-          </div>
-      </div>
-  </div>
-
-  <!-- Third event -->
-  <div class="row size">
-      <div><h1 class="titulo-eventos">Palestras</h1></div>
-      <div class="eventos-colum">
-          <div class="atendidos-image-home">
-              <div id="carouselExampleSettings" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleSettings" data-bs-slide-to="0"
-                          class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleSettings" data-bs-slide-to="1"
-                          aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleSettings" data-bs-slide-to="2"
-                          aria-label="Slide 3"></button>
-                  </div>
-                  <div class="carousel-inner">
-                      <div class="carousel-item active">
-                          <img src="../assets/img/palestra.1.JPG" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                              <div class="d-grid gap-2 col-6 mx-auto">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <img src="../assets/img/palestra.2.JPG" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                              <div class="d-grid gap-2 col-6 mx-auto">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                          <img src="../assets/img/palestra.3.JPG" class="d-block w-100" alt="...">
-                          <div class="carousel-caption d-none d-md-block">
-                              <div class="d-grid gap-2 col-6 mx-auto">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSettings"
-                      data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSettings"
-                      data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                  </button>
-              </div>
-          </div>
-          <div class="text-relatos" cite="https://www.huxley.net/bnw/four.html">
-              <p>Integer sagittis ante nisi, non ullamcorper tortor suscipit id. Phasellus a tincidunt mi. Nunc
-                  tincidunt
-                  nisi vitae dui ultricies laoreet in vitae nulla. Aliquam pharetra gravida finibus. Integer eget
-                  bibendum
-                  ipsum. Vestibulum tristique risus nisl, eget pulvinar arcu volutpat id. Proin diam orci, varius
-                  a turpis at,
-                  vulputate maximus ligula.</p>
-              <p>—Aldous Huxley, <cite>Brave New World</cite></p>
-          </div>
-      </div>
+    <h2>PRÓXIMOS EVENTOS - MÊS DE MAIO</h2>
   </div>
   <div>
-      <h1 class="titulo-eventos">Futuros Eventos</h1>
-      <h2 class="fonte-eventos">MAIO</h2>
-          <h3>DIA 06 ( Sexta-Feira): Brechó aberto das 10h às 16h.</h3>
-          <h3>DIA 11 (Quarta-Feira): Entrega dos Kits LARIAMOR, Lariamor convidados.</h3>
-          <h3>DIA 14 (Sábado): Abordagem com Fraternidade Sem Fronteiras.</h3>
-          <h3>DIA 20 ( Sexta-Feira): Discussões de caso as 17h.</h3>
-      <h2 class="fonte-eventos">JUNHO</h2>
-          <h3>DIA 03/06 ( Sexta-Feira):  Brechó aberto das 10h às 16h.</h3>
-          <h3>DIA 11 (Sábado): Abordagem com Fraternidade Sem Fronteiras.</h3>
-          <h3 class="space-down">DIA 22 (Quarta-Feira): FESTA JUNINA com os atendidos, lanche de linguiça (assada na churrasqueira), bolos e doces típicos e dança.</h3>
-  </div>
+    <div class="fadeInUp " data-wow-delay="0.1s">
+        <div>
+            <div class="cardcalendareventos row">
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                    <button class="texteventos1">
+                        <br>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <h3 class="mb-3">06 | MAIO</h3>
+                        <h5 class="mb-4">Brechó aberto das 10h às 16h.</h5>
+                        <a class="btneventos" href="./index.html"><i class="fa fa-plus m-2"></i>Participar</a>
+                    </button>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                    <button class="texteventos2">
+                        <br>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <h3 class="mb-3">06 | MAIO</h3>
+                        <h5 class="mb-4">Brechó aberto das 10h às 16h.</h5>
+                        <a class="btneventos" href="./index.html"><i class="fa fa-plus m-2"></i>Participar</a>
+                    </button>
+                </div>
+
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                    <button class="texteventos3">
+                        <br>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <h3 class="mb-3">06 | MAIO</h3>
+                        <h5 class="mb-4">Brechó aberto das 10h às 16h.</h5>
+                        <a class="btneventos" href="./index.html"><i class="fa fa-plus m-2"></i>Participar</a>
+                    </button>
+                </div>
+
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                    <button class="texteventos4">
+                        <br>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <h3 class="mb-3">06 | MAIO</h3>
+                        <h5 class="mb-4">Brechó aberto das 10h às 16h.</h5>
+                        <a class="btneventos" href="./index.html"><i class="fa fa-plus m-2"></i>Participar</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <h2>PRÓXIMOS EVENTOS - MÊS DE JUNHO</h2>
+</div>
+<div>
+    <div class="fadeInUp " data-wow-delay="0.1s">
+        <div >
+            <div class="cardcalendareventos row">
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                    <button class="texteventos5">
+                        <br>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <h3 class="mb-3">06 | MAIO</h3>
+                        <h5 class="mb-4">Brechó aberto das 10h às 16h.</h5>
+                        <a class="btneventos" href="./index.html"><i class="fa fa-plus m-2"></i>Participar</a>
+                    </button>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                    <button class="texteventos6">
+                        <br>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <h3 class="mb-3">06 | MAIO</h3>
+                        <h5 class="mb-4">Brechó aberto das 10h às 16h.</h5>
+                        <a class="btneventos" href="./index.html"><i class="fa fa-plus m-2"></i>Participar</a>
+                    </button>
+                </div>
+
+                <div class="col-md-6 col-lg-3 col-sm-12">
+                    <button class="texteventos7">
+                        <br>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <h3 class="mb-3">06 | MAIO</h3>
+                        <h5 class="mb-4">Brechó aberto das 10h às 16h.</h5>
+                        <a class="btneventos" href="./index.html"><i class="fa fa-plus m-2"></i>Participar</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </section>
+
+
+
+
+
 
 <footer id="myFooter">
   <div class="container">
@@ -308,9 +397,7 @@
                           Alimentos</a></li>
                   <li><a href="../doacao/doacao.html"><img class="arrow" src="../assets/img/arrow_icon.png">
                           Roupas</a></li>
-                  <li><a href="../doacao/doacao.html"><img class="arrow" src="../assets/img/arrow_icon.png"> Produto
-                          de
-                          Higiêne</a></li>
+                  <li><a href="../doacao/doacao.html"><img class="arrow" src="../assets/img/arrow_icon.png"> Produto de Higiêne</a></li>
               </ul>
           </div>
           <div class="home4 col-sm-3">
@@ -331,13 +418,10 @@
           </div>
       </div>
   </div>
-  </div>
   <div class="footer-copyright">
       <p>© 2022 Copyright - Projeto Revirar</p>
   </div>
 </footer>
-
+<script src="../js/style_adm.js"></script>
 </body>
-
 </html>
-
