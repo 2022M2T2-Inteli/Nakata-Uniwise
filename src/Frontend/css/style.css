@@ -221,13 +221,23 @@ header{
 
 /* --- PÁGINA  INICIAL--- */
 
+.textoInicialImpacto{
+    
+}
+
+.cardServHome{
+    background-color: #000000;
+    border-radius: 20px;
+    margin: 10px;
+    color: white;
+}
+
 .projectsection{
     background-image: url(../assets/img/Fundo-Atuacao.jpg);
     padding: 5%;
 }
 
 .projectsection1{
-    background-image: url(../assets/img/Fundo-Atuacao.jpg);
     padding: 3%;
     display: flex;
     justify-content: center;
@@ -235,7 +245,6 @@ header{
 }
 
 .projectsection2{
-    background-image: url(../assets/img/Fundo-Atuacao.jpg);
     padding-top: 2%;
     display: flex;
     justify-content: center;
@@ -259,11 +268,11 @@ header{
 
 .fa-people-group{
     font-size: 80px;
-    color: #427AA1;
+    color: #FAF806;
 }
 .fa-user{
     font-size: 80px;
-    color: #427AA1;
+    color:  #FAF806;
 }
 
  .text-home-inicial{
@@ -351,6 +360,22 @@ header{
     z-index: 1;
     background-color: white;
     padding-top: 10%;
+}
+
+.text-home-serv{
+    width: 70%;
+    margin: 0 auto;
+    z-index: 1;
+    background-color: white;
+}
+.text-home-serv h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.text-home-serv p{
+    text-align: center;
+    font-size: 20px;
 }
 
 .text-home h1{
@@ -858,6 +883,10 @@ input, button{
     border-radius: 0;
     border: 0;
     border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+#mensagem{
     width: 100%;
 }
 

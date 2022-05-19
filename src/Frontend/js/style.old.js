@@ -1,3 +1,15 @@
+$(document).ready(function(){
+        
+    $("#header").load("menu.html", function() {
+        $("#btn").on('click', showmenu);
+    });
+
+});
+
+function showmenu(){
+    nav.classList.toggle('active');
+}
+
 //MENU HAMBURGUER
 const btn = document.getElementById('btn')
 
