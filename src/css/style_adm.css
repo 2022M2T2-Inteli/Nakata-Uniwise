@@ -300,3 +300,27 @@
     text-align: left;
     font-size: 20px;
   }
+
+/* PÁGINA FREQUENCIA */
+
+.DataFrequencia{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.frequenciaLayout{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.pagination{
+    display: flex;
+    justify-content: right;
+    width: 90%;
+}
+
+.PesqFreq{
+    width: 30%;
+    margin: 0 auto;
+}
