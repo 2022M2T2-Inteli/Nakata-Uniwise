@@ -956,200 +956,322 @@ input, button{
 /* --- PÁGINA  DOAÇÕES --- */
 @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
 
-.textHome-doacao{
-    width: 70%;
-    margin: 0 auto;
-    margin-top: -5%;
-    z-index: 1;
-    background-color: white;
-    padding: 2%;
-}
-
-.textHome-doacao h1{
-    font-size: 40px;
-}
-
-.textHome-doacao p{
-    font-size: 20px;
-}
-
-.why {
-    background-color: #F5D312;
-    border-radius: 20px;
-    height: 250px !important;
-    color: #000000;
-    text-align: center;
-    margin-left: 5%;
+.videoInicio {
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+.conteudoDoacao {
     position: absolute;
-    padding-top: 20px;
-    padding-bottom: 100px;
-    padding-right: 300px; 
-    padding-left: 300px; 
-
-}
-
-.titleFirst {
-    color: #000000;
-    text-align: center;
-}
-.accordion-body, .topicS{
-    font-size: 20px;
-    
-}
-
-.money {
-    text-align: center;
-}
-
-.food {
-    text-align: center;
-}
-
-.principalDoacao{
-    background-image: url('../assets/img/backgroundSpend.png');
-    height: 60vh;
+    bottom: 0;
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20vh;
     display: flex;
-    align-items: center;
+    height: 100vh;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+  }
+
+@keyframes smooth {
+    from {
+        width: 40%;
+    } to {
+        width: 50%;
+    }
+  }
+
+.conteudoDoacao h1 {
+    color: #ffffff;
+    text-align: center;
+  }
+
+.conteudoDoacao h4 {
+    color: #ffffff;
+    text-align: center;
+  }
+
+.iconeSetaInicio {
+    bottom: 0;
+    color: #f1f1f1;
+    display: inline-flex;
+    justify-content: center;
+  }
+
+.iconeSetaInicio img {
+    margin-top: 30vh;
+    margin-bottom: 20vh;
+    width: 40%;
+    transition: ease all 0.2s;
+  }
+
+.iconeSetaInicio:hover img{
+    transform: scale(1.1,1.1);
+    animation: smooth 1s ease-out;
+  }
+
+.textoTituloDoacao {
+    margin-top: 40vh;
+  }
+
+/* Primeiro texto doação */
+
+.textoIntroducaoDoacao p {
+    size: 25px;
 }
 
-.containerMY {
+/* Caixa porque doar */
+
+.caixaAmarela {
+    position: relative;
+    width: 75%;
+    height: 500px;
     background-color: yellow;
-    border-radius: 10px;
-    padding-bottom: 0px;
+    border-radius: 5vh;
+    padding-bottom: 95vh;
     padding-top: 30px;
     padding-left: 70px;
     padding-right: 70px;
     text-align: center;
+    margin-left: 25vh;
 }
 
-.containerMY1 {
+.caixaPreta {
+    position: absolute;
+    margin-right: 10vh;
     background-color: #212529;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 50px;
+    border-radius: 5vh;
+    padding-top: 50px;
 }
 
-.gambiarra {
-    background-color: #212529;
-    padding: 50px;
-    margin-left: 70px;
-    margin-right: 70px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.furlan {
-    margin: auto;
-    align-items: center;
-    text-align: center;
-}
-
-.furlan h5 {
-    color: #427aa1;
-}
-
-.furlan p {
-    color: #FAF806;
-}
-
-.card-deck img {
-    width: 10%;
-}
-
-.card-img-house {
-    width: 40%;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    transition: all .2s ease-in-out;
-}
-.money h2 {
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-.card-img-house :hover {
-    width: 60%;
-}
-.grow-sobre { 
-    transition: all .2s ease-in-out; 
-}
-.grow-sobre:hover { 
-        transform: scale(1.05); 
-}
-
-.center-items{
-    display: flex;
-    align-items: center;
-}
-
-.botton1 {
-    padding: 20px 20px 20px 20px;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: #022169;
-    font-family: "Fredoka One", Fredoka One;
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 1.4em;
-    background-color: #ffffff;
-    color: #f177c4;
-}
-.card-group {
-    align-items: center;
-}
-.spendeIcon {
+.IconePresente {
     width: 15%;
     padding-bottom: 5%;
 }
 
-.caixaIcon {
-    /* margin-top: 13px;
-    margin-bottom: 9.5px; */
-    width: 60%;
-    /* margin-left: 60px; */
+/* Acordeão porque doar */
+
+.acordeaoDoacao {
+    border-top: 1px solid #212529;
+    background-color: #212529;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    transition: 0.4s;
+    color: #444;
+    outline: none;
+    display: flex;
+  }
+
+.colorIconArrow {
+    color: #FAF806;
 }
 
-.paypalIcon {
-    /* margin-top: 13px;
-    margin-bottom: 7px; */
-    width: 60%;
-    /* margin-left: 60px; */
+  .acordeaoDoacao h6 {
+      color: #FAF806;
+  }
+  
+  .active, .acordeaoDoacao:hover {
+    background-color: rgb(95, 93, 93);
+  }
+  
+  .painel {
+    padding: 0 18px;
+    background-color: #212529;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .painel p {
+      color: white;
+  }
+
+ 
+
+/* Valores de Doação */
+.colunaFixo1 {
+    width: 30%;
+    height: 50%;
 }
 
-
-.pixIcon {
-    width: 60%;
-    /* margin-left: 60px; */
+.colunaFixo2 {
+    width: 30%;
+    height: 50%;
 }
 
-.roupasw {
+.colunaFixo3 {
+    width: 30%;
+    height: 50%;
+}
+.tituloDoacaoFixo {
     text-align: center;
 }
-.Higiene {
-    text-align: center;
+
+.card-img-house {
+    width: 20%;
+    height: 20%;
 }
-.row h5 {
+.geralColunas {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.outrovalor {
+    text-align: center;
+    align-items: center;
+}
+
+  /* Espaço de texto para outro valor */
+.form__group {
+    margin-left: 73vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 20%;
+}
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
     color: rgb(0, 0, 0);
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+.form__label {
+    position: absolute;
+    top: 0;
+    display: flex;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: flex;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700;
 }
 
-.tittleDoacao {
-    color: yellow;
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+  
+/* Checkbox Radio valor */
+
+.dddd {
+    display: flex;
 }
 
-/* .card{
-    border: none !important;
-} */
+.mensalorindi {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.containerT {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .containerT input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .containerT:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .containerT input:checked ~ .checkmark {
+    background-color: #000000;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .containerT input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .containerT .checkmark:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #FAF806;
+  }
 
-.accordion {
-     font-family: Georgia, 'Times New Roman', Times, serif;
-     background-color: #000;
-     border: none;
- }
 
- /* botão assinar */
+
+/* BOTÃO PLANO MENSAL */
+
 .valorant {
     display: flex;
     align-items: center;
@@ -1232,6 +1354,60 @@ input, button{
     width: 110%;
 }
 
+/* Intituições de doação */
+
+.bancoPix {
+    width: 30%;
+    height: 50%;
+}
+
+.bancoPaypal {
+    width: 30%;
+    height: 50%;
+}
+
+.bancoCaixa {
+    width: 30%;
+    height: 50%;
+}
+
+.pixicon {
+    width: 40%;
+}
+
+.paypalicon {
+    width: 60%;
+}
+
+.caixaicon {
+    width: 60%;
+}
+
+.tituloInstituicoes {
+    text-align: center;
+}
+
+.tituloComida {
+    text-align: center;
+}
+
+.tituloHigiene {
+    text-align: center;
+}
+
+.tituloRoupas {
+    text-align: center;
+}
+
+.colunasBancos {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botão copiar */
+
 .copyButton {
     display: inline-block;
     outline: none;
@@ -1264,7 +1440,43 @@ input, button{
     transform: rotateX(90deg), translateZ(50%);
     background-color: #427aa1;
 }
- /* fim botão assinar */
+
+/* TESTEEEEEE */
+
+
+.buttontst {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 17px 48px;
+    color: rgb(0, 0, 0);
+    background-color: #FAF806;
+    height: 48px;
+    }
+
+.buttontst:hover {
+    transform: scale(1.04);
+    background-color: #427aa1;
+}
+
+.buttontst2 {
+    background-color: #427aa1;
+}
+
+
+/* FIM PAGINA DOAÇÃO */
 
 
 /* --- PÁGINA  TRANSPARÊNCIA --- */

@@ -1,3 +1,4 @@
+console.log("linkou")
 $(document).ready(function(){
         
     $("#header").load("menu.html", function() {
@@ -58,3 +59,82 @@ document.addEventListener("scroll", function() {
         counted = true;
     } 
 })
+
+// SCRIPT PAGINA DE DOAÇÃO
+
+// Script Acordeão
+var acordeaoDoacao = document.getElementsByClassName("acordeaoDoacao");
+console.log("b")
+var i;
+console.log(acordeaoDoacao.length)
+for (i = 0; i < acordeaoDoacao.length; i++) {
+  acordeaoDoacao[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var painel = this.nextElementSibling;
+    if (painel.style.maxHeight) {
+      painel.style.maxHeight = null;
+    } else {
+      painel.style.maxHeight = painel.scrollHeight + "px";
+    }
+  });
+}
+
+// Script Botoes doação
+var buttonA = document.getElementById("buttonVinte");
+var buttonB = document.getElementById("buttonCinquenta");
+var buttonC = document.getElementById("buttonCem");
+
+buttonA.addEventListener("click", function() {
+    console.log("clickbttonA")
+    this.classList.toggle("buttontst2");
+    buttonB.classList.remove("buttontst2")
+    buttonC.classList.remove("buttontst2")
+});
+buttonB.addEventListener("click", function() {
+    console.log("clickbttonb")
+    this.classList.toggle("buttontst2");
+    buttonA.classList.remove("buttontst2")
+    buttonC.classList.remove("buttontst2")
+});
+buttonC.addEventListener("click", function() {
+    console.log("clickbttonb")
+    this.classList.toggle("buttontst2");
+    buttonA.classList.remove("buttontst2")
+    buttonB.classList.remove("buttontst2")
+});
+
+// Script Copiar doação
+var buttonPix = document.getElementById("buttonPix");
+var buttonCaixa = document.getElementById("buttonCaixa");
+var buttonPaypal = document.getElementById("buttonPaypal");
+
+buttonPix.addEventListener("click", function() {
+    console.log("clickpix")
+this.classList.toggle("buttontst2");
+this.innerHTML = "Pix Copiado"
+setTimeout(function() {
+    buttonPix.classList.toggle("buttontst2");
+    buttonPix.innerHTML = "Copiar Pix";
+}, 1000)
+});
+
+buttonCaixa.addEventListener("click", function() {
+    console.log("clickcaixa")
+this.classList.toggle("buttontst2");
+this.innerHTML = "Caixa Copiado"
+setTimeout(function() {
+    buttonCaixa.classList.toggle("buttontst2");
+    buttonCaixa.innerHTML = "Copiar Caixa";
+}, 1000)
+});
+
+buttonPaypal.addEventListener("click", function() {
+    console.log("clickpaypal")
+this.classList.toggle("buttontst2");
+this.innerHTML = "Paypal Copiado"
+setTimeout(function() {
+    buttonPaypal.classList.toggle("buttontst2");
+    buttonPaypal.innerHTML = "Copiar Paypal";
+}, 1000)
+});
+// FIM SCRIPT PAGINA DE DOAÇÃO

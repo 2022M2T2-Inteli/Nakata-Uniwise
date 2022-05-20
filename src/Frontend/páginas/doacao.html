@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../Frontend/css/style2.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4918f2ce61.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
     <title>Revirar</title>
 </head>
 <body>
@@ -45,11 +46,6 @@
                     <li><a class="dropdown-item" href="#">Produto de Higiêne</a></li>
                   </ul>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="../páginas/parceiras.html">Parceiros</a>
-                </li>
-
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="../páginas/transparencia.html">Transparência</a>
                 </li>
@@ -65,248 +61,215 @@
             </ul>
         </div>
     </header>
-
-    <section class="principalDoacao">
-            <div class="tittleDoacao">
-                <h1><b>Doações</b></h1>
-            </div>
-    </section>
-
-    <section class="textHome-doacao">
-      <div class="titleFirst">
-        <h3><b>Sua ajuda é muito importante para os nossos assistidos</b></h3>
+    <div class="teste5">
+      <video autoplay loop class="videoInicio">
+        <source src="../assets/video/videomp4.mp4" type="video/mp4">
+        <source src="../assets/video/videoweb.webm" type="video/webm">
+    </video>
+      <div class="conteudoDoacao">
+        <div class="textoTituloDoacao">
+          <h1>Doações</h1>
+          <h4>Sua ajuda é muito importante para os nossos assistidos</h4>
+        </div>
+        <a href="#container" class="iconeSetaInicio"><img src="../assets/img/Icon-Fundo-Spende.png"></a>
+      </div>
     </div>
     <br>
-    <div class="textOne">
+    <div class="container" id="container">
+      <div class="textoIntroducaoDoacao" id="textInicial">
         <p>Nós oferecemos atendimento e convivência para famílias e indivíduos que utilizam as ruas como espaço de moradia e sobrevivência, com atividades direcionadas para o desenvolvimento de reinserção social, na perspectiva de construção de vínculos interpessoais e familiares que oportunizem a construção do processo de saída das ruas.</p>
-    </div>
-    <br>
-    <section class="whySpende">
-        <div class="containerMY">
+      </div>
+      <section class="whySpende">
+        <div class="caixaAmarela">
           <h3><b>Razões Para Doar</b></h3>
           <br>
-          <div class="containerMY1">
-            <img class="spendeIcon" src="../assets/img/spendIcon.png" alt="">
-            <div class="accordion"  id="accordionExample">
-              <div class="accordion-item acordionov">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button collapsed margin-0 bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    <strong>Importância</strong>
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse bg-dark" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                  <div class="accordion-body text-white">
-                    A doação de recursos financeiros é de grande importância para o ReVirar. O apoio da sociedade para o serviço de abordagem a pessoas de ruas pode ser feito financeiramente, é um ato de boa vontade que vai impactar muitas pessoas em situação de rua, esse impacto gera consequências positivas que vão muito além do projeto, sua ajuda pode mudar a vida de varias pessoas.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <strong>Colaboração</strong>
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse bg-dark" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                  <div class="accordion-body text-white">
-                    Ao doar para o ReVirar você colabora com a elaboração de atividades direcionadas para o desenvolvimento de reinserção social, com Lanche/alimentação, Banho e higiene pessoal, na perspectiva de construção de vínculos interpessoais e familiares que oportunizem a construção do processo de saída das ruas.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <strong>Impacto</strong>
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse bg-dark" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                  <div class="accordion-body text-white">
-                    Ao doar para o ReVirar você vai apoiar projetos que geram valor para a sociedade, com impactos concretos para a saúde das pessoas. Alguns desses resultados são:
-                    <br>
-                    <br>
-                    <ul class="topicS">
-                      <p>• Retorno para a família de origem;</p>
-                      <p>• Aluguel social - saída da rua;</p>
-                      <p>• Retorno da criança para genitora/aluguel social;</p>
-                      <p>• Localização da família de origem;</p>
-                      <p>• Regresso escolar;</p>
-                      <p>• Saúde preventiva/tratamento médico ambulatorial;</p>
-                      <p>• Elevação da auto estima pessoal (banho, higiene pessoal).</p>
-                  </ul>
-                  </div>
-                </div>
+          <div class="caixaPreta">
+            <img class="IconePresente" src="../assets/img/spendIcon.png">
+              <button class="acordeaoDoacao justify-content-between" id="acordeao"><h6><b>Importância</b></h6> <i class="bi bi-arrow-down-circle-fill colorIconArrow"></i> </button>
+            <div class="painel">
+              <p>A doação de recursos financeiros é de grande importância para o ReVirar. O apoio da sociedade para o serviço de abordagem a pessoas de ruas pode ser feito financeiramente, é um ato de boa vontade que vai impactar muitas pessoas em situação de rua, esse impacto gera consequências positivas que vão muito além do projeto, sua ajuda pode mudar a vida de varias pessoas.</p>
+            </div>
+            <button class="acordeaoDoacao justify-content-between" id="acordeao"><h6><b>Colaboração</b></h6><i class="bi bi-arrow-down-circle-fill colorIconArrow"></i></button>
+            <div class="painel">
+              <p>Ao doar para o ReVirar você colabora com a elaboração de atividades direcionadas para o desenvolvimento de reinserção social, com Lanche/alimentação, Banho e higiene pessoal, na perspectiva de construção de vínculos interpessoais e familiares que oportunizem a construção do processo de saída das ruas.</p>
+            </div>
+            <button class="acordeaoDoacao justify-content-between" ><h6><b>Impacto</b></h6><i class="bi bi-arrow-down-circle-fill colorIconArrow"></i></button>
+            <div class="painel">
+              <div class="textoImpactoDoacao">
+                <p>Ao doar para o ReVirar você vai apoiar projetos que geram valor para a sociedade, com impactos concretos para a saúde das pessoas. Alguns desses resultados são:</p>
+                <br>
+                <ul class="topicosDoacao">
+                  <p>• Retorno para a família de origem;</p>
+                  <p>• Aluguel social - saída da rua;</p>
+                  <p>• Retorno da criança para genitora/aluguel social;</p>
+                  <p>• Localização da família de origem;</p>
+                  <p>• Regresso escolar;</p>
+                  <p>• Saúde preventiva/tratamento médico ambulatorial;</p>
+                  <p>• Elevação da auto estima pessoal (banho, higiene pessoal).</p>
+              </ul>
               </div>
             </div>
+            <br>
+            <br>
           </div>
         </div>
-      <div class="gambiarra">
-        <!-- CAIXA PRETA -->
-      </div>
     </section>
     <br>
     <br>
-    <section class="gambiarra2">
-      <div class="tittlePlan">
-        <h2><b>Planos de Doação</b></h2>
-      </div>
-    </section>
-    <br>
-    <br>
-    <section class="furlan">
-      <div class="card-group">
-        <div class="card center-items">
-          <img class="card-img-house" src="../assets/img/house.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><b>R$ 50,00 por mês</b></h5>
-            <h6 class="card-text">Com R$ 50,00 por mês você contribui para ajudar nossos assistidos em tudos que eles necessitam.</h6>
-            
-            <p class="card-text"><small class="text-muted">Venha ReVirar com a gente!</small></p>
-            <div class="valorant">
-            </a><a class="transparent" href="#">
-            <p><span class="bg"></span><span class="base"></span><span class="text">Assinar</span></p>
-        </a>
-         </div>
-          </div>
-        </div>
-        <div class="card center-items">
-          <img class="card-img-house" src="../assets/img/house.png" alt="Card image cap" class="grow-sobre">
-          <div class="card-body">
-            <h5 class="card-title"><b>R$ 100,00 por mês</b></h5>
-            <h6 class="card-text">Com R$ 100,00 por mês você contribui para ajudar nossos assistidos em tudos que eles necessitam.</h6>
-            <p class="card-text"><small class="text-muted">Venha ReVirar com a gente!</small></p>
-            <div class="valorant">
-            </a><a class="transparent" href="#">
-            <p><span class="bg"></span><span class="base"></span><span class="text">Assinar</span></p>
-        </a>
-         </div>
-          </div>
-        </div>
-        <div class="card center-items">
-          <img class="card-img-house" src="../assets/img/house.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><b>R$ 150,00 por mês</b></h5>
-            <h6 class="card-text">Com R$ 150,00 por mês você contribui para ajudar nossos assistidos em tudos que eles necessitam.</h6>
-            <p class="card-text"><small class="text-muted">Venha ReVirar com a gente!</small></p>
-            <div class="valorant">
-            </a><a class="transparent" href="#">
-            <p><span class="bg"></span><span class="base"></span><span class="text">Assinar</span></p>
-        </a>
-         </div>
-          </div>
-        </div>
-      </div>
-    </a>
-    </section>
-    <div class="money">
-      <br>
-      <br>
-        <div class="tittleMney"><h2><b>Doações Financeiras</b></h2></div>
-      <br>
-      <br>
-      <div class="card-group">
-        <div class="card">
-          <img class="pixicon" src="../assets/img/pixicon.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Doação por Pix</h5>
-            <p class="card-text"><h6>Fraternidade Irmã Amélia</h6>
-              <h6>CNPJ: 62.180.252/0001-05</h6></p>
-            <p class="card-text"><small class="text-muted"></small></p>
-            <button class="copyButton" onclick="myFunction()">Copiar Pix</button>
-          </div>
-        </div>
-        <div class="card card-doação">
-          <img class="caixaicon" src="../assets/img/caixaicon.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title-doacao">Caixa Econômica Federal</h5>
-            <p class="card-text-doacao"><h6>Agência 4050</h6>
-              <h6>Conta Corrente 2006-9</h6></p>
-            <p class="card-text-doacao"><small class="text-muted"></small></p>
-            <button class="copyButton" onclick="myFunction()">Copiar Caixa</button>
-          </div>
-        </div>
-        <div class="card">
-          <img class="paypalicon" src="../assets/img/paypalicon.png" alt="Card image cap">
-          <div class="card-body-doacao">
-            <h5 class="card-title-doacao">Paypal</h5>
-            <p class="card-text-doacao"><h6>Projeto ReVirar</h6>
-              <h6>@projetorevirar</h6></p>
-            <p class="card-text-doacao"><small class="text-muted"></small></p>
-            <button class="copyButton" onclick="myFunction()">Copiar Paypal</button>
-          </div>
-        </div>
-      </div>
-      </div>
+    <div class="tituloDoacaoFixo">
+      <h2><b>Valores de Doação</b></h2>
+      <h5>Muitos assistidos esperam por sua doação</h5>
     </div>
     <br>
     <br>
-    <div class="food">
-      <h2><b>Doação Alimentícia</b></h2>
+    <div class="geralColunas">
+      <div class="colunaFixo1">
+        <img class="card-img-house" src="../assets/img/house.png">
+        <h5><b>R$ 20,00</b></h5>
+        <h6>Com R$ 20,00 você colabora com com Lanche/alimentação, Banho e higiene pessoal.</h6>
+        <p><small class="text-muted">Venha ReVirar com a gente!</small></p>
+        <button onclick="buttontst()" class="buttontst" id="buttonVinte"><a>Doar R$20,00</a></button>
+      </div>
+      <div class="colunaFixo2">
+        <img class="card-img-house" src="../assets/img/house.png">
+        <h5><b>R$ 50,00</b></h5>
+            <h6>Com R$ 50,00 você colabora para o desenvolvimento de reinserção social.</h6>
+            <p><small class="text-muted">Venha ReVirar com a gente!</small></p>
+            <button onclick="buttontst()" class="buttontst" id="buttonCinquenta"><a>Doar R$50,00</a></button>
+      </div>
+      <div class="colunaFixo3">
+        <img class="card-img-house" src="../assets/img/house.png">
+        <h5><b>R$ 100,00</b></h5>
+        <h6>Com R$ 100,00 você colabora na construção do processo de saída das ruas.</h6>
+        <p><small class="text-muted">Venha ReVirar com a gente!</small></p>
+        <button onclick="buttontst()" class="buttontst" id="buttonCem"><a>Doar R$100,00</a></button>
+      </div>
     </div>
-    <br>
-    <br>
-    <ol class="list-group list-group-numbered">
-      <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">OPÇÃO DE ALIMENTO</div>
-          GRAMAS/LITROS/KG
-        </div>
-        <span class="badge bg-primary rounded-pill">0</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">OPÇÃO DE ALIMENTO</div>
-          GRAMAS/LITROS/KG
-        </div>
-        <span class="badge bg-primary rounded-pill">0</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">OPÇÃO DE ALIMENTO</div>
-          GRAMAS/LITROS/KG
-        </div>
-        <span class="badge bg-primary rounded-pill">0</span>
-      </li>
-    </ol>
-    <br>
-    <br>
-    <div class="roupas">
-      <div class="roupasw">
-        <h2><b>Doação de Vestuário</b></h2>
+    <div class="outrovalor">
+      <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+        <label for="name" class="form__label">Digite outro valor</label>
       </div>
       <br>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <div class="mensalorindi">
+        <fieldset>
+          <h4>Escolha a opção de doação:</h4>
+          <label class="containerT">Individual
+            <input type="radio" checked="checked" name="radio">
+            <span class="checkmark"></span>
+          </label>
+          <label class="containerT">Mensal
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+          </label>
+      </fieldset>
+      </div>
+      <div class="valorant">
+      </a><a class="transparent" href="#">
+      <p><span class="bg"></span><span class="base"></span><span class="text">Confirmar</span></p></a>
+      </div>
+      </div>
+      <br>
+      <br>
+      <div class="tituloInstituicoes">
+        <h2><b>Intituições de Doação</b></h2>
+      </div>
+      <br>
+      <br>
+      <div class="colunasBancos">
+        <div class="bancoPix">
+          <img class="pixicon" src="../assets/img/pixicon3.png" alt="Card image cap">
+          <h5>Pix - Banco Central do Brasil</h5>
+          <h6>Fraternidade Irmã Amélia</h6>
+          <h6>CNPJ: 62.180.252/0001-05</h6>
+          <button class="copyButton" onclick="" id="buttonPix">Copiar Pix</button>
+        </div>
+        <div class="bancoCaixa">
+          <img class="caixaicon" src="../assets/img/caixaicon3.png" alt="Card image cap">
+          <h5>Caixa Econômica Federal</h5>
+          <h6>Agência 4050</h6>
+          <h6>Conta Corrente 2006-9</h6>
+          <button class="copyButton" onclick="myFunction()" id="buttonCaixa">Copiar Caixa</button>
+        </div>
+        <div class="bancoPaypal">
+          <img class="paypalicon" src="../assets/img/paypalicon3.png" alt="Card image cap">
+          <h5>Paypal</h5>
+          <h6>Projeto ReVirar</h6>
+          <h6>@projetorevirar</h6>
+          <button class="copyButton" onclick="myFunction()" id="buttonPaypal">Copiar Paypal</button>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="tituloComida">
+        <h2><b>Doação Alimentícia</b></h2>
+      </div>
+      <br>
+      <br>
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">OPÇÃO DE ALIMENTO</div>
+            GRAMAS/LITROS/KG
+          </div>
+          <span class="badge bg-primary rounded-pill">0</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">OPÇÃO DE ALIMENTO</div>
+            GRAMAS/LITROS/KG
+          </div>
+          <span class="badge bg-primary rounded-pill">0</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">OPÇÃO DE ALIMENTO</div>
+            GRAMAS/LITROS/KG
+          </div>
+          <span class="badge bg-primary rounded-pill">0</span>
+        </li>
+      </ol>
+      <br>
+      <br>
+      <div class="roupas">
+        <div class="tituloRoupas">
+          <h2><b>Doação de Vestuário</b></h2>
+        </div>
+        <br>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <br>
+      <br>
+      <div class="tituloHigiene">
+        <h2><b>Doação de Produtos de Higiêne</b></h2>
+      </div>
+      <br>
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">OPÇÃO DE PRODUTO</div>
+            PACOTE/UNITARIO
+          </div>
+          <span class="badge bg-primary rounded-pill">0</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">OPÇÃO DE PRODUTO</div>
+            PACOTE/UNITARIO
+          </div>
+          <span class="badge bg-primary rounded-pill">0</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">OPÇÃO DE PRODUTO</div>
+            PACOTE/UNITARIO
+          </div>
+          <span class="badge bg-primary rounded-pill">0</span>
+        </li>
+      </ol>
+      <br>
+      <br>
     </div>
-    <br>
-    <br>
-    <div class="Higiene">
-      <h2><b>Doação de Produtos de Higiêne</b></h2>
-    </div>
-    <br>
-    <ol class="list-group list-group-numbered">
-      <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">OPÇÃO DE PRODUTO</div>
-          PACOTE/UNITARIO
-        </div>
-        <span class="badge bg-primary rounded-pill">0</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">OPÇÃO DE PRODUTO</div>
-          PACOTE/UNITARIO
-        </div>
-        <span class="badge bg-primary rounded-pill">0</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">OPÇÃO DE PRODUTO</div>
-          PACOTE/UNITARIO
-        </div>
-        <span class="badge bg-primary rounded-pill">0</span>
-      </li>
-    </ol>
-    <br>
-    <br>
-    </section>
     <footer id="myFooter">
       <div class="container">
         <div class="row">
@@ -355,6 +318,6 @@
           <p>© 2022 Copyright - Projeto Revirar</p>
       </div>
   </footer>
-
+<script src="../js/style.js"></script>
 </body>
 </html>
