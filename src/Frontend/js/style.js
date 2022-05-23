@@ -1,5 +1,4 @@
-console.log("linkou")
-$(document).ready(function(){
+$("document").ready(function(){
         
     $("#header").load("menu.html", function() {
         $("#btn").on('click', showmenu);
@@ -61,10 +60,8 @@ document.addEventListener("scroll", function() {
 })
 
 // SCRIPT PAGINA DE DOAÇÃO
-
 // Script Acordeão
 var acordeaoDoacao = document.getElementsByClassName("acordeaoDoacao");
-console.log("b")
 var i;
 console.log(acordeaoDoacao.length)
 for (i = 0; i < acordeaoDoacao.length; i++) {
@@ -85,31 +82,26 @@ var buttonB = document.getElementById("buttonCinquenta");
 var buttonC = document.getElementById("buttonCem");
 
 buttonA.addEventListener("click", function() {
-    console.log("clickbttonA")
     this.classList.toggle("buttontst2");
     buttonB.classList.remove("buttontst2")
     buttonC.classList.remove("buttontst2")
 });
 buttonB.addEventListener("click", function() {
-    console.log("clickbttonb")
     this.classList.toggle("buttontst2");
     buttonA.classList.remove("buttontst2")
     buttonC.classList.remove("buttontst2")
 });
 buttonC.addEventListener("click", function() {
-    console.log("clickbttonb")
     this.classList.toggle("buttontst2");
     buttonA.classList.remove("buttontst2")
     buttonB.classList.remove("buttontst2")
 });
-
 // Script Copiar doação
 var buttonPix = document.getElementById("buttonPix");
 var buttonCaixa = document.getElementById("buttonCaixa");
 var buttonPaypal = document.getElementById("buttonPaypal");
 
 buttonPix.addEventListener("click", function() {
-    console.log("clickpix")
 this.classList.toggle("buttontst2");
 this.innerHTML = "Pix Copiado"
 setTimeout(function() {
@@ -119,7 +111,6 @@ setTimeout(function() {
 });
 
 buttonCaixa.addEventListener("click", function() {
-    console.log("clickcaixa")
 this.classList.toggle("buttontst2");
 this.innerHTML = "Caixa Copiado"
 setTimeout(function() {
@@ -129,7 +120,6 @@ setTimeout(function() {
 });
 
 buttonPaypal.addEventListener("click", function() {
-    console.log("clickpaypal")
 this.classList.toggle("buttontst2");
 this.innerHTML = "Paypal Copiado"
 setTimeout(function() {
