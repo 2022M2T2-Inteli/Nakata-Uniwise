@@ -222,7 +222,8 @@ header{
 /* --- PÁGINA  INICIAL--- */
 
 .textoInicialImpacto{
-    
+    display: flex;
+    flex-direction: column;
 }
 
 .cardServHome{
