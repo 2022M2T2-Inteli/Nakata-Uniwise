@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/iniadm.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">ReVirar</div>
+            <i class="bi bi-list" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <i class="bi bi-search"></i>
+           <input type="text" placeholder="Search...">
+           <span class="tooltip">Search</span>
+        </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-clipboard-check"></i>
+              <span class="links_name">Fichas</span>
+            </a>
+             <span class="tooltip">Fichas</span>
+          </li>
+          <li>
+           <a href="#">
+            <i class="bi bi-archive"></i>
+             <span class="links_name">Formulários</span>
+           </a>
+           <span class="tooltip">Formulários</span>
+         </li>
+         <li>
+           <a href="#">
+            <i class="bi bi-heart-fill"></i>
+             <span class="links_name">Doações</span>
+           </a>
+           <span class="tooltip">Doações</span>
+         </li>
+         <li>
+           <a href="#">
+            <i class="bi bi-calendar-date"></i>
+             <span class="links_name">Eventos</span>
+           </a>
+           <span class="tooltip">Eventos</span>
+         </li>
+         <li>
+           <a href="#">
+            <i class="bi bi-folder"></i>
+             <span class="links_name">Relatórios</span>
+           </a>
+           <span class="tooltip">Relatórios</span>
+         </li>
+         <li>
+           <a href="#">
+            <i class="bi bi-map"></i>
+             <span class="links_name">Mapa</span>
+           </a>
+           <span class="tooltip">Mapa</span>
+         </li>
+         <li>
+           <a href="#">
+            <i class="bi bi-person-fill"></i>
+             <span class="links_name">Configurações</span>
+           </a>
+           <span class="tooltip">Configurações</span>
+         </li>
+         <li>
+           <a href="#">
+            <i class="bi bi-box-arrow-left"></i>
+             <span class="links_name">Sair</span>
+           </a>
+           <span class="tooltip">Sair</span>
+         </li>
+         <li class="profile">
+             <div class="profile-details">
+               <div class="name_job">
+                 <div class="name">Revirar</div>
+                 <div class="job">Admin</div>
+               </div>
+             </div>
+             <i class="bi bi-box-arrow-left"></i>
+         </li>
+        </ul>
+      </div>
+      <section class="home-section">
+          <div class="textAssistido">
+            <h2>Assistidos ReVirar</h2>
+            <button id="buttonAddAss" class="buttonNew">Novo Assistido +</button>
+          </div>
+          <br>
+          <br>
+          <div class="titulosTabelaAss">
+            <div class="titleTabOne"><h4>ID</h4></div>
+            <div class="titleTabTwo"><h4>Nome Completo</h4></div>
+            <div class="titleTabThree"><h4>Cadastro</h4></div>
+          </div>
+          <div class="assistidosTable">
+            <div class="idAssistidos"><h5>01</h5></div>
+            <div class="nomeAssistidos"><h5>Giovanna Furlan Torres</h5></div>
+            <div class="cadastroAssistidos"><button id="buttonCadastro" class="button">Visualbizar</button></div>
+          </div>
+          <div class="assistidosTable">
+            <div class="idAssistidos"><h5>02</h5></div>
+            <div class="nomeAssistidos"><h5>Gábrio Lina da Silva</h5></div>
+            <div class="cadastroAssistidos"><button id="buttonCadastro" class="button">Visualbizar</button></div>
+          </div>
+          <div class="assistidosTable">
+            <div class="idAssistidos"><h5>03</h5></div>
+            <div class="nomeAssistidos"><h5>Elias Biondo</h5></div>
+            <div class="cadastroAssistidos"><button id="buttonCadastro" class="button">Visualbizar</button></div>
+          </div>
+      </section>
+      <script src="../js/inicialScript.js"></script>
+</body>
+</html>
