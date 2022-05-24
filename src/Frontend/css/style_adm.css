@@ -324,3 +324,21 @@
     width: 30%;
     margin: 0 auto;
 }
+
+/* teste */
+
+.to-receive-values-box.active {
+    margin-bottom: 3.5rem;
+}
+.to-receive-values-box:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+.box-summary {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.box-summary span {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
