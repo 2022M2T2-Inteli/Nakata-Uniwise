@@ -2178,3 +2178,48 @@ input, button{
     display: flex;
 }
 
+
+/* PÁGINA ERRO */
+
+.text-erro-inicio h1{
+    font-size: 50px;
+}
+
+.text-erro-inicio p{
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.text-erro{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text-erro a{
+    text-decoration: none;
+    color: white !important;
+}
+
+.text-erro a:hover{
+    color: black !important;
+}
+
+.img-error img{
+    width: 700px;
+}
+
+.btn-erro{
+    margin-bottom: 50px;
+    background-color: black;
+    border: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 10px;
+}
+
+.btn-erro:hover{
+    background-color: #FAF806;
+}
+
