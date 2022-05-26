@@ -144,7 +144,7 @@
 						"doacaoselect"
 					]
 				},
-				"description": "Código usado para vizualizar as doações da tabela de doações."
+				"description": "Código usado para visualizar as doações da tabela de doações."
 			},
 			"response": []
 		}

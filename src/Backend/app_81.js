@@ -615,6 +615,84 @@ app.post('/doacaoupdate', urlencodedParser, (req, res) => {
   db.close(); 
 });
 
+// FICHA PIA
+
+
+// Retorna todos registros (PIA)
+app.get('/piaselect', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*');
+
+	var db = new sqlite3.Database(DBPATH); 
+  var sql = 'SELECT * FROM FichaPIA ORDER BY IDPIA COLLATE NOCASE'
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.json(rows);
+	});
+	db.close();
+});
+
+// Insere um registro (PIA)
+app.post('/piainsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var sql = "INSERT INTO FichaPIA (nomePIA, nomeSocPIA, tecPIA, datanascPIA, localPIA, sexoPIA, racaPIA, filiacaoPIA, estadoCivilPIA, profissaoPIA, attProfPIA, empresaPIA, beneficioPIA, valorBenePIA, deficienciaPIA, depQuimicoPIA, centAcolhiPIA, comproJudiPIA) VALUES ('"+ req.body.nomePIA +"', '"+ req.body.nomeSocPIA +"', '"+ req.body.tecPIA +"', '"+ req.body.datanascPIA +"', '"+ req.body.localPIA +"', '"+ req.body.sexoPIA +"', '"+ req.body.racaPIA +"', '"+ req.body.filiacaoPIA +"', '"+ req.body.estadoCivilPIA +"', '"+ req.body.profissaoPIA +"', '"+ req.body.attProfPIA +"', '"+ req.body.empresaPIA +"', '"+ req.body.beneficioPIA +"', '"+ req.body.valorBenePIA +"', '"+ req.body.deficienciaPIA +"', '"+ req.body.depQuimicoPIA +"', '"+ req.body.centAcolhiPIA +"', '"+ req.body.comproJudiPIA +"')";
+  var db = new sqlite3.Database(DBPATH);
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close();
+  res.end();
+});
+
+// Exclui um registro (Doação)
+app.post('/piadelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  sql = "DELETE FROM FichaPIA WHERE IDPIA = '"+ req.body.IDPIA +"'";
+  var db = new sqlite3.Database(DBPATH);
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close();
+});
+
+// Atualiza um registro (Doação)
+app.post('/piaupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  sql = "UPDATE FichaPIA SET nomeSocPIA = '" + req.body.nomeSocPIA + "' WHERE IDPIA = " + req.body.IDPIA;
+  sqll = "UPDATE FichaPIA SET tecPIA = '" + req.body.tecPIA + "' WHERE IDPIA = " + req.body.IDPIA;
+  
+  var db = new sqlite3.Database(DBPATH);
+  var dbb = new sqlite3.Database(DBPATH);
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); 
+
+  dbb.run(sqll, [],  err => {
+      if (err) {
+        throw err;
+    }
+    res.end();
+  });
+  dbb.close(); 
+});
+
 
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
