@@ -650,7 +650,7 @@ app.post('/piainsert', urlencodedParser, (req, res) => {
   res.end();
 });
 
-// Exclui um registro (Doação)
+// Exclui um registro (PIA)
 app.post('/piadelete', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -666,7 +666,7 @@ app.post('/piadelete', urlencodedParser, (req, res) => {
   db.close();
 });
 
-// Atualiza um registro (Doação)
+// Atualiza um registro (PIA)
 app.post('/piaupdate', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -693,11 +693,146 @@ app.post('/piaupdate', urlencodedParser, (req, res) => {
   dbb.close(); 
 });
 
+// FICHA LOCAIS
 
+// Insere um registro (locais)
+app.post('/locaiscadastroinsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "INSERT INTO FichaLocaisCadastro (viadutoLoca, predioppLoca, parquesLoca, tremLoca, rodoviasLoca, construcoesLoca, galeriaSubLoca, casasAbanLoca, outrosLoca) VALUES (  '" + req.body.viadutoLoca + "','" + req.body.predioppLoca + "','" + req.body.parquesLoca + "','" + req.body.tremLoca + "','" + req.body.rodoviasLoca + "','" + req.body.construcoesLoca + "','" + req.body.galeriaSubLoca + "','" + req.body.casasAbanLoca + "','" + req.body.outrosLoca + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+
+
+// Exclui um registro (Locais)
+app.post('/locaiscadastrodelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "DELETE FROM FichaLocaisCadastro  WHERE IDLocais = '" + req.body.IDLocais + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+// Visualisa um registro (Locais)
+app.get('/locaiscadastroselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM FichaLocaisCadastro ORDER BY IDLocais COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
+
+
+// Atualiza um registro (Locais)
+app.post('/locaiscadastroupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); 
+
+  sql = "UPDATE FichaLocaisCadastro SET tremLoca = '" + req.body.tremLoca + "' WHERE IDLocais = '" + req.body.IDLocais + "'";
+  var db = new sqlite3.Database(DBPATH);
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 
+// FICHA MOTIVO QUE ESTÁ EM SITUAÇÃO DE RUA
+
+// Insere um registro (Motivo)
+app.post('/motivoinsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "INSERT INTO FichaMotivo (perdaMoraMoti, ameacaMoti, alcoolismoMoti, probleFamiMoti, desempregoMoti, trabalhoMoti, tratamentoSauMoti, preferenciaMoti, esqueceuMoti, outroMoti) VALUES (  '" + req.body.perdaMoraMoti + "','" + req.body.ameacaMoti + "','" + req.body.alcoolismoMoti + "','" + req.body.probleFamiMoti + "','" + req.body.desempregoMoti + "','" + req.body.trabalhoMoti + "','" + req.body.tratamentoSauMoti + "','" + req.body.preferenciaMoti + "','" + req.body.esqueceuMoti + "','" + req.body.outroMoti + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+
+
+// Exclui um registro (Motivo)
+app.post('/motivodelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "DELETE FROM FichaMotivo  WHERE IDMotivoAbo = '" + req.body.IDMotivoAbo + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+// Visualisa um registro (Motivo)
+app.get('/motivoselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM FichaMotivo ORDER BY IDMotivoAbo COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
+
+
+// Atualiza um registro (Motivo)
+app.post('/motivoupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "UPDATE FichaMotivo SET alcoolismoMoti = '" + req.body.alcoolismoMoti + "' WHERE IDMotivoAbo = '" + req.body.IDMotivoAbo + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
 
 
 
