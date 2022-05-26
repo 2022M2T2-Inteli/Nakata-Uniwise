@@ -481,7 +481,7 @@ var sql = 'SELECT * FROM FichaNumeroDiasRua ORDER BY IDNumeroDiasRua COLLATE NOC
 
 
 
-// Retorna todos registros (é o R do CRUD - Read)
+// Retorna todos registros (Toalha)
 app.get('/selecttoalha', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
@@ -526,7 +526,7 @@ app.post('/toalhadelete', urlencodedParser, (req, res) => {
       }
       res.end();
   });
-  db.close(); // Fecha o banco
+  db.close();
 });
 
 // Atualiza um registro (toalha)
@@ -543,7 +543,76 @@ app.post('/toalhaupdate', urlencodedParser, (req, res) => {
       }
       res.end();
   });
-  db.close(); // Fecha o banco
+  db.close(); 
+});
+
+// FICHA DOAÇÃO
+
+
+
+// Retorna todos registros (DOAÇÃO)
+app.get('/doacaoselect', (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*');
+
+	var db = new sqlite3.Database(DBPATH); 
+  var sql = 'SELECT * FROM Doacao ORDER BY IDDoacao COLLATE NOCASE'
+	db.all(sql, [],  (err, rows ) => {
+		if (err) {
+		    throw err;
+		}
+		res.json(rows);
+	});
+	db.close();
+});
+
+// Insere um registro (Doação)
+app.post('/doacaoinsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var sql = "INSERT INTO Doacao (tituloDoacao, descricaoDoacao, dataDoacao, valorDoacao) VALUES ('"+ req.body.tituloDoacao +"', '"+ req.body.descricaoDoacao +"', '"+ req.body.dataDoacao +"', '"+ req.body.valorDoacao +"')";
+  var db = new sqlite3.Database(DBPATH);
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close();
+  res.end();
+});
+
+// Exclui um registro (Doação)
+app.post('/doacaodelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  sql = "DELETE FROM Doacao WHERE IDDoacao = '"+ req.body.IDDoacao +"'";
+  var db = new sqlite3.Database(DBPATH);
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close();
+});
+
+// Atualiza um registro (Doação)
+app.post('/doacaoupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  sql = "UPDATE Doacao SET descricaoDoacao = '" + req.body.descricaoDoacao + "' WHERE IDDoacao = " + req.body.IDDoacao;
+  
+  var db = new sqlite3.Database(DBPATH);
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); 
 });
 
 
