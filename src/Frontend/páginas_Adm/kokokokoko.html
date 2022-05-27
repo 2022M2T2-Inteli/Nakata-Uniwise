@@ -14,6 +14,39 @@
     <link rel="stylesheet" href="../css/iniadm.css">
 </head>
 <body>
+  <div id="myModal"class="modal customizar">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content customize">
+        <div class="modal-header">
+          <h5 class="modal-title">Novo assistido</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Fazer o cadastro inicial de um novo assistido.</p>
+        </div>
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"></label>Nome Completo:
+            <input type="text" class="form-control" id="nome_completo">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"></label>Número do documento:
+            <input type="text" class="form-control" id="numero_documento">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"></label>Tempo na rua:
+            <input type="text" class="form-control" id="tempo_rua">
+          </div>
+        </form>
+        <div class="modal-footer">
+          <button onclick="salvarAss()" type="button" class="btn btn-primary">Salvar Assistido</button>
+          <button onclick="fecharModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar Cadastro</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <div class="sidebar">
         <div class="logo-details">
             <div class="logo_name">ReVirar</div>
@@ -102,7 +135,7 @@
               <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Usuario">
             </div>
            </form>
-            <button id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo Usuario</p></button>
+            <button onclick="buttonNewAss()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo Usuario</p></button>
           </div>
           <br>
           <table class="table">
@@ -148,7 +181,7 @@
               </tr>
               <tr>
                 <th scope="row">4</th>
-                <td>Sofia Pimazzone</td>
+                <td>Sofia Pimazzoni</td>
                 <td>123.456.789-10</td>
                 <td>5 Anos</td>
                 <td><button class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
@@ -160,5 +193,6 @@
           </table>
       </section>
       <script src="../js/inicialScript.js"></script>
+      <script src="../js/bancodedados.js"></script>
 </body>
 </html>

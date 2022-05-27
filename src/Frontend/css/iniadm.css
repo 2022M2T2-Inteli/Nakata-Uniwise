@@ -260,6 +260,9 @@
   }
 }
 
+.customizar{
+  z-index: 100000 !important;
+}
 
 /* MARIANA  EVENTOS CSS */
 
@@ -688,6 +691,10 @@ transition: all .2s ease-in-out;
   padding-top: 2vh;
   display: flex;
   justify-content: end;
+}
+
+.customize{
+  padding: 4%;
 }
 
 

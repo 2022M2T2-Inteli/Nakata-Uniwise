@@ -115,3 +115,18 @@ elements.visibilityControlButtons.forEach(button => {
         refreshVisibleBoxes();
     })
 })
+
+// PAGINA ASSISITIDOS
+
+function buttonNewAss() {
+    $('#myModal').modal('show');
+}
+
+function fecharModal() {
+    $('#myModal').modal('hide');
+}
+
+// function salvarAss() {
+//     $('#myModal').modal('hide');
+//     alert("Assistido cadastrado com sucesso!!!!")
+// }
