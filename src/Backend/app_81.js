@@ -615,8 +615,9 @@ app.post('/doacaoupdate', urlencodedParser, (req, res) => {
   db.close(); 
 });
 
-// FICHA PIA
 
+
+// FICHA PIA
 
 // Retorna todos registros (PIA)
 app.get('/piaselect', (req, res) => {
@@ -694,27 +695,28 @@ app.post('/piaupdate', urlencodedParser, (req, res) => {
 });
 
 
-app.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
 
+// FICHA ENCAMINHAMENTO
 
-
-
-
-
-
-
-
-
-
-
-// Atualiza um registro (é o U do CRUD - Update)
-app.post('/abordagemupdate2', urlencodedParser, (req, res) => {
+// Insere um registro (é o C do CRUD - Create)
+app.post('/encaminhamentoinsert', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
-
-  sql = "UPDATE FichaAbordagem SET "+req.body.campo+" = '" + req.body.dado + "' WHERE IDAbordagem = '" + req.body.IDAbordagem + "'";
+  sql = "INSERT INTO FichaEncaminhamento (servEnca, dataEnca, obsEnca ) VALUES ('" + req.body.servEnca + "', '" + req.body.dataEnca + "', '" + req.body.obsEnca + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+// Exclui um registro (é o D do CRUD - Delete)
+app.post('/encaminhamentodelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+  sql = "DELETE FROM FichaEncaminhamento WHERE IdEncaminhamento = '" + req.body.IdEncaminhamento + "'";
   var db = new sqlite3.Database(DBPATH); // Abre o banco
   db.run(sql, [],  err => {
       if (err) {
@@ -723,4 +725,449 @@ app.post('/abordagemupdate2', urlencodedParser, (req, res) => {
       res.end();
   });
   db.close(); // Fecha o banco
+});
+// Atualiza um registro (é o U do CRUD - Update)
+app.post('/encaminhamentoupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+  sql = "UPDATE FichaEncaminhamento SET obsEnca = '" + req.body.obsEnca + "' WHERE IdEncaminhamento = '" + req.body.IdEncaminhamento + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+app.get('/encaminhamentoselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM FichaEncaminhamento ORDER BY IdEncaminhamento COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
+
+
+
+// FICHA HISTÓRICO VOLUNTÁRIO
+
+app.post('/historicovoluntariosinsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+  sql = "INSERT INTO HistoricoVOL (tituloHisVol, dataHisVol, duracaoHisVol, IDPerfil ) VALUES ('" + req.body.tituloHisVol + "', '" + req.body.dataHisVol + "', '" + req.body.duracaoHisVol + "', '" + req.body.IDPerfil + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+
+// Exclui um registro (é o D do CRUD - Delete)
+app.post('/historicovoluntariosdelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+  sql = "DELETE FROM HistoricoVOL WHERE IDHistoricoVol = '" + req.body.IDHistoricoVol + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+// Atualiza um registro (é o U do CRUD - Update)
+app.post('/historicovoluntariosupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+  sql = "UPDATE HistoricoVOL SET tituloHisVol = '" + req.body.tituloHisVol + "' WHERE IDHistoricoVol = '" + req.body.IDHistoricoVol + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+app.get('/historicovoluntariosselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM HistoricoVOL ORDER BY IDHistoricoVol COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
+
+
+
+// FICHA PERFIL ADM 
+
+// Insere um registro (é o C do CRUD - Create)
+app.post('/perfiladminsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "INSERT INTO PerfilADM (perfilADM, imagemADM, descricaoADM, nomePerfilADM, telefonePerfilADM, emailPerfilADM) VALUES ('" + req.body.perfilADM + "', '" + req.body.imagemADM + "', '" + req.body.descricaoADM + "', '" + req.body.nomePerfilADM + "', '" + req.body.telefonePerfilADM + "', '" + req.body.emailPerfilADM + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+
+
+// Exclui um registro (é o D do CRUD - Delete)
+app.post('/perfiladmdelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "DELETE FROM PerfilADM WHERE IDPerfil = '" + req.body.IDPerfil + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+// Atualiza um registro (é o U do CRUD - Update)
+app.post('/perfiladmupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); 
+
+  sql = "UPDATE PerfilADM SET perfilADM = '" + req.body.perfilADM + "' WHERE IDPerfil = '" + req.body.IDPerfil + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+app.get('/perfiladmselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM PerfilADM ORDER BY IDPerfil COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
+
+
+//FICHA FREQUENCIA
+
+// Insere um registro (é o C do CRUD - Create)
+app.post('/fichafrequenciainsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "INSERT INTO FichaFrequencia (dataFreq, horarioFreq, nomeFreq, banhoFreq, lancheFreq, roupaFreq, cestaBaFreq, TransFreq) VALUES ('" + req.body.dataFreq + "', '" + req.body.horarioFreq + "', '" + req.body.nomeFreq + "', '" + req.body.banhoFreq + "', '" + req.body.lancheFreq + "', '" + req.body.roupaFreq + "', '" + req.body.cestaBaFreq + "', '" + req.body.TransFreq + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+
+
+// Exclui um registro (é o D do CRUD - Delete)
+app.post('/fichafrequenciadelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "DELETE FROM FichaFrequencia WHERE IDFrequencia = '" + req.body.IDFrequencia + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+// Atualiza um registro (é o U do CRUD - Update)
+app.post('/fichafrequenciaupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "UPDATE FichaFrequencia SET dataFreq = '" + req.body.dataFreq + "' WHERE IDFrequencia = '" + req.body.IDFrequencia + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+app.get('/fichafrequenciaselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM FichaFrequencia ORDER BY IDFrequencia COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
+
+
+// LUGARES QUE OS ASSISTIDOS JÁ FREQUENTARAM
+
+// Insere um registro (é o C do CRUD - Create)
+app.post('/locaiscadastroinsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "INSERT INTO FichaLocaisCadastro (viadutoLoca, predioppLoca, parquesLoca, tremLoca, rodoviasLoca, construcoesLoca, galeriaSubLoca, casasAbanLoca, outrosLoca) VALUES (  '" + req.body.viadutoLoca + "','" + req.body.predioppLoca + "','" + req.body.parquesLoca + "','" + req.body.tremLoca + "','" + req.body.rodoviasLoca + "','" + req.body.construcoesLoca + "','" + req.body.galeriaSubLoca + "','" + req.body.casasAbanLoca + "','" + req.body.outrosLoca + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+
+
+// Exclui um registro (é o D do CRUD - Delete)
+app.post('/locaiscadastrodelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "DELETE FROM FichaLocaisCadastro  WHERE IDLocais = '" + req.body.IDLocais + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+// Visualisa um registro (é o R do CRUD - Read)
+app.get('/locaiscadastroselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM FichaLocaisCadastro ORDER BY IDLocais COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
+
+
+// Atualiza um registro (é o U do CRUD - Update)
+app.post('/locaiscadastroupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "UPDATE FichaLocaisCadastro SET tremLoca = '" + req.body.tremLoca + "' WHERE IDLocais = '" + req.body.IDLocais + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+
+// FICHA MOTIVO QUE ESTÁ EM SITUAÇÃO DE RUA
+
+// Insere um registro (é o C do CRUD - Create)
+app.post('/motivoinsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "INSERT INTO FichaMotivo (perdaMoraMoti, ameacaMoti, alcoolismoMoti, probleFamiMoti, desempregoMoti, trabalhoMoti, tratamentoSauMoti, preferenciaMoti, esqueceuMoti, outroMoti) VALUES (  '" + req.body.perdaMoraMoti + "','" + req.body.ameacaMoti + "','" + req.body.alcoolismoMoti + "','" + req.body.probleFamiMoti + "','" + req.body.desempregoMoti + "','" + req.body.trabalhoMoti + "','" + req.body.tratamentoSauMoti + "','" + req.body.preferenciaMoti + "','" + req.body.esqueceuMoti + "','" + req.body.outroMoti + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+
+
+// Exclui um registro (é o D do CRUD - Delete)
+app.post('/motivodelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "DELETE FROM FichaMotivo  WHERE IDMotivoAbo = '" + req.body.IDMotivoAbo + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+// Visualisa um registro (é o R do CRUD - Read)
+app.get('/motivoselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM FichaMotivo ORDER BY IDMotivoAbo COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
+
+
+// Atualiza um registro (é o U do CRUD - Update)
+app.post('/motivoupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "UPDATE FichaMotivo SET alcoolismoMoti = '" + req.body.alcoolismoMoti + "' WHERE IDMotivoAbo = '" + req.body.IDMotivoAbo + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+
+// FICHA USUARIOS ADM
+
+// Insere um registro (é o C do CRUD - Create)
+app.post('/usuarioadminsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "INSERT INTO UsuarioADM (nomeCompletoADM,emailADM,senha,telefone,IDPerfil) VALUES (  '" + req.body.nomeCompletoADM + "','" + req.body.emailADM + "','" + req.body.senha + "','" + req.body.telefone + "','" + req.body.IDPerfil + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+
+
+// Exclui um registro (é o D do CRUD - Delete)
+app.post('/usuariosadmdelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "DELETE FROM UsuarioADM  WHERE IDUsuarioADM = '" + req.body.IDUsuarioADM + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+// Visualisa um registro (é o R do CRUD - Read)
+app.get('/usuariosamdselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM UsuarioADM ORDER BY IDUsuarioADM COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
+
+
+// Atualiza um registro (é o U do CRUD - Update)
+app.post('/usuariosadmupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "UPDATE UsuarioADM SET nomeCompletoADM = '" + req.body.nomeCompletoADM + "' WHERE IDUsuarioADM = '" + req.body.IDUsuarioADM + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });

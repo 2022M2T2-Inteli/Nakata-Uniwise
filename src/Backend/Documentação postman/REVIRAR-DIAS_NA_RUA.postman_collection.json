@@ -1,18 +1,25 @@
 {
 	"info": {
-		"_postman_id": "6c03771f-c5e7-4578-835c-3f6b196d9623",
-		"name": "REVIRAR-DOACAO",
+		"_postman_id": "539eaa57-d0bf-4952-a777-f34876402f3e",
+		"name": "REVIRAR-DIAS_NA_RUA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20586643"
 	},
 	"item": [
 		{
-			"name": "SELECT-DOACAO",
+			"name": "SELECT-NUMERO_DE_DIAS_NA_RUA",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoselect",
+					"raw": "http://127.0.0.1:3081/numerodiasruaselect",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -22,15 +29,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoselect"
+						"numerodiasruaselect"
 					]
-				},
-				"description": "Código usado para visualizar as doações da tabela de doações."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "INSERT-DOACAO",
+			"name": "INSERT-NUMERO_DE_DIAS_NA_RUA",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -38,29 +44,34 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "tituloDoacao",
-							"value": "Doação Julio Nascimento",
+							"key": "ruaNum",
+							"value": "M.M.D.C",
 							"type": "text"
 						},
 						{
-							"key": "descricaoDoacao",
-							"value": "5 peças de roupa, 10 produtos de higiene e 5kilos de arroz.",
+							"key": "albergueNum",
+							"value": "Santa Maria",
 							"type": "text"
 						},
 						{
-							"key": "dataDoacao",
-							"value": "25/05/2022",
+							"key": "domicilioPartNum",
+							"value": "",
 							"type": "text"
 						},
 						{
-							"key": "valorDoacao",
-							"value": "Somando todos os itens o valor da doação é de R$120,00",
+							"key": "outroNum",
+							"value": "sim",
+							"type": "text"
+						},
+						{
+							"key": "outroQualNum",
+							"value": "Praças",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoinsert",
+					"raw": "http://127.0.0.1:3081/numerodiasruainsert",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -70,15 +81,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoinsert"
+						"numerodiasruainsert"
 					]
-				},
-				"description": "Código usado para inserir nova doação na tabela de doações."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "UPDATE-DOACAO",
+			"name": "UPDATE-NUMERO_DE_DIAS_NA_RUA",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -86,19 +96,19 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "descricaoDoacao",
-							"value": "9 peças de roupa, 15 produtos de higiene e 6 kilos de arroz.",
+							"key": "ruaNum",
+							"value": "Santa Clara",
 							"type": "text"
 						},
 						{
-							"key": "IDDoacao",
+							"key": "IDNumeroDiasRua",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoupdate",
+					"raw": "http://127.0.0.1:3081/numerodiasruaupdate",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -108,15 +118,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoupdate"
+						"numerodiasruaupdate"
 					]
-				},
-				"description": "Código usado para atualizar descrição da doação na tabela de doação."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE-DOACAO",
+			"name": "DELETE-NUMERO_DE_DIAS_NA_RUA",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -124,14 +133,14 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "IDDoacao",
+							"key": "IDNumeroDiasRua",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaodelete",
+					"raw": "http://127.0.0.1:3081/numerosdiasruadelete",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -141,10 +150,9 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaodelete"
+						"numerosdiasruadelete"
 					]
-				},
-				"description": "Código usado para deletar linha na tabela de doação."
+				}
 			},
 			"response": []
 		}

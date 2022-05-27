@@ -1,18 +1,25 @@
 {
 	"info": {
-		"_postman_id": "6c03771f-c5e7-4578-835c-3f6b196d9623",
-		"name": "REVIRAR-DOACAO",
+		"_postman_id": "b9fa1566-7531-44fa-9d9b-07ec20a21b84",
+		"name": "REVIRAR-FICHA-ENCAMINHAMENTO",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20586643"
 	},
 	"item": [
 		{
-			"name": "SELECT-DOACAO",
+			"name": "SELECT-ENCAMINHAMENTO",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoselect",
+					"raw": "http://127.0.0.1:3081/encaminhamentoselect",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -22,15 +29,15 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoselect"
+						"encaminhamentoselect"
 					]
 				},
-				"description": "Código usado para visualizar as doações da tabela de doações."
+				"description": "seleciona uma parte específica da tabela "
 			},
 			"response": []
 		},
 		{
-			"name": "INSERT-DOACAO",
+			"name": "INSERT-ENCAMINHAMENTO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -38,29 +45,24 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "tituloDoacao",
-							"value": "Doação Julio Nascimento",
+							"key": "servEnca",
+							"value": "poupatempo",
 							"type": "text"
 						},
 						{
-							"key": "descricaoDoacao",
-							"value": "5 peças de roupa, 10 produtos de higiene e 5kilos de arroz.",
+							"key": "dataEnca",
+							"value": "26/05/2022",
 							"type": "text"
 						},
 						{
-							"key": "dataDoacao",
-							"value": "25/05/2022",
-							"type": "text"
-						},
-						{
-							"key": "valorDoacao",
-							"value": "Somando todos os itens o valor da doação é de R$120,00",
+							"key": "obsEnca",
+							"value": "1 via RG",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoinsert",
+					"raw": "http://127.0.0.1:3081/encaminhamentoinsert",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -70,15 +72,15 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoinsert"
+						"encaminhamentoinsert"
 					]
 				},
-				"description": "Código usado para inserir nova doação na tabela de doações."
+				"description": "inseri na tabela o encaminhamento do assistido"
 			},
 			"response": []
 		},
 		{
-			"name": "UPDATE-DOACAO",
+			"name": "UPDATE-ENCAMINHAMENTO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -86,19 +88,19 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "descricaoDoacao",
-							"value": "9 peças de roupa, 15 produtos de higiene e 6 kilos de arroz.",
+							"key": "obsEnca",
+							"value": "2 via RG",
 							"type": "text"
 						},
 						{
-							"key": "IDDoacao",
+							"key": "IdEncaminhamento",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoupdate",
+					"raw": "http://127.0.0.1:3081/encaminhamentoupdate",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -108,15 +110,15 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoupdate"
+						"encaminhamentoupdate"
 					]
 				},
-				"description": "Código usado para atualizar descrição da doação na tabela de doação."
+				"description": "Inseri uma atualização na tabela"
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE-DOACAO",
+			"name": "DELETE-ENCAMINHAMENTO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -124,14 +126,14 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "IDDoacao",
+							"key": "IdEncaminhamento",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaodelete",
+					"raw": "http://127.0.0.1:3081/encaminhamentodelete",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -141,10 +143,10 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaodelete"
+						"encaminhamentodelete"
 					]
 				},
-				"description": "Código usado para deletar linha na tabela de doação."
+				"description": "Deleta uma parte da tabela "
 			},
 			"response": []
 		}
