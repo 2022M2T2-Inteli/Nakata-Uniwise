@@ -1,18 +1,25 @@
 {
 	"info": {
-		"_postman_id": "6c03771f-c5e7-4578-835c-3f6b196d9623",
-		"name": "REVIRAR-DOACAO",
+		"_postman_id": "2c4e1579-8f2a-43b0-aa5c-0561e76900a8",
+		"name": "REVIRAR-LOCAIS_CADASTRO",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20586643"
 	},
 	"item": [
 		{
-			"name": "SELECT-DOACAO",
+			"name": "SELECT-LOCAIS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoselect",
+					"raw": "http://127.0.0.1:3081/locaiscadastroselect",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -22,15 +29,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoselect"
+						"locaiscadastroselect"
 					]
-				},
-				"description": "Código usado para visualizar as doações da tabela de doações."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "INSERT-DOACAO",
+			"name": "INSERT-LOCAIS",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -38,29 +44,54 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "tituloDoacao",
-							"value": "Doação Julio Nascimento",
+							"key": "viadutoLoca",
+							"value": "SIM",
 							"type": "text"
 						},
 						{
-							"key": "descricaoDoacao",
-							"value": "5 peças de roupa, 10 produtos de higiene e 5kilos de arroz.",
+							"key": "predioppLoca",
+							"value": "NÃO",
 							"type": "text"
 						},
 						{
-							"key": "dataDoacao",
-							"value": "25/05/2022",
+							"key": "parquesLoca",
+							"value": "SIM",
 							"type": "text"
 						},
 						{
-							"key": "valorDoacao",
-							"value": "Somando todos os itens o valor da doação é de R$120,00",
+							"key": "tremLoca",
+							"value": "NÃO",
+							"type": "text"
+						},
+						{
+							"key": "rodoviasLoca",
+							"value": "NÃO",
+							"type": "text"
+						},
+						{
+							"key": "construcoesLoca",
+							"value": "NÃO",
+							"type": "text"
+						},
+						{
+							"key": "galeriaSubLoca",
+							"value": "SIM",
+							"type": "text"
+						},
+						{
+							"key": "casasAbanLoca",
+							"value": "NÃO",
+							"type": "text"
+						},
+						{
+							"key": "outrosLoca",
+							"value": "",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoinsert",
+					"raw": "http://127.0.0.1:3081/locaiscadastroinsert",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -70,15 +101,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoinsert"
+						"locaiscadastroinsert"
 					]
-				},
-				"description": "Código usado para inserir nova doação na tabela de doações."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "UPDATE-DOACAO",
+			"name": "UPDATE-LOCAIS",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -86,19 +116,19 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "descricaoDoacao",
-							"value": "9 peças de roupa, 15 produtos de higiene e 6 kilos de arroz.",
+							"key": "tremLoca",
+							"value": "SIM",
 							"type": "text"
 						},
 						{
-							"key": "IDDoacao",
+							"key": "IDLocais",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoupdate",
+					"raw": "http://127.0.0.1:3081/locaiscadastroupdate",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -108,15 +138,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoupdate"
+						"locaiscadastroupdate"
 					]
-				},
-				"description": "Código usado para atualizar descrição da doação na tabela de doação."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE-DOACAO",
+			"name": "DELETE-LOCAIS",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -124,14 +153,14 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "IDDoacao",
+							"key": "IDLocais",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaodelete",
+					"raw": "http://127.0.0.1:3081/locaiscadastrodelete",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -141,10 +170,9 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaodelete"
+						"locaiscadastrodelete"
 					]
-				},
-				"description": "Código usado para deletar linha na tabela de doação."
+				}
 			},
 			"response": []
 		}

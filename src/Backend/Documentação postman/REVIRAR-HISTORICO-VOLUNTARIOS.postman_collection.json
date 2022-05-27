@@ -1,18 +1,25 @@
 {
 	"info": {
-		"_postman_id": "6c03771f-c5e7-4578-835c-3f6b196d9623",
-		"name": "REVIRAR-DOACAO",
+		"_postman_id": "a13090b0-43df-42da-8f09-b6e18604b868",
+		"name": "REVIRAR-HISTORICO-VOLUNTARIOS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20586643"
 	},
 	"item": [
 		{
-			"name": "SELECT-DOACAO",
+			"name": "SELECT-HIstorico-voluntarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoselect",
+					"raw": "http://127.0.0.1:3081/historicovoluntariosselect",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -22,15 +29,15 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoselect"
+						"historicovoluntariosselect"
 					]
 				},
-				"description": "Código usado para visualizar as doações da tabela de doações."
+				"description": "seleciona algo específico da tabela "
 			},
 			"response": []
 		},
 		{
-			"name": "INSERT-DOACAO",
+			"name": "INSERT-HIstorico-voluntarios",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -38,67 +45,29 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "tituloDoacao",
-							"value": "Doação Julio Nascimento",
+							"key": "tituloHisVol",
+							"value": "participação na recreação",
 							"type": "text"
 						},
 						{
-							"key": "descricaoDoacao",
-							"value": "5 peças de roupa, 10 produtos de higiene e 5kilos de arroz.",
+							"key": "dataHisVol",
+							"value": "26/05/2022",
 							"type": "text"
 						},
 						{
-							"key": "dataDoacao",
-							"value": "25/05/2022",
+							"key": "duracaoHisVol",
+							"value": "2 horas",
 							"type": "text"
 						},
 						{
-							"key": "valorDoacao",
-							"value": "Somando todos os itens o valor da doação é de R$120,00",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoinsert",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3081",
-					"path": [
-						"doacaoinsert"
-					]
-				},
-				"description": "Código usado para inserir nova doação na tabela de doações."
-			},
-			"response": []
-		},
-		{
-			"name": "UPDATE-DOACAO",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "descricaoDoacao",
-							"value": "9 peças de roupa, 15 produtos de higiene e 6 kilos de arroz.",
-							"type": "text"
-						},
-						{
-							"key": "IDDoacao",
+							"key": "IDPerfil",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoupdate",
+					"raw": "http://127.0.0.1:3081/historicovoluntariosinsert",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -108,15 +77,15 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoupdate"
+						"historicovoluntariosinsert"
 					]
 				},
-				"description": "Código usado para atualizar descrição da doação na tabela de doação."
+				"description": "inseri algo na tebalado histórico dos voluntários "
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE-DOACAO",
+			"name": "UPDATE-Historico-voluntarios",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -124,14 +93,19 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "IDDoacao",
+							"key": "tituloHisVol",
+							"value": "Participação da atividade com gesso",
+							"type": "text"
+						},
+						{
+							"key": "IDHistoricoVol",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaodelete",
+					"raw": "http://127.0.0.1:3081/historicovoluntariosupdate",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -141,10 +115,41 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaodelete"
+						"historicovoluntariosupdate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE-Historico-voluntarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "IDHistoricoVol",
+							"value": "1",
+							"type": "text"
+						}
 					]
 				},
-				"description": "Código usado para deletar linha na tabela de doação."
+				"url": {
+					"raw": "http://127.0.0.1:3081/historicovoluntariosdelete",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3081",
+					"path": [
+						"historicovoluntariosdelete"
+					]
+				}
 			},
 			"response": []
 		}

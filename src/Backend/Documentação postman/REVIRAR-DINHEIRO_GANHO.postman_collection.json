@@ -1,18 +1,18 @@
 {
 	"info": {
-		"_postman_id": "6c03771f-c5e7-4578-835c-3f6b196d9623",
-		"name": "REVIRAR-DOACAO",
+		"_postman_id": "04c6c9aa-7448-46ac-aaca-503dec70dc00",
+		"name": "REVIRAR-DINHEIRO_GANHO",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20586643"
 	},
 	"item": [
 		{
-			"name": "SELECT-DOACAO",
+			"name": "SELECT-DINHEIRO_GANHO",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoselect",
+					"raw": "http://127.0.0.1:3081/dinheiroganhoselect",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -22,15 +22,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoselect"
+						"dinheiroganhoselect"
 					]
-				},
-				"description": "Código usado para visualizar as doações da tabela de doações."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "INSERT-DOACAO",
+			"name": "INSERT-DINHEIRO_GANHO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -38,29 +37,54 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "tituloDoacao",
-							"value": "Doação Julio Nascimento",
+							"key": "construcaoCivil",
+							"value": "não",
 							"type": "text"
 						},
 						{
-							"key": "descricaoDoacao",
-							"value": "5 peças de roupa, 10 produtos de higiene e 5kilos de arroz.",
+							"key": "servicoGeral",
+							"value": "sim",
 							"type": "text"
 						},
 						{
-							"key": "dataDoacao",
-							"value": "25/05/2022",
+							"key": "flanelinha",
+							"value": "sim",
 							"type": "text"
 						},
 						{
-							"key": "valorDoacao",
-							"value": "Somando todos os itens o valor da doação é de R$120,00",
+							"key": "pedeDin",
+							"value": "sim",
+							"type": "text"
+						},
+						{
+							"key": "carregador",
+							"value": "sim",
+							"type": "text"
+						},
+						{
+							"key": "catadorMaterial",
+							"value": "sim",
+							"type": "text"
+						},
+						{
+							"key": "naoRespondeu",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "outros",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "outrosQual",
+							"value": "",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoinsert",
+					"raw": "http://127.0.0.1:3081/dinheiroganhoinsert",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -70,15 +94,15 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoinsert"
+						"dinheiroganhoinsert"
 					]
 				},
-				"description": "Código usado para inserir nova doação na tabela de doações."
+				"description": "O código insere os atributos referente a forma como o assistido ganha dinheiro."
 			},
 			"response": []
 		},
 		{
-			"name": "UPDATE-DOACAO",
+			"name": "UPDATE-DINHEIRO_GANHO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -86,19 +110,19 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "descricaoDoacao",
-							"value": "9 peças de roupa, 15 produtos de higiene e 6 kilos de arroz.",
+							"key": "construcaoCivil",
+							"value": "sim",
 							"type": "text"
 						},
 						{
-							"key": "IDDoacao",
+							"key": "IDDinheiro",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoupdate",
+					"raw": "http://127.0.0.1:3081/dinheiroganhoupdate",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -108,15 +132,15 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoupdate"
+						"dinheiroganhoupdate"
 					]
 				},
-				"description": "Código usado para atualizar descrição da doação na tabela de doação."
+				"description": "O código altera as informações específicas dadas pelo usuário"
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE-DOACAO",
+			"name": "DELETE-DINHEIRO_GANHO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -124,14 +148,14 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "IDDoacao",
+							"key": "IDDinheiro",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaodelete",
+					"raw": "http://127.0.0.1:3081/dinheiroganhodelete",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -141,10 +165,10 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaodelete"
+						"dinheiroganhodelete"
 					]
 				},
-				"description": "Código usado para deletar linha na tabela de doação."
+				"description": "O código deleta as informações específicadas pelo usuário"
 			},
 			"response": []
 		}

@@ -1,18 +1,25 @@
 {
 	"info": {
-		"_postman_id": "6c03771f-c5e7-4578-835c-3f6b196d9623",
-		"name": "REVIRAR-DOACAO",
+		"_postman_id": "a3f5426e-c883-479f-81dc-b77e85fe7672",
+		"name": "REVIRAR-FICHA_FREQUENCIA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20586643"
 	},
 	"item": [
 		{
-			"name": "SELECT-DOACAO",
+			"name": "SELECT-FICHA_FREQUENCIA",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoselect",
+					"raw": "http://127.0.0.1:3081/fichafrequenciaselect",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -22,15 +29,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoselect"
+						"fichafrequenciaselect"
 					]
-				},
-				"description": "Código usado para visualizar as doações da tabela de doações."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "INSERT-DOACAO",
+			"name": "INSERT-FICHA_FREQUENCIA",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -38,29 +44,49 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "tituloDoacao",
-							"value": "Doação Julio Nascimento",
+							"key": "dataFreq",
+							"value": "26/05/2022",
 							"type": "text"
 						},
 						{
-							"key": "descricaoDoacao",
-							"value": "5 peças de roupa, 10 produtos de higiene e 5kilos de arroz.",
+							"key": "horarioFreq",
+							"value": "15:33",
 							"type": "text"
 						},
 						{
-							"key": "dataDoacao",
-							"value": "25/05/2022",
+							"key": "nomeFreq",
+							"value": "Gustavo Monteiro",
 							"type": "text"
 						},
 						{
-							"key": "valorDoacao",
-							"value": "Somando todos os itens o valor da doação é de R$120,00",
+							"key": "banhoFreq",
+							"value": "SIM",
+							"type": "text"
+						},
+						{
+							"key": "lancheFreq",
+							"value": "SIM",
+							"type": "text"
+						},
+						{
+							"key": "roupaFreq",
+							"value": "NÃO",
+							"type": "text"
+						},
+						{
+							"key": "cestaBaFreq",
+							"value": "SIM",
+							"type": "text"
+						},
+						{
+							"key": "TransFreq",
+							"value": "NÃO",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoinsert",
+					"raw": "http://127.0.0.1:3081/fichafrequenciainsert",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -70,15 +96,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoinsert"
+						"fichafrequenciainsert"
 					]
-				},
-				"description": "Código usado para inserir nova doação na tabela de doações."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "UPDATE-DOACAO",
+			"name": "UPDATE-FICHA_FREQUENCIA",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -86,19 +111,19 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "descricaoDoacao",
-							"value": "9 peças de roupa, 15 produtos de higiene e 6 kilos de arroz.",
+							"key": "dataFreq",
+							"value": "27/05/2022",
 							"type": "text"
 						},
 						{
-							"key": "IDDoacao",
+							"key": "IDFrequencia",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoupdate",
+					"raw": "http://127.0.0.1:3081/fichafrequenciaupdate",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -108,15 +133,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoupdate"
+						"fichafrequenciaupdate"
 					]
-				},
-				"description": "Código usado para atualizar descrição da doação na tabela de doação."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE-DOACAO",
+			"name": "DELETE-FICHA_FREQUENCIA",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -124,14 +148,14 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "IDDoacao",
+							"key": "IDFrequencia",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaodelete",
+					"raw": "http://127.0.0.1:3081/fichafrequenciadelete",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -141,10 +165,9 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaodelete"
+						"fichafrequenciadelete"
 					]
-				},
-				"description": "Código usado para deletar linha na tabela de doação."
+				}
 			},
 			"response": []
 		}

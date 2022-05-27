@@ -1,18 +1,25 @@
 {
 	"info": {
-		"_postman_id": "6c03771f-c5e7-4578-835c-3f6b196d9623",
-		"name": "REVIRAR-DOACAO",
+		"_postman_id": "341ab666-b9f2-4cc1-993d-23615c05febd",
+		"name": "REVIRAR-USUARIOS_ADM",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20586643"
 	},
 	"item": [
 		{
-			"name": "SELECT-DOACAO",
+			"name": "SELECT-USUARIOS-ADM",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoselect",
+					"raw": "http://127.0.0.1:3081/usuariosamdselect",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -22,15 +29,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoselect"
+						"usuariosamdselect"
 					]
-				},
-				"description": "Código usado para visualizar as doações da tabela de doações."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "INSERT-DOACAO",
+			"name": "INSERT-USUARIOS-ADM",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -38,67 +44,34 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "tituloDoacao",
-							"value": "Doação Julio Nascimento",
+							"key": "nomeCompletoADM",
+							"value": "Giovanna Furlan Torres",
 							"type": "text"
 						},
 						{
-							"key": "descricaoDoacao",
-							"value": "5 peças de roupa, 10 produtos de higiene e 5kilos de arroz.",
+							"key": "emailADM",
+							"value": "giovanna@revirar.com",
 							"type": "text"
 						},
 						{
-							"key": "dataDoacao",
-							"value": "25/05/2022",
+							"key": "senha",
+							"value": "2203Teste",
 							"type": "text"
 						},
 						{
-							"key": "valorDoacao",
-							"value": "Somando todos os itens o valor da doação é de R$120,00",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoinsert",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3081",
-					"path": [
-						"doacaoinsert"
-					]
-				},
-				"description": "Código usado para inserir nova doação na tabela de doações."
-			},
-			"response": []
-		},
-		{
-			"name": "UPDATE-DOACAO",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "descricaoDoacao",
-							"value": "9 peças de roupa, 15 produtos de higiene e 6 kilos de arroz.",
+							"key": "telefone",
+							"value": "(11) 98401-8719",
 							"type": "text"
 						},
 						{
-							"key": "IDDoacao",
+							"key": "IDPerfil",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoupdate",
+					"raw": "http://127.0.0.1:3081/usuarioadminsert",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -108,15 +81,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoupdate"
+						"usuarioadminsert"
 					]
-				},
-				"description": "Código usado para atualizar descrição da doação na tabela de doação."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE-DOACAO",
+			"name": "UPDATE-USUARIOS-ADM",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -124,14 +96,19 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "IDDoacao",
+							"key": "nomeCompletoADM",
+							"value": "Pedro De Assunção Esteves",
+							"type": "text"
+						},
+						{
+							"key": "IDUsuarioADM",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaodelete",
+					"raw": "http://127.0.0.1:3081/usuariosadmupdate",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -141,10 +118,41 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaodelete"
+						"usuariosadmupdate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE-USUARIOS-ADM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "IDUsuarioADM",
+							"value": "1",
+							"type": "text"
+						}
 					]
 				},
-				"description": "Código usado para deletar linha na tabela de doação."
+				"url": {
+					"raw": "http://127.0.0.1:3081/usuariosadmdelete",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3081",
+					"path": [
+						"usuariosadmdelete"
+					]
+				}
 			},
 			"response": []
 		}

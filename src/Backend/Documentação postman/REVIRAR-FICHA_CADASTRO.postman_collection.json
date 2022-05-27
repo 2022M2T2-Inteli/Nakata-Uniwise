@@ -1,18 +1,25 @@
 {
 	"info": {
-		"_postman_id": "ce46d50a-30fc-403c-b395-5061d7d5b211",
-		"name": "REVIRAR-PIA",
+		"_postman_id": "e72d2297-d25f-43c5-81e1-ce4e368bf00a",
+		"name": "REVIRAR-FICHA_CADASTRO",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20586643"
 	},
 	"item": [
 		{
-			"name": "SELECT-PIA",
+			"name": "SELECT-FICHA_CADASTRO",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/piaselect",
+					"raw": "http://127.0.0.1:3081/cadastrousers",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -22,15 +29,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"piaselect"
+						"cadastrousers"
 					]
-				},
-				"description": "Código usado para visualizar as fichas PIA´s dos assistidos."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "INSERT-PIA",
+			"name": "INSERT-FICHA_CADASTRO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -38,99 +44,114 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "nomePIA",
-							"value": "Jorge Batista",
+							"key": "nomeCad",
+							"value": "Bruno Meira",
 							"type": "text"
 						},
 						{
-							"key": "nomeSocPIA",
-							"value": "Jorginho",
+							"key": "chamadoCad",
+							"value": "Bruno",
 							"type": "text"
 						},
 						{
-							"key": "tecPIA",
-							"value": "Patricia Belarmino",
+							"key": "documentoCad",
+							"value": "sim",
 							"type": "text"
 						},
 						{
-							"key": "datanascPIA",
-							"value": "12/06/1980",
+							"key": "rgDocCad",
+							"value": "737737373",
 							"type": "text"
 						},
 						{
-							"key": "localPIA",
-							"value": "Brás",
+							"key": "cpfDocCad",
+							"value": "737383739",
 							"type": "text"
 						},
 						{
-							"key": "sexoPIA",
-							"value": "Masculino",
+							"key": "nascimentoCad",
+							"value": "30/05/2003",
 							"type": "text"
 						},
 						{
-							"key": "racaPIA",
-							"value": "Branco",
+							"key": "IDLocais",
+							"value": "1",
 							"type": "text"
 						},
 						{
-							"key": "filiacaoPIA",
-							"value": "Não",
+							"key": "abrigoCad",
+							"value": "não",
 							"type": "text"
 						},
 						{
-							"key": "estadoCivilPIA",
-							"value": "Casado",
+							"key": "domPartCad",
+							"value": "não",
 							"type": "text"
 						},
 						{
-							"key": "profissaoPIA",
-							"value": "Não",
+							"key": "IDNumRua",
+							"value": "1",
 							"type": "text"
 						},
 						{
-							"key": "attProfPIA",
-							"value": "Catador de reciclaveis",
+							"key": "tempRuaCad",
+							"value": "2 anos",
 							"type": "text"
 						},
 						{
-							"key": "empresaPIA",
-							"value": "Não",
+							"key": "IDMotivoCad",
+							"value": "1",
 							"type": "text"
 						},
 						{
-							"key": "beneficioPIA",
-							"value": "Não",
+							"key": "tempcidCad",
+							"value": "não sabe",
 							"type": "text"
 						},
 						{
-							"key": "valorBenePIA",
-							"value": "Não Aplicavel",
+							"key": "familiaCad",
+							"value": "não sabe",
 							"type": "text"
 						},
 						{
-							"key": "deficienciaPIA",
-							"value": "Visual",
+							"key": "cttParenteCad",
+							"value": "não tem",
 							"type": "text"
 						},
 						{
-							"key": "depQuimicoPIA",
-							"value": "Álcool",
+							"key": "attCad",
+							"value": "não tem",
 							"type": "text"
 						},
 						{
-							"key": "centAcolhiPIA",
-							"value": "Não",
+							"key": "IDAtendeCad",
+							"value": "1",
 							"type": "text"
 						},
 						{
-							"key": "comproJudiPIA",
-							"value": "Não",
+							"key": "carteiraCad",
+							"value": "não sabe",
+							"type": "text"
+						},
+						{
+							"key": "IDDinheiro",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "benefCad",
+							"value": "não tem",
+							"type": "text"
+						},
+						{
+							"key": "qualBenefCad",
+							"value": "",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/piainsert",
+					"raw": "http://127.0.0.1:3081/cadastroinsert",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -140,15 +161,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"piainsert"
+						"cadastroinsert"
 					]
-				},
-				"description": "Código para adicionar nova ficha de PIA para assistido na tabela."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE-PIA",
+			"name": "UPDATE-FICHA_CADASTRO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -156,14 +176,19 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "IDPIA",
+							"key": "nomeCad",
+							"value": "Mariana Souza",
+							"type": "text"
+						},
+						{
+							"key": "IDCadastro",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/piadelete",
+					"raw": "http://127.0.0.1:3081/cadastroupdate",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -173,15 +198,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"piadelete"
+						"cadastroupdate"
 					]
-				},
-				"description": "Código para deletar linha da tabela Ficha Pia de algum assistido."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "UPDATE-PIA",
+			"name": "DELETE-FICHA_CADASTRO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -189,24 +213,14 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "IDPIA",
+							"key": "IDCadastro",
 							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "nomeSocPIA",
-							"value": "Jorjão",
-							"type": "text"
-						},
-						{
-							"key": "tecPIA",
-							"value": "Soraya",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/piaupdate",
+					"raw": "http://127.0.0.1:3081/cadastrodelete",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -216,10 +230,9 @@
 					],
 					"port": "3081",
 					"path": [
-						"piaupdate"
+						"cadastrodelete"
 					]
-				},
-				"description": "Código para alterar tecnico e nome social do assistido na ficha PIA."
+				}
 			},
 			"response": []
 		}

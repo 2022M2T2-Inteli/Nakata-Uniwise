@@ -1,18 +1,18 @@
 {
 	"info": {
-		"_postman_id": "6c03771f-c5e7-4578-835c-3f6b196d9623",
-		"name": "REVIRAR-DOACAO",
+		"_postman_id": "6a9e15ac-35bb-4983-b8af-c89de1846225",
+		"name": "REVIRAR-FICHA-ATENDIMENTO_EXTERNO",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20586643"
 	},
 	"item": [
 		{
-			"name": "SELECT-DOACAO",
+			"name": "SELECT-ATENDIMENTO-EXTERNO",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoselect",
+					"raw": "http://127.0.0.1:3081/atendimentoexternoselect",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -22,15 +22,14 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoselect"
+						"atendimentoexternoselect"
 					]
-				},
-				"description": "Código usado para visualizar as doações da tabela de doações."
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "INSERT-DOACAO",
+			"name": "INSERT-ATENDIMENTO_EXTERNO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -38,29 +37,14 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "tituloDoacao",
-							"value": "Doação Julio Nascimento",
-							"type": "text"
-						},
-						{
-							"key": "descricaoDoacao",
-							"value": "5 peças de roupa, 10 produtos de higiene e 5kilos de arroz.",
-							"type": "text"
-						},
-						{
-							"key": "dataDoacao",
-							"value": "25/05/2022",
-							"type": "text"
-						},
-						{
-							"key": "valorDoacao",
-							"value": "Somando todos os itens o valor da doação é de R$120,00",
+							"key": "CRAS",
+							"value": "Sim",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoinsert",
+					"raw": "http://127.0.0.1:3081/atendimentoexternoinsert",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -70,15 +54,15 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoinsert"
+						"atendimentoexternoinsert"
 					]
 				},
-				"description": "Código usado para inserir nova doação na tabela de doações."
+				"description": "Esse código é utilizado para inserir um tipo de atendimento na ficha de atendimento."
 			},
 			"response": []
 		},
 		{
-			"name": "UPDATE-DOACAO",
+			"name": "UPDATE-ATENDIMENTO_EXTERNO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -86,19 +70,19 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "descricaoDoacao",
-							"value": "9 peças de roupa, 15 produtos de higiene e 6 kilos de arroz.",
+							"key": "CRAS",
+							"value": "Não",
 							"type": "text"
 						},
 						{
-							"key": "IDDoacao",
+							"key": "IDAtendimentoExterno",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaoupdate",
+					"raw": "http://127.0.0.1:3081/atendimentoexternoupdate",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -108,15 +92,15 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaoupdate"
+						"atendimentoexternoupdate"
 					]
 				},
-				"description": "Código usado para atualizar descrição da doação na tabela de doação."
+				"description": "Uso de código para atualizar o tipo de cadastro na ficha de atendimento externo."
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE-DOACAO",
+			"name": "DELETE-ATENDIMENTO_EXTERNO",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -124,14 +108,14 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "IDDoacao",
+							"key": "IDAtendimentoExterno",
 							"value": "1",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:3081/doacaodelete",
+					"raw": "http://127.0.0.1:3081/atendimentoexternodelete",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -141,10 +125,10 @@
 					],
 					"port": "3081",
 					"path": [
-						"doacaodelete"
+						"atendimentoexternodelete"
 					]
 				},
-				"description": "Código usado para deletar linha na tabela de doação."
+				"description": "Uso de código para deletar linha na tabela de atendimento Externo."
 			},
 			"response": []
 		}
