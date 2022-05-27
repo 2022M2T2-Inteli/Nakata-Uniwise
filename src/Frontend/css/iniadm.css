@@ -68,6 +68,7 @@
   font-size: 28px;
   text-align: center;
   line-height: 60px;
+  padding-left: 0rem;
 }
 .sidebar .navbarside{
   margin-top: 20px;
@@ -77,6 +78,7 @@
   position: relative;
   margin: 8px 0;
   list-style: none;
+  padding-left: 0rem;
 }
 .sidebar li .tooltip{
   position: absolute;
@@ -93,6 +95,10 @@
   white-space: nowrap;
   pointer-events: none;
   transition: 0s;
+}
+
+.nav-list {
+  padding-left: 0rem;
 }
 .sidebar li:hover .tooltip{
   opacity: 1;
@@ -673,183 +679,69 @@ transition: all .2s ease-in-out;
 
 
 /* ASSISTIDOS BRUNO */
-
-.titulosTabelaAss {
-  display: flex;
-  justify-content: center;
-}
-
-.assistidosTable {
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid black;
-  margin: 0 auto;
-  width: 1000px;
-}
-
-.titleTabOne {
-  border-top-left-radius: 10px;
-  text-align: center;
-  padding-top: 1vh;
-  background-color: #faf806;
-  width: 250px;
-  height: 40px;
-  border-left: 1px solid black;
-  border-top: 1px solid black;;
-  border-bottom: 1px solid black;;
-}
-
-.titleTabOne h4 {
-  color: black;
-}
-
-.titleTabTwo {
-  text-align: center;
-  padding-top: 1vh;
-  background-color: #faf806;
-  width: 500px;
-  height: 40px;
-  border: 1px solid black;
-}
-
-.titleTabTwo h4 {
-  color: black;
-}
-
-.titleTabThree {
-  border-top-right-radius: 10px;
-  text-align: center;
-  padding-top: 1vh;
-  background-color: #faf806;
-  width: 250px;
-  height: 40px;
-  border-right: 1px solid black;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;;
-}
-
-.titleTabThree h4 {
-  color: black;
-}
-
-.idAssistidos {
-  text-align: center;
-  padding-top: 2vh;
-  width: 250px;
-  height: 45px;
-}
-
-.nomeAssistidos {
-  text-align: center;
-  padding-top: 2vh;
-  width: 500px;
-  height: 45px;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-}
-
-.cadastroAssistidos{
-  text-align: center;
-  width: 250px;
-  height: 45px;
-}
-
-.textAssistido {
-  display: flex;
-  justify-content: space-around;
-}
-
-.tittleAssistidoUsers {
-  padding-right: 35vh;
-}
-
-.button {
-  background-color: #faf806;
-  border: 1px solid #272343;
-  border-radius: 500px;
-  padding-right: 5vh;
-  padding-left: 5vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  text-align: center;
-  margin-top: 5px;
-}
-
-.button:hover {
-  background-color: #427aa1;
-  color: #F5F9FD;
-}
-
 .buttonNew {
-  background-color: #faf806;
+  background-color: #5FDBA7;
   border: 1px solid #272343;
   border-radius: 500px;
-  padding-left: 5vh;
-  padding-right: 5vh;
-  padding-top:2vh ;
-  padding-bottom: 2vh;
+  padding-left: 4vh;
+  padding-right: 4vh;
+  padding-top: 2vh;
+  display: flex;
+  justify-content: end;
 }
 
-.buttonNew:Hover {
-  background-color: #427aa1;
-}
 
-.searchAssistidos {
-  text-align: center;
-  align-items: center;
+.novoUsuario {
+  margin-right: 80px;
+  margin-left: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.inputSearchDiv {
+  margin-top: 15px;
 }
 
 .inputSearch {
+  padding-top: 1px;
   padding-left: 2vh;
   background-color: transparent;
   border: 1px solid black;
-  border-radius: 500px;
-}
+  border-radius: 200px;
+} */
 
-.inputSearch::placeholder {
+ .inputSearch::placeholder {
   color: color(#575756 a(0.8));
   text-transform: uppercase;
   letter-spacing: 1.5px;
   border: none;
 }
 
-.finalTabOne {
-  border-bottom-left-radius: 10px;
-  text-align: center;
-  padding-top: 1vh;
-  background-color: #faf806;
-  width: 250px;
-  height: 40px;
-  border-bottom: 1px solid black;;
+.buttonEdit {
+  border-radius: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 2px;
+  padding-bottom: 1px;
+  background-color: #4493CF;
+  border: 1px solid black;
 }
 
-.finalTabTwo {
-  text-align: center;
-  padding-top: 1vh;
-  background-color: #faf806;
-  width: 500px;
-  height: 40px;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  border-left: 1px solid black;
+.buttonDelete {
+  border-radius: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 2px;
+  padding-bottom: 1px;
+  background-color: #FF7985;
+  border: 1px solid black;
 }
 
-.finalTabThree {
-  border-bottom-right-radius: 10px;
-  text-align: center;
-  padding-top: 1vh;
-  background-color: #faf806;
-  width: 250px;
-  height: 40px;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;;
-}
-
-.finalTabThree h4 {
-  color: black;
-}
-
-.finalTabelaAss {
-  display: flex;
-  justify-content: center;
+.buttonUpdate {
+  border-radius: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 2px;
+  padding-bottom: 1px;
+  background-color: #FFC700;
+  border: 1px solid black;
 }
