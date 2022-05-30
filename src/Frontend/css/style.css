@@ -33,7 +33,7 @@ header{
 
 .logo{
     color: #FAF806;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .logo h2{
@@ -90,6 +90,7 @@ header{
     color: #141313;
     justify-content: right;
     border: none;
+    text-decoration: none;
 }
 .menu-give-button:hover{
     background-color: white;
