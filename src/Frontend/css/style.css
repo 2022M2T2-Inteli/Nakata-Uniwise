@@ -2255,9 +2255,9 @@ input, button{
 
 
 
-.btn a{
-    text-decoration: none;
-    color: white;
+.botaoeventos a{
+    text-decoration: none !important;
+    color: white !important;
 }
 
 /* PÁGINA ERRO */
