@@ -2254,6 +2254,12 @@ input, button{
 }
 
 
+
+.btn a{
+    text-decoration: none;
+    color: white;
+}
+
 /* PÁGINA ERRO */
 
 .text-erro-inicio h1{
