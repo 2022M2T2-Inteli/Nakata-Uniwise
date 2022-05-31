@@ -949,7 +949,7 @@ var sql = 'SELECT * FROM FichaFrequencia ORDER BY IDFrequencia COLLATE NOCASE';
       if (err) {
           throw err;
       }
-      res.json(rows);
+      res.json({data:rows});
   });
   db.close();
 });

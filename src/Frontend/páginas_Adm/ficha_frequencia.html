@@ -9,8 +9,6 @@
     <script src="https://kit.fontawesome.com/4918f2ce61.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../Frontend/css/style_adm.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>	
-
-    <script src="../../Frontend/js/style_adm.js"></script>
     <title>Ficha de Cadastro</title>
 </head>
 <body>
@@ -49,21 +47,14 @@
                 <th scope="col">Transporte</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td><input type="date" class="DataFrequencia"></td>
-                <td><input type="time"></td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-                <td>Teste</td>
-              </tr>
+            <tbody id="table-body">
+              
             </tbody>
         </table>
     </div>
+
+    <input type="text" name="nomeFreq">
+    <input type="button" value="enviar" onclick="enviar()">
    
     <nav>
         <ul class="pagination">
@@ -84,5 +75,6 @@
           </li>
         </ul>
     </nav>
+    <script src="../js/style_adm.js"></script>
 </body>
 </html>

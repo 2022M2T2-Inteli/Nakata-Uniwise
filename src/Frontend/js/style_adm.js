@@ -165,4 +165,61 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 });
 
+const tableBody = document.querySelector("#table-body");
 
+var settings = {
+    "url": "http://127.0.0.1:3081/fichafrequenciaselect",
+    "method": "GET",
+    "timeout": 0,
+};
+  
+$.ajax(settings).done(function (response) {
+    let { data } = response;
+
+    data.forEach(pessoa => {
+
+        console.log(pessoa);
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+        
+        <tr>
+                <th scope="row">${pessoa.IDFrequencia}</th>
+                <td>${pessoa.dataFreq}</td>
+                <td>${pessoa.horarioFreq}</td>
+                <td>${pessoa.nomeFreq}</td>
+                <td>${pessoa.banhoFreq}</td>
+                <td>${pessoa.lancheFreq}</td>
+                <td>${pessoa.roupaFreq}</td>
+                <td>${pessoa.cestaBaFreq}</td>
+                <td>${pessoa.TransFreq}</td>
+        </tr>
+
+        `
+
+        tableBody.appendChild(tr);
+    })
+});
+
+
+function enviar() {
+    const inputName = document.querySelector("input[name='nomeFreq']").value;
+
+    var settings = {
+        "url": "http://127.0.0.1:3081/fichafrequenciainsert",
+        "method": "POST",
+        "timeout": 0,
+        "data": {
+          "dataFreq": "26/05/2022",
+          "horarioFreq": "15:33",
+          "nomeFreq": inputName,
+          "banhoFreq": "SIM",
+          "lancheFreq": "SIM",
+          "roupaFreq": "NÃO",
+          "cestaBaFreq": "SIM",
+          "TransFreq": "NÃO"
+        }
+      };
+      
+      $.ajax(settings);
+}
