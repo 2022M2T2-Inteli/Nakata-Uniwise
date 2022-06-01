@@ -116,7 +116,7 @@ elements.visibilityControlButtons.forEach(button => {
     })
 })
 
-// PAGINA ASSISITIDOS
+// PAGINA Doação
 
 function buttonNewAss() {
     $('#myModal').modal('show');
@@ -126,7 +126,87 @@ function fecharModal() {
     $('#myModal').modal('hide');
 }
 
-// function salvarAss() {
-//     $('#myModal').modal('hide');
-//     alert("Assistido cadastrado com sucesso!!!!")
-// }
+const tableBodyy = document.querySelector("#table-body-doacao");
+
+var settingss = {
+    "url": "http://127.0.0.1:3081/doacaoselect",
+    "method": "GET",
+    "timeout": 0,
+};
+  
+// $.ajax(settingss).done(function (response) {
+//     let { data } = response;
+
+//     data.forEach(Doacao => {
+
+//         console.log(Doacao);
+
+//         const tr = document.createElement("tr");
+//         tr.innerHTML = `
+        
+//         <tr>
+//                 <th scope="row">${Doacao.IDDoacao}</th>
+//                 <td>${Doacao.tituloDoacao}</td>
+//                 <td>${Doacao.descricaoDoacao}</td>
+//                 <td>${Doacao.dataDoacao}</td>
+//                 <td>${Doacao.valorDoacao}</td>
+//                 <td>${Doacao.comproDoacao}</td>
+//         </tr>
+
+//         `
+
+//         tableBodyy.appendChild(tr);
+//     })
+// });
+
+$.ajax({
+    url: "http://127.0.0.1:3081/doacaoselect",
+    type: 'GET',
+    success: data => {
+        data.forEach(element => {
+            const tr = document.createElement("tr");
+        tr.innerHTML = `
+        
+        <tr>
+                <th scope="row">${element.IDDoacao}</th>
+                <td>${element.tituloDoacao}</td>
+                <td>${element.descricaoDoacao}</td>
+                <td>${element.dataDoacao}</td>
+                <td>${element.valorDoacao}</td>
+                <td>${element.comproDoacao}</td>
+                <td><button class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
+                  <button class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
+                  <button class="buttonUpdate"><i class="bi bi-arrow-up-circle-fill"></i></button>
+                </td>
+        </tr>
+
+        `
+        tableBodyy.appendChild(tr);
+        });
+    }
+});
+
+function salvarAss() {
+    const inputTitulo = document.querySelector("input[name='titulo']").value;
+    const inputDescricao = document.querySelector("input[name='descricao']").value;
+    const inputData = document.querySelector("input[name='data']").value;
+    const inputValor = document.querySelector("input[name='valor']").value;
+    const inputCompro = document.querySelector("input[name='compro']").value;
+
+
+    var settings = {
+        "url": "http://127.0.0.1:3081/doacaoinsert",
+        "method": "POST",
+        "timeout": 0,
+        "data": {
+            "tituloDoacao": inputTitulo,
+            "descricaoDoacao": inputDescricao,
+            "dataDoacao": inputData,
+            "valorDoacao": inputValor,
+            "comproDoacao": inputCompro,
+
+        }
+      };
+      
+      $.ajax(settings);
+}

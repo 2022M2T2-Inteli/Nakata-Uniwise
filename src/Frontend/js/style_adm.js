@@ -201,7 +201,6 @@ $.ajax(settings).done(function (response) {
     })
 });
 
-
 function enviar() {
     const inputName = document.querySelector("input[name='nomeFreq']").value;
 

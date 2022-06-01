@@ -7,10 +7,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4918f2ce61.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>	
     <link rel="stylesheet" href="../css/iniadm.css">
 </head>
 <body>
@@ -18,26 +18,31 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content customize">
         <div class="modal-header">
-          <h5 class="modal-title">Novo assistido</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <h5 class="modal-title">Nova Doação</h5>
         </div>
         <div class="modal-body">
-          <p>Fazer o cadastro inicial de um novo assistido.</p>
+          <p>Fazer o cadastro de uma nova doação.</p>
         </div>
         <form>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Nome Completo:
-            <input type="text" class="form-control" id="nome_completo">
+            <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+            <input type="text" class="form-control" id="nome_completo" name="titulo">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Número do documento:
-            <input type="text" class="form-control" id="numero_documento">
+            <label for="exampleInputEmail1" class="form-label"></label>Descrição:
+            <input type="text" class="form-control" id="numero_documento" name="descricao">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Tempo na rua:
-            <input type="text" class="form-control" id="tempo_rua">
+            <label for="exampleInputEmail1" class="form-label"></label>Data:
+            <input  type="datetime-local" id="inputdateDoac" name="data">
+          </div>
+          <div class="mb-4">
+            <label for="exampleInputEmail1" class="form-label"></label>Valor:
+            <input  type="text" id="inputdateDoac" name="valor">
+          </div>
+          <div class="mb-5">
+            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+            <input  type="file" id="inputcompro" name="compro">
           </div>
         </form>
         <div class="modal-footer">
@@ -129,31 +134,32 @@
           <div class="text">Usuarios</div>
           <br>
           <div class="novoUsuario">
-           <form>
-            <div class="inputSearchDiv">
-              <i class="bi bi-search"></i>
-              <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Usuario">
-            </div>
+           <form class="inputSearchDiv">
+          <i class="bi bi-search"></i>
+              <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Doação">
            </form>
-            <button onclick="buttonNewAss()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo Usuario</p></button>
+            <button onclick="buttonNewAss()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Nova doação</p></button>
           </div>
           <br>
           <table class="table">
             <thead class="thead-warning">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nome Completo</th>
-                <th scope="col">Documento</th>
-                <th scope="col">Tempo de rua</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Data</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Comprovante</th>
                 <th scope="col">Edição</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
+            <tbody id="table-body-doacao">
+              <!-- <tr>
                 <th scope="row">1</th>
                 <td>Mariana Silva de Paula</td>
-                <td>123.456.789-10</td>
-                <td>3 Meses</td>
+                <td>Roupas</td>
+                <td>xx/xx/xxxx</td>
+                <td>-</td>
                 <td><button class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
                   <button class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                   <button class="buttonUpdate"><i class="bi bi-arrow-up-circle-fill" color:white></i></button>
@@ -162,8 +168,9 @@
               <tr>
                 <th scope="row">2</th>
                 <td>Giovanna Furlan Torres</td>
-                <td>123.456.789-10</td>
-                <td>2 anos</td>
+                <td>Produto de Higiene</td>
+                <td>xx/xx/xxxx</td>
+                <td>-</td>
                 <td><button class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
                   <button class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                   <button class="buttonUpdate"><i class="bi bi-arrow-up-circle-fill"></i></button>
@@ -172,8 +179,9 @@
               <tr>
                 <th scope="row">3</th>
                 <td>Pedro Sant'anna Oliveira</td>
-                <td>123.456.789-10</td>
-                <td>1 ano</td>
+                <td>Doação Alimentícia</td>
+                <td>xx/xx/xxxx</td>
+                <td>-</td>
                 <td><button class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
                   <button class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                   <button class="buttonUpdate"><i class="bi bi-arrow-up-circle-fill"></i></button>
@@ -182,17 +190,17 @@
               <tr>
                 <th scope="row">4</th>
                 <td>Sofia Pimazzoni</td>
-                <td>123.456.789-10</td>
-                <td>5 Anos</td>
+                <td>Doação Financeira</td>
+                <td>xx/xx/xxxx</td>
+                <td>-</td>
                 <td><button class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
                   <button class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                   <button class="buttonUpdate"><i class="bi bi-arrow-up-circle-fill"></i></button>
                 </td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
       </section>
       <script src="../js/inicialScript.js"></script>
-      <script src="../js/bancodedados.js"></script>
 </body>
 </html>
