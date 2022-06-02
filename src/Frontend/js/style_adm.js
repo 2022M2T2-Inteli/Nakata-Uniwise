@@ -165,60 +165,270 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 });
 
-const tableBody = document.querySelector("#table-body");
 
-var settings = {
-    "url": "http://127.0.0.1:3081/fichafrequenciaselect",
+
+
+
+
+
+
+// INSERIR ASSISTIDOS
+
+
+const tableBodyAssistidos = document.querySelector("#table-body-assistidos");
+
+var settingss = {
+    "url":  "http://127.0.0.1:3081/cadastrousers",
     "method": "GET",
     "timeout": 0,
 };
-  
-$.ajax(settings).done(function (response) {
-    let { data } = response;
 
-    data.forEach(pessoa => {
-
-        console.log(pessoa);
-
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
+$.ajax({
+    url:  "http://127.0.0.1:3081/cadastrousers",
+    type: 'GET',
+    success: data => {
+        data.forEach(element => {
+            const trr = document.createElement("tr");
+        trr.innerHTML = `
         
         <tr>
-                <th scope="row">${pessoa.IDFrequencia}</th>
-                <td>${pessoa.dataFreq}</td>
-                <td>${pessoa.horarioFreq}</td>
-                <td>${pessoa.nomeFreq}</td>
-                <td>${pessoa.banhoFreq}</td>
-                <td>${pessoa.lancheFreq}</td>
-                <td>${pessoa.roupaFreq}</td>
-                <td>${pessoa.cestaBaFreq}</td>
-                <td>${pessoa.TransFreq}</td>
+                <th scope="row">${element.IDCadastro}</th>
+                <td>${element.nomeCad}</td>
+                <td>${element.nascimentoCad}</td>
+                <td><button class="buttonEdit" onclick="editarAssistidos(${element.IDCadastro})"><i class="bi bi-pencil-fill"></i></button>
+                  <button class="buttonDelete" onclick="buttonNewAss2(${element.IDCadastro})"><i class="bi bi-trash-fill"></i></button>
+                  <button class="buttonUpdate" onclick="buttonNewAss3(${element.IDCadastro})"><i class="bi bi-arrow-up-circle-fill"></i></button>
+                </td>
         </tr>
 
         `
-
-        tableBody.appendChild(tr);
-    })
+        tableBodyAssistidos.appendChild(trr);
+        });
+    }
 });
 
-function enviar() {
-    const inputName = document.querySelector("input[name='nomeFreq']").value;
+function buttonNewAss() {
+    $('#myModal').modal('show');
+}
 
-    var settings = {
-        "url": "http://127.0.0.1:3081/fichafrequenciainsert",
+function fecharModal() {
+    $('#myModal').modal('hide');
+}
+
+
+
+
+
+
+
+
+
+// VISUALIZAR ASSISTIDOS NA TABELA
+
+function salvarAss() {
+    const inputTituloAssistidos = document.querySelector("input[name='titulo']").value;
+    const inputDescricaoAssistidos = document.querySelector("input[name='data']").value;
+
+    var settingss = {
+        "url": "http://127.0.0.1:3081/cadastroinsert",
         "method": "POST",
         "timeout": 0,
         "data": {
-          "dataFreq": "26/05/2022",
-          "horarioFreq": "15:33",
-          "nomeFreq": inputName,
-          "banhoFreq": "SIM",
-          "lancheFreq": "SIM",
-          "roupaFreq": "NÃO",
-          "cestaBaFreq": "SIM",
-          "TransFreq": "NÃO"
+            "nomeCad": inputTituloAssistidos,
+            "nascimentoCad": inputDescricaoAssistidos,
+            "chamadoCad": inputTituloAssistidos,
+            "documentoCad": inputTituloAssistidos,
+            "IDLocais": 6,
+            "abrigoCad": inputTituloAssistidos,
+            "domPartCad": inputTituloAssistidos,
+            "familiaCad": inputTituloAssistidos,
+            "attCad": inputTituloAssistidos,
+            "cttParenteCad": inputTituloAssistidos,
+            "carteiraCad": inputTituloAssistidos,
+            "benefCad": inputTituloAssistidos,
+            "qualBenefCad": inputTituloAssistidos,
         }
       };
       
-      $.ajax(settings);
+      $.ajax(settingss).done(response => {
+          console.log(response)
+      });
+
+      console.log("foi")
 }
+
+
+
+
+
+
+// DELETE ASSISTIDOS
+
+function buttonNewAss2(id) {
+
+    console.log("foi")
+    const div = document.createElement("div");
+    div.innerHTML = `
+    
+    <div id="myModal2"class="modal customizar">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content customize">
+            <div class="modal-body">
+            <p>Tem certeza que deseja excluir o assistido com id ${id}?</p>
+            </div>
+            <div class="modal-footer">
+            <button onclick="deleteAssistido(${id})" type="button" class="btn btn-primary">Excluir Assistido</button>
+            <button onclick="fecharModal2()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar Exclusão</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    `
+
+    document.body.appendChild(div);
+
+    $('#myModal2').modal('show');
+}
+
+function fecharModal2() {
+    $('#myModal2').modal('hide');
+    $('#myModal2').remove();
+}
+
+function deleteAssistido(id){
+
+    var settings = {
+        "url": "http://127.0.0.1:3081/cadastrodelete",
+        "method": "POST",
+        "timeout": 0,
+        "data": {
+          "IDCadastro": id, 
+        }
+      };
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+    
+}
+
+
+
+
+
+// UPDATE ASSISTIDOS
+
+function updateAssistido(){
+
+    var settings = {
+        "url": "http://127.0.0.1:3081/cadastroupdate",
+        "method": "POST",
+        "timeout": 0,
+        "data": {
+          "nomeCad": "Mariana Souza",
+          "IDCadastro": "1"
+        }
+    };
+      
+    $.ajax(settings).done(function (response) {
+    console.log(response);
+    });
+
+}
+
+
+function editarAssistidos(id) {
+    const divv = document.createElement("div");
+    divv.innerHTML = `
+    <div id="myModal10"class="modal customizar">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content customize">
+            <div class="modal-body">
+            <label for="exampleInputEmail1" class="form-label"></label>Alteração do Nome:
+            <input type="text" class="form-control" name="valorNew" id="EditAss">
+            </div>
+            <div class="modal-footer">
+            <button onclick="editAssistidos(${id})" type="button" class="btn btn-primary">Confirmar edição</button>
+            <button onclick="fecharVal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    `
+    document.body.appendChild(divv);
+    $('#myModal10').modal('show');
+};
+function fecharVal() {
+    $('#myModal10').modal('hide');
+    $('#myModal10').remove();
+};
+function editAssistidos(id) {
+    var EditarOsAssistidos = document.getElementById('EditAss').value;
+    $.ajax({
+        type: 'POST',
+        url: 'http://127.0.0.1:3081/cadastroupdate',
+        data: {IDCadastro: id, nomeCad: EditarOsAssistidos},
+    }).done(function () {
+        console.log("aq")
+    }).fail(function (msg) {
+        //console.log('FAIL');
+    }).always(function (msg) {
+        //console.log('ALWAYS');
+    });
+    $('#myModal10').modal('hide');
+    $('#myModal10').remove();
+};
+
+
+
+
+// VISUALIZAR ASSISTIDOS COM TODOS OS CAMPOS
+
+
+function buttonNewAss3(id){
+
+
+    $.ajax({
+        url: "http://127.0.0.1:3081/cadastrousers",
+        type: 'GET',
+        success: data => {
+         data.forEach(element => {
+
+    const dive = document.createElement("div");
+    dive.innerHTML = `
+    <div id="myModal11"class="modal customizar">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content customize">
+            <div class="modal-body">
+            <label for="exampleInputEmail1" class="form-label"></label>
+            <h3>DADOS DO ASSISTIDO:</h3>
+            <br>
+            <div>
+                <h4>Nome Completo:</h4>
+                <p class="designer">${element.nomeCad}</p>
+            </div>
+            <br>
+             <div>
+                <h4>Data de Nascimento:</h4>
+                <p class="designer">${element.nascimentoCad}</p>
+            </div>
+            
+            </div>
+            <div class="modal-footer">
+            <button onclick="fecharVal()" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar Visualização</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    `
+    document.body.appendChild(dive);
+    $('#myModal11').modal('show');
+         });
+        }
+});
+}
+function fecharVal() {
+    $('#myModal11').modal('hide');
+    $('#myModal11').remove();
+};

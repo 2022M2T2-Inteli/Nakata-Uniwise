@@ -752,3 +752,14 @@ transition: all .2s ease-in-out;
   background-color: #FFC700;
   border: 1px solid black;
 }
+
+.designer {
+  background-color: #E0E0E0;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
