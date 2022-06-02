@@ -142,9 +142,9 @@ $.ajax({
                 <td>${element.dataDoacao}</td>
                 <td>${element.horarioDoacao}</td>
                 <td>${element.valorDoacao}</td>
-                <td><button onclick="editDoacao()" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                  <button onclick="deleteDoacao()" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
-                  <button class="buttonUpdate"><i class="bi bi-arrow-up-circle-fill"></i></button>
+                <td><button onclick="editDoacao(${element.IDDoacao})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
+                  <button onclick="deleteDoacao(${element.IDDoacao})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
+                  <button onclick="viewDoacao(${element.IDDoacao})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
                 </td>
         </tr>
 
@@ -181,34 +181,134 @@ function salvarAss() {
       $.ajax(settings);
 }
 
-function deleteDoacao() {
+function deleteDoacao(id) {
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <div id="myModal4"class="modal customizar">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content customize">
+            <div class="modal-body">
+            <p>Tem certeza que deseja excluir a doação ${id}?</p>
+            </div>
+            <div class="modal-footer">
+            <button onclick="deletedoc(${id})" type="button" class="btn btn-primary">Confirmar exclusão</button>
+            <button onclick="fecharModall()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar exclusão</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    `
+    document.body.appendChild(div);
+    $('#myModal4').modal('show');
+};
 
-    var chute = parseInt(prompt("Digite o ID para excluir"));
+function fecharModall() {
+    $('#myModal4').modal('hide');
+    $('#myModal4').remove();
+};
 
-    if (confirm('Confirma a exclusão?')) {
+function deletedoc(id) {
         $.ajax({
             type: 'POST',
             url: "http://127.0.0.1:3081/doacaodelete",
-            data: {IDDoacao: chute},
+            data: {IDDoacao: id},
         })
     }
+
+function editDoacao(id) {
+    const divv = document.createElement("div");
+    divv.innerHTML = `
+    <div id="myModal9"class="modal customizar">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content customize">
+            <div class="modal-body">
+            <label for="exampleInputEmail1" class="form-label"></label>Novo valor:
+            <input type="text" class="form-control" name="valorNew" id="edittt">
+            </div>
+            <div class="modal-footer">
+            <button onclick="editVal(${id})" type="button" class="btn btn-primary">Confirmar edição</button>
+            <button onclick="fecharVal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    `
+    document.body.appendChild(divv);
+    $('#myModal9').modal('show');
 };
 
-function editDoacao() {
-    var chuteId = parseInt(prompt("Digite o ID para editar"));
-    var newval = prompt("Digite o novo valor");
+function fecharVal() {
+    $('#myModal9').modal('hide');
+    $('#myModal9').remove();
+};
 
-        if (confirm('Confirma a edição?')) {
-            $.ajax({
-                type: 'POST',
-                url: 'http://127.0.0.1:3081/doacaoupdate',
-                data: {IDDoacao: chuteId, valorDoacao: newval},
-            }).done(function () {
-                console.log("aq")
-            }).fail(function (msg) {
-                //console.log('FAIL');
-            }).always(function (msg) {
-                //console.log('ALWAYS');
+function editVal(id) {
+    var yr = document.getElementById('edittt').value;
+    $.ajax({
+        type: 'POST',
+        url: 'http://127.0.0.1:3081/doacaoupdate',
+        data: {IDDoacao: id, valorDoacao: yr},
+    }).done(function () {
+        console.log("aq")
+    }).fail(function (msg) {
+        //console.log('FAIL');
+    }).always(function (msg) {
+        //console.log('ALWAYS');
+    });
+    console.log("caoi", yr)
+    $('#myModal9').modal('hide');
+    $('#myModal9').remove();
+};
+
+// TESTE
+
+function viewDoacao(id) {
+    $.ajax({
+        url: "http://127.0.0.1:3081/doacaoselect",
+        type: 'GET',
+        success: data => {
+            data.forEach(element => {
+                const divvv = document.createElement("div");
+    divvv.innerHTML = `
+    <div id="myModa22"class="modal customizar">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content customize">
+            <div class="modal-body">
+            <div class="mb-1">
+            <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+            <p class="textAA">${element.tituloDoacao}</p>
+          </div>
+          <div class="mb-2">
+            <label for="exampleInputEmail1" class="form-label"></label>Descrição:
+            <p class="textAA">${element.descricaoDoacao}</p>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"></label>Valor:
+            <p class="textAA">${element.valorDoacao}</p>
+          </div>
+          <div class="mb-4">
+            <label for="exampleInputEmail1" class="form-label"></label>Data:
+            <p class="textAA">${element.dataDoacao}</p>
+          </div>
+          <div class="mb-5">
+            <label for="exampleInputEmail1" class="form-label"></label>Horário:
+            <p class="textAA">${element.horarioDoacao}</p>
+          </div>
+          <div class="mb-6">
+            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+            <p class="textAA">${element.comproDoacao}</p>
+          </div>
+            </div>
+            <div class="modal-footer">
+            <button onclick="fecharVal()" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar formulário</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    `
+    document.body.appendChild(divvv);
+    $('#myModa22').modal('show');
             });
         }
-    };
+    });
+};
