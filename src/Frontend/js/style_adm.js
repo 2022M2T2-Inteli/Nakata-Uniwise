@@ -319,25 +319,6 @@ function deleteAssistido(id){
 
 // UPDATE ASSISTIDOS
 
-function updateAssistido(){
-
-    var settings = {
-        "url": "http://127.0.0.1:3081/cadastroupdate",
-        "method": "POST",
-        "timeout": 0,
-        "data": {
-          "nomeCad": "Mariana Souza",
-          "IDCadastro": "1"
-        }
-    };
-      
-    $.ajax(settings).done(function (response) {
-    console.log(response);
-    });
-
-}
-
-
 function editarAssistidos(id) {
     const divv = document.createElement("div");
     divv.innerHTML = `
