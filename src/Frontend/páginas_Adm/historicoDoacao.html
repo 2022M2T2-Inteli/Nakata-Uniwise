@@ -24,23 +24,27 @@
           <p>Fazer o cadastro de uma nova doação.</p>
         </div>
         <form>
-          <div class="mb-3">
+          <div class="mb-1">
             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-            <input type="text" class="form-control" id="nome_completo" name="titulo">
+            <input type="text" class="form-control" name="titulo">
           </div>
-          <div class="mb-3">
+          <div class="mb-2">
             <label for="exampleInputEmail1" class="form-label"></label>Descrição:
-            <input type="text" class="form-control" id="numero_documento" name="descricao">
+            <input type="text" class="form-control" name="descricao">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Data:
-            <input  type="datetime-local" id="inputdateDoac" name="data">
+            <label for="exampleInputEmail1" class="form-label"></label>Valor:
+            <input type="text" class="form-control" name="valor">
           </div>
           <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label"></label>Valor:
-            <input  type="text" id="inputdateDoac" name="valor">
+            <label for="exampleInputEmail1" class="form-label"></label>Data:
+            <input  type="date" id="inputdateDoac" name="data">
           </div>
           <div class="mb-5">
+            <label for="exampleInputEmail1" class="form-label"></label>Horário:
+            <input  type="time" id="inputdateDoac" name="horario">
+          </div>
+          <div class="mb-6">
             <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
             <input  type="file" id="inputcompro" name="compro">
           </div>
@@ -131,7 +135,7 @@
         </ul>
       </div>
       <section class="home-section">
-          <div class="text">Usuarios</div>
+          <div class="text">Doações</div>
           <br>
           <div class="novoUsuario">
            <form class="inputSearchDiv">
@@ -146,58 +150,13 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Titulo</th>
-                <th scope="col">Descrição</th>
                 <th scope="col">Data</th>
+                <th scope="col">Horário</th>
                 <th scope="col">Valor</th>
-                <th scope="col">Comprovante</th>
                 <th scope="col">Edição</th>
               </tr>
             </thead>
             <tbody id="table-body-doacao">
-              <!-- <tr>
-                <th scope="row">1</th>
-                <td>Mariana Silva de Paula</td>
-                <td>Roupas</td>
-                <td>xx/xx/xxxx</td>
-                <td>-</td>
-                <td><button class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                  <button class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
-                  <button class="buttonUpdate"><i class="bi bi-arrow-up-circle-fill" color:white></i></button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Giovanna Furlan Torres</td>
-                <td>Produto de Higiene</td>
-                <td>xx/xx/xxxx</td>
-                <td>-</td>
-                <td><button class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                  <button class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
-                  <button class="buttonUpdate"><i class="bi bi-arrow-up-circle-fill"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Pedro Sant'anna Oliveira</td>
-                <td>Doação Alimentícia</td>
-                <td>xx/xx/xxxx</td>
-                <td>-</td>
-                <td><button class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                  <button class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
-                  <button class="buttonUpdate"><i class="bi bi-arrow-up-circle-fill"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Sofia Pimazzoni</td>
-                <td>Doação Financeira</td>
-                <td>xx/xx/xxxx</td>
-                <td>-</td>
-                <td><button class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                  <button class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
-                  <button class="buttonUpdate"><i class="bi bi-arrow-up-circle-fill"></i></button>
-                </td>
-              </tr> -->
             </tbody>
           </table>
       </section>

@@ -128,37 +128,6 @@ function fecharModal() {
 
 const tableBodyy = document.querySelector("#table-body-doacao");
 
-var settingss = {
-    "url": "http://127.0.0.1:3081/doacaoselect",
-    "method": "GET",
-    "timeout": 0,
-};
-  
-// $.ajax(settingss).done(function (response) {
-//     let { data } = response;
-
-//     data.forEach(Doacao => {
-
-//         console.log(Doacao);
-
-//         const tr = document.createElement("tr");
-//         tr.innerHTML = `
-        
-//         <tr>
-//                 <th scope="row">${Doacao.IDDoacao}</th>
-//                 <td>${Doacao.tituloDoacao}</td>
-//                 <td>${Doacao.descricaoDoacao}</td>
-//                 <td>${Doacao.dataDoacao}</td>
-//                 <td>${Doacao.valorDoacao}</td>
-//                 <td>${Doacao.comproDoacao}</td>
-//         </tr>
-
-//         `
-
-//         tableBodyy.appendChild(tr);
-//     })
-// });
-
 $.ajax({
     url: "http://127.0.0.1:3081/doacaoselect",
     type: 'GET',
@@ -170,12 +139,11 @@ $.ajax({
         <tr>
                 <th scope="row">${element.IDDoacao}</th>
                 <td>${element.tituloDoacao}</td>
-                <td>${element.descricaoDoacao}</td>
                 <td>${element.dataDoacao}</td>
+                <td>${element.horarioDoacao}</td>
                 <td>${element.valorDoacao}</td>
-                <td>${element.comproDoacao}</td>
-                <td><button class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                  <button class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
+                <td><button onclick="editDoacao()" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
+                  <button onclick="deleteDoacao()" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                   <button class="buttonUpdate"><i class="bi bi-arrow-up-circle-fill"></i></button>
                 </td>
         </tr>
@@ -190,6 +158,7 @@ function salvarAss() {
     const inputTitulo = document.querySelector("input[name='titulo']").value;
     const inputDescricao = document.querySelector("input[name='descricao']").value;
     const inputData = document.querySelector("input[name='data']").value;
+    const inputHora = document.querySelector("input[name='horario']").value;
     const inputValor = document.querySelector("input[name='valor']").value;
     const inputCompro = document.querySelector("input[name='compro']").value;
 
@@ -202,6 +171,7 @@ function salvarAss() {
             "tituloDoacao": inputTitulo,
             "descricaoDoacao": inputDescricao,
             "dataDoacao": inputData,
+            "horarioDoacao": inputHora,
             "valorDoacao": inputValor,
             "comproDoacao": inputCompro,
 
@@ -210,3 +180,35 @@ function salvarAss() {
       
       $.ajax(settings);
 }
+
+function deleteDoacao() {
+
+    var chute = parseInt(prompt("Digite o ID para excluir"));
+
+    if (confirm('Confirma a exclusão?')) {
+        $.ajax({
+            type: 'POST',
+            url: "http://127.0.0.1:3081/doacaodelete",
+            data: {IDDoacao: chute},
+        })
+    }
+};
+
+function editDoacao() {
+    var chuteId = parseInt(prompt("Digite o ID para editar"));
+    var newval = prompt("Digite o novo valor");
+
+        if (confirm('Confirma a edição?')) {
+            $.ajax({
+                type: 'POST',
+                url: 'http://127.0.0.1:3081/doacaoupdate',
+                data: {IDDoacao: chuteId, valorDoacao: newval},
+            }).done(function () {
+                console.log("aq")
+            }).fail(function (msg) {
+                //console.log('FAIL');
+            }).always(function (msg) {
+                //console.log('ALWAYS');
+            });
+        }
+    };
