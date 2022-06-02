@@ -255,7 +255,7 @@ function editVal(id) {
     }).always(function (msg) {
         //console.log('ALWAYS');
     });
-    console.log("caoi", yr)
+    
     $('#myModal9').modal('hide');
     $('#myModal9').remove();
 };
@@ -290,7 +290,7 @@ function viewDoacao(id) {
             <label for="exampleInputEmail1" class="form-label"></label>Data:
             <p class="textAA">${element.dataDoacao}</p>
           </div>
-          <div class="mb-5">
+          <div class="mb-4">
             <label for="exampleInputEmail1" class="form-label"></label>Horário:
             <p class="textAA">${element.horarioDoacao}</p>
           </div>
@@ -300,7 +300,7 @@ function viewDoacao(id) {
           </div>
             </div>
             <div class="modal-footer">
-            <button onclick="fecharVal()" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar formulário</button>
+            <button onclick="fecharform()" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar formulário</button>
             </div>
         </div>
         </div>
@@ -311,4 +311,9 @@ function viewDoacao(id) {
             });
         }
     });
+};
+
+function fecharform() {
+    $('#myModa22').modal('hide');
+    $('#myModa22').remove();
 };
