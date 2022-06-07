@@ -213,7 +213,15 @@ function deletedoc(id) {
             url: "http://127.0.0.1:3081/doacaodelete",
             data: {IDDoacao: id},
         })
-    }
+}
+
+function enableField(number){
+    document.getElementById("inputEdit" + number).disabled = false;
+}
+
+function disableField(number){
+    document.getElementById("inputEdit" + number).disabled = true;
+}
 
 function editDoacao(id) {
     $.ajax({
@@ -227,29 +235,47 @@ function editDoacao(id) {
                         <div class="modal-dialog" role="document">
                         <div class="modal-content customize">
                             <div class="modal-body">
-                            <div class="mb-1">
+                            <div class="mb-1" id="teste23">
                             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-                            <input class="editInput" type="text" id="inputEdit1" placeholder="${element.tituloDoacao}" value="${element.tituloDoacao}"></input>
+                            <div id="displaytt">
+                            <input disabled onfocusout="disableField(1)" class="editInput" type="text" id="inputEdit1" placeholder="${element.tituloDoacao}" value="${element.tituloDoacao}"></input>
+                            <button onclick="enableField(1)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            </div>
                             </div>
                             <div class="mb-2">
                             <label for="exampleInputEmail1" class="form-label"></label>Descrição:
-                            <input class="editInput" type="text" id="inputEdit2" placeholder="${element.descricaoDoacao}" value="${element.descricaoDoacao}"></input>
+                            <div id="displaytt">
+                            <input disabled onfocusout="disableField(2)" class="editInput" type="text" id="inputEdit2" placeholder="${element.descricaoDoacao}" value="${element.descricaoDoacao}"></input>
+                            <button onclick="enableField(2)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            </div>
                             </div>
                             <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label"></label>Valor:
-                            <input class="editInput" type="text" id="inputEdit3" placeholder="${element.valorDoacao}" value="${element.valorDoacao}"></input>
+                            <div id="displaytt">
+                            <input disabled onfocusout="disableField(3)" class="editInput" type="text" id="inputEdit3" placeholder="${element.valorDoacao}" value="${element.valorDoacao}"></input>
+                            <button onclick="enableField(3)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            </div>
                             </div>
                             <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label"></label>Data:
-                            <input class="editInput" type="text" id="inputEdit4" placeholder="${element.dataDoacao}" value="${element.dataDoacao}"></input>
+                            <div id="displaytt">
+                            <input disabled onfocusout="disableField(4)" class="editInput" type="text" id="inputEdit4" placeholder="${element.dataDoacao}" value="${element.dataDoacao}"></input>
+                            <button onclick="enableField(4)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            </div>
                             </div>
                             <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label"></label>Horário:
-                            <input class="editInput" type="text" id="inputEdit5" placeholder="${element.horarioDoacao}" value="${element.horarioDoacao}"></input>
+                            <div id="displaytt">
+                            <input disabled onfocusout="disableField(5)" class="editInput" type="text" id="inputEdit5" placeholder="${element.horarioDoacao}" value="${element.horarioDoacao}"></input>
+                            <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            </div>
                             </div>
                             <div class="mb-6">
                             <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
-                            <input class="editInput" type="text" id="inputEdit6" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
+                            <div id="displaytt">
+                            <input disabled onfocusout="disableField(6)" class="editInput" type="text" id="inputEdit6" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
+                            <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            </div>
                             </div>
                             </div>
                             <div class="modal-footer">
