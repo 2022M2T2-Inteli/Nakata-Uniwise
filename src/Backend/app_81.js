@@ -1149,7 +1149,6 @@ var sql = 'SELECT * FROM UsuarioADM ORDER BY IDUsuarioADM COLLATE NOCASE';
   db.close();
 });
 
-
 // Atualiza um registro (é o U do CRUD - Update)
 app.post('/usuariosadmupdate', urlencodedParser, (req, res) => {
   res.statusCode = 200;
@@ -1165,7 +1164,6 @@ app.post('/usuariosadmupdate', urlencodedParser, (req, res) => {
   });
   db.close(); // Fecha o banco
 });
-
 
 
 app.listen(port, hostname, () => {

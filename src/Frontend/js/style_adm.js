@@ -1,5 +1,7 @@
 //PÁGINA FICHA DE ABORDAGEM
 
+const { response } = require("express");
+
 $(document).ready( function() {
     habilitarSimTextInput();
 });
@@ -413,3 +415,10 @@ function fecharVal() {
     $('#myModal11').modal('hide');
     $('#myModal11').remove();
 };
+
+
+
+
+
+
+
