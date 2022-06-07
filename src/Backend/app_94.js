@@ -60,16 +60,22 @@ app.post('/loginupdate', urlencodedParser, (req, res) => {
 });
 
 
-app.get('/loginselect', (req, res) => {
+app.post('/loginselect', urlencodedParser, (req, res) => {
+
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
   var db = new sqlite3.Database(DBPATH);
-  var sql = 'SELECT * FROM login ORDER BY IDlogin COLLATE NOCASE';
-  db.all(sql, [],  (err, rows ) => {
-      if (err) {
-          throw err;
-      }
-      res.json(rows);
+  var sql = `SELECT senha FROM login where email = '${req.body.email}'`;
+  console.log(sql);
+  db.all(sql, [], (err,rows) => {
+    if (err) {
+      throw err;
+    } 
+    //res.json(rows);
+
+    if(rows[0].senha == req.body.senha) res.json(true) 
+    else res.json(false);
+
   });
   db.close();
 });

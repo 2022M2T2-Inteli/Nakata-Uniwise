@@ -378,35 +378,35 @@ function buttonNewAss3(id){
         success: data => {
          data.forEach(element => {
 
-    const dive = document.createElement("div");
-    dive.innerHTML = `
-    <div id="myModal11"class="modal customizar">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content customize">
-            <div class="modal-body">
-            <label for="exampleInputEmail1" class="form-label"></label>
-            <h3>DADOS DO ASSISTIDO:</h3>
-            <br>
-            <div>
-                <h4>Nome Completo:</h4>
-                <p class="designer">${element.nomeCad}</p>
+            const dive = document.createElement("div");
+            dive.innerHTML = `
+            <div id="myModal11"class="modal customizar">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content customize">
+                    <div class="modal-body">
+                    <label for="exampleInputEmail1" class="form-label"></label>
+                    <h3>DADOS DO ASSISTIDO:</h3>
+                    <br>
+                    <div>
+                        <h4>Nome Completo:</h4>
+                        <p class="designer">${element.nomeCad}</p>
+                    </div>
+                    <br>
+                    <div>
+                        <h4>Data de Nascimento:</h4>
+                        <p class="designer">${element.nascimentoCad}</p>
+                    </div>
+                    
+                    </div>
+                    <div class="modal-footer">
+                    <button onclick="fecharVal()" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar Visualização</button>
+                    </div>
+                </div>
+                </div>
             </div>
-            <br>
-             <div>
-                <h4>Data de Nascimento:</h4>
-                <p class="designer">${element.nascimentoCad}</p>
-            </div>
-            
-            </div>
-            <div class="modal-footer">
-            <button onclick="fecharVal()" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar Visualização</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    `
-    document.body.appendChild(dive);
-    $('#myModal11').modal('show');
+            `
+            document.body.appendChild(dive);
+            $('#myModal11').modal('show');
          });
         }
 });
