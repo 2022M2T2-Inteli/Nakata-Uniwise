@@ -571,7 +571,7 @@ app.post('/doacaoinsert', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  var sql = "INSERT INTO Doacao (tituloDoacao, descricaoDoacao, dataDoacao, horarioDoacao, valorDoacao) VALUES ('"+ req.body.tituloDoacao +"', '"+ req.body.descricaoDoacao +"', '"+ req.body.dataDoacao +"', '"+ req.body.horarioDoacao +"', '"+ req.body.valorDoacao +"')";
+  var sql = "INSERT INTO Doacao (tituloDoacao, descricaoDoacao, dataDoacao, horarioDoacao, valorDoacao, comproDoacao) VALUES ('"+ req.body.tituloDoacao +"', '"+ req.body.descricaoDoacao +"', '"+ req.body.dataDoacao +"', '"+ req.body.horarioDoacao +"', '"+ req.body.valorDoacao +"', '"+ req.body.comproDoacao +"')";
   var db = new sqlite3.Database(DBPATH);
   db.run(sql, [],  err => {
       if (err) {
@@ -603,7 +603,7 @@ app.post('/doacaoupdate', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  sql = "UPDATE Doacao SET valorDoacao = '" + req.body.valorDoacao + "' WHERE IDDoacao = " + req.body.IDDoacao;
+  sql = "UPDATE Doacao SET tituloDoacao = '" + req.body.tituloDoacao + "', descricaoDoacao = '" + req.body.descricaoDoacao + "', dataDoacao = '" + req.body.dataDoacao + "', horarioDoacao = '" + req.body.horarioDoacao + "', valorDoacao = '" + req.body.valorDoacao + "', comproDoacao = '" + req.body.comproDoacao + "' WHERE IDDoacao = " + req.body.IDDoacao;
   
   var db = new sqlite3.Database(DBPATH);
   db.run(sql, [],  err => {
