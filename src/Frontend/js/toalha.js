@@ -20,6 +20,102 @@ if(sidebar.classList.contains("open")){
     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
 }
 }
+
+
+// MARIANA SCRIPT
+
+for (var i = 0; i < 4; i++) {
+    $("#programação-eventos")
+        .append(`<div class="cards-programação col-12 col-md-5 m-2">
+    <div class="texto-card-programação" >
+        <h4>Sexta-Feira 03/06/2022</h4>
+        <h5>Brecho Aberto</h5>
+        <P>descrição do evento</P>
+        <p> Abertura a comunidade | Privado</p>
+    </div>
+</div>`)
+};
+
+for (var i = 0; i < 3; i++) {
+    $("#programação-eventos-2")
+        .append(`<div class="cards-programação col-12 col-md-5 m-2">
+    <div class="texto-card-programação" >
+        <h4>Quarta-Feira 20/07/2022</h4>
+        <h5>Laboratório de comidas típicas</h5>
+        <P>descrição do evento</P>
+        <p> Abertura a comunidade | Privado</p>
+    </div>
+</div>`)
+};
+
+// PARCEIROS ADM DANIEL
+
+for (var i = 0; i < 8; i++) {
+    $("#listas-cards-adminstrativo")
+        .append(`
+        <div class="cards-administrativo texto-card-administrativo col-12 col-md-5 m-2">
+            <div>
+                <h5 class="texto-ajuda ajuda">Nome do parceiro</h5>
+            </div>
+            <h5>[Nome do responsável]</h5>
+            <p>email: exemplo@exemplo.com.br</p>
+            <p>telefone: (11) 1111-1111</p>
+            <p>mensagem: "Olá, como posso ajudar hoje?"</p>
+        </div>
+        `)
+};
+
+// VOLUNTARIOS ADM DANIEL
+for (var i = 0; i < 8; i++) {
+    $("#listas-cards-adminstrativo")
+        .append(`
+        <div class="cards-administrativo texto-card-administrativo col-12 col-md-5 m-2">
+            <div>
+                <h5 class="texto-ajuda ajuda">Bazar</h5>
+            </div>
+            <h5>[Nome do voluntário]</h5>
+            <p>email: exemplo@exemplo.com.br</p>
+            <p>telefone: (11) 1111-1111</p>
+            <p>mensagem: "Olá, gostaria de ajudar com o bazar."</p>
+        </div>
+        `)
+};
+
+//teste//
+
+// Getting all necessary elements from DOM.
+const elements = {
+    monthToReceiveValueBoxes: document.querySelectorAll(".to-receive-values-box"),
+    visibilityControlButtons: document.querySelectorAll("#visibility-control-btn"),
+}
+// Instancing the resfreshVisibleBoxes function.
+function refreshVisibleBoxes() {
+    // Getting all month to receive boxes elements and setting its display property according to their classes.
+    elements.monthToReceiveValueBoxes.forEach(box => {
+        if(box.classList.contains("active")) {
+            box.children[1].style.display = "flex";
+        } else {
+            box.children[1].style.display = "none";
+        }
+    })
+}
+// Getting all visibility control buttons.
+elements.visibilityControlButtons.forEach(button => {
+    // Adding a click event listener to all buttons.
+    button.addEventListener("click", function() {
+        // Controlling the "active" class in the target month to receive box element.
+        if(button.parentNode.parentNode.classList.contains("active")) {
+            button.parentNode.parentNode.classList.remove("active")
+            button.parentNode.children[1].src = "../icons/arrow-down-circle.svg";
+        } else {
+            button.parentNode.parentNode.classList.add("active");
+            button.parentNode.children[1].src = "../icons/arrow-up-circle.svg";
+        }
+        // Refreshing the visible boxes.
+        refreshVisibleBoxes();
+    })
+})
+
 // PAGINA Doação
 
 function buttonNewAss() {
@@ -30,7 +126,7 @@ function fecharModal() {
     $('#myModal').modal('hide');
 }
 
-const tableBodyy = document.querySelector("#table-body-doacao");
+const tableBodyy = document.querySelector("#table-body-toalha");
 
 $.ajax({
     url: "http://127.0.0.1:3081/doacaoselect",
@@ -41,11 +137,8 @@ $.ajax({
         tr.innerHTML = `
         
         <tr>
-                <th scope="row">${element.IDDoacao}</th>
-                <td>${element.tituloDoacao}</td>
-                <td>${element.dataDoacao}</td>
-                <td>${element.horarioDoacao}</td>
-                <td>${element.valorDoacao}</td>
+                <th scope="row">${element.IDToalha}</th>
+                <td>${element.numeroToalha}</td>
                 <td><button onclick="editDoacao(${element.IDDoacao})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
                   <button onclick="deleteDoacao(${element.IDDoacao})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                   <button onclick="viewDoacao(${element.IDDoacao})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
@@ -142,42 +235,42 @@ function editDoacao(id) {
                             <div class="mb-1" id="teste23">
                             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(1)" class="form-control" type="text" id="inputEdit1" placeholder="${element.tituloDoacao}" value="${element.tituloDoacao}"></input>
+                            <input disabled onfocusout="disableField(1)" class="editInput" type="text" id="inputEdit1" placeholder="${element.tituloDoacao}" value="${element.tituloDoacao}"></input>
                             <button onclick="enableField(1)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-2">
                             <label for="exampleInputEmail1" class="form-label"></label>Descrição:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(2)" class="form-control" type="text" id="inputEdit2" placeholder="${element.descricaoDoacao}" value="${element.descricaoDoacao}"></input>
+                            <input disabled onfocusout="disableField(2)" class="editInput" type="text" id="inputEdit2" placeholder="${element.descricaoDoacao}" value="${element.descricaoDoacao}"></input>
                             <button onclick="enableField(2)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label"></label>Valor:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(3)" class="form-control" type="text" id="inputEdit3" placeholder="${element.valorDoacao}" value="${element.valorDoacao}"></input>
+                            <input disabled onfocusout="disableField(3)" class="editInput" type="text" id="inputEdit3" placeholder="${element.valorDoacao}" value="${element.valorDoacao}"></input>
                             <button onclick="enableField(3)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label"></label>Data:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(4)" class="form-control" type="text" id="inputEdit4" placeholder="${element.dataDoacao}" value="${element.dataDoacao}"></input>
+                            <input disabled onfocusout="disableField(4)" class="editInput" type="text" id="inputEdit4" placeholder="${element.dataDoacao}" value="${element.dataDoacao}"></input>
                             <button onclick="enableField(4)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label"></label>Horário:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(5)" class="form-control" type="text" id="inputEdit5" placeholder="${element.horarioDoacao}" value="${element.horarioDoacao}"></input>
+                            <input disabled onfocusout="disableField(5)" class="editInput" type="text" id="inputEdit5" placeholder="${element.horarioDoacao}" value="${element.horarioDoacao}"></input>
                             <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-6">
                             <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
+                            <input disabled onfocusout="disableField(6)" class="editInput" type="text" id="inputEdit6" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
                             <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
