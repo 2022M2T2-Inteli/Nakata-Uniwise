@@ -61,7 +61,7 @@ app.post('/loginupdate', urlencodedParser, (req, res) => {
 
 
 app.post('/loginselect', urlencodedParser, (req, res) => {
-
+  console.log(req.body)
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
   var db = new sqlite3.Database(DBPATH);
@@ -72,10 +72,66 @@ app.post('/loginselect', urlencodedParser, (req, res) => {
       throw err;
     } 
     //res.json(rows);
-
-    if(rows[0].senha == req.body.senha) res.json(true) 
+    
+    
+    if(rows.length > 0 && rows[0].senha == req.body.senha) res.json(true) 
     else res.json(false);
 
+  });
+  db.close();
+});
+
+
+
+
+
+
+// FORMULARIO
+
+// Insere um registro (é o C do CRUD - Create)
+app.post('/forminsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "INSERT INTO forms (Nome, TelefoneEmail, IDFuncao, funcao) VALUES (  '" + req.body.Nome + "','" + req.body.TelefoneEmail + "','" + req.body.IDFuncao + "','" + req.body.funcao + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+
+// Exclui um registro (é o D do CRUD - Delete)
+app.post('/formdelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+  sql = "DELETE FROM forms WHERE IDform = '" + req.body.IDform + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+
+app.get('/formselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM forms ORDER BY IDform COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
   });
   db.close();
 });
