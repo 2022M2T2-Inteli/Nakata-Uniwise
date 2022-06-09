@@ -25,28 +25,8 @@
         </div>
         <form>
           <div class="mb-1">
-            <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+            <label for="exampleInputEmail1" class="form-label"></label>Número:
             <input type="text" class="form-control" name="titulo">
-          </div>
-          <div class="mb-2">
-            <label for="exampleInputEmail1" class="form-label"></label>Descrição:
-            <input type="text" class="form-control" name="descricao">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Valor:
-            <input type="text" class="form-control" name="valor">
-          </div>
-          <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label"></label>Data:
-            <input  type="date" id="inputdateDoac" name="data">
-          </div>
-          <div class="mb-5">
-            <label for="exampleInputEmail1" class="form-label"></label>Horário:
-            <input  type="time" id="inputdateDoac" name="horario">
-          </div>
-          <div class="mb-6">
-            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
-            <input  type="file" id="inputcompro" name="compro">
           </div>
         </form>
         <div class="modal-footer">
@@ -64,7 +44,7 @@
         <ul class="nav-list">
           <li>
             <i class="bi bi-search"></i>
-           <input onkeyup="searchFilter()" type="search" id="inputSearchID" placeholder="Pesquisar">
+           <input type="text" placeholder="Search...">
            <span class="tooltip">Search</span>
         </li>
           <li>
@@ -138,29 +118,24 @@
           <div class="text">Doações</div>
           <br>
           <div class="novoUsuario">
-           <!-- <form class="inputSearchDiv">
+           <form class="inputSearchDiv">
           <i class="bi bi-search"></i>
               <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Doação">
-           </form> -->
+           </form>
           <button onclick="buttonNewAss()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Nova doação</p></button>
           </div>
           <br>
-          <table class="table"id="table">
+          <table class="table">
             <thead class="thead-warning">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Titulo</th>
-                <th scope="col">Data</th>
-                <th scope="col">Horário</th>
-                <th scope="col">Valor</th>
-                <th scope="col">Edição</th>
+                <th scope="col">N° Toalha</th>
               </tr>
             </thead>
-            <tbody id="table-body-doacao">
+            <tbody id="table-body-toalha">
             </tbody>
           </table>
       </section>
-      <div id="modal"> </div>
       <script src="../js/DoacaoAdmin.js"></script>
 </body>
 </html>
