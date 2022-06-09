@@ -64,7 +64,7 @@
         <ul class="nav-list">
           <li>
             <i class="bi bi-search"></i>
-           <input type="text" placeholder="Search...">
+           <input onkeyup="searchFilter()" type="search" id="inputSearchID" placeholder="Pesquisar">
            <span class="tooltip">Search</span>
         </li>
           <li>
@@ -138,14 +138,14 @@
           <div class="text">Doações</div>
           <br>
           <div class="novoUsuario">
-           <form class="inputSearchDiv">
+           <!-- <form class="inputSearchDiv">
           <i class="bi bi-search"></i>
               <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Doação">
-           </form>
+           </form> -->
           <button onclick="buttonNewAss()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Nova doação</p></button>
           </div>
           <br>
-          <table class="table">
+          <table class="table"id="table">
             <thead class="thead-warning">
               <tr>
                 <th scope="col">#</th>
@@ -160,6 +160,7 @@
             </tbody>
           </table>
       </section>
+      <div id="modal"> </div>
       <script src="../js/DoacaoAdmin.js"></script>
 </body>
 </html>

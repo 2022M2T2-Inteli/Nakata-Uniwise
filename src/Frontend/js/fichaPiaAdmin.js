@@ -20,102 +20,6 @@ if(sidebar.classList.contains("open")){
     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
 }
 }
-
-
-// MARIANA SCRIPT
-
-for (var i = 0; i < 4; i++) {
-    $("#programação-eventos")
-        .append(`<div class="cards-programação col-12 col-md-5 m-2">
-    <div class="texto-card-programação" >
-        <h4>Sexta-Feira 03/06/2022</h4>
-        <h5>Brecho Aberto</h5>
-        <P>descrição do evento</P>
-        <p> Abertura a comunidade | Privado</p>
-    </div>
-</div>`)
-};
-
-for (var i = 0; i < 3; i++) {
-    $("#programação-eventos-2")
-        .append(`<div class="cards-programação col-12 col-md-5 m-2">
-    <div class="texto-card-programação" >
-        <h4>Quarta-Feira 20/07/2022</h4>
-        <h5>Laboratório de comidas típicas</h5>
-        <P>descrição do evento</P>
-        <p> Abertura a comunidade | Privado</p>
-    </div>
-</div>`)
-};
-
-// PARCEIROS ADM DANIEL
-
-for (var i = 0; i < 8; i++) {
-    $("#listas-cards-adminstrativo")
-        .append(`
-        <div class="cards-administrativo texto-card-administrativo col-12 col-md-5 m-2">
-            <div>
-                <h5 class="texto-ajuda ajuda">Nome do parceiro</h5>
-            </div>
-            <h5>[Nome do responsável]</h5>
-            <p>email: exemplo@exemplo.com.br</p>
-            <p>telefone: (11) 1111-1111</p>
-            <p>mensagem: "Olá, como posso ajudar hoje?"</p>
-        </div>
-        `)
-};
-
-// VOLUNTARIOS ADM DANIEL
-for (var i = 0; i < 8; i++) {
-    $("#listas-cards-adminstrativo")
-        .append(`
-        <div class="cards-administrativo texto-card-administrativo col-12 col-md-5 m-2">
-            <div>
-                <h5 class="texto-ajuda ajuda">Bazar</h5>
-            </div>
-            <h5>[Nome do voluntário]</h5>
-            <p>email: exemplo@exemplo.com.br</p>
-            <p>telefone: (11) 1111-1111</p>
-            <p>mensagem: "Olá, gostaria de ajudar com o bazar."</p>
-        </div>
-        `)
-};
-
-//teste//
-
-// Getting all necessary elements from DOM.
-const elements = {
-    monthToReceiveValueBoxes: document.querySelectorAll(".to-receive-values-box"),
-    visibilityControlButtons: document.querySelectorAll("#visibility-control-btn"),
-}
-// Instancing the resfreshVisibleBoxes function.
-function refreshVisibleBoxes() {
-    // Getting all month to receive boxes elements and setting its display property according to their classes.
-    elements.monthToReceiveValueBoxes.forEach(box => {
-        if(box.classList.contains("active")) {
-            box.children[1].style.display = "flex";
-        } else {
-            box.children[1].style.display = "none";
-        }
-    })
-}
-// Getting all visibility control buttons.
-elements.visibilityControlButtons.forEach(button => {
-    // Adding a click event listener to all buttons.
-    button.addEventListener("click", function() {
-        // Controlling the "active" class in the target month to receive box element.
-        if(button.parentNode.parentNode.classList.contains("active")) {
-            button.parentNode.parentNode.classList.remove("active")
-            button.parentNode.children[1].src = "../icons/arrow-down-circle.svg";
-        } else {
-            button.parentNode.parentNode.classList.add("active");
-            button.parentNode.children[1].src = "../icons/arrow-up-circle.svg";
-        }
-        // Refreshing the visible boxes.
-        refreshVisibleBoxes();
-    })
-})
-
 // PAGINA Doação
 
 function buttonNewAss() {
@@ -134,6 +38,7 @@ $.ajax({
     success: data => {
         data.forEach(element => {
             const tr = document.createElement("tr");
+            console.log(element.IDDoacao);
         tr.innerHTML = `
         
         <tr>
@@ -182,13 +87,13 @@ function salvarAss() {
 }
 
 function deleteDoacao(id) {
-    const div = document.createElement("div");
+    var div = document.createElement("div");
     div.innerHTML = `
-    <div id="myModal4"class="modal customizar">
+    <div id="myModal`+ id +`"class="modal customizar">
         <div class="modal-dialog" role="document">
         <div class="modal-content customize">
             <div class="modal-body">
-            <p>Tem certeza que deseja excluir a doação ${id}?</p>
+            <p>Tem certeza que deseja excluir a doação ` + id + `?</p>
             </div>
             <div class="modal-footer">
             <button onclick="deletedoc(${id})" type="button" class="btn btn-primary">Confirmar exclusão</button>
@@ -199,12 +104,12 @@ function deleteDoacao(id) {
     </div>
     `
     document.body.appendChild(div);
-    $('#myModal4').modal('show');
+    $('#myModal' + id).modal('show');
 };
 
 function fecharModall() {
-    $('#myModal4').modal('hide');
-    $('#myModal4').remove();
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
 function deletedoc(id) {
@@ -213,6 +118,7 @@ function deletedoc(id) {
             url: "http://127.0.0.1:3081/doacaodelete",
             data: {IDDoacao: id},
         })
+        $('#myModal' + id).remove();
 }
 
 function enableField(number){
@@ -224,56 +130,56 @@ function disableField(number){
 }
 
 function editDoacao(id) {
+    console.log(id);
     $.ajax({
         url: "http://127.0.0.1:3081/doacaoselect",
         type: 'GET',
         success: data => {
             data.forEach(element => {
-                const editarDo = document.createElement("div");
-                editarDo.innerHTML = `
-                    <div id="myModa67"class="modal customizar">
+                var editarDo = `
+                    <div id="myModal`+id+`"class="modal customizar">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content customize">
                             <div class="modal-body">
                             <div class="mb-1" id="teste23">
                             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(1)" class="editInput" type="text" id="inputEdit1" placeholder="${element.tituloDoacao}" value="${element.tituloDoacao}"></input>
+                            <input disabled onfocusout="disableField(1)" class="form-control" type="text" id="inputEdit1" placeholder="${element.tituloDoacao}" value="${element.tituloDoacao}"></input>
                             <button onclick="enableField(1)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-2">
                             <label for="exampleInputEmail1" class="form-label"></label>Descrição:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(2)" class="editInput" type="text" id="inputEdit2" placeholder="${element.descricaoDoacao}" value="${element.descricaoDoacao}"></input>
+                            <input disabled onfocusout="disableField(2)" class="form-control" type="text" id="inputEdit2" placeholder="${element.descricaoDoacao}" value="${element.descricaoDoacao}"></input>
                             <button onclick="enableField(2)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label"></label>Valor:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(3)" class="editInput" type="text" id="inputEdit3" placeholder="${element.valorDoacao}" value="${element.valorDoacao}"></input>
+                            <input disabled onfocusout="disableField(3)" class="form-control" type="text" id="inputEdit3" placeholder="${element.valorDoacao}" value="${element.valorDoacao}"></input>
                             <button onclick="enableField(3)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label"></label>Data:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(4)" class="editInput" type="text" id="inputEdit4" placeholder="${element.dataDoacao}" value="${element.dataDoacao}"></input>
+                            <input disabled onfocusout="disableField(4)" class="form-control" type="text" id="inputEdit4" placeholder="${element.dataDoacao}" value="${element.dataDoacao}"></input>
                             <button onclick="enableField(4)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label"></label>Horário:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(5)" class="editInput" type="text" id="inputEdit5" placeholder="${element.horarioDoacao}" value="${element.horarioDoacao}"></input>
+                            <input disabled onfocusout="disableField(5)" class="form-control" type="text" id="inputEdit5" placeholder="${element.horarioDoacao}" value="${element.horarioDoacao}"></input>
                             <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-6">
                             <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(6)" class="editInput" type="text" id="inputEdit6" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
+                            <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
                             <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
@@ -285,17 +191,19 @@ function editDoacao(id) {
                         </div>
                         </div>
                     </div>
-    `
-    document.body.appendChild(editarDo);
-    $('#myModa67').modal('show');
+                    `
+    if(element.IDDoacao == id){
+        document.getElementById("modal").innerHTML = editarDo;
+        $('#myModal' + id).modal('show');
+    }
             });
         }
     });
 };
 
 function fecharVal() {
-    $('#myModa67').modal('hide');
-    $('#myModa67').remove();
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
 function editVal(id) {
@@ -318,8 +226,8 @@ function editVal(id) {
         //console.log('ALWAYS');
     });
     
-    $('#myModa67').modal('hide');
-    $('#myModa67').remove();
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
 // TESTE
@@ -330,9 +238,8 @@ function viewDoacao(id) {
         type: 'GET',
         success: data => {
             data.forEach(element => {
-                const divvv = document.createElement("div");
-    divvv.innerHTML = `
-    <div id="myModa22"class="modal customizar">
+                const divvv = `
+        <div id="myModal`+id+`"class="modal customizar">
         <div class="modal-dialog" role="document">
         <div class="modal-content customize">
             <div class="modal-body">
@@ -368,14 +275,37 @@ function viewDoacao(id) {
         </div>
     </div>
     `
-    document.body.appendChild(divvv);
-    $('#myModa22').modal('show');
+    if(element.IDDoacao == id){
+        document.getElementById("modal").innerHTML = divvv;
+        $('#myModal' + id).modal('show');
+    }
             });
         }
     });
 };
 
 function fecharform() {
-    $('#myModa22').modal('hide');
-    $('#myModa22').remove();
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
+
+// function searchFilter() {
+//     var input, filter, table, tr, td, i, txtValue;
+  
+//     input = document.getElementById("inputSearchID");
+//     filter = input.value.toUpperCase();
+//     table = document.getElementById("table");
+//     tr = table.getElementsByTagName("tr");
+
+//     for (i = 0; i < tr.length; i++) {
+//       td = tr[i].getElementsByTagName("td")[0];
+//       if (td) {
+//         txtValue = td.textContent || td.innerText;
+//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//           tr[i].style.display = "";
+//         } else {
+//           tr[i].style.display = "none";
+//         }
+//       }
+//     }
+//   }
