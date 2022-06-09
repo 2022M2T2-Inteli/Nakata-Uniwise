@@ -20,7 +20,7 @@ if(sidebar.classList.contains("open")){
     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
 }
 }
-// PAGINA Doação
+// PAGINA ficha PIA
 
 function buttonNewAss() {
     $('#myModal').modal('show');
@@ -30,26 +30,25 @@ function fecharModal() {
     $('#myModal').modal('hide');
 }
 
-const tableBodyy = document.querySelector("#table-body-doacao");
+const tableBodyy = document.querySelector("#table-body-pia");
 
 $.ajax({
-    url: "http://127.0.0.1:3081/doacaoselect",
+    url: "http://127.0.0.1:3081/piaselect",
     type: 'GET',
     success: data => {
         data.forEach(element => {
             const tr = document.createElement("tr");
-            console.log(element.IDDoacao);
         tr.innerHTML = `
         
         <tr>
-                <th scope="row">${element.IDDoacao}</th>
-                <td>${element.tituloDoacao}</td>
-                <td>${element.dataDoacao}</td>
-                <td>${element.horarioDoacao}</td>
-                <td>${element.valorDoacao}</td>
-                <td><button onclick="editDoacao(${element.IDDoacao})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                  <button onclick="deleteDoacao(${element.IDDoacao})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
-                  <button onclick="viewDoacao(${element.IDDoacao})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
+                <th scope="row">${element.IDPIA}</th>
+                <td>${element.nomePIA}</td>
+                <td>${element.datanascPIA}</td>
+                <td>${element.rgPIA}</td>
+                <td>${element.cpfPIA}</td>
+                <td><button onclick="editDoacao(${element.IDPIA})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
+                  <button onclick="deleteDoacao(${element.IDPIA})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
+                  <button onclick="viewDoacao(${element.IDPIA})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
                 </td>
         </tr>
 
@@ -60,25 +59,121 @@ $.ajax({
 });
 
 function salvarAss() {
-    const inputTitulo = document.querySelector("input[name='titulo']").value;
-    const inputDescricao = document.querySelector("input[name='descricao']").value;
-    const inputData = document.querySelector("input[name='data']").value;
-    const inputHora = document.querySelector("input[name='horario']").value;
-    const inputValor = document.querySelector("input[name='valor']").value;
-    const inputCompro = document.querySelector("input[name='compro']").value;
+    const nomePIA = document.querySelector("input[name='nomePia']").value;
+    const nomeSocPIA = document.querySelector("input[name='nomeSocPia']").value;
+    const tecPIA = document.querySelector("input[name='tecnicoPia']").value;
+    const filiacaoPIA = document.querySelector("input[name='filiacaoPia']").value;
+    const datanascPIA = document.querySelector("input[name='dataNascPia']").value;
+    const localPIA = document.querySelector("input[name='localPia']").value;
+    const sexoPIA = document.getElementById('sexoPIA').value; //VER DEPOIS
+    const estadoCivilPIA = document.querySelector("input[name='estadoCivilPia']").value;
+    const racaPIA = document.getElementById('racaPIA').value; //VER DEPOIS
+    const religiaoPIA = document.querySelector("input[name='religiaoPia']").value;
+    const escolaridadePIA = document.querySelector("input[name='escolaridadePia']").value; 
+    const rgPIA = document.querySelector("input[name='rgPia']").value;
+    const emissaoPIA = document.querySelector("input[name='emissaoPia']").value;
+    const orgaoDocPIA = document.querySelector("input[name='orgaoRgPia']").value; 
+    const certPIA = document.querySelector("input[name='certPia']").value;
+    const livroPIA = document.querySelector("input[name='livroPia']").value;
+    const folhaPIA = document.querySelector("input[name='folhaPia']").value;
+    const cpfPIA = document.querySelector("input[name='cpfPia']").value;
+    const pisPIA = document.querySelector("input[name='pisPia']").value;
+    const reservistaPIA = document.querySelector("input[name='reservistaPia']").value;
+    const eleitorPIA = document.querySelector("input[name='eleitorPia']").value;
+    const secaoPIA = document.querySelector("input[name='secaoPia']").value;
+    const zonaPIA = document.querySelector("input[name='zonaPia']").value;
+    const ctpsPIA = document.querySelector("input[name='ctpsPia']").value;
+    const serieCtpsPIA = document.querySelector("input[name='serieCtpsPia']").value;
+    const emissaoCtpsPIA = document.querySelector("input[name='emissaoCtpsPia']").value;
+    const refEndePIA= document.querySelector("input[name='refEndePia']").value;
+    const tipoPIA = document.querySelector("input[name='tipoPia']").value;
+    const ruaPIA = document.querySelector("input[name='ruaPia']").value;
+    const fonePIA = document.querySelector("input[name='fonePia']").value;
+    const bairroPIA = document.querySelector("input[name='bairroPia']").value;
+    const municipioPIA = document.querySelector("input[name='municipioPia']").value;
+    const profissaoPIA = document.querySelector("input[name='profissaoPia']").value;
+    const attProfPIA = document.getElementById('tipsTrabPIA').value; //VER DEPOIS TIPOS DE TRABALHO
+    const tipoAttProfPIA = document.querySelector("input[name='atvProfPia']").value; //QUAL ATIVIDADE PROFISSIONAL
+    const rendaMensalPIA = document.querySelector("input[name='rendaMensalPia']").value;
+    const PTRS = document.getElementById('ptrsPIA').value; //VER DEPOIS PTRS
+    const empresaPIA = document.querySelector("input[name='empresaPia']").value;
+    const beneficioPIA = document.getElementById('benefPIA').value; //VER DEPOIS BENEFICIO
+    const valorBenePIA = document.querySelector("input[name='valorBenePia']").value;
+    const deficienciaPIA = document.getElementById('deficienciaPIA').value; //VER DEPOIS DEFICIENCIA
+    const expeDefiPIA = document.querySelector("input[name='especiDefPia']").value;
+    const probleSauPIA = document.getElementById('problemSauPIA').value; //VER DEPOIS SAUDE
+    const especiSauPIA = document.querySelector("input[name='especiSauPia']").value;
+    const medicacoesProblePIA = document.querySelector("input[name='especiMedPia']").value;
+    const depQuimicoPIA= document.getElementById('dpQuiPIA').value; //VER DEPOIS DEPENDENTE QUIMICO
+    const drogasDepPIA = document.querySelector("input[name='QuaisDrogPia']").value;
+    const temRuaPIA = document.querySelector("input[name='tempoRuaPia']").value;
+    const motivoTempRuaPIA = document.getElementById('motivoRuaPIA').value; //VER DEPOIS MOTIVO RUA
+    const proceMotiTempRuaPIA = document.querySelector("input[name='procedenciaPia']").value;
+    const centAcolhiPIA = document.querySelector("input[name='outrosAcoPia']").value;
+    const comproJudiPIA = document.getElementById('juridicoPIA').value; //VER DEPOIS JURIDICO
+    const qualComproJudiPIA = document.querySelector("input[name='qualJudiciPia']").value;
+    const propInicialPIA = document.querySelector("input[name='propostaIniPia']").value;
 
 
     var settings = {
-        "url": "http://127.0.0.1:3081/doacaoinsert",
+        "url": "http://127.0.0.1:3081/piainsert",
         "method": "POST",
         "timeout": 0,
         "data": {
-            "tituloDoacao": inputTitulo,
-            "descricaoDoacao": inputDescricao,
-            "dataDoacao": inputData,
-            "horarioDoacao": inputHora,
-            "valorDoacao": inputValor,
-            "comproDoacao": inputCompro,
+            "nomePIA": nomePIA,
+            "nomeSocPIA": nomeSocPIA,
+            "tecPIA": tecPIA,
+            "filiacaoPIA": filiacaoPIA,
+            "datanascPIA": datanascPIA,
+            "localPIA": localPIA,
+            "sexoPIA": sexoPIA,
+            "estadoCivilPIA": estadoCivilPIA,
+            "racaPIA": racaPIA,
+            "religiaoPIA": religiaoPIA,
+            "escolaridadePIA": escolaridadePIA,
+            "rgPIA": rgPIA,
+            "emissaoPIA": emissaoPIA,
+            "orgaoDocPIA": orgaoDocPIA,
+            "certPIA": certPIA,
+            "livroPIA": livroPIA,
+            "folhaPIA": folhaPIA,
+            "cpfPIA": cpfPIA,
+            "pisPIA": pisPIA,
+            "reservistaPIA": reservistaPIA,
+            "eleitorPIA": eleitorPIA,
+            "secaoPIA": secaoPIA,
+            "zonaPIA": zonaPIA,
+            "ctpsPIA": ctpsPIA,
+            "serieCtpsPIA": serieCtpsPIA,
+            "emissaoCtpsPIA": emissaoCtpsPIA,
+            "refEndePIA": refEndePIA,
+            "tipoPIA": tipoPIA,
+            "ruaPIA": ruaPIA,
+            "fonePIA": fonePIA,
+            "bairroPIA": bairroPIA,
+            "municipioPIA": municipioPIA,
+            "profissaoPIA": profissaoPIA,
+            "attProfPIA": attProfPIA,
+            "tipoAttProfPIA": tipoAttProfPIA,
+            "rendaMensalPIA": rendaMensalPIA,
+            "PTRS": PTRS,
+            "empresaPIA": empresaPIA,
+            "beneficioPIA": beneficioPIA,
+            "valorBenePIA": valorBenePIA,
+            "deficienciaPIA": deficienciaPIA,
+            "expeDefiPIA": expeDefiPIA,
+            "probleSauPIA": probleSauPIA,
+            "especiSauPIA": especiSauPIA,
+            "medicacoesProblePIA": medicacoesProblePIA,
+            "depQuimicoPIA": depQuimicoPIA,
+            "drogasDepPIA": drogasDepPIA,
+            "temRuaPIA": temRuaPIA,
+            "motivoTempRuaPIA": motivoTempRuaPIA,
+            "proceMotiTempRuaPIA": proceMotiTempRuaPIA,
+            "centAcolhiPIA": centAcolhiPIA,
+            "comproJudiPIA": comproJudiPIA,
+            "qualComproJudiPIA": qualComproJudiPIA,
+            "propInicialPIA": propInicialPIA,
 
         }
       };
@@ -115,8 +210,8 @@ function fecharModall() {
 function deletedoc(id) {
         $.ajax({
             type: 'POST',
-            url: "http://127.0.0.1:3081/doacaodelete",
-            data: {IDDoacao: id},
+            url: "http://127.0.0.1:3081/piadelete",
+            data: {IDPIA: id},
         })
         $('#myModal' + id).remove();
 }

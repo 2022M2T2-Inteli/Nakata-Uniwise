@@ -50,7 +50,7 @@
           </div>
           <div class="mb-7">
             <label for="exampleInputEmail1" class="form-label"></label>Sexo:
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="sexoPIA">
               <option selected>Selecionar</option>
               <option value="1">Masculino</option>
               <option value="2">Feminino</option>
@@ -62,7 +62,7 @@
           </div>
           <div class="mb-9">
             <label for="exampleInputEmail1" class="form-label"></label>Raça:
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="racaPIA">
               <option selected>Selecionar</option>
               <option value="1">Branca</option>
               <option value="2">Negra</option>
@@ -138,10 +138,10 @@
             <label for="exampleInputEmail1" class="form-label"></label>Emissão/UF:
             <input  type="Text" class="form-control" id="inputcompro" name="emissaoCtpsPia">
           </div>
-          <div class="mb-27">
+          <!-- <div class="mb-27">
             <label for="exampleInputEmail1" class="form-label"></label>Emissão/UF:
             <input  type="Text" class="form-control" id="inputcompro" name="emissaoCtpsPia">
-          </div>
+          </div> -->
           <div class="mb-28">
             <label for="exampleInputEmail1" class="form-label"></label>Referência de endereço:
             <input  type="Text" class="form-control" id="inputcompro" name="refEndePia">
@@ -172,7 +172,7 @@
           </div>
           <div class="mb-35">
             <label for="exampleInputEmail1" class="form-label"></label>Tipo de trabalho:
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="tipsTrabPIA">
               <option selected>Selecionar</option>
               <option value="1">Trabalho Formal</option>
               <option value="2">Trabalho Informal</option>
@@ -183,17 +183,17 @@
             <label for="exampleInputEmail1" class="form-label"></label>Atividade profissional:
             <input  type="Text" class="form-control" id="inputcompro" name="atvProfPia">
           </div>
-          <div class="mb-37">
+          <!-- <div class="mb-37">
             <label for="exampleInputEmail1" class="form-label"></label>Tipo de atividade:
             <input  type="Text" class="form-control" id="inputcompro" name="tipoAttPia">
-          </div>
+          </div> -->
           <div class="mb-38">
             <label for="exampleInputEmail1" class="form-label"></label>Renda Mensal:
             <input  type="Text" class="form-control" id="inputcompro" name="rendaMensalPia">
           </div>
           <div class="mb-39">
             <label for="exampleInputEmail1" class="form-label"></label>PTR´s:
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="ptrsPIA">
               <option selected>Selecionar</option>
               <option value="1">BF</option>
               <option value="2">RC</option>
@@ -206,7 +206,7 @@
           </div>
           <div class="mb-41">
             <label for="exampleInputEmail1" class="form-label"></label>Beneficio:
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="benefPIA">
               <option selected>Selecionar</option>
               <option value="1">Aposentado</option>
               <option value="2">Aposentado por invalidez</option>
@@ -219,7 +219,7 @@
           </div>
           <div class="mb-43">
             <label for="exampleInputEmail1" class="form-label"></label>Deficiência:
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="deficienciaPIA">
               <option selected>Selecionar</option>
               <option value="1">Deficiente Físico</option>
               <option value="2">Transtornos de Ordem Psíquica</option>
@@ -232,7 +232,7 @@
           </div>
           <div class="mb-45">
             <label for="exampleInputEmail1" class="form-label"></label>Problemas de Saúde:
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="problemSauPIA">
               <option selected>Selecionar</option>
               <option value="1">Sim</option>
               <option value="2">Não</option>
@@ -248,7 +248,7 @@
           </div>
           <div class="mb-48">
             <label for="exampleInputEmail1" class="form-label"></label>É dependente químico?:
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="dpQuiPIA">
               <option selected>Selecionar</option>
               <option value="1">Sim</option>
               <option value="2">Não</option>
@@ -264,7 +264,7 @@
           </div>
           <div class="mb-50">
             <label for="exampleInputEmail1" class="form-label"></label>Motivo:
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="motivoRuaPIA">
               <option selected>Selecionar</option>
               <option value="1">Perda de moradia</option>
               <option value="2">Ameaça/Violência</option>
@@ -288,7 +288,7 @@
           </div>
           <div class="mb-53">
             <label for="exampleInputEmail1" class="form-label"></label>Possuí comprometimento judicial?
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" id="juridicoPIA">
               <option selected>Selecionar</option>
               <option value="1">Sim</option>
               <option value="2">Não</option>
@@ -392,10 +392,10 @@
           <div class="text">Fichas de Plano Individual de Atendimento</div>
           <br>
           <div class="novoUsuario">
-           <form class="inputSearchDiv">
+           <!-- <form class="inputSearchDiv">
           <i class="bi bi-search"></i>
               <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar ficha">
-           </form>
+           </form> -->
           <button onclick="buttonNewAss()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>Nova ficha</p></button>
           </div>
           <br>
