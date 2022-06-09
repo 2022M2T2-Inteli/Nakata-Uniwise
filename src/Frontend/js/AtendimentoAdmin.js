@@ -190,16 +190,15 @@ $.ajax({
         data.forEach(element => {
             const trr = document.createElement("tr");
         trr.innerHTML = `
-        
         <tr>
                 <th scope="row">${element.IDAtendimento}</th>
                 <td>${element.tituloAtendi}</td>
                 <td>${element.observacaoAtendi}</td>
                 <td>${element.dataAtendi}</td>
                 <td>${element.horaAtendi}</td>
-                <td><button class="buttonEdit" onclick="editarAtendimento(${element.IDEncaminhamento})"><i class="bi bi-pencil-fill"></i></button>
-                  <button class="buttonDelete" onclick="buttonNewAssAtendi2(${element.IDEncaminhamento})"><i class="bi bi-trash-fill"></i></button>
-                  <button class="buttonUpdate" onclick="buttonNewAssAtendi3(${element.IDEncaminhamento})"><i class="bi bi-arrow-up-circle-fill"></i></button>
+                <td><button class="buttonEdit" onclick="editarAtendimento(${element.IDAtendimento})"><i class="bi bi-pencil-fill"></i></button>
+                  <button class="buttonDelete" onclick="buttonNewAssAtendi2(${element.IDAtendimento})"><i class="bi bi-trash-fill"></i></button>
+                  <button class="buttonUpdate" onclick="buttonNewAssAtendi3(${element.IDAtendimento})"><i class="bi bi-arrow-up-circle-fill"></i></button>
                 </td>
         </tr>
 
@@ -229,7 +228,9 @@ function fecharModalAtendi() {
 
 function salvarAss() {
     const inputTituloAtendimento = document.querySelector("input[name='titulo']").value;
-    const inputDescricaoAtendimento = document.querySelector("input[name='data']").value;
+    const inputDescricaoAtendimento = document.querySelector("input[name='observacao']").value;
+    const inputDataAtendimento = document.querySelector("input[name='data']").value;
+    const inputhoraAtendimento = document.querySelector("input[name='hora']").value;
 
     var settingsAtendimento = {
         "url": "http://127.0.0.1:3081/atendimentoinsert",
@@ -237,9 +238,9 @@ function salvarAss() {
         "timeout": 0,
         "data": {
             "tituloAtendi": inputTituloAtendimento,
-            "observacaoAtendi": inputTituloAtendimento,
-            "dataAtendi": inputDescricaoAtendimento,
-            "horaAtendi": inputDescricaoAtendimento
+            "observacaoAtendi": inputDescricaoAtendimento,
+            "dataAtendi": inputDataAtendimento,
+            "horaAtendi": inputhoraAtendimento
         }
       };
       
@@ -259,7 +260,7 @@ function salvarAss() {
 
 function buttonNewAssAtendi2(id) {
 
-    console.log("foi")
+    console.log("foi delete")
     const deleteAtend = document.createElement("div");
     deleteAtend.innerHTML = `
     
@@ -290,17 +291,15 @@ function fecharModalAtendi2() {
 }
 
 function deleteAtendimento(id){
-
-    var settingsAtendi = {
+    console.log("o id é ", id)
+    var settingsAtendii = {
         "url": "http://127.0.0.1:3081/atendimentodelete",
         "method": "POST",
         "timeout": 0,
-        "data": {
-          "IDAtendimento": id, 
-        }
+        "data": {"IDAtendimento": id},
       };
       
-      $.ajax(settingsAtendi).done(function (response) {
+      $.ajax(settingsAtendii).done(function (response) {
         console.log(response);
       });
     
@@ -371,14 +370,13 @@ function fecharValAtendi() {
 };
 function editAtendimento(id) {
     var EditarOsAtendimentos = document.getElementById('inputEditAtendi1').value;
-    var newObservacao = document.getElementById('inputEditAtendi2').value
-    var newDataAtendi = document.getElementById('inputEditAtendi3').value
-    var newHoraAtendi = document.getElementById('inputEditAtendi4').value
+    // var newObservacao = document.getElementById('inputEditAtendi2').value
+    // var newDataAtendi = document.getElementById('inputEditAtendi3').value
+    // var newHoraAtendi = document.getElementById('inputEditAtendi4').value
     $.ajax({
         type: 'POST',
-        url: 'http://127.0.0.1:3081/cadastroupdate',
-        data: {IDAtendimento: id, tituloAtendi: EditarOsAtendimentos, observacaoAtendi: newObservacao, dataAtendi: newDataAtendi, horaAtendi: newHoraAtendi 
-        }
+        url: 'http://127.0.0.1:3081/atendimentoupdate',
+        data: {IDAtendimento: id, tituloAtendi: EditarOsAtendimentos}
     }).done(function () {
         console.log("aq")
     }).fail(function (msg) {
@@ -443,3 +441,123 @@ function fecharValAtendi() {
     $('#myModalAtendi11').remove();
 };
 
+
+
+// $.ajax({
+//     url:  "http://127.0.0.1:3081/atendimentoselect",
+//     type: 'GET',
+//     success: data => {
+//         data.forEach(element => {
+//             const trr = document.createElement("tr");
+//         trr.innerHTML = `
+//         <div id="myModalAtendi10"class="modal customizar">
+//         <div class="modal-dialog" role="document">
+//         <div class="modal-content customize">
+//             <div class="modal-body">
+//             <div class="mb-1">
+//             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+//             <div id="displaytt">
+//             <input disabled onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi1" placeholder="${elemnt.tituloAtendi}" value=""></input>
+//             </div>
+//             </div>
+
+//             <div class="modal-body">
+//             <div class="mb-1">
+//             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+//             <div id="displaytt">
+//             <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi2" placeholder="" value=""></input>
+//             <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+//             </div>
+//             </div>
+
+//             <div class="modal-body">
+//             <div class="mb-1">
+//             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+//             <div id="displaytt">
+//             <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi3" placeholder="" value=""></input>
+//             <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+//             </div>
+//             </div>
+
+//             <div class="modal-body">
+//             <div class="mb-1">
+//             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+//             <div id="displaytt">
+//             <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi4" placeholder="" value=""></input>
+//             <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+//             </div>
+//             </div>
+//             </div>
+//             <div class="modal-footer">
+//             <button onclick="editAtendimento(${id})" type="button" class="btn btn-primary">Confirmar edição</button>
+//             <button onclick="fecharValAtendi()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
+//             </div>
+//         </div>
+//         </div>
+//     </div>
+//         `
+//         tableBodyAtendimento.appendChild(trr);
+//         });
+//     }
+// });
+
+
+// // function buttonNewAssAtendi3(id) {
+//     $.ajax({
+//         url:  "http://127.0.0.1:3081/atendimentoselect",
+//         type: 'GET',
+//         success: data => {
+//             data.forEach(element => {
+//                 const trr = document.createElement("tr");
+//             trr.innerHTML = `
+//             <div id="myModalAtendi10"class="modal customizar">
+//             <div class="modal-dialog" role="document">
+//             <div class="modal-content customize">
+//                 <div class="modal-body">
+//                 <div class="mb-1">
+//                 <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+//                 <div id="displaytt">
+//                 <input disabled onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi1" placeholder="${element.tituloAtendi}" value=""></input>
+//                 </div>
+//                 </div>
+    
+//                 <div class="modal-body">
+//                 <div class="mb-1">
+//                 <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+//                 <div id="displaytt">
+//                 <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi2" placeholder="" value=""></input>
+//                 <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+//                 </div>
+//                 </div>
+    
+//                 <div class="modal-body">
+//                 <div class="mb-1">
+//                 <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+//                 <div id="displaytt">
+//                 <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi3" placeholder="" value=""></input>
+//                 <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+//                 </div>
+//                 </div>
+    
+//                 <div class="modal-body">
+//                 <div class="mb-1">
+//                 <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+//                 <div id="displaytt">
+//                 <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi4" placeholder="" value=""></input>
+//                 <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+//                 </div>
+//                 </div>
+//                 </div>
+//                 <div class="modal-footer">
+//                 <button onclick="editAtendimento(${id})" type="button" class="btn btn-primary">Confirmar edição</button>
+//                 <button onclick="fecharValAtendi()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
+//                 </div>
+//             </div>
+//             </div>
+//         </div>
+//             `
+//             tableBodyAtendimento.appendChild(trr);
+//             });
+//         }
+//     });
+// }
