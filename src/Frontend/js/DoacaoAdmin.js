@@ -38,6 +38,7 @@ $.ajax({
     success: data => {
         data.forEach(element => {
             const tr = document.createElement("tr");
+            console.log(element.IDDoacao);
         tr.innerHTML = `
         
         <tr>
@@ -86,29 +87,29 @@ function salvarAss() {
 }
 
 function deleteDoacao(id) {
-    const div = document.createElement("div");
+    var div = document.createElement("div");
     div.innerHTML = `
-    <div id="myModal4"class="modal customizar">
+    <div id="myModal`+ id +`"class="modal customizar">
         <div class="modal-dialog" role="document">
         <div class="modal-content customize">
             <div class="modal-body">
-            <p>Tem certeza que deseja excluir a doação ${id}?</p>
+            <p>Tem certeza que deseja excluir a doação ` + id + `?</p>
             </div>
             <div class="modal-footer">
             <button onclick="deletedoc(${id})" type="button" class="btn btn-primary">Confirmar exclusão</button>
-            <button onclick="fecharModall()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar exclusão</button>
+            <button onclick="fecharModall(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar exclusão</button>
             </div>
         </div>
         </div>
     </div>
     `
     document.body.appendChild(div);
-    $('#myModal4').modal('show');
+    $('#myModal' + id).modal('show');
 };
 
-function fecharModall() {
-    $('#myModal4').modal('hide');
-    $('#myModal4').remove();
+function fecharModall(id) {
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
 function deletedoc(id) {
@@ -117,6 +118,7 @@ function deletedoc(id) {
             url: "http://127.0.0.1:3081/doacaodelete",
             data: {IDDoacao: id},
         })
+        $('#myModal' + id).remove();
 }
 
 function enableField(number){
@@ -128,23 +130,25 @@ function disableField(number){
 }
 
 function editDoacao(id) {
+    console.log(id);
     $.ajax({
         url: "http://127.0.0.1:3081/doacaoselect",
         type: 'GET',
         success: data => {
             data.forEach(element => {
-                const editarDo = document.createElement("div");
-                editarDo.innerHTML = `
-                    <div id="myModa67"class="modal customizar">
+                var editarDo = `
+                    <div id="myModal`+id+`"class="modal customizar">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content customize">
                             <div class="modal-body">
                             <div class="mb-1" id="teste23">
                             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
+
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(1)" class="form-control" type="text" id="inputEdit1" placeholder="${element.tituloDoacao}" value="${element.tituloDoacao}"></input>
-                            <button onclick="enableField(1)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                                <input disabled onfocusout="disableField(1)" class="form-control" type="text" id="inputEdit1" placeholder="${element.tituloDoacao}" value="${element.tituloDoacao}"></input>
+                                <button onclick="enableField(1)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
+
                             </div>
                             <div class="mb-2">
                             <label for="exampleInputEmail1" class="form-label"></label>Descrição:
@@ -184,22 +188,24 @@ function editDoacao(id) {
                             </div>
                             <div class="modal-footer">
                             <button onclick="editVal(${id})" type="button" class="btn btn-primary">Confirmar edição</button>
-                            <button onclick="fecharVal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
+                            <button onclick="fecharVal(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
                             </div>
                         </div>
                         </div>
                     </div>
-    `
-    document.body.appendChild(editarDo);
-    $('#myModa67').modal('show');
+                    `
+    if(element.IDDoacao == id){
+        document.getElementById("modal").innerHTML = editarDo;
+        $('#myModal' + id).modal('show');
+    }
             });
         }
     });
 };
 
-function fecharVal() {
-    $('#myModa67').modal('hide');
-    $('#myModa67').remove();
+function fecharVal(id) {
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
 function editVal(id) {
@@ -222,8 +228,8 @@ function editVal(id) {
         //console.log('ALWAYS');
     });
     
-    $('#myModa67').modal('hide');
-    $('#myModa67').remove();
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
 // TESTE
@@ -234,9 +240,8 @@ function viewDoacao(id) {
         type: 'GET',
         success: data => {
             data.forEach(element => {
-                const divvv = document.createElement("div");
-    divvv.innerHTML = `
-    <div id="myModa22"class="modal customizar">
+                const divvv = `
+        <div id="myModal`+id+`"class="modal customizar">
         <div class="modal-dialog" role="document">
         <div class="modal-content customize">
             <div class="modal-body">
@@ -266,20 +271,43 @@ function viewDoacao(id) {
           </div>
             </div>
             <div class="modal-footer">
-            <button onclick="fecharform()" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar formulário</button>
+            <button onclick="fecharform(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar formulário</button>
             </div>
         </div>
         </div>
     </div>
     `
-    document.body.appendChild(divvv);
-    $('#myModa22').modal('show');
+    if(element.IDDoacao == id){
+        document.getElementById("modal").innerHTML = divvv;
+        $('#myModal' + id).modal('show');
+    }
             });
         }
     });
 };
 
-function fecharform() {
-    $('#myModa22').modal('hide');
-    $('#myModa22').remove();
+function fecharform(id) {
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
+
+function searchFilter() {
+    var input, filter, table, tr, td, i, txtValue;
+  
+    input = document.getElementById("inputSearchID");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+}

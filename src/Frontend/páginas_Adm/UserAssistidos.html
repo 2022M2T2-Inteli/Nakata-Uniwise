@@ -11,537 +11,450 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>	
-    <script src="../js/style_adm.js"></script>
     <link rel="stylesheet" href="../css/iniadm.css">
 </head>
 <body>
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" class="modal customizar">
+  <div id="myModal20"class="modal customizar">
     <div class="modal-dialog" role="document">
       <div class="modal-content customize">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Nova Doação</h5>
+          <h5 class="modal-title">Cadastro</h5>
         </div>
         <div class="modal-body">
-          <p>Fazer o cadastro de uma nova doação.</p>
+          <p>Realize o cadastro do atendido!</p>
         </div>
-        <!-- <form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Nome:
-            <input type="text" class="form-control" id="nome_completo" name="titulo">
+        <form>
+          
+          <div class="mb-1">
+            <label class="form-label">Nome Completo:</label>
+            <input type="text" class="form-control" id="nomeCad">
           </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Como gosta de ser chamado / Como é conhecido:
-            <input  type="text" id="inputdateDoac" name="text">
+          <br>
+          <br>
+          <div class="mb-2">
+            <label class="form-label"></label>Nome Social:
+            <input type="text" class="form-control" id="chamadoCad">
           </div>
+          <br>
+          <br>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Possui Documento?
+            <label class="form-label"></label>Possui Documento?
+            <select class="form-select" aria-label="Default select example" id="docCad">
+              <option selected>Selecionar</option>
+              <option value="naoDoc">Não</option>
+              <option value="simDoc">Sim</option>
+            </select>
+          </div>
+          <br>
+          <br>
+          <div class="mb-4">
+            <label class="form-label"></label>RG: 
+            <input type="text" class="form-control" disable id="rgCad">
             <br>
-            <br>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  onclick="habilitarSimTextInput3()" checked>
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Não
-                </label>
+            <label class="form-label"></label>CPF:
+            <input type="text" class="form-control" disable id="cpfCad">
+          </div>
+          <br>
+          <br>
+          <div class="mb-5">
+            <label class="form-label"></label>Data Nascimento:
+            <input  type="date" class="form-control" id="nascimentoCad">
+          </div>
+          <br>
+          <div class="mb-6">
+              <label class="form-label"></label>Rua / Locais:
+              <div class="form-check form-check">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Marquises e Viadutos</label>
+            </div>
+            <div class="form-check form-check">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Frente de prédios privados e públicos</label>
+            </div>
+            <div class="form-check form-check">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Parques, praças</label>
+            </div>
+            <div class="form-check form-check">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Estações de trem, rodoviárias</label>
+            </div>
+            <div class="form-check form-check">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Margem de rodovias</label>
+            </div>
+            <div class="form-check form-check">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Construções com áreas internas ocupáveis</label>
+            </div>
+            <div class="form-check form-check">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Galerias subterrâneas</label>
+            </div>
+            <div class="form-check form-check">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Casas e prédios abandonados</label>
+            </div>
+            <div class="form-check form-check">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">OutroS Locais</label>
+            </div>
+              
             </div>
             <br>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" onclick="habilitarSimTextInput3()">
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Sim, qual?
-                </label>
-                <div disabled id="fieldsetDisabled3">
-                    <input type="text" id="textInput" class="form-control" placeholder="RG">
-                    <input type="text" id="textInput" class="form-control" placeholder="CPF">
-                </div>
+            <br>
+          <div class="mb-7">
+            <label class="form-label"></label>Frequentou/Frequenta algum albergue, abrigo ou Casa de Passagem?
+            <input type="text" class="form-control" id="abrigoCad">
           </div>
+          <br>
+          <br>
+          <div class="mb-8">
+            <label class="form-label"></label>Frequentou/Frequenta algum domicílio particular ?<br><p>(Nesse quesito, considere como locais utilizados temporariamente pelo entrevistado para pernoitar, os quais pertencem a outras pessoas)</p>
+            <input type="text" class="form-control" id="domPartCad">
           </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Data de Nascimento:
-            <input type="date" class="form-control" id="educador_social">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Rua / Locais: 
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" onclick="habilitarSimTextInput4()">
-            <label class="form-check-label" for="inlineCheckbox1">Marquises e Viadutos</label>
-            <div disabled id="fieldsetDisabled4">
-                <input type="text" id="textInput" class="form-control" placeholder="">
-            </div>
-          </div>
-          <div class="mb-3">
-            
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option1" onclick="habilitarSimTextInput5()">
-              <label class="form-check-label" for="inlineCheckbox1">Frente de prédios privados e públicos</label>
-              <div disabled id="fieldsetDisabled5">
-                  <input type="text" id="textInput" class="form-control" placeholder="">
-              </div>
-
-          </div>
-          <div class="mb-3">
-            
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option1" onclick="habilitarSimTextInput6()">
-              <label class="form-check-label" for="inlineCheckbox1">Parques, praças</label>
-              <div disabled id="fieldsetDisabled6">
-                  <input type="text" id="textInput" class="form-control" placeholder="">
-              </div>
-
-          </div>
-          <div class="mb-3">
-            
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option1" onclick="habilitarSimTextInput7()">
-              <label class="form-check-label" for="inlineCheckbox1">Estações de trem, rodoviárias</label>
-              <div disabled id="fieldsetDisabled7">
-                  <input type="text" id="textInput" class="form-control" placeholder="">
-              </div>
-
-          </div>
-          <div class="mb-3">
-          
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option1" onclick="habilitarSimTextInput8()">
-              <label class="form-check-label" for="inlineCheckbox1">Margem de rodovias</label>
-              <div disabled id="fieldsetDisabled8">
-                  <input type="text" id="textInput" class="form-control" placeholder="">
-              </div>
-
-          </div>
-          <div class="mb-3">
-        
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option1" onclick="habilitarSimTextInput9()">
-              <label class="form-check-label" for="inlineCheckbox1">Dentro de construções com áreas internas ocupáveis</label>
-              <div disabled id="fieldsetDisabled9">
-                  <input type="text" id="textInput" class="form-control" placeholder="">
-              </div>
-
-          </div>
-          <div class="mb-3">
-          
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option1" onclick="habilitarSimTextInput10()">
-              <label class="form-check-label" for="inlineCheckbox1">Galerias subterrâneas</label>
-              <div disabled id="fieldsetDisabled10">
-                  <input type="text" id="textInput" class="form-control" placeholder="">
-              </div>
-
-          </div>
-
-          <div class="mb-3">
-           
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option1" onclick="habilitarSimTextInput11()">
-              <label class="form-check-label" for="inlineCheckbox1">Casas e prédios abandonados</label>
-              <div disabled id="fieldsetDisabled11">
-                  <input type="text" id="textInput" class="form-control" placeholder="">
-              </div>
-
-          </div>
-
-          <div class="mb-3">
-            
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option1" onclick="habilitarSimTextInput12()">
-              <label class="form-check-label" for="inlineCheckbox1">Outros locais </label>
-              <div disabled id="fieldsetDisabled12">
-                  <input type="text" id="textInput" class="form-control" placeholder="">
-              </div>
-
-          </div>
-
-          <div class="mb-3">
-      
-            <label for="exampleInputEmail1" class="form-label"></label>Frequentou/Frequenta algum albergue, abrigo ou Casa de Passagem?
-            <input type="text" class="form-control" id="nome_completo">
-          </div>
-
-          </div>
-
-          <div class="mb-3">
-           
-            <label for="exampleInputEmail1" class="form-label"></label>Frequentou/Frequenta algum domicílio particular ?<br><p>(Nesse quesito, considere como locais utilizados temporariamente pelo entrevistado para pernoitar, os quais pertencem a outras pessoas)</p>
-            <input type="text" class="form-control" id="nome_completo">
-          </div>
-
-          </div>
-
-          <div class="mb-3">
-          
-            <label for="exampleInputEmail1" class="form-label"></label>Número de dias na semana que a pessoa em situação de rua costuma utilizar os espaços listados:
-
-          </div>
-
-          <div class="mb-3">
-           
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox13" value="option1" onclick="habilitarSimTextInput13()">
-              <label class="form-check-label" for="inlineCheckbox1">Rua</label>
-              <select class="form-select" aria-label="Default select example" disabled id="fieldsetDisabled13">
+          <br>
+          <br>
+          <div class="mb-9">
+ 
+              <label class="form-label"></label>Número de dias na semana que a pessoa em situação de rua costuma utilizar os espaços listados:
+              <br>
+            <div>
+              <label>Rua</label>
+              <select class="form-select" aria-label="Default select example" id="ruaVezCad">
                   <option selected>Selecionar</option>
-                  <option value="1">1 vez</option>
-                  <option value="2">2 vezes</option>
-                  <option value="3">3 vezes</option>
-                  <option value="4">4 vezes</option>
-                  <option value="5">5 vezes</option>
+                  <option value="Rua1Cad">1 vez</option>
+                  <option value="Rua2Cad">2 vezes</option>
+                  <option value="Rua3Cad">3 vezes</option>
+                  <option value="Rua4Cad">4 vezes</option>
+                  <option value="Rua5Cad">5 vezes</option>
               </select>
             </div>
-
-          </div>
-
-          <div class="mb-3">
-          
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox14" value="option1" onclick="habilitarSimTextInput14()">
-              <label class="form-check-label" for="inlineCheckbox1">Albergue</label>
-              <select class="form-select" aria-label="Default select example" disabled id="fieldsetDisabled14">
-                  <option selected>Selecionar</option>
-                  <option value="1">1 vez</option>
-                  <option value="2">2 vezes</option>
-                  <option value="3">3 vezes</option>
-                  <option value="4">4 vezes</option>
-                  <option value="5">5 vezes</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="mb-3">
-          
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox15" value="option1" onclick="habilitarSimTextInput15()">
-              <label class="form-check-label" for="inlineCheckbox1">Domicílio Particular</label>
-              <select class="form-select" aria-label="Default select example" disabled id="fieldsetDisabled15">
-                  <option selected>Selecionar</option>
-                  <option value="1">1 vez</option>
-                  <option value="2">2 vezes</option>
-                  <option value="3">3 vezes</option>
-                  <option value="4">4 vezes</option>
-                  <option value="5">5 vezes</option>
-              </select>
-            </div>
-
-          </div>
-
-          <div class="mb-3">
-           
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox16" value="option1" onclick="habilitarSimTextInput16()">
-              <label class="form-check-label" for="inlineCheckbox1">Outro, Qual?</label>
-              <div class="PerguntaX_Cadastro">
-                  <div disabled id="fieldsetDisabled16" class="PerguntaX_Cadastro_1">
-                      <input type="text" id="textInput" class="form-control" placeholder="">
-                  </div>
-                  <br>
-                  <select class="form-select" aria-label="Default select example" disabled id="fieldsetDisabled17">
-                      <option selected>Selecionar</option>
-                      <option value="1">1 vez</option>
-                      <option value="2">2 vezes</option>
-                      <option value="3">3 vezes</option>
-                      <option value="4">4 vezes</option>
-                      <option value="5">5 vezes</option>
-                  </select>
-                </div>
-            </div>
-          </div>
-
-          <div class="mb-3">
-            
-            <label for="exampleInputEmail1" class="form-label"></label>Quanto tempo vive na rua?
             <br>
-            <select class="form-select" aria-label="Default select example">
+          <br>
+            <div>
+              <label>Albergue</label>
+              <select class="form-select" aria-label="Default select example" id="albVezCad">
+                  <option selected>Selecionar</option>
+                  <option value="alb1Cad">1 vez</option>
+                  <option value="alb2Cad">2 vezes</option>
+                  <option value="alb3Cad">3 vezes</option>
+                  <option value="alb4Cad">4 vezes</option>
+                  <option value="alb5Cad">5 vezes</option>
+              </select>
+            </div>
+            <br>
+          <br>
+            <div>
+              <label>Domicílio Particular</label>
+              <select class="form-select" aria-label="Default select example" id="dompartvezCad">
+                  <option selected>Selecionar</option>
+                  <option value="dom1Cad">1 vez</option>
+                  <option value="dom2Cad">2 vezes</option>
+                  <option value="dom3Cad">3 vezes</option>
+                  <option value="dom4Cad">4 vezes</option>
+                  <option value="dom5Cad">5 vezes</option>
+              </select>
+            </div>
+            <br>
+          <br>
+            <div>
+              <label>Outro, Qual?</label>
+              <input type="text" id="dompartQual" class="form-control" placeholder="">
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="mb-10">
+            
+            <label></label>Quanto tempo vive na rua?
+            <br>
+              <select class="form-select" aria-label="Default select example" id="viveRuaCad">
                 <option selected>Selecionar</option>
-                <option value="1">Até seis meses</option>
-                <option value="2">Entre seis meses e um ano</option>
-                <option value="3">Entre um e dois anos</option>
-                <option value="4">Entre dois e cinco anos</option>
-                <option value="5">Entre cinco e dez anos</option>
-                <option value="6">Mais de dez anos</option>
+                <option value="vive1Cad">Até seis meses</option>
+                <option value="vive2Cad">Entre seis meses e um ano</option>
+                <option value="vive3Cad">Entre um e dois anos</option>
+                <option value="vive4Cad">Entre dois e cinco anos</option>
+                <option value="vive5Cad">Entre cinco e dez anos</option>
+                <option value="vive6Cad">Mais de dez anos</option>
               </select>
           </div>
-
-          <div class="mb-3">
-            
-            <label for="exampleInputEmail1" class="form-label"></label>Quais os principais motivos pelos quais passou a morar na rua, albergue ou outro local?
-            <br>
-
-          </div>
-
-          <div class="mb-3">
-          
-              <div class="form-check form-check-inline">
+          <br>
+          <br>
+          <div class="mb-11">
+            <div>
+              <label class="form-label"></label>Quais os principais motivos pelos quais passou a morar na rua, albergue ou outro local?
+              <br>
+            </div>
+            <div class="form-check form-check">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Perda de moradia</label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                 <label class="form-check-label" for="inlineCheckbox2">Ameaça/ violência</label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                 <label class="form-check-label" for="inlineCheckbox2">Alcoolismo/ drogas</label>
             </div>
-            <br>
-            <br>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Problemas com familiares/ companheiro(a)</label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                 <label class="form-check-label" for="inlineCheckbox2">Desemprego</label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Trabalho</label>
             </div>
-            <br>
-            <br>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                 <label class="form-check-label" for="inlineCheckbox2">Tratamento de saúde</label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                 <label class="form-check-label" for="inlineCheckbox2">Preferência/opção própria</label>
             </div>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                 <label class="form-check-label" for="inlineCheckbox2">Não sabe/não lembra</label>
             </div>
-            <br>
-            <br>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check">
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
                 <label class="form-check-label" for="inlineCheckbox2">Outro</label>
             </div>
           </div>
-
-          <div class="mb-3">
-           
-            <label for="exampleInputEmail1" class="form-label"></label>Há quanto tempo mora nesta cidade?
+          <br>
+          <br>
+          <div class="mb-12">
+            <label></label>Há quanto tempo mora nesta cidade?
             <br>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Selecionar</option>
-                <option value="1">Até seis meses</option>
-                <option value="2">Entre seis meses e um ano</option>
-                <option value="3">Entre um e dois anos</option>
-                <option value="4">Entre dois e cinco anos</option>
-                <option value="5">Entre cinco e dez anos</option>
-                <option value="6">Mais de dez anos</option>
+            <select class="form-select" aria-label="Default select example" id="moraCidaCad">
+              <option selected>Selecionar</option>
+              <option value="moraCi1Cad">Até seis meses</option>
+              <option value="moraCi2Cad">Entre seis meses e um ano</option>
+              <option value="moraCi3Cad">Entre um e dois anos</option>
+              <option value="moraCi4Cad">Entre dois e cinco anos</option>
+              <option value="moraCi5Cad">Entre cinco e dez anos</option>
+              <option value="moraCi6Cad">Mais de dez anos</option>
             </select>
           </div>
-
-          <div class="mb-3">
-           
-            <label for="exampleInputEmail1" class="form-label"></label>Vive com sua família na rua?
-            <br>
-            <br>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  onclick="habilitarSimTextInput3()" checked>
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Não
-                </label>
-            </div>
-            <br>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" onclick="habilitarSimTextInput3()">
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Sim
-                </label>
-            </div>
+          <br>
+          <br>
+          <div class="mb-13">
+            <label></label>Vive com sua família na rua?
+              <select class="form-select" aria-label="Default select example" id="viveFamCad">
+                <option selected>Selecionar</option>
+                <option value="vive1Cad">Não</option>
+                <option value="vive2Cad">Sim</option>
+              </select>
           </div>
-
-          <div class="mb-3">
-            
-            <label for="exampleInputEmail1" class="form-label"></label>Tem contato com parente que vive fora da rua?
-                <br>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Selecionar</option>
-                    <option value="1">Todo dia</option>
-                    <option value="2">Toda semana</option>
-                    <option value="3">Todo mês</option>
-                    <option value="4">Todo ano</option>
-                    <option value="5">Quase Nunca</option>
-                    <option value="6">Nunca</option>
-                  </select>
-            </div>
+          <br>
+          <br>
+          <div class="mb-14">
+            <label></label>Tem contato com parente que vive fora da rua?
             <br>
+            <select class="form-select" aria-label="Default select example" id="parenteCad">
+              <option selected>Selecionar</option>
+              <option value="par1Cad">Todo dia</option>
+              <option value="par2Cad">Toda semana</option>
+              <option value="par3Cad">Todo mês</option>
+              <option value="par4Cad">Todo ano</option>
+              <option value="par5Cad">Quase Nunca</option>
+              <option value="par6Cad">Nunca</option>
+            </select>
+          </div>
+          <br>
+          <br>
+          <div class="mb-15">
+            <label></label>Nos últimos seis meses frequentou ou participou de alguma atividade comunitária?
             <br>
+            <select class="form-select" aria-label="Default select example" id="attcomCad">
+              <option selected>Selecionar</option>
+              <option value="att1Cad">Escola</option>
+              <option value="att2Cad">Movimento social</option>
+              <option value="att3Cad">Associação</option>
+              <option value="att4Cad">Cooperativa</option>
+              <option value="att5Cad">Não lembra</option>
+              <option value="att6Cad">Não Respondeu</option>
+            </select>
+          </div>
+          <br>
+          <br>
+          <div class="mb-16">
             <div>
-                <label for="exampleInputEmail1" class="form-label"></label>Nos últimos seis meses frequentou ou participou de alguma atividade comunitária?
-                <br>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Selecionar</option>
-                    <option value="1">Escola</option>
-                    <option value="2">Movimento social</option>
-                    <option value="3">Associação</option>
-                    <option value="4">Cooperativa</option>
-                    <option value="5">Não lembra</option>
-                    <option value="6">Não Respondeu</option>
-                  </select>
-          </div>
-
-          <div class="mb-3">
-            
-            <label for="exampleInputEmail1" class="form-label"></label>Nos últimos seis meses foi atendido em algum dos lugares abaixo?
-            <br>
-
-          </div>
-
-          <div class="mb-3">
-          
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1"> Centro de Referência de Assistência Social (CRAS);</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Centro de Referência Especializado da Assistência Social (CREAS);</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2"> Centro de referência para população em situação de rua;</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1"> Instituição de acolhimento (albergue/ abrigo/outro);</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Hospital/clínica geral;</label>
-            </div>
-            <br>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Nenhum.</label>
-
-          </div>
-
-          <div class="mb-3">
-          
-            <label for="exampleInputEmail1" class="form-label"></label>Alguma vez teve emprego com carteira de trabalho assinada?
-            <br>
-            <br>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  onclick="habilitarSimTextInput3()" checked>
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Não
-                </label>
-            </div>
-            <br>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" onclick="habilitarSimTextInput3()">
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Sim
-                </label>
-            </div>
-
-          </div>
-
-          <div class="mb-3">
-            
-            <label for="exampleInputEmail1" class="form-label"></label>O que faz para ganhar dinheiro?
-            <br>
-
-          </div>
-
-           <div class="mb-3">
-           
-            <label for="exampleInputEmail1" class="form-label"></label>Alguma vez teve emprego com carteira de trabalho assinada?
-            <br>
-            <br>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  onclick="habilitarSimTextInput3()" checked>
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Não
-                </label>
-            </div>
-            <br>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" onclick="habilitarSimTextInput3()">
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Sim
-                </label>
-            </div>
-        </div>
-        <br>
-        <div>
-            <label for="exampleInputEmail1" class="form-label"></label>O que faz para ganhar dinheiro?
-            <br>
-        </div>
-        <br>
-        <div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Construção civil;</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Serviços gerais/limpeza;</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Guardador de carro / flanelinha;</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Pede dinheiro;</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Carregador / estivador;</label>
-            </div>
-            <br>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Catador de material reciclável;</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Não respondeu;</label>
+              <label></label>Nos últimos seis meses foi atendido em algum dos lugares abaixo?
             </div>
             <br>
             <div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox18" value="option1" onclick="habilitarSimTextInput18()">
-                    <label class="form-check-label" for="inlineCheckbox1">Outro, qual?</label>
-                    <fieldset disabled id="fieldsetDisabled18">
-                        <input type="text" id="textInput" class="form-control" placeholder="">
-                    </fieldset>
+              <div>
+                <label> Centro de Referência de Assistência Social (CRAS);</label>
+                <select class="form-select" aria-label="Default select example" id="atendLuCad">
+                  <option selected>Selecionar</option>
+                  <option value="atend1Cad">Não</option>
+                  <option value="atend2Cad">Sim</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <div>
+                  <label>Centro de Referência Especializado da Assistência Social (CREAS);</label>
+                  <select class="form-select" aria-label="Default select example" id="centroCad">
+                    <option selected>Selecionar</option>
+                    <option value="centro1">Não</option>
+                    <option value="centro2">Sim</option>
+                  </select>
+              </div>
+              <br>
+              <br>
+              <div>
+                  <label> Centro de referência para população em situação de rua;</label>
+                  <select class="form-select" aria-label="Default select example" id="centrorefCad">
+                    <option selected>Selecionar</option>
+                    <option value="ref1">Não</option>
+                    <option value="ref2">Sim</option>
+                  </select>
+              </div>
+              <br>
+              <br>
+              <div>
+                  <label> Instituição de acolhimento (albergue/ abrigo/outro);</label>
+                  <select class="form-select" aria-label="Default select example" id="instacolhiCad">
+                    <option selected>Selecionar</option>
+                    <option value="insta1">Não</option>
+                    <option value="insta2">Sim</option>
+                  </select>
+              </div>
+              <br>
+              <br>
+              <div>
+                  <label>Hospital/clínica geral;</label>
+                  <select class="form-select" aria-label="Default select example" id="hospiCad">
+                    <option selected>Selecionar</option>
+                    <option value="hosp1">Não</option>
+                    <option value="hosp2">Sim</option>
+                  </select>
+              </div>
+            </div>
           </div>
+          <br>
+          <br>
+          <div class="mb-17">
+            <label></label>Alguma vez teve emprego com carteira de trabalho assinada?
+            <br>
+            <select class="form-select" aria-label="Default select example" id="trabaCad">
+              <option selected>Selecionar</option>
+              <option value="trab1">Não</option>
+              <option value="trab2">Sim</option>
+              </select>
+          </div>
+          <br>
+          <br>
+          <div class="mb-18">
+              <label></label>O que faz para ganhar dinheiro?
+              <br>
+              <div>
+                <label>Construção civil;</label>
+                <select class="form-select" aria-label="Default select example" id="dinheiroCad">
+                  <option selected>Selecionar</option>
+                  <option value="din1">Não</option>
+                  <option value="din2">Sim</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <div>
+                <label>Serviços gerais/limpeza;</label>
+                <select class="form-select" aria-label="Default select example" id="dinheiroCad2">
+                  <option selected>Selecionar</option>
+                  <option value="1">Não</option>
+                  <option value="2">Sim</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <div>
+                <label>Guardador de carro / flanelinha;</label>
+                <select class="form-select" aria-label="Default select example" id="dinheiroCad3">
+                  <option selected>Selecionar</option>
+                  <option value="1">Não</option>
+                  <option value="2">Sim</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <div>
+                <label>Pede dinheiro;</label>
+                <select class="form-select" aria-label="Default select example" id="dinheiroCad4">
+                  <option selected>Selecionar</option>
+                  <option value="1">Não</option>
+                  <option value="2">Sim</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <div>
+                <label>Carregador / estivador;</label>
+                <select class="form-select" aria-label="Default select example" id="dinheiroCad5">
+                  <option selected>Selecionar</option>
+                  <option value="1">Não</option>
+                  <option value="2">Sim</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <div>
+                <label>Catador de material reciclável;</label>
+                <select class="form-select" aria-label="Default select example" id="dinheiroCad6">
+                  <option selected>Selecionar</option>
+                  <option value="1">Não</option>
+                  <option value="2">Sim</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <div>
+                <label>Outro, qual?</label>
+                <input type="text" class="form-control" placeholder="" id="dinheiroCad7">
+              </div>
+          </div>
+          <br>
+          <br>
+          <div class="mb-19">
+              <label class="form-label"></label>Recebe algum benefício ou está inserido em algum Programa de Renda?
+              <br>
+              <select class="form-select" aria-label="Default select example" id="benefCad">
+                <option selected>Selecionar</option>
+                <option value="1">Não</option>
+                <option value="2">Sim</option>
+              </select>
+          </div>
+          <br>
+          <div class="mb-20">
+            <label class="form-label"></label>Sim, Qual?
+           <input type="text" id="qualBenefCad" class="form-control" placeholder="">
+        </div>
+        <br>
+        <br>
 
-          <div class="mb-3">
-            
-            <label for="exampleInputEmail1" class="form-label"></label>Recebe algum benefício ou está inserido em algum Programa de Renda?
-              <br>
-              <br>
-              <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault19"  onclick="habilitarSimTextInput19()" checked>
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Não
-                  </label>
-              </div>
-              <br>
-              <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault19" onclick="habilitarSimTextInput19()">
-                  <label class="form-check-label" for="flexRadioDefault19">
-                    Sim, qual?
-                  </label>
-                  <fieldset disabled id="fieldsetDisabled19">
-                      <input type="text" id="textInput" class="form-control" placeholder="">
-                  </fieldset>
-              </div>
-          </div> -->
+
         </form>
         <div class="modal-footer">
-          <button onclick="salvarAss()" type="button" class="btn btn-primary">Salvar Assistido</button>
+          <button onclick="salvarAss()" type="button" class="btn btn-primary">Salvar Cadastro</button>
           <button onclick="fecharModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar Cadastro</button>
         </div>
       </div>
     </div>
   </div>
+
+
+
+
+
+
 
     <div class="sidebar">
         <div class="logo-details">
@@ -622,35 +535,29 @@
         </ul>
       </div>
       <section class="home-section">
-          <div class="text">Usuarios</div>
+          <div class="text">Fichas Cadastro</div>
           <br>
           <div class="novoUsuario">
            <form class="inputSearchDiv">
-          <i class="bi bi-search"></i>
-              <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Doação">
+              <i class="bi bi-search"></i>
+              <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar ficha">
            </form>
-            <button onclick="buttonNewAss()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Nova doação</p></button>
+          <button onclick="buttonNewCad()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo Assistido</p></button>
           </div>
           <br>
           <table class="table">
             <thead class="thead-warning">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nome Completo</th>
+                <th scope="col">Nome</th>
                 <th scope="col">Data de Nascimento</th>
                 <th scope="col">Edição</th>
               </tr>
             </thead>
-            <tbody id="table-body-assistidos">
+            <tbody id="table-body-cadastro">
             </tbody>
           </table>
       </section>
-      <script src="../js/style_adm.js"></script>
+      <script src="../js/fichaCadastro.js"></script>
 </body>
 </html>
-
-
-
-
-
-

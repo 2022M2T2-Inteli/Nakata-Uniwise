@@ -3,59 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/iniadm.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4918f2ce61.js" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>	
-    <link rel="stylesheet" href="../css/iniadm.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Encaminhamentos</title>
 </head>
 <body>
-  <div id="myModal"class="modal customizar">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content customize">
+
+  <!-- Button trigger modal
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Nova Doação</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p>Fazer o cadastro de uma nova doação.</p>
-        </div>
-        <form>
           <div class="mb-1">
-            <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-            <input type="text" class="form-control" name="titulo">
+            <label for="exampleInputEmail1" class="form-label"></label>Serviço:
+            <input type="text" class="form-control" name="servEnca">
           </div>
           <div class="mb-2">
-            <label for="exampleInputEmail1" class="form-label"></label>Descrição:
-            <input type="text" class="form-control" name="descricao">
+            <label for="exampleInputEmail1" class="form-label"></label>Data:
+            <input type="date" class="form-control" name="dataEnca">
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Valor:
-            <input type="text" class="form-control" name="valor">
+            <label for="exampleInputEmail1" class="form-label"></label>Observação:
+            <input type="text" class="form-control" name="obsEnca">
           </div>
-          <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label"></label>Data:
-            <input  type="date" id="inputdateDoac" name="data">
-          </div>
-          <div class="mb-5">
-            <label for="exampleInputEmail1" class="form-label"></label>Horário:
-            <input  type="time" id="inputdateDoac" name="horario">
-          </div>
-          <div class="mb-6">
-            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
-            <input  type="file" id="inputcompro" name="compro">
-          </div>
-        </form>
+        </div>
         <div class="modal-footer">
-          <button onclick="salvarAss()" type="button" class="btn btn-primary">Salvar Doação</button>
-          <button onclick="fecharModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar Cadastro</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+          <button type="button" onclick="saveEnca()" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
+
     <div class="sidebar">
         <div class="logo-details">
             <div class="logo_name">ReVirar</div>
@@ -64,7 +61,7 @@
         <ul class="nav-list">
           <li>
             <i class="bi bi-search"></i>
-           <input onkeyup="searchFilter()" type="search" id="inputSearchID" placeholder="Pesquisar">
+           <input type="text" placeholder="Search...">
            <span class="tooltip">Search</span>
         </li>
           <li>
@@ -135,32 +132,35 @@
         </ul>
       </div>
       <section class="home-section">
-          <div class="text">Doações</div>
+          <div class="text">Revirar</div>
           <br>
           <div class="novoUsuario">
-           <!-- <form class="inputSearchDiv">
+           <form class="inputSearchDiv">
           <i class="bi bi-search"></i>
-              <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Doação">
-           </form> -->
-          <button onclick="buttonNewAss()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Nova doação</p></button>
+              <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Encaminhamento">
+           </form>
+          <button onclick="newEnca()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo Encaminhamento</p></button>
           </div>
           <br>
-          <table class="table"id="table">
-            <thead class="thead-warning">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Titulo</th>
+        
+
+    <div class="tabela-encam">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Serviço</th>
                 <th scope="col">Data</th>
-                <th scope="col">Horário</th>
-                <th scope="col">Valor</th>
+                <th scope="col">Observação</th>
                 <th scope="col">Edição</th>
-              </tr>
+            </tr>
             </thead>
-            <tbody id="table-body-doacao">
+            <tbody id="tabela-encaminhamento">
             </tbody>
-          </table>
+        </table>
+    </div>
+          
       </section>
-      <div id="modal"> </div>
-      <script src="../js/DoacaoAdmin.js"></script>
+      <script src="../js/historicovol.js"></script>
 </body>
 </html>
