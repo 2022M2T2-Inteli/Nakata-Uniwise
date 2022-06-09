@@ -672,11 +672,9 @@ app.post('/piaupdate', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  sql = "UPDATE FichaPIA SET nomeSocPIA = '" + req.body.nomeSocPIA + "' WHERE IDPIA = " + req.body.IDPIA;
-  sqll = "UPDATE FichaPIA SET tecPIA = '" + req.body.tecPIA + "' WHERE IDPIA = " + req.body.IDPIA;
+  sql = "UPDATE FichaPIA SET nomeSocPIA = '" + req.body.nomeSocPIA + "', tecPIA = '" + req.body.tecPIA + "', nomePIA = '" + req.body.nomePIA + "', filiacaoPIA = '" + req.body.filiacaoPIA + "', datanascPIA = '" + req.body.datanascPIA + "', localPIA = '" + req.body.localPIA + "', sexoPIA = '" + req.body.sexoPIA + "', estadoCivilPIA = '" + req.body.estadoCivilPIA + "', racaPIA = '" + req.body.racaPIA + "', religiaoPIA = '" + req.body.religiaoPIA + "', escolaridadePIA = '" + req.body.escolaridadePIA + "', rgPIA = '" + req.body.rgPIA + "', emissaoPIA = '" + req.body.emissaoPIA + "', orgaoDocPIA = '" + req.body.orgaoDocPIA + "', certPIA = '" + req.body.certPIA + "', livroPIA = '" + req.body.livroPIA + "', folhaPIA = '" + req.body.folhaPIA + "', cpfPIA = '" + req.body.cpfPIA + "', pisPIA = '" + req.body.pisPIA + "', reservistaPIA = '" + req.body.reservistaPIA + "', eleitorPIA = '" + req.body.eleitorPIA + "', secaoPIA = '" + req.body.secaoPIA + "', zonaPIA = '" + req.body.zonaPIA + "', ctpsPIA = '" + req.body.ctpsPIA + "', serieCtpsPIA = '" + req.body.serieCtpsPIA + "', emissaoCtpsPIA = '" + req.body.emissaoCtpsPIA + "', refEndePIA = '" + req.body.refEndePIA + "', tipoPIA = '" + req.body.tipoPIA + "', ruaPIA = '" + req.body.ruaPIA + "', fonePIA = '" + req.body.fonePIA + "', bairroPIA = '" + req.body.bairroPIA + "', municipioPIA = '" + req.body.municipioPIA + "', profissaoPIA = '" + req.body.profissaoPIA + "', attProfPIA = '" + req.body.attProfPIA + "', tipoAttProfPIA = '" + req.body.tipoAttProfPIA + "', rendaMensalPIA = '" + req.body.rendaMensalPIA + "', empresaPIA = '" + req.body.empresaPIA + "', beneficioPIA = '" + req.body.beneficioPIA + "', valorBenePIA = '" + req.body.valorBenePIA + "', deficienciaPIA = '" + req.body.deficienciaPIA + "', expeDefiPIA = '" + req.body.expeDefiPIA + "', probleSauPIA = '" + req.body.probleSauPIA + "', medicacoesProblePIA = '" + req.body.medicacoesProblePIA + "', depQuimicoPIA = '" + req.body.depQuimicoPIA + "', drogasDepPIA = '" + req.body.drogasDepPIA + "', temRuaPIA = '" + req.body.temRuaPIA + "', motivoTempRuaPIA = '" + req.body.motivoTempRuaPIA + "', proceMotiTempRuaPIA = '" + req.body.proceMotiTempRuaPIA + "', centAcolhiPIA = '" + req.body.centAcolhiPIA + "', comproJudiPIA = '" + req.body.comproJudiPIA + "', qualComproJudiPIA = '" + req.body.qualComproJudiPIA + "', propInicialPIA = '" + req.body.propInicialPIA + "'  WHERE IDPIA = '" + req.body.IDPIA + "'";
   
   var db = new sqlite3.Database(DBPATH);
-  var dbb = new sqlite3.Database(DBPATH);
   db.run(sql, [],  err => {
       if (err) {
           throw err;
@@ -684,14 +682,6 @@ app.post('/piaupdate', urlencodedParser, (req, res) => {
       res.end();
   });
   db.close(); 
-
-  dbb.run(sqll, [],  err => {
-      if (err) {
-        throw err;
-    }
-    res.end();
-  });
-  dbb.close(); 
 });
 
 
