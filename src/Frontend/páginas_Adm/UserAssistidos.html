@@ -41,8 +41,8 @@
             <label class="form-label"></label>Possui Documento?
             <select class="form-select" aria-label="Default select example" id="docCad">
               <option selected>Selecionar</option>
-              <option value="naoDoc">Não</option>
-              <option value="simDoc">Sim</option>
+              <option>Não</option>
+              <option>Sim</option>
             </select>
           </div>
           <br>
@@ -63,43 +63,18 @@
           <br>
           <div class="mb-6">
               <label class="form-label"></label>Rua / Locais:
-              <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Marquises e Viadutos</label>
-            </div>
-            <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Frente de prédios privados e públicos</label>
-            </div>
-            <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Parques, praças</label>
-            </div>
-            <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Estações de trem, rodoviárias</label>
-            </div>
-            <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Margem de rodovias</label>
-            </div>
-            <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Construções com áreas internas ocupáveis</label>
-            </div>
-            <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Galerias subterrâneas</label>
-            </div>
-            <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Casas e prédios abandonados</label>
-            </div>
-            <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">OutroS Locais</label>
-            </div>
-              
+              <select class="form-select" aria-label="Default select example" id="localCad">
+                  <option selected>Selecionar</option>
+                  <option>Marquises e Viadutos</option>
+                  <option>Frente de prédios privados e públicos</option>
+                  <option>Parques, praças</option>
+                  <option>Estações de trem, rodoviárias</option>
+                  <option>Margem de rodovias</option>
+                  <option>Construções com áreas internas ocupáveis</option>
+                  <option>Galerias subterrâneas</option>
+                  <option>Casas e prédios abandonados</option>
+                  <option>Outros locais</option>
+              </select>
             </div>
             <br>
             <br>
@@ -123,11 +98,11 @@
               <label>Rua</label>
               <select class="form-select" aria-label="Default select example" id="ruaVezCad">
                   <option selected>Selecionar</option>
-                  <option value="Rua1Cad">1 vez</option>
-                  <option value="Rua2Cad">2 vezes</option>
-                  <option value="Rua3Cad">3 vezes</option>
-                  <option value="Rua4Cad">4 vezes</option>
-                  <option value="Rua5Cad">5 vezes</option>
+                  <option>1 vez</option>
+                  <option>2 vezes</option>
+                  <option>3 vezes</option>
+                  <option>4 vezes</option>
+                  <option>5 vezes</option>
               </select>
             </div>
             <br>
@@ -136,11 +111,11 @@
               <label>Albergue</label>
               <select class="form-select" aria-label="Default select example" id="albVezCad">
                   <option selected>Selecionar</option>
-                  <option value="alb1Cad">1 vez</option>
-                  <option value="alb2Cad">2 vezes</option>
-                  <option value="alb3Cad">3 vezes</option>
-                  <option value="alb4Cad">4 vezes</option>
-                  <option value="alb5Cad">5 vezes</option>
+                  <option>1 vez</option>
+                  <option >2 vezes</option>
+                  <option>3 vezes</option>
+                  <option>4 vezes</option>
+                  <option>5 vezes</option>
               </select>
             </div>
             <br>
@@ -149,11 +124,11 @@
               <label>Domicílio Particular</label>
               <select class="form-select" aria-label="Default select example" id="dompartvezCad">
                   <option selected>Selecionar</option>
-                  <option value="dom1Cad">1 vez</option>
-                  <option value="dom2Cad">2 vezes</option>
-                  <option value="dom3Cad">3 vezes</option>
-                  <option value="dom4Cad">4 vezes</option>
-                  <option value="dom5Cad">5 vezes</option>
+                  <option>1 vez</option>
+                  <option>2 vezes</option>
+                  <option>3 vezes</option>
+                  <option>4 vezes</option>
+                  <option>5 vezes</option>
               </select>
             </div>
             <br>
@@ -171,12 +146,12 @@
             <br>
               <select class="form-select" aria-label="Default select example" id="viveRuaCad">
                 <option selected>Selecionar</option>
-                <option value="vive1Cad">Até seis meses</option>
-                <option value="vive2Cad">Entre seis meses e um ano</option>
-                <option value="vive3Cad">Entre um e dois anos</option>
-                <option value="vive4Cad">Entre dois e cinco anos</option>
-                <option value="vive5Cad">Entre cinco e dez anos</option>
-                <option value="vive6Cad">Mais de dez anos</option>
+                <option>Até seis meses</option>
+                <option>Entre seis meses e um ano</option>
+                <option>Entre um e dois anos</option>
+                <option>Entre dois e cinco anos</option>
+                <option>Entre cinco e dez anos</option>
+                <option>Mais de dez anos</option>
               </select>
           </div>
           <br>
@@ -187,43 +162,43 @@
               <br>
             </div>
             <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1">
                 <label class="form-check-label" for="inlineCheckbox1">Perda de moradia</label>
             </div>
             <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2">
                 <label class="form-check-label" for="inlineCheckbox2">Ameaça/ violência</label>
             </div>
             <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2">
                 <label class="form-check-label" for="inlineCheckbox2">Alcoolismo/ drogas</label>
             </div>
             <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1">
                 <label class="form-check-label" for="inlineCheckbox1">Problemas com familiares/ companheiro(a)</label>
             </div>
             <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2">
                 <label class="form-check-label" for="inlineCheckbox2">Desemprego</label>
             </div>
             <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1">
                 <label class="form-check-label" for="inlineCheckbox1">Trabalho</label>
             </div>
             <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2">
                 <label class="form-check-label" for="inlineCheckbox2">Tratamento de saúde</label>
             </div>
             <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2">
                 <label class="form-check-label" for="inlineCheckbox2">Preferência/opção própria</label>
             </div>
             <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2">
                 <label class="form-check-label" for="inlineCheckbox2">Não sabe/não lembra</label>
             </div>
             <div class="form-check form-check">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2">
                 <label class="form-check-label" for="inlineCheckbox2">Outro</label>
             </div>
           </div>
@@ -234,12 +209,12 @@
             <br>
             <select class="form-select" aria-label="Default select example" id="moraCidaCad">
               <option selected>Selecionar</option>
-              <option value="moraCi1Cad">Até seis meses</option>
-              <option value="moraCi2Cad">Entre seis meses e um ano</option>
-              <option value="moraCi3Cad">Entre um e dois anos</option>
-              <option value="moraCi4Cad">Entre dois e cinco anos</option>
-              <option value="moraCi5Cad">Entre cinco e dez anos</option>
-              <option value="moraCi6Cad">Mais de dez anos</option>
+              <option>Até seis meses</option>
+              <option>Entre seis meses e um ano</option>
+              <option>Entre um e dois anos</option>
+              <option>Entre dois e cinco anos</option>
+              <option>Entre cinco e dez anos</option>
+              <option>Mais de dez anos</option>
             </select>
           </div>
           <br>
@@ -248,8 +223,8 @@
             <label></label>Vive com sua família na rua?
               <select class="form-select" aria-label="Default select example" id="viveFamCad">
                 <option selected>Selecionar</option>
-                <option value="vive1Cad">Não</option>
-                <option value="vive2Cad">Sim</option>
+                <option>Não</option>
+                <option>Sim</option>
               </select>
           </div>
           <br>
@@ -259,12 +234,12 @@
             <br>
             <select class="form-select" aria-label="Default select example" id="parenteCad">
               <option selected>Selecionar</option>
-              <option value="par1Cad">Todo dia</option>
-              <option value="par2Cad">Toda semana</option>
-              <option value="par3Cad">Todo mês</option>
-              <option value="par4Cad">Todo ano</option>
-              <option value="par5Cad">Quase Nunca</option>
-              <option value="par6Cad">Nunca</option>
+              <option>Todo dia</option>
+              <option>Toda semana</option>
+              <option>Todo mês</option>
+              <option>Todo ano</option>
+              <option>Quase Nunca</option>
+              <option>Nunca</option>
             </select>
           </div>
           <br>
@@ -274,12 +249,12 @@
             <br>
             <select class="form-select" aria-label="Default select example" id="attcomCad">
               <option selected>Selecionar</option>
-              <option value="att1Cad">Escola</option>
-              <option value="att2Cad">Movimento social</option>
-              <option value="att3Cad">Associação</option>
-              <option value="att4Cad">Cooperativa</option>
-              <option value="att5Cad">Não lembra</option>
-              <option value="att6Cad">Não Respondeu</option>
+              <option>Escola</option>
+              <option>Movimento social</option>
+              <option>Associação</option>
+              <option>Cooperativa</option>
+              <option>Não lembra</option>
+              <option>Não Respondeu</option>
             </select>
           </div>
           <br>
@@ -294,8 +269,8 @@
                 <label> Centro de Referência de Assistência Social (CRAS);</label>
                 <select class="form-select" aria-label="Default select example" id="atendLuCad">
                   <option selected>Selecionar</option>
-                  <option value="atend1Cad">Não</option>
-                  <option value="atend2Cad">Sim</option>
+                  <option>Não</option>
+                  <option>Sim</option>
                 </select>
               </div>
               <br>
@@ -304,8 +279,8 @@
                   <label>Centro de Referência Especializado da Assistência Social (CREAS);</label>
                   <select class="form-select" aria-label="Default select example" id="centroCad">
                     <option selected>Selecionar</option>
-                    <option value="centro1">Não</option>
-                    <option value="centro2">Sim</option>
+                    <option>Não</option>
+                    <option>Sim</option>
                   </select>
               </div>
               <br>
@@ -314,8 +289,8 @@
                   <label> Centro de referência para população em situação de rua;</label>
                   <select class="form-select" aria-label="Default select example" id="centrorefCad">
                     <option selected>Selecionar</option>
-                    <option value="ref1">Não</option>
-                    <option value="ref2">Sim</option>
+                    <option>Não</option>
+                    <option>Sim</option>
                   </select>
               </div>
               <br>
@@ -324,8 +299,8 @@
                   <label> Instituição de acolhimento (albergue/ abrigo/outro);</label>
                   <select class="form-select" aria-label="Default select example" id="instacolhiCad">
                     <option selected>Selecionar</option>
-                    <option value="insta1">Não</option>
-                    <option value="insta2">Sim</option>
+                    <option>Não</option>
+                    <option>Sim</option>
                   </select>
               </div>
               <br>
@@ -334,8 +309,8 @@
                   <label>Hospital/clínica geral;</label>
                   <select class="form-select" aria-label="Default select example" id="hospiCad">
                     <option selected>Selecionar</option>
-                    <option value="hosp1">Não</option>
-                    <option value="hosp2">Sim</option>
+                    <option>Não</option>
+                    <option>Sim</option>
                   </select>
               </div>
             </div>
@@ -347,8 +322,8 @@
             <br>
             <select class="form-select" aria-label="Default select example" id="trabaCad">
               <option selected>Selecionar</option>
-              <option value="trab1">Não</option>
-              <option value="trab2">Sim</option>
+              <option>Não</option>
+              <option>Sim</option>
               </select>
           </div>
           <br>
@@ -360,8 +335,8 @@
                 <label>Construção civil;</label>
                 <select class="form-select" aria-label="Default select example" id="dinheiroCad">
                   <option selected>Selecionar</option>
-                  <option value="din1">Não</option>
-                  <option value="din2">Sim</option>
+                  <option>Não</option>
+                  <option>Sim</option>
                 </select>
               </div>
               <br>
@@ -370,8 +345,8 @@
                 <label>Serviços gerais/limpeza;</label>
                 <select class="form-select" aria-label="Default select example" id="dinheiroCad2">
                   <option selected>Selecionar</option>
-                  <option value="1">Não</option>
-                  <option value="2">Sim</option>
+                  <option>Não</option>
+                  <option>Sim</option>
                 </select>
               </div>
               <br>
@@ -380,8 +355,8 @@
                 <label>Guardador de carro / flanelinha;</label>
                 <select class="form-select" aria-label="Default select example" id="dinheiroCad3">
                   <option selected>Selecionar</option>
-                  <option value="1">Não</option>
-                  <option value="2">Sim</option>
+                  <option>Não</option>
+                  <option>Sim</option>
                 </select>
               </div>
               <br>
@@ -390,8 +365,8 @@
                 <label>Pede dinheiro;</label>
                 <select class="form-select" aria-label="Default select example" id="dinheiroCad4">
                   <option selected>Selecionar</option>
-                  <option value="1">Não</option>
-                  <option value="2">Sim</option>
+                  <option>Não</option>
+                  <option>Sim</option>
                 </select>
               </div>
               <br>
@@ -400,8 +375,8 @@
                 <label>Carregador / estivador;</label>
                 <select class="form-select" aria-label="Default select example" id="dinheiroCad5">
                   <option selected>Selecionar</option>
-                  <option value="1">Não</option>
-                  <option value="2">Sim</option>
+                  <option>Não</option>
+                  <option>Sim</option>
                 </select>
               </div>
               <br>
@@ -410,8 +385,8 @@
                 <label>Catador de material reciclável;</label>
                 <select class="form-select" aria-label="Default select example" id="dinheiroCad6">
                   <option selected>Selecionar</option>
-                  <option value="1">Não</option>
-                  <option value="2">Sim</option>
+                  <option>Não</option>
+                  <option>Sim</option>
                 </select>
               </div>
               <br>
@@ -428,8 +403,8 @@
               <br>
               <select class="form-select" aria-label="Default select example" id="benefCad">
                 <option selected>Selecionar</option>
-                <option value="1">Não</option>
-                <option value="2">Sim</option>
+                <option>Não</option>
+                <option>Sim</option>
               </select>
           </div>
           <br>
@@ -540,12 +515,12 @@
           <div class="novoUsuario">
            <form class="inputSearchDiv">
               <i class="bi bi-search"></i>
-              <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar ficha">
+              <input onkeyup="searchFilter()" class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar ficha">
            </form>
           <button onclick="buttonNewCad()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo Assistido</p></button>
           </div>
           <br>
-          <table class="table">
+          <table class="table" id="table">
             <thead class="thead-warning">
               <tr>
                 <th scope="col">#</th>
@@ -558,6 +533,9 @@
             </tbody>
           </table>
       </section>
+      <div id="modalCadastro">
+
+      </div>
       <script src="../js/fichaCadastro.js"></script>
 </body>
 </html>

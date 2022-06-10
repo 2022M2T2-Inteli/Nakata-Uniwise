@@ -94,7 +94,7 @@ app.post('/abordagemdelete', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-  sql = "DELETE FROM FichaAbordagem  WHERE IDAssistidos = '" + req.body.IDAssistidos + "'";
+  sql = "DELETE FROM FichaAbordagem  WHERE IDAbordagem = '" + req.body.IDAbordagem + "'";
   var db = new sqlite3.Database(DBPATH); // Abre o banco
   db.run(sql, [],  err => {
       if (err) {
