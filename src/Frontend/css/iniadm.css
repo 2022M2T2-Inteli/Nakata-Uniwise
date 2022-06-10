@@ -799,3 +799,44 @@ transition: all .2s ease-in-out;
   background-color: #4493CF;
   border: 1px solid black;
 }
+
+/* HOME ADM */
+
+.homeADM {
+  /* display: flex; */
+  background-color: white;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  padding-right: 5vh;
+  padding-left: 5vh;
+  padding-top: 2vh;
+  border-radius: 10px;
+}
+
+.divTodas {
+  justify-content: space-between;
+  display: flex;
+}
+
+.firtsText{
+  justify-content: start;
+}
+
+.p31 {
+  display: flex;
+}
+
+.r2 {
+  padding-left: 1vh;
+}
+
+.buttonNeww {
+  background-color: #5FDBA7;
+  border: 1px solid #272343;
+  border-radius: 500px;
+  padding-left: 4vh;
+  padding-right: 4vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  justify-content: center;
+}
