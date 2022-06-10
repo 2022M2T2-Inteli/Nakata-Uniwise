@@ -810,7 +810,7 @@ transition: all .2s ease-in-out;
   padding-right: 5vh;
   padding-left: 5vh;
   padding-top: 2vh;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .divTodas {
@@ -839,4 +839,8 @@ transition: all .2s ease-in-out;
   padding-top: 1vh;
   padding-bottom: 1vh;
   justify-content: center;
+}
+
+.t2 {
+  text-decoration: none;
 }
