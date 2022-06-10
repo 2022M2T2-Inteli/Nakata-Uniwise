@@ -132,26 +132,25 @@
         </ul>
       </div>
       <section class="home-section">
-          <div class="text">Revirar</div>
+          <div class="text">Encaminhamentos</div>
           <br>
           <div class="novoUsuario">
            <form class="inputSearchDiv">
           <i class="bi bi-search"></i>
-              <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Encaminhamento">
+              <input onkeyup="searchFilter()" class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Encaminhamento">
            </form>
           <button onclick="newEnca()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo Encaminhamento</p></button>
           </div>
           <br>
         
 
-    <div class="tabela-encam">
+    <div class="tabela-encam" id="table">
         <table class="table">
             <thead>
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Serviço</th>
                 <th scope="col">Data</th>
-                <th scope="col">Observação</th>
                 <th scope="col">Edição</th>
             </tr>
             </thead>
@@ -161,6 +160,6 @@
     </div>
           
       </section>
-      <script src="../js/historicovol.js"></script>
+      <script src="../js/encaminhamento.js"></script>
 </body>
 </html>

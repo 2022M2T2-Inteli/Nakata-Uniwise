@@ -19,7 +19,6 @@ $.ajax({
                 <th scope="row">${element.IDEncaminhamento}</th>
                 <td>${element.servEnca}</td>
                 <td>${element.dataEnca}</td>
-                <td>${element.obsEnca}</td>
                 <td><button onclick="editEnca(${element.IDEncaminhamento})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
                   <button onclick="deleteEnca(${element.IDEncaminhamento})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                   <button onclick="viewEnca(${element.IDEncaminhamento})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
@@ -28,6 +27,7 @@ $.ajax({
             ` 
             encaminhamento.appendChild(encam);
         });
+        
     }
 });
 
@@ -131,4 +131,70 @@ function editEnca2(id) {
     
     $('#myModal45').modal('hide');
     $('#myModal45').remove();
+};
+
+function searchFilter() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("inputSearchID");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+}
+
+function viewEnca(id) {
+    $.ajax({
+        url: "http://127.0.0.1:3081/encaminhamentoselect",
+        type: 'GET',
+        success: data => {
+            data.forEach(element => {
+                const divvv = document.createElement("div");
+    divvv.innerHTML = `
+    <div id="myModal`+ id +`"class="modal customizar">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content customize">
+            <div class="modal-body">
+            <div class="mb-1">
+            <label for="exampleInputEmail1" class="form-label"></label>Serviço:
+            <p class="textAA">${element.servEnca}</p>
+          </div>
+          <div class="mb-2">
+            <label for="exampleInputEmail1" class="form-label"></label>Data:
+            <p class="textAA">${element.dataEnca}</p>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"></label>Observação:
+            <p class="textAA">${element.obsEnca}</p>
+          </div>
+            </div>
+            <div class="modal-footer">
+            <button onclick="fecharform(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar formulário</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    `
+    if(element.IDEncaminhamento == id){
+        document.body.appendChild(divvv);
+        $('#myModal'+ id).modal('show');
+    }
+
+            });
+        }
+    });
+};
+
+function fecharform(id) {
+    $('#myModal'+ id).modal('hide');
+    $('#myModal'+ id).remove();
 };
