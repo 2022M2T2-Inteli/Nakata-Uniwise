@@ -702,7 +702,7 @@ transition: all .2s ease-in-out;
   margin-right: 80px;
   margin-left: 80px;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
 }
 .inputSearchDiv {
   margin-top: 15px;
