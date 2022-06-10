@@ -198,7 +198,6 @@ $.ajax({
                 <td>${element.horaAtendi}</td>
                 <td><button class="buttonEdit" onclick="editarAtendimento(${element.IDAtendimento})"><i class="bi bi-pencil-fill"></i></button>
                   <button class="buttonDelete" onclick="buttonNewAssAtendi2(${element.IDAtendimento})"><i class="bi bi-trash-fill"></i></button>
-                  <button class="buttonUpdate" onclick="buttonNewAssAtendi3(${element.IDAtendimento})"><i class="bi bi-arrow-up-circle-fill"></i></button>
                 </td>
         </tr>
 
@@ -390,56 +389,6 @@ function editAtendimento(id) {
 
 
 
-
-// VISUALIZAR ATENDIMENTOS COM TODOS OS CAMPOS
-
-
-function buttonNewAssAtendi3(id){
-
-
-    $.ajax({
-        url: "http://127.0.0.1:3081/atendimentoselect",
-        type: 'GET',
-        success: data => {
-         data.forEach(element => {
-
-    const dive = document.createElement("div");
-    dive.innerHTML = `
-    <div id="myModalAtendi11"class="modal customizar">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content customize">
-            <div class="modal-body">
-            <label for="exampleInputEmail1" class="form-label"></label>
-            <h3>DADOS DO ATENDIMENTO:</h3>
-            <br>
-            <div>
-                <h4>Título Atendimento:</h4>
-                <p class="designer">${element.tituloAtendi}</p>
-            </div>
-            <br>
-             <div>
-                <h4>Data do Atendimento:</h4>
-                <p class="designer">${element.dataAtendi}</p>
-            </div>
-            
-            </div>
-            <div class="modal-footer">
-            <button onclick="fecharValAtendi()" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar Visualização</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    `
-    document.body.appendChild(dive);
-    $('#myModalAtendi11').modal('show');
-         });
-        }
-});
-}
-function fecharValAtendi() {
-    $('#myModalAtendi11').modal('hide');
-    $('#myModalAtendi11').remove();
-};
 
 
 
