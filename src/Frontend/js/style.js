@@ -3,6 +3,7 @@ $("document").ready(function(){
     $("#header").load("menu.html", function() {
         $("#btn").on('click', showmenu);
     });
+    
 });
 
 function showmenu(){

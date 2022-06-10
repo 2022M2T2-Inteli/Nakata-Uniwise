@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Localize um assistido | Projeto re virar</title>
+
+  <!-- Leaflet Start Code -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <!-- Leaflet End Code -->
+
+  <link rel="stylesheet" href="../../public/css/main.css" />
+  <link rel="stylesheet" href="../../public/css/page-orphanages.css" />
+  <link rel="stylesheet" href="../../public/css/animations.css" />
+  <link rel="icon" href="../../public/images/logo-icon.png" />
+</head>
+
+<body>
+  <div id="page-orphanages">
+    <aside>
+      <div class="aside-content">
+        <header>
+          <div class=" text-box">
+            <h2>Adicione locais onde encontrou algum assistido</h2>
+            <p>Pequenas atitudes transformam! :)</p>
+          </div>
+        </header>
+        <footer >
+          <div>
+            <strong class="city">Projeto</strong>
+            <p class="state">re virar</p>
+          </div>
+        </footer>
+      </div>
+    </aside>
+    <div class="animate-apper" id="mapid"></div>
+
+  <div class="orphanages">
+    
+    
+    {{#each orphanages}}
+
+      <span 
+      
+        hidden 
+        data-id="{{this.id}}" 
+        data-name="{{this.name}}" 
+        data-lat="{{this.lat}}" 
+        data-lng="{{this.lng}}">
+        
+      </span>
+
+    {{/each}}
+
+  </div>
+    <a href="../views/add-orphanage.html" class="add-orphanage" title="Adicionar local"><img src="../../public/images/plus.svg" alt="Adicionar local" /></a>
+  </div>
+  <script src="../../public/scripts/page-orphanages.js"></script>
+</body>
+</html>

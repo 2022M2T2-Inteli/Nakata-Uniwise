@@ -104,6 +104,8 @@ app.post('/forminsert', urlencodedParser, (req, res) => {
   res.end();
 });
 
+
+
 // Exclui um registro (é o D do CRUD - Delete)
 app.post('/formdelete', urlencodedParser, (req, res) => {
   res.statusCode = 200;
