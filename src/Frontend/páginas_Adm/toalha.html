@@ -18,15 +18,19 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content customize">
         <div class="modal-header">
-          <h5 class="modal-title">Nova Doação</h5>
+          <h5 class="modal-title">Nova Toalha</h5>
         </div>
         <div class="modal-body">
-          <p>Fazer o cadastro de uma nova doação.</p>
+          <p>Fazer o cadastro de uma nova Toalha.</p>
         </div>
         <form>
           <div class="mb-1">
-            <label for="exampleInputEmail1" class="form-label"></label>Número:
-            <input type="text" class="form-control" name="titulo">
+            <label for="exampleInputEmail1" class="form-label"></label>Nome:
+            <input type="text" class="form-control" name="nomeToalha">
+          </div>
+          <div class="mb-2">
+            <label for="exampleInputEmail1" class="form-label"></label>Número da toalha:
+            <input type="text" class="form-control" name="numeroToalha">
           </div>
         </form>
         <div class="modal-footer">
@@ -115,27 +119,30 @@
         </ul>
       </div>
       <section class="home-section">
-          <div class="text">Doações</div>
+          <div class="text">Ficha toalha</div>
           <br>
           <div class="novoUsuario">
            <form class="inputSearchDiv">
           <i class="bi bi-search"></i>
-              <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Doação">
+              <input onkeyup="searchFilter()" class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Toalha">
            </form>
-          <button onclick="buttonNewAss()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Nova doação</p></button>
+          <button onclick="buttonNewAss()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Nova Toalha</p></button>
           </div>
           <br>
-          <table class="table">
+          <table class="table" id="table">
             <thead class="thead-warning">
               <tr>
                 <th scope="col">#</th>
+                <th scope="col">Nome</th>
                 <th scope="col">N° Toalha</th>
+                <th scope="col">Edição</th>
               </tr>
             </thead>
             <tbody id="table-body-toalha">
             </tbody>
           </table>
       </section>
-      <script src="../js/DoacaoAdmin.js"></script>
+      <div id="modal"></div>
+      <script src="../js/toalha.js"></script>
 </body>
 </html>

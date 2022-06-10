@@ -18,9 +18,9 @@
 <body>
 
      <!-- Button trigger modal -->
-     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+     <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Launch demo modal
-      </button> 
+      </button>  -->
   
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -137,30 +137,28 @@
           <div class="novoUsuario">
            <form class="inputSearchDiv">
           <i class="bi bi-search"></i>
-              <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Encaminhamento">
+              <input onkeyup="searchFilter()" class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Histórico">
            </form>
-          <button onclick="newHisVol()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo Encaminhamento</p></button>
+          <button onclick="newHisVol()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo Histórico</p></button>
           </div>
           <br>
 
       <div class="tabela-encam">
-        <table class="table">
+        <table class="table" id="table">
             <thead>
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Título</th>
                 <th scope="col">Data</th>
                 <th scope="col">Duração</th>
-                <th scope="col">IDPerfil</th>
             </tr>
             </thead>
             <tbody id="table-historico-voluntarios">
             </tbody>
         </table>
     </div>
-
-          
       </section>
+      <div id="modal"></div>
       <script src="../js/historicoVol.js"></script>
 </body>
 </html>

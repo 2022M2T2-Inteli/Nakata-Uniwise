@@ -21,101 +21,6 @@ if(sidebar.classList.contains("open")){
 }
 }
 
-
-// MARIANA SCRIPT
-
-for (var i = 0; i < 4; i++) {
-    $("#programação-eventos")
-        .append(`<div class="cards-programação col-12 col-md-5 m-2">
-    <div class="texto-card-programação" >
-        <h4>Sexta-Feira 03/06/2022</h4>
-        <h5>Brecho Aberto</h5>
-        <P>descrição do evento</P>
-        <p> Abertura a comunidade | Privado</p>
-    </div>
-</div>`)
-};
-
-for (var i = 0; i < 3; i++) {
-    $("#programação-eventos-2")
-        .append(`<div class="cards-programação col-12 col-md-5 m-2">
-    <div class="texto-card-programação" >
-        <h4>Quarta-Feira 20/07/2022</h4>
-        <h5>Laboratório de comidas típicas</h5>
-        <P>descrição do evento</P>
-        <p> Abertura a comunidade | Privado</p>
-    </div>
-</div>`)
-};
-
-// PARCEIROS ADM DANIEL
-
-for (var i = 0; i < 8; i++) {
-    $("#listas-cards-adminstrativo")
-        .append(`
-        <div class="cards-administrativo texto-card-administrativo col-12 col-md-5 m-2">
-            <div>
-                <h5 class="texto-ajuda ajuda">Nome do parceiro</h5>
-            </div>
-            <h5>[Nome do responsável]</h5>
-            <p>email: exemplo@exemplo.com.br</p>
-            <p>telefone: (11) 1111-1111</p>
-            <p>mensagem: "Olá, como posso ajudar hoje?"</p>
-        </div>
-        `)
-};
-
-// VOLUNTARIOS ADM DANIEL
-for (var i = 0; i < 8; i++) {
-    $("#listas-cards-adminstrativo")
-        .append(`
-        <div class="cards-administrativo texto-card-administrativo col-12 col-md-5 m-2">
-            <div>
-                <h5 class="texto-ajuda ajuda">Bazar</h5>
-            </div>
-            <h5>[Nome do voluntário]</h5>
-            <p>email: exemplo@exemplo.com.br</p>
-            <p>telefone: (11) 1111-1111</p>
-            <p>mensagem: "Olá, gostaria de ajudar com o bazar."</p>
-        </div>
-        `)
-};
-
-//teste//
-
-// Getting all necessary elements from DOM.
-const elements = {
-    monthToReceiveValueBoxes: document.querySelectorAll(".to-receive-values-box"),
-    visibilityControlButtons: document.querySelectorAll("#visibility-control-btn"),
-}
-// Instancing the resfreshVisibleBoxes function.
-function refreshVisibleBoxes() {
-    // Getting all month to receive boxes elements and setting its display property according to their classes.
-    elements.monthToReceiveValueBoxes.forEach(box => {
-        if(box.classList.contains("active")) {
-            box.children[1].style.display = "flex";
-        } else {
-            box.children[1].style.display = "none";
-        }
-    })
-}
-// Getting all visibility control buttons.
-elements.visibilityControlButtons.forEach(button => {
-    // Adding a click event listener to all buttons.
-    button.addEventListener("click", function() {
-        // Controlling the "active" class in the target month to receive box element.
-        if(button.parentNode.parentNode.classList.contains("active")) {
-            button.parentNode.parentNode.classList.remove("active")
-            button.parentNode.children[1].src = "../icons/arrow-down-circle.svg";
-        } else {
-            button.parentNode.parentNode.classList.add("active");
-            button.parentNode.children[1].src = "../icons/arrow-up-circle.svg";
-        }
-        // Refreshing the visible boxes.
-        refreshVisibleBoxes();
-    })
-})
-
 // PAGINA Doação
 
 function buttonNewAss() {
@@ -129,7 +34,7 @@ function fecharModal() {
 const tableBodyy = document.querySelector("#table-body-toalha");
 
 $.ajax({
-    url: "http://127.0.0.1:3081/doacaoselect",
+    url: "http://127.0.0.1:3081/selecttoalha",
     type: 'GET',
     success: data => {
         data.forEach(element => {
@@ -138,10 +43,10 @@ $.ajax({
         
         <tr>
                 <th scope="row">${element.IDToalha}</th>
+                <td>${element.nomeToalha}</td>
                 <td>${element.numeroToalha}</td>
-                <td><button onclick="editDoacao(${element.IDDoacao})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                  <button onclick="deleteDoacao(${element.IDDoacao})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
-                  <button onclick="viewDoacao(${element.IDDoacao})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
+                <td><button onclick="editDoacao(${element.IDToalha})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
+                  <button onclick="deleteDoacao(${element.IDToalha})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                 </td>
         </tr>
 
@@ -152,26 +57,17 @@ $.ajax({
 });
 
 function salvarAss() {
-    const inputTitulo = document.querySelector("input[name='titulo']").value;
-    const inputDescricao = document.querySelector("input[name='descricao']").value;
-    const inputData = document.querySelector("input[name='data']").value;
-    const inputHora = document.querySelector("input[name='horario']").value;
-    const inputValor = document.querySelector("input[name='valor']").value;
-    const inputCompro = document.querySelector("input[name='compro']").value;
+    const inputTitulo = document.querySelector("input[name='nomeToalha']").value;
+    const inputDescricao = document.querySelector("input[name='numeroToalha']").value;
 
 
     var settings = {
-        "url": "http://127.0.0.1:3081/doacaoinsert",
+        "url": "http://127.0.0.1:3081/toalhainsert",
         "method": "POST",
         "timeout": 0,
         "data": {
-            "tituloDoacao": inputTitulo,
-            "descricaoDoacao": inputDescricao,
-            "dataDoacao": inputData,
-            "horarioDoacao": inputHora,
-            "valorDoacao": inputValor,
-            "comproDoacao": inputCompro,
-
+            "nomeToalha": inputTitulo,
+            "numeroToalha": inputDescricao,
         }
       };
       
@@ -181,38 +77,39 @@ function salvarAss() {
 function deleteDoacao(id) {
     const div = document.createElement("div");
     div.innerHTML = `
-    <div id="myModal4"class="modal customizar">
+    <div id="myModal`+ id +`"class="modal customizar">
         <div class="modal-dialog" role="document">
         <div class="modal-content customize">
             <div class="modal-body">
-            <p>Tem certeza que deseja excluir a doação ${id}?</p>
+            <p>Tem certeza que deseja excluir a toalha com ID ${id}?</p>
             </div>
             <div class="modal-footer">
             <button onclick="deletedoc(${id})" type="button" class="btn btn-primary">Confirmar exclusão</button>
-            <button onclick="fecharModall()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar exclusão</button>
+            <button onclick="fecharModall(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar exclusão</button>
             </div>
         </div>
         </div>
     </div>
     `
     document.body.appendChild(div);
-    $('#myModal4').modal('show');
+    $('#myModal' + id).modal('show');
 };
 
-function fecharModall() {
-    $('#myModal4').modal('hide');
-    $('#myModal4').remove();
+function fecharModall(id) {
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
 function deletedoc(id) {
         $.ajax({
             type: 'POST',
-            url: "http://127.0.0.1:3081/doacaodelete",
-            data: {IDDoacao: id},
+            url: "http://127.0.0.1:3081/toalhadelete",
+            data: {IDToalha: id},
         })
 }
 
 function enableField(number){
+    console.log("logostoso")
     document.getElementById("inputEdit" + number).disabled = false;
 }
 
@@ -220,93 +117,67 @@ function disableField(number){
     document.getElementById("inputEdit" + number).disabled = true;
 }
 
+function teste(){
+    console.log("log")
+}
+
 function editDoacao(id) {
     $.ajax({
-        url: "http://127.0.0.1:3081/doacaoselect",
+        url: "http://127.0.0.1:3081/selecttoalha",
         type: 'GET',
         success: data => {
             data.forEach(element => {
-                const editarDo = document.createElement("div");
-                editarDo.innerHTML = `
-                    <div id="myModa67"class="modal customizar">
+                const editarDo = `
+                    <div id="myModal`+id+`"class="modal customizar">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content customize">
                             <div class="modal-body">
                             <div class="mb-1" id="teste23">
                             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(1)" class="editInput" type="text" id="inputEdit1" placeholder="${element.tituloDoacao}" value="${element.tituloDoacao}"></input>
+                            <input disabled onfocusout="disableField(1)" class="form-control" type="text" id="inputEdit1" placeholder="${element.nomeToalha}" value="${element.nomeToalha}"></input>
                             <button onclick="enableField(1)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-2">
                             <label for="exampleInputEmail1" class="form-label"></label>Descrição:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(2)" class="editInput" type="text" id="inputEdit2" placeholder="${element.descricaoDoacao}" value="${element.descricaoDoacao}"></input>
+                            <input disabled onfocusout="disableField(2)" class="form-control" type="text" id="inputEdit2" placeholder="${element.numeroToalha}" value="${element.numeroToalha}"></input>
                             <button onclick="enableField(2)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
-                            </div>
-                            </div>
-                            <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label"></label>Valor:
-                            <div id="displaytt">
-                            <input disabled onfocusout="disableField(3)" class="editInput" type="text" id="inputEdit3" placeholder="${element.valorDoacao}" value="${element.valorDoacao}"></input>
-                            <button onclick="enableField(3)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
-                            </div>
-                            </div>
-                            <div class="mb-4">
-                            <label for="exampleInputEmail1" class="form-label"></label>Data:
-                            <div id="displaytt">
-                            <input disabled onfocusout="disableField(4)" class="editInput" type="text" id="inputEdit4" placeholder="${element.dataDoacao}" value="${element.dataDoacao}"></input>
-                            <button onclick="enableField(4)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
-                            </div>
-                            </div>
-                            <div class="mb-4">
-                            <label for="exampleInputEmail1" class="form-label"></label>Horário:
-                            <div id="displaytt">
-                            <input disabled onfocusout="disableField(5)" class="editInput" type="text" id="inputEdit5" placeholder="${element.horarioDoacao}" value="${element.horarioDoacao}"></input>
-                            <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
-                            </div>
-                            </div>
-                            <div class="mb-6">
-                            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
-                            <div id="displaytt">
-                            <input disabled onfocusout="disableField(6)" class="editInput" type="text" id="inputEdit6" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
-                            <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             </div>
                             <div class="modal-footer">
                             <button onclick="editVal(${id})" type="button" class="btn btn-primary">Confirmar edição</button>
-                            <button onclick="fecharVal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
+                            <button onclick="fecharVal(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
                             </div>
                         </div>
                         </div>
                     </div>
     `
-    document.body.appendChild(editarDo);
-    $('#myModa67').modal('show');
+    if(element.IDToalha == id){
+        console.log("oi")
+        document.getElementById("modal").innerHTML = editarDo;
+        $('#myModal' + id).modal('show');
+    }
             });
         }
     });
 };
 
-function fecharVal() {
-    $('#myModa67').modal('hide');
-    $('#myModa67').remove();
+function fecharVal(id) {
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
 function editVal(id) {
     var edit1 = document.getElementById('inputEdit1').value;
     var edit2 = document.getElementById('inputEdit2').value;
-    var edit3 = document.getElementById('inputEdit3').value;
-    var edit4 = document.getElementById('inputEdit4').value;
-    var edit5 = document.getElementById('inputEdit5').value;
-    var edit6 = document.getElementById('inputEdit6').value;
 
     $.ajax({
         type: 'POST',
-        url: 'http://127.0.0.1:3081/doacaoupdate',
-        data: {IDDoacao: id, tituloDoacao: edit1, descricaoDoacao: edit2, valorDoacao: edit3, dataDoacao: edit4, horarioDoacao: edit5, comproDoacao: edit6},
+        url: 'http://127.0.0.1:3081/toalhaupdate',
+        data: {IDToalha: id, nomeToalha: edit1, numeroToalha: edit2},
     }).done(function () {
         console.log("aq")
     }).fail(function (msg) {
@@ -315,64 +186,27 @@ function editVal(id) {
         //console.log('ALWAYS');
     });
     
-    $('#myModa67').modal('hide');
-    $('#myModa67').remove();
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
-// TESTE
+function searchFilter() {
+    var input, filter, table, tr, td, i, txtValue;
+  
+    input = document.getElementById("inputSearchID");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table");
+    tr = table.getElementsByTagName("tr");
 
-function viewDoacao(id) {
-    $.ajax({
-        url: "http://127.0.0.1:3081/doacaoselect",
-        type: 'GET',
-        success: data => {
-            data.forEach(element => {
-                const divvv = document.createElement("div");
-    divvv.innerHTML = `
-    <div id="myModa22"class="modal customizar">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content customize">
-            <div class="modal-body">
-            <div class="mb-1">
-            <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-            <p class="textAA">${element.tituloDoacao}</p>
-          </div>
-          <div class="mb-2">
-            <label for="exampleInputEmail1" class="form-label"></label>Descrição:
-            <p class="textAA">${element.descricaoDoacao}</p>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"></label>Valor:
-            <p class="textAA">${element.valorDoacao}</p>
-          </div>
-          <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label"></label>Data:
-            <p class="textAA">${element.dataDoacao}</p>
-          </div>
-          <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label"></label>Horário:
-            <p class="textAA">${element.horarioDoacao}</p>
-          </div>
-          <div class="mb-6">
-            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
-            <p class="textAA">${element.comproDoacao}</p>
-          </div>
-            </div>
-            <div class="modal-footer">
-            <button onclick="fecharform()" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar formulário</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    `
-    document.body.appendChild(divvv);
-    $('#myModa22').modal('show');
-            });
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
         }
-    });
-};
-
-function fecharform() {
-    $('#myModa22').modal('hide');
-    $('#myModa22').remove();
-};
+      }
+    }
+  }
