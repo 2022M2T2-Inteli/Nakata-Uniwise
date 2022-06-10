@@ -224,6 +224,23 @@ header{
     line-height: 25px;
 }
 
+.adm{
+    color: rgb(0, 0, 0);
+    background-color: #2b2b2b;
+    border-radius: 20px;
+    border: none;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    line-height: 25px;
+    padding: 2%;
+}
+
+.fa-solid{
+    color: white;
+}
+
 #myFooter{
    flex: 0 0 auto;
    -webkit-flex: 0 0 auto;
@@ -674,6 +691,36 @@ header{
     text-align: center;
 }
 
+.equipe{
+    padding-bottom: 8%;
+    padding-top: 4%;
+    background-image: url("../assets/img/Fundo-Atuacao.jpg");
+}
+
+
+.cardequipe{
+    border-radius: 20px;
+    border: none;
+    box-shadow: 1px 1px 4px 4px rgb(195, 193, 193);
+}
+
+.equipe{
+    text-align: center;
+}
+
+.positionteam{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 44%;
+    height: 27vh;
+}
+
+.positionteam img{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
 @keyframes moveObject {
     0% {
         transform: translateX(0);
@@ -1030,6 +1077,7 @@ input, button{
 }
 
 /* --- PÁGINA  DOAÇÕES --- */
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
 
 .videoInicio {
