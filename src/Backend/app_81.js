@@ -502,7 +502,7 @@ app.post('/toalhainsert', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  sql = "INSERT INTO Toalha (numeroToalha) VALUES ('"+ req.body.numeroToalha +"')";
+  sql = "INSERT INTO Toalha (nomeToalha, numeroToalha) VALUES ('"+ req.body.nomeToalha +"', '"+ req.body.numeroToalha +"')";
   var db = new sqlite3.Database(DBPATH);
   db.run(sql, [],  err => {
       if (err) {
@@ -534,7 +534,7 @@ app.post('/toalhaupdate', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-  sql = "UPDATE Toalha SET numeroToalha = '" + req.body.numeroToalha + "' WHERE IDToalha = " + req.body.IDToalha;
+  sql = "UPDATE Toalha SET numeroToalha = '" + req.body.numeroToalha + "', nomeToalha = '" + req.body.nomeToalha + "' WHERE IDToalha = " + req.body.IDToalha;
   
   var db = new sqlite3.Database(DBPATH);
   db.run(sql, [],  err => {

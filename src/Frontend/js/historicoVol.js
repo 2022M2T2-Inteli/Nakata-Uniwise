@@ -17,14 +17,12 @@ $.ajax({
         histvol.innerHTML = `
         
         <tr>
-                <th scope="row">${element.IDHistorico}</th>
+                <th scope="row">${element.IDHistoricoVol}</th>
                 <td>${element.tituloHisVol}</td>
                 <td>${element.dataHisVol}</td>
                 <td>${element.duracaoHisVol}</td>
-                <td>${element.IDPerfil}</td>
-                <td><button onclick="edithistoricovol(${element.IDHistorico})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                  <button onclick="deletehistoricovol(${element.IDHistorico})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
-                  <button onclick="viewhistoricovol(${element.IDHistorico})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
+                <td><button onclick="edithistoricovol(${element.IDHistoricoVol})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
+                  <button onclick="deletehistoricovol(${element.IDHistoricoVol})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                 </td>
         </tr>
 
@@ -58,7 +56,7 @@ function saveHisVol() {
 function deletehistoricovol(id) {
     const hisvol = document.createElement("div");
     hisvol.innerHTML = `
-    <div id="myModal4"class="modal customizar">
+    <div id="myModal`+ id +`"class="modal customizar">
         <div class="modal-dialog" role="document">
         <div class="modal-content customize">
             <div class="modal-body">
@@ -66,19 +64,19 @@ function deletehistoricovol(id) {
             </div>
             <div class="modal-footer">
             <button onclick="deletehisvol(${id})" type="button" class="btn btn-primary">Confirmar exclusão</button>
-            <button onclick="fecharModall()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar exclusão</button>
+            <button onclick="fecharModall(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar exclusão</button>
             </div>
         </div>
         </div>
     </div>
     `
     document.body.appendChild(hisvol);
-    $('#myModal4').modal('show');
+    $('#myModal' + id).modal('show');
 };
 
-function fecharModall() {
-    $('#myModal4').modal('hide');
-    $('#myModal4').remove();
+function fecharModall(id) {
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
 function deletehisvol(id) {
@@ -89,31 +87,41 @@ function deletehisvol(id) {
         })
     }
 
-function edithistoricovol (id) {
-    const divv = document.createElement("div");
-    divv.innerHTML = `
-    <div id="myModal9"class="modal customizar">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content customize">
-            <div class="modal-body">
-            <label for="exampleInputEmail1" class="form-label"></label>Novo Titulo:
-            <input type="text" class="form-control" name="valorNew" id="edittt">
+function edithistoricovol(id) {
+    $.ajax({
+        url: "http://127.0.0.1:3081/historicovoluntariosselect",
+        type: 'GET',
+        success: data => {
+            data.forEach(element => {
+                const editarDo = `
+                <div id="myModal`+id+`"class="modal customizar">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content customize">
+                    <div class="modal-body">
+                    <label for="exampleInputEmail1" class="form-label"></label>Novo Titulo:
+                    <input type="text" class="form-control" name="valorNew" id="edittt">
+                    </div>
+                    <div class="modal-footer">
+                    <button onclick="editVal(${id})" type="button" class="btn btn-primary">Confirmar edição</button>
+                    <button onclick="fecharVal(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
+                    </div>
+                </div>
+                </div>
             </div>
-            <div class="modal-footer">
-            <button onclick="editVal(${id})" type="button" class="btn btn-primary">Confirmar edição</button>
-            <button onclick="fecharVal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
-            </div>
-        </div>
-        </div>
-    </div>
     `
-    document.body.appendChild(divv);
-    $('#myModal9').modal('show');
+    if(element.IDHistoricoVol == id){
+        console.log("oi")
+        document.getElementById("modal").innerHTML = editarDo;
+        $('#myModal' + id).modal('show');
+    }
+            });
+        }
+    });
 };
 
-function fecharVal() {
-    $('#myModal9').modal('hide');
-    $('#myModal9').remove();
+function fecharVal(id) {
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
 function editVal(id) {
@@ -130,6 +138,27 @@ function editVal(id) {
         //console.log('ALWAYS');
     });
     
-    $('#myModal9').modal('hide');
-    $('#myModal9').remove();
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
+
+function searchFilter() {
+    var input, filter, table, tr, td, i, txtValue;
+  
+    input = document.getElementById("inputSearchID");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
