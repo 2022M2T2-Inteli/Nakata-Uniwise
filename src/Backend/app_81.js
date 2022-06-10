@@ -640,7 +640,7 @@ app.post('/piainsert', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  var sql = "INSERT INTO FichaPIA (nomePIA, nomeSocPIA, tecPIA, datanascPIA, localPIA, sexoPIA, racaPIA, filiacaoPIA, estadoCivilPIA, profissaoPIA, attProfPIA, empresaPIA, beneficioPIA, valorBenePIA, deficienciaPIA, depQuimicoPIA, centAcolhiPIA, comproJudiPIA) VALUES ('"+ req.body.nomePIA +"', '"+ req.body.nomeSocPIA +"', '"+ req.body.tecPIA +"', '"+ req.body.datanascPIA +"', '"+ req.body.localPIA +"', '"+ req.body.sexoPIA +"', '"+ req.body.racaPIA +"', '"+ req.body.filiacaoPIA +"', '"+ req.body.estadoCivilPIA +"', '"+ req.body.profissaoPIA +"', '"+ req.body.attProfPIA +"', '"+ req.body.empresaPIA +"', '"+ req.body.beneficioPIA +"', '"+ req.body.valorBenePIA +"', '"+ req.body.deficienciaPIA +"', '"+ req.body.depQuimicoPIA +"', '"+ req.body.centAcolhiPIA +"', '"+ req.body.comproJudiPIA +"')";
+  var sql = "INSERT INTO FichaPIA (nomePIA, nomeSocPIA, tecPIA, datanascPIA, localPIA, sexoPIA, racaPIA, filiacaoPIA, estadoCivilPIA, profissaoPIA, attProfPIA, empresaPIA, beneficioPIA, valorBenePIA, deficienciaPIA, depQuimicoPIA, centAcolhiPIA, comproJudiPIA, religiaoPIA, escolaridadePIA, rgPIA, emissaoPIA, orgaoDocPIA, certPIA, livroPIA, folhaPIA, cpfPIA, pisPIA, reservistaPIA, eleitorPIA, secaoPIA, zonaPIA, ctpsPIA, serieCtpsPIA, emissaoCtpsPIA, refEndePIA, tipoPIA, ruaPIA, fonePIA, bairroPIA, municipioPIA, tipoAttProfPIA, rendaMensalPIA, expeDefiPIA, probleSauPIA, medicacoesProblePIA, drogasDepPIA, temRuaPIA, motivoTempRuaPIA, proceMotiTempRuaPIA, qualComproJudiPIA, propInicialPIA, PTRS, especiSauPIA) VALUES ('"+ req.body.nomePIA +"', '"+ req.body.nomeSocPIA +"', '"+ req.body.tecPIA +"', '"+ req.body.datanascPIA +"', '"+ req.body.localPIA +"', '"+ req.body.sexoPIA +"', '"+ req.body.racaPIA +"', '"+ req.body.filiacaoPIA +"', '"+ req.body.estadoCivilPIA +"', '"+ req.body.profissaoPIA +"', '"+ req.body.attProfPIA +"', '"+ req.body.empresaPIA +"', '"+ req.body.beneficioPIA +"', '"+ req.body.valorBenePIA +"', '"+ req.body.deficienciaPIA +"', '"+ req.body.depQuimicoPIA +"', '"+ req.body.centAcolhiPIA +"', '"+ req.body.comproJudiPIA +"', '"+ req.body.religiaoPIA +"', '"+ req.body.escolaridadePIA +"', '"+ req.body.rgPIA +"', '"+ req.body.emissaoPIA +"', '"+ req.body.orgaoDocPIA +"', '"+ req.body.certPIA +"', '"+ req.body.livroPIA +"', '"+ req.body.folhaPIA +"', '"+ req.body.cpfPIA +"', '"+ req.body.pisPIA +"', '"+ req.body.reservistaPIA +"', '"+ req.body.eleitorPIA +"', '"+ req.body.secaoPIA +"', '"+ req.body.zonaPIA +"', '"+ req.body.ctpsPIA +"', '"+ req.body.serieCtpsPIA +"', '"+ req.body.emissaoCtpsPIA +"', '"+ req.body.refEndePIA +"', '"+ req.body.tipoPIA +"', '"+ req.body.ruaPIA +"', '"+ req.body.fonePIA +"', '"+ req.body.bairroPIA +"', '"+ req.body.municipioPIA +"', '"+ req.body.tipoAttProfPIA +"', '"+ req.body.rendaMensalPIA +"', '"+ req.body.expeDefiPIA +"', '"+ req.body.probleSauPIA +"', '"+ req.body.medicacoesProblePIA +"', '"+ req.body.drogasDepPIA +"', '"+ req.body.temRuaPIA +"', '"+ req.body.motivoTempRuaPIA +"', '"+ req.body.proceMotiTempRuaPIA +"', '"+ req.body.qualComproJudiPIA +"', '"+ req.body.propInicialPIA +"', '"+ req.body.PTRS +"', '"+ req.body.especiSauPIA +"')";
   var db = new sqlite3.Database(DBPATH);
   db.run(sql, [],  err => {
       if (err) {
@@ -672,26 +672,26 @@ app.post('/piaupdate', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  sql = "UPDATE FichaPIA SET nomeSocPIA = '" + req.body.nomeSocPIA + "' WHERE IDPIA = " + req.body.IDPIA;
-  sqll = "UPDATE FichaPIA SET tecPIA = '" + req.body.tecPIA + "' WHERE IDPIA = " + req.body.IDPIA;
+  sql = "UPDATE FichaPIA SET nomeSocPIA = '" + req.body.nomeSocPIA + "', tecPIA = '" + req.body.tecPIA + "', nomePIA = '" + req.body.nomePIA + "', filiacaoPIA = '" + req.body.filiacaoPIA + "', datanascPIA = '" + req.body.datanascPIA + "', localPIA = '" + req.body.localPIA + "', sexoPIA = '" + req.body.sexoPIA + "', estadoCivilPIA = '" + req.body.estadoCivilPIA + "', racaPIA = '" + req.body.racaPIA + "', religiaoPIA = '" + req.body.religiaoPIA + "', escolaridadePIA = '" + req.body.escolaridadePIA + "', rgPIA = '" + req.body.rgPIA + "', emissaoPIA = '" + req.body.emissaoPIA + "', orgaoDocPIA = '" + req.body.orgaoDocPIA + "', certPIA = '" + req.body.certPIA + "', livroPIA = '" + req.body.livroPIA + "', folhaPIA = '" + req.body.folhaPIA + "', cpfPIA = '" + req.body.cpfPIA + "', pisPIA = '" + req.body.pisPIA + "', reservistaPIA = '" + req.body.reservistaPIA + "', eleitorPIA = '" + req.body.eleitorPIA + "', secaoPIA = '" + req.body.secaoPIA + "', zonaPIA = '" + req.body.zonaPIA + "', ctpsPIA = '" + req.body.ctpsPIA + "', serieCtpsPIA = '" + req.body.serieCtpsPIA + "', emissaoCtpsPIA = '" + req.body.emissaoCtpsPIA + "', refEndePIA = '" + req.body.refEndePIA + "', tipoPIA = '" + req.body.tipoPIA + "', ruaPIA = '" + req.body.ruaPIA + "', fonePIA = '" + req.body.fonePIA + "', bairroPIA = '" + req.body.bairroPIA + "', municipioPIA = '" + req.body.municipioPIA + "', profissaoPIA = '" + req.body.profissaoPIA + "', attProfPIA = '" + req.body.attProfPIA + "', tipoAttProfPIA = '" + req.body.tipoAttProfPIA + "', rendaMensalPIA = '" + req.body.rendaMensalPIA + "', empresaPIA = '" + req.body.empresaPIA + "', beneficioPIA = '" + req.body.beneficioPIA + "', valorBenePIA = '" + req.body.valorBenePIA + "', deficienciaPIA = '" + req.body.deficienciaPIA + "', expeDefiPIA = '" + req.body.expeDefiPIA + "', probleSauPIA = '" + req.body.probleSauPIA + "', medicacoesProblePIA = '" + req.body.medicacoesProblePIA + "', depQuimicoPIA = '" + req.body.depQuimicoPIA + "', drogasDepPIA = '" + req.body.drogasDepPIA + "', temRuaPIA = '" + req.body.temRuaPIA + "', motivoTempRuaPIA = '" + req.body.motivoTempRuaPIA + "', proceMotiTempRuaPIA = '" + req.body.proceMotiTempRuaPIA + "', centAcolhiPIA = '" + req.body.centAcolhiPIA + "', comproJudiPIA = '" + req.body.comproJudiPIA + "', qualComproJudiPIA = '" + req.body.qualComproJudiPIA + "', propInicialPIA = '" + req.body.propInicialPIA + "', PTRS = '" + req.body.PTRS + "' WHERE IDPIA = '" + req.body.IDPIA + "'";
   
+sql2 = "UPDATE FichaPIA SET especiSauPIA = '" + req.body.especiSauPIA + "' WHERE IDPIA = '" + req.body.IDPIA + "'";
   var db = new sqlite3.Database(DBPATH);
-  var dbb = new sqlite3.Database(DBPATH);
+  var db2 = new sqlite3.Database(DBPATH);
   db.run(sql, [],  err => {
       if (err) {
           throw err;
       }
       res.end();
   });
-  db.close(); 
+  db.close();
 
-  dbb.run(sqll, [],  err => {
-      if (err) {
+  db2.run(sql2, [],  err => {
+    if (err) {
         throw err;
     }
     res.end();
-  });
-  dbb.close(); 
+});
+db2.close(); 
 });
 
 
