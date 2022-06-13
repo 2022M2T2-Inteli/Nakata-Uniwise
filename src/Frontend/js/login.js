@@ -15,7 +15,7 @@ function login(){
             console.log(data);
             if(data) {
                 console.log("Identificou");
-                window.location.replace("../páginas_Adm/UserAssistidos.html");
+                window.location.replace("../páginas_Adm/adminHome.html");
             }
             else{
                 alert("Dados incorretos!");
