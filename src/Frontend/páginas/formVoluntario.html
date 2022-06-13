@@ -11,15 +11,15 @@
     <title>Revirar</title>
 </head>
 <body>
-  <header id="header">
+  <header id="header"> <!-- esse header contém a barra de navegação do site -->
     <div id="nav" class="center-menu">
         <div class="logo">
-          <h2>re<b>virar</b></h2>
+          <h2>re<b>virar</b></h2> <!-- nome do projeto  -->
         </div>
         <button id="btn"> .
           <span id="hamburguer"></span>
       </button>
-        <ul id="menu" class="nav nav-pills">
+        <ul id="menu" class="nav nav-pills"> <!-- essa lista contém as páginas do site -->
 
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
@@ -52,7 +52,7 @@
     </div>
 </header>
 
-    <section class="text-home">
+    <section class="text-home"> <!-- essa section contém o título da página, um texto informativo e um formulário específico das categorias possíveis para serem escolhidas -->
         <div>
             <p><h1>Voluntariado</h1></p>
         </div>
@@ -65,29 +65,29 @@
         <section>
           <div class="container my-5">
 
-            <div class="titulos">
-                <h1 id="título"> Inscreva-se </h1>
-                <h4 id="subtítulo"> Categorias específicas </h4>
+            <div class="titles">
+                <h1 id="title"> Inscreva-se </h1>
+                <h4 id="caption"> Categorias específicas </h4>
                 <br>
             </div>
             
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <form>
-                        <div class="campos">
-                            <div class="campo">
-                                <label for="nomeCompleto"> Nome Completo* </label>
-                                <input type="text" name="nomeCompleto" id="nomeCompleto" placeholder="Seu nome" required>
+                        <div class="fields"> <!-- essa div possui um formulário com duas opções de input e uma de select-->
+                            <div class="field">
+                                <label for="fullName"> Nome Completo* </label>
+                                <input type="text" name="fullName" id="fullName" placeholder="Seu nome" required>
                             </div>
                             
-                            <div class="campo">
-                                <label for="contato"> E-mail ou telefone* </label>
-                                <input type="email" name="contato" id="contato" placeholder="Seu contato" required>
+                            <div class="field">
+                                <label for="contact"> E-mail ou telefone* </label>
+                                <input type="email" name="contact" id="contact" placeholder="Seu contato" required>
                             </div>
                             
-                            <div class="campo">
-                                <label for="função"> Função desejada* </label>
-                                <select name="função" id="função" required>
+                            <div class="field"> <!-- essa div possuí um select, para o usuário escolher wqual função ele deseja exercer -->
+                                <label for="function"> Função desejada* </label>
+                                <select name="function" id="IDFuncao" required>
                                     <option selected disabled value="">Escolha</option>
                                     <option value = "1"> Assistência na cantina </option>
                                     <option value = "2"> Cuidar da horta </option>
@@ -97,16 +97,16 @@
                                 </select>
                             </div>
                             
-                            <div class="buttonDiv2">
-                              <button type="button" class="btn btn-primary button2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <div class="buttonDiv2"> 
+                              <button type="button" class="btn btn-primary button2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <!-- esse botão serve para a pessoa enviar o formulário, e, em seguida, um modal aparece para confirmar o envio -->
                                 Enviar
                               </button>
 
-                              <button type="button" class="btn btn-primary button2" data-bs-target="#staticBackdrop">
+                              <button type="button" class="btn btn-primary button2" data-bs-target="#staticBackdrop"> <!-- esse botão serve para voltar à página que o usúario estava, caso seja de sua vontade -->
                                 Voltar
                               </button>
                               
-                              <!-- Modal -->
+                              <!-- código do modal -->
                               <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
@@ -139,7 +139,7 @@
     </section>
          
 
-    <footer id="myFooter">
+    <footer id="myFooter"> <!-- essa footer contém os elementos do rodapé -->
       <div class="container">
         <div class="row">
             <div class="col-sm-3">
@@ -147,7 +147,7 @@
             </div>
             <div class="home2 col-sm-2">
                 <h5>Inicio</h5>
-                <ul>
+                <ul> <!-- lista de navegação das páginas (com excessão da de doação)--> 
                     <li><a href="../páginas/index.html"><img class="arrow" src="../assets/img/arrow_icon.png"> Home</a></li>
                     <li><a href="../páginas/sobre.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Sobre</a></li>
                     <li><a href="../páginas/voluntariad.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Voluntariado</a></li>
@@ -157,7 +157,7 @@
             </div>
             <div class="home3 col-sm-2">
                 <h5>Doações</h5>
-                <ul>
+                <ul> <!-- lista dos subtítulos da página de doação -->
                     <li><a href="../páginas/doacao.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Dinheiro</a></li>
                     <li><a href="../páginas/doacao.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Alimentos</a></li>
                     <li><a href="../páginas/doacao.html"><img class="arrow" src="../assets/img/arrow_icon.png">  Roupas</a></li>
@@ -171,7 +171,7 @@
                     Siga o projeto Revirar nas Redes Sociais!
                   </p>
                 </div>
-                <div class="social-networks">
+                <div class="social-networks">  <!-- div dos links das redes sociais -->
                     <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                     <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                     <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
