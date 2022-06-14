@@ -1288,6 +1288,7 @@ input, button{
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
+    text-align: center;
 }
 .form__field::placeholder {
     color: transparent;
@@ -1609,6 +1610,10 @@ input, button{
 
 .buttontst2 {
     background-color: #427aa1;
+}
+
+.buttontst3 {
+    background-color: #FAF806;
 }
 
 
