@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <title>Abordagem</title>
+    <title>Formulários</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>	
     <link rel="stylesheet" href="../css/iniadm.css">
 </head>
@@ -93,7 +93,7 @@
         </ul>
       </div>
       <section class="home-section">
-          <div class="text">Formulários</div>
+          <div class="text">Formulários de Voluntários</div>
           <br>
           <div class="novoUsuario">
            <form class="inputSearchDiv">
@@ -101,23 +101,25 @@
               <input onkeyup="searchFilter()" class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar ficha">
            </form>
           </div>
-
           <br>
-          <table class="table" id="table">
-            <thead class="thead-warning">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Contato</th>
-                <th scope="col">Função Desejada</th>
-                <th scope="col">Edição</th>
-              </tr>
-            </thead>
-            <tbody id="table-body-form">
-            </tbody>
-          </table>
+            <table class="table" id="table">
+              <thead class="thead-warning">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Contato</th>
+                  <th scope="col">Função</th>
+                  <th scope="col">Edição</th>
+                  <th scope="col">Feedback</th>
+                </tr>
+              </thead>
+              <tbody id="table-body-form">
+              </tbody>
+            </table>
+       
+          
       </section>
-      
+      <div id="modalForm"></div>
       <script src="../js/formularioVoluntarios.js"></script>
 </body>
 </html>
