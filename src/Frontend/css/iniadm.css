@@ -844,3 +844,21 @@ transition: all .2s ease-in-out;
 .t2 {
   text-decoration: none;
 }
+
+.green {
+  background-color: #5FDBA7;
+  color: white;
+}
+
+.red {
+  background-color: #FF7985;
+  color: white;
+}
+
+.white {
+  background-color: #FFF;
+}
+
+.alinhamento{
+  width: 20vh;
+}

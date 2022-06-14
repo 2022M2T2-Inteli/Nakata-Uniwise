@@ -752,20 +752,20 @@ header{
     font-size: 40px !important;
 }
 
-.videosobrerevirar{
+.videoaboutrevirar{
     background-image: url(../assets/img/Fundo-Atuacao.jpg);
     padding: 4%;
 }
 
-.videosobrerevirar h1{
+.videoaboutrevirar h1{
     text-align: center;
 }
 
-.videosobrerevirar h3{
+.videoaboutrevirar h3{
     text-align: center;
 }
 
-.videosobre{
+.videoabout{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -878,7 +878,7 @@ header{
 }
 
 /* COntainer para o vídeo do YouTube ficar em um tamanho específico e responsivo */
-.video-container-sobre {
+.video-container-about {
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -886,13 +886,13 @@ header{
     width:60%;
 }
 
-.video-container-sobre::after {
+.video-container-about::after {
     padding-top: 70%;
     display: block;
     content: '';
 }
 
-.video-container-sobre iframe {
+.video-container-about iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -942,7 +942,7 @@ header{
 
 /* --- PÁGINA  VOLUNTARIADO --- */
 
-.titulos{
+.titles{
     text-align: center;
     margin-bottom: 0.5rem;
 }
@@ -955,7 +955,7 @@ input, button{
     margin-bottom: 1.5rem;
 }
 
-#nomeCompleto, #contato, #função{
+#fullName, #contact, #IDFuncao, #TelefoneEmail, #Nome{
     border-radius: 0;
     border: 0;
     border-bottom: 1px solid grey;
@@ -1003,7 +1003,7 @@ input, button{
     width: 75%;
 }
 
-.campos{
+.fields{
     width: 100%;
 
 }
@@ -1075,6 +1075,18 @@ input, button{
     width: 100%;
     margin-top: 20px;
 }
+
+/* vídeo voluntários*/
+
+.VolVideos {
+    width: 100%;
+    text-align: center;
+}
+
+.video-responsive-Vol iframe {
+    width: 560px;
+    height: 315px;
+};
 
 /* --- PÁGINA  DOAÇÕES --- */
 
@@ -1276,6 +1288,7 @@ input, button{
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
+    text-align: center;
 }
 .form__field::placeholder {
     color: transparent;
@@ -1318,6 +1331,10 @@ input, button{
 
 .dddd {
     display: flex;
+}
+
+.lugar {
+    text-align: center;
 }
 
 .mensalorindi {
@@ -1599,6 +1616,10 @@ input, button{
     background-color: #427aa1;
 }
 
+.buttontst3 {
+    background-color: #FAF806;
+}
+
 
 /* FIM PAGINA DOAÇÃO */
 
@@ -1818,7 +1839,7 @@ input, button{
     border-radius: 5px;
 }
 
-.campo{
+.field{
     margin-bottom: 1.5rem;
 }
 
@@ -1948,6 +1969,11 @@ input, button{
         margin: 0 auto;
         width: 97%;
     }
+
+    .video-responsive-Vol iframe {
+        width: 300px;
+        height: 169px;
+    };
 }
 
 @media (max-width:480px) {
@@ -1959,6 +1985,11 @@ input, button{
         margin: 0 auto;
         width: 4%;
     }
+
+    .video-responsive-Vol iframe {
+        width: 300px;
+        height: 169px;
+    };
 
 }
 
@@ -2001,6 +2032,11 @@ input, button{
         width: 50%;
         float: none;
     }
+
+    .video-responsive-Vol iframe {
+        width: 300px;
+        height: 169px;
+    };
 }
 
 @media (max-width:801px) { 
@@ -2029,6 +2065,11 @@ input, button{
         justify-content: space-between;
         text-align: center;
     }
+
+    .video-responsive-Vol iframe {
+        width: 300px;
+        height: 169px;
+    };
 }
 
 @media (max-width:1025px) { 
@@ -2041,6 +2082,10 @@ input, button{
         width: 7%;
     }
 
+    .video-responsive-Vol iframe {
+        width: 400px;
+        height: 225px;
+    };
 
 }
 
@@ -2054,7 +2099,11 @@ input, button{
         width: 8%;
     }
 
-
+    .video-responsive-Vol iframe {
+        width: 400px;
+        height: 225px;
+    };
+    
 }
 
 @media (max-width: 1290px) {

@@ -88,12 +88,28 @@ app.post('/loginselect', urlencodedParser, (req, res) => {
 
 // FORMULARIO
 
+
+// Atualiza um registro (é o U do CRUD - Update)
+app.post('/formupdate', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+  sql = "UPDATE forms SET obsForm = '" + req.body.obsForm + "' WHERE IDform = '" + req.body.IDform + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
 // Insere um registro (é o C do CRUD - Create)
 app.post('/forminsert', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-  sql = "INSERT INTO forms (Nome, TelefoneEmail, IDFuncao, funcao) VALUES (  '" + req.body.Nome + "','" + req.body.TelefoneEmail + "','" + req.body.IDFuncao + "','" + req.body.funcao + "')";
+  sql = "INSERT INTO forms (Nome, TelefoneEmail, IDFuncao, funcao, obsForm) VALUES (  '" + req.body.Nome + "','" + req.body.TelefoneEmail + "','" + req.body.IDFuncao + "','" + req.body.funcao + "','" + req.body.obsForm + "')";
   var db = new sqlite3.Database(DBPATH); // Abre o banco
   db.run(sql, [],  err => {
       if (err) {
