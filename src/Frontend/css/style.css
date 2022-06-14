@@ -1333,6 +1333,10 @@ input, button{
     display: flex;
 }
 
+.lugar {
+    text-align: center;
+}
+
 .mensalorindi {
     display: flex;
     text-align: center;
