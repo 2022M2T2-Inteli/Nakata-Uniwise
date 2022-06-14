@@ -752,20 +752,20 @@ header{
     font-size: 40px !important;
 }
 
-.videosobrerevirar{
+.videoaboutrevirar{
     background-image: url(../assets/img/Fundo-Atuacao.jpg);
     padding: 4%;
 }
 
-.videosobrerevirar h1{
+.videoaboutrevirar h1{
     text-align: center;
 }
 
-.videosobrerevirar h3{
+.videoaboutrevirar h3{
     text-align: center;
 }
 
-.videosobre{
+.videoabout{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -878,7 +878,7 @@ header{
 }
 
 /* COntainer para o vídeo do YouTube ficar em um tamanho específico e responsivo */
-.video-container-sobre {
+.video-container-about {
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -886,13 +886,13 @@ header{
     width:60%;
 }
 
-.video-container-sobre::after {
+.video-container-about::after {
     padding-top: 70%;
     display: block;
     content: '';
 }
 
-.video-container-sobre iframe {
+.video-container-about iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -942,7 +942,7 @@ header{
 
 /* --- PÁGINA  VOLUNTARIADO --- */
 
-.titulos{
+.titles{
     text-align: center;
     margin-bottom: 0.5rem;
 }
@@ -955,7 +955,7 @@ input, button{
     margin-bottom: 1.5rem;
 }
 
-#nomeCompleto, #contato, #função{
+#fullName, #contact, #IDFuncao, #TelefoneEmail, #Nome{
     border-radius: 0;
     border: 0;
     border-bottom: 1px solid grey;
@@ -1003,7 +1003,7 @@ input, button{
     width: 75%;
 }
 
-.campos{
+.fields{
     width: 100%;
 
 }
@@ -1074,6 +1074,11 @@ input, button{
     display: flex;
     width: 100%;
     margin-top: 20px;
+}
+
+.VolVideos {
+    width: 100%;
+    text-align: center;
 }
 
 /* --- PÁGINA  DOAÇÕES --- */
@@ -1818,7 +1823,7 @@ input, button{
     border-radius: 5px;
 }
 
-.campo{
+.field{
     margin-bottom: 1.5rem;
 }
 
