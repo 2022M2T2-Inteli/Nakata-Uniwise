@@ -857,6 +857,7 @@ transition: all .2s ease-in-out;
 
 .white {
   background-color: #FFF;
+  color: #000000;
 }
 
 .alinhamento{

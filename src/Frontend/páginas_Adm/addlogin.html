@@ -11,12 +11,42 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-    <title>Formulários</title>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>	 -->
+    <title>Administradores</title>
     <script src="https://releases.jquery.com/git/jquery-git.min.js"></script>
     <link rel="stylesheet" href="../css/iniadm.css">
 </head>
 <body>
+    <div id="myModal"class="modal customizar">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content customize">
+            <div class="modal-header">
+              <h5 class="modal-title">Novo Administrador</h5>
+            </div>
+            <div class="modal-body">
+              <p>Fazer o cadastro de um novo administrador</p>
+            </div>
+            <form>
+              <div class="mb-1">
+                <label for="exampleInputEmail1" class="form-label"></label>Nome Completo:
+                <input type="text" class="form-control" id="nome">
+              </div>
+              <div class="mb-2">
+                <label for="exampleInputEmail1" class="form-label"></label>E-mail:
+                <input type="text" class="form-control" id="email">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"></label>Senha:
+                <input type="text" class="form-control" id="senha">
+              </div>
+            </form>
+            <div class="modal-footer">
+              <button onclick="salvarAss()" type="button" class="btn btn-primary">Salvar</button>
+              <button onclick="fecharModal()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <div class="sidebar">
         <div class="logo-details">
             <div class="logo_name">ReVirar</div>
@@ -97,13 +127,14 @@
       </div>
       <section class="home-section">
         <div class="container">
-          <div class="text">Formulários de Voluntários</div>
+          <div class="text">Cadastramento de Administradores</div>
           <br>
           <div class="novoUsuario">
            <form class="inputSearchDiv">
               <i class="bi bi-search"></i>
               <input onkeyup="searchFilter()" class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar ficha">
            </form>
+           <button onclick="buttonNewLogin()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Cadastrar</p></button>
           </div>
           <br>
          
@@ -112,17 +143,16 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Nome</th>
-                  <th scope="col">Função</th>
+                  <th scope="col">E-mail</th>
                   <th scope="col">Edição</th>
-                  <th scope="col">Feedback</th>
                 </tr>
               </thead>
-              <tbody id="table-body-form">
+              <tbody id="table-body-login">
               </tbody>
             </table>
           </div>   
       </section>
-      <div id="modalForm"></div>
-      <script src="../js/formularioVoluntarios.js"></script>
+      <div id="modallogin"></div>
+      <script src="../js/addlogin.js"></script>
 </body>
 </html>
