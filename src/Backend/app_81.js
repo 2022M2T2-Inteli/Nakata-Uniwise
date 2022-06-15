@@ -1,7 +1,10 @@
 
 const express = require('express'); 
 const app = express();
-app.use(express.static("../"));
+app.use(express.static("../../../frontend/"));
+
+const hostname = '127.0.0.1';
+const port = 3081;
 const sqlite3 = require('sqlite3').verbose(); 
 const DBPATH = 'revirar.db'; 
 const bodyParser = require('body-parser');
@@ -1163,6 +1166,6 @@ app.post('/usuariosadmupdate', urlencodedParser, (req, res) => {
 });
 
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server running at`);
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });

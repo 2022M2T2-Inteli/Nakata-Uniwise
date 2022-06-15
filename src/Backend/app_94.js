@@ -1,7 +1,10 @@
 
 const express = require('express'); 
 const app = express();
-app.use(express.static("../"));
+app.use(express.static("../../../frontend/"));
+
+const hostname = '127.0.0.1';
+const port = 3094;
 const sqlite3 = require('sqlite3').verbose(); 
 const DBPATH = 'adm.db'; 
 const bodyParser = require('body-parser');
@@ -151,6 +154,6 @@ var sql = 'SELECT * FROM forms ORDER BY IDform COLLATE NOCASE';
   db.close();
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server running at`);
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
