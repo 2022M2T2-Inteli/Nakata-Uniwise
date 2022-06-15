@@ -2,9 +2,9 @@
   "name": "projeto",
   "version": "1.0.0",
   "description": "Template de projeto",
-  "main": "app.js",
+  "main": "app_81.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app_81.js"
   },
   "author": "",
   "license": "MIT",
