@@ -1076,10 +1076,17 @@ input, button{
     margin-top: 20px;
 }
 
+/* vídeo voluntários*/
+
 .VolVideos {
     width: 100%;
     text-align: center;
 }
+
+.video-responsive-Vol iframe {
+    width: 560px;
+    height: 315px;
+};
 
 /* --- PÁGINA  DOAÇÕES --- */
 
@@ -1281,6 +1288,7 @@ input, button{
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
+    text-align: center;
 }
 .form__field::placeholder {
     color: transparent;
@@ -1323,6 +1331,10 @@ input, button{
 
 .dddd {
     display: flex;
+}
+
+.lugar {
+    text-align: center;
 }
 
 .mensalorindi {
@@ -1602,6 +1614,10 @@ input, button{
 
 .buttontst2 {
     background-color: #427aa1;
+}
+
+.buttontst3 {
+    background-color: #FAF806;
 }
 
 
@@ -1953,6 +1969,11 @@ input, button{
         margin: 0 auto;
         width: 97%;
     }
+
+    .video-responsive-Vol iframe {
+        width: 300px;
+        height: 169px;
+    };
 }
 
 @media (max-width:480px) {
@@ -1964,6 +1985,11 @@ input, button{
         margin: 0 auto;
         width: 4%;
     }
+
+    .video-responsive-Vol iframe {
+        width: 300px;
+        height: 169px;
+    };
 
 }
 
@@ -2006,6 +2032,11 @@ input, button{
         width: 50%;
         float: none;
     }
+
+    .video-responsive-Vol iframe {
+        width: 300px;
+        height: 169px;
+    };
 }
 
 @media (max-width:801px) { 
@@ -2034,6 +2065,11 @@ input, button{
         justify-content: space-between;
         text-align: center;
     }
+
+    .video-responsive-Vol iframe {
+        width: 300px;
+        height: 169px;
+    };
 }
 
 @media (max-width:1025px) { 
@@ -2046,6 +2082,10 @@ input, button{
         width: 7%;
     }
 
+    .video-responsive-Vol iframe {
+        width: 400px;
+        height: 225px;
+    };
 
 }
 
@@ -2059,7 +2099,11 @@ input, button{
         width: 8%;
     }
 
-
+    .video-responsive-Vol iframe {
+        width: 400px;
+        height: 225px;
+    };
+    
 }
 
 @media (max-width: 1290px) {

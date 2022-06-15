@@ -83,26 +83,38 @@ var buttonB = document.getElementById("buttonCinquenta");
 var buttonC = document.getElementById("buttonCem");
 
 buttonA.addEventListener("click", function() {
+    document.getElementById('valueMoney').value = 20;
     this.classList.toggle("buttontst2");
     buttonB.classList.remove("buttontst2")
     buttonC.classList.remove("buttontst2")
 });
 buttonB.addEventListener("click", function() {
+    document.getElementById('valueMoney').value = 50;
     this.classList.toggle("buttontst2");
     buttonA.classList.remove("buttontst2")
     buttonC.classList.remove("buttontst2")
 });
 buttonC.addEventListener("click", function() {
+    document.getElementById('valueMoney').value = 100;
     this.classList.toggle("buttontst2");
     buttonA.classList.remove("buttontst2")
     buttonB.classList.remove("buttontst2")
 });
+
+function inputValue(){
+    buttonA.classList.toggle("buttontst3");
+    buttonB.classList.toggle("buttontst3");
+    buttonC.classList.toggle("buttontst3");
+}
+
 // Script Copiar doação
 var buttonPix = document.getElementById("buttonPix");
 var buttonCaixa = document.getElementById("buttonCaixa");
 var buttonPaypal = document.getElementById("buttonPaypal");
 
-buttonPix.addEventListener("click", function() {
+buttonPix.addEventListener("click", function(e) {
+    e.preventDefault();
+    navigator.clipboard.writeText("62180252000105");
 this.classList.toggle("buttontst2");
 this.innerHTML = "Pix Copiado"
 setTimeout(function() {
@@ -111,7 +123,9 @@ setTimeout(function() {
 }, 1000)
 });
 
-buttonCaixa.addEventListener("click", function() {
+buttonCaixa.addEventListener("click", function(e) {
+    e.preventDefault();
+    navigator.clipboard.writeText("Agência 4050, Conta 2006-9");
 this.classList.toggle("buttontst2");
 this.innerHTML = "Caixa Copiado"
 setTimeout(function() {
@@ -120,7 +134,9 @@ setTimeout(function() {
 }, 1000)
 });
 
-buttonPaypal.addEventListener("click", function() {
+buttonPaypal.addEventListener("click", function(e) {
+    e.preventDefault();
+    navigator.clipboard.writeText("@projetorevirar");
 this.classList.toggle("buttontst2");
 this.innerHTML = "Paypal Copiado"
 setTimeout(function() {
