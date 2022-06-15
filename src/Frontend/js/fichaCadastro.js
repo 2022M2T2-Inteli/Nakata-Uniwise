@@ -54,6 +54,7 @@ function salvarAss() {
    const rgCad  = document.getElementById("rgCad").value;
    const cpfCad  = document.getElementById("cpfCad").value;
    const nascimentoCad  = document.getElementById("nascimentoCad").value;
+   const localCad  = document.getElementById("localCad").value;
    const abrigoCad  = document.getElementById("abrigoCad").value;
    const domPartCad  = document.getElementById("domPartCad").value;
    const ruaVezCad  = document.getElementById("ruaVezCad").value;
@@ -80,25 +81,6 @@ function salvarAss() {
    const dinheiroCad7 = document.getElementById("dinheiroCad7").value;
    const benefCad = document.getElementById("benefCad").value;
    const qualBenefCad = document.getElementById("qualBenefCad").value;
-   const marqViaCad = document.getElementById("marqViaCad").value;
-   const predioCad = document.getElementById("predioCad").value;
-   const parqueCad = document.getElementById("parqueCad").value;
-   const tremCad = document.getElementById("tremCad").value;
-   const rodoCad = document.getElementById("rodoCad").value;
-   const construCad = document.getElementById("construCad").value;
-   const galeriaCad = document.getElementById("galeriaCad").value;
-   const casaAbanCad = document.getElementById("casaAbanCad").value;
-   const outrosLocaisCad = document.getElementById("outrosLocaisCad").value;
-   const moradiaCad = document.getElementById("moradiaCad").value;
-   const ameacaCad = document.getElementById("ameacaCad").value;
-   const drogasCad = document.getElementById("drogasCad").value;
-   const familiaCad = document.getElementById("familiaCad").value;
-   const desemCad = document.getElementById("desemCad").value;
-   const trabalhoCad = document.getElementById("trabalhoCad").value;
-   const saudeCad = document.getElementById("saudeCad").value;
-   const opcaoCad = document.getElementById("opcaoCad").value;
-   const nsabeCad = document.getElementById("nsabeCad").value;
-   const outroMotiCad = document.getElementById("outroMotiCad").value;
 
 
     var settings = {
@@ -118,6 +100,8 @@ function salvarAss() {
             "cpfCad": cpfCad,
 
             "nascimentoCad": nascimentoCad,
+
+            "localCad": localCad,
 
             "abrigoCad": abrigoCad,
 
@@ -170,44 +154,6 @@ function salvarAss() {
             "benefCad": benefCad,
 
             "qualBenefCad": qualBenefCad,
-
-            "marqViaCad": marqViaCad,
-
-            "predioCad": predioCad,
-
-            "parqueCad": parqueCad,
-
-            "tremCad": tremCad,
-
-            "rodoCad": rodoCad,
-
-            "construCad": construCad,
-
-            "galeriaCad": galeriaCad,
-
-            "casaAbanCad": casaAbanCad,
-
-            "outrosLocaisCad": outrosLocaisCad,
-
-            "moradiaCad": moradiaCad,
-
-            "ameacaCad": ameacaCad,
-
-            "drogasCad": drogasCad,
-
-            "familiaCad": familiaCad,
-
-            "desemCad": desemCad,
-
-            "trabalhoCad": trabalhoCad,
-
-            "saudeCad": saudeCad,
-
-            "opcaoCad": opcaoCad, 
-
-            "nsabeCad": nsabeCad,
-
-            "outroMotiCad": outroMotiCad,
 
         }
       };
@@ -317,52 +263,8 @@ function viewCadastro(id){
                     <br>
                     <div>
                         <h4>Rua / Locais:</h4>
-                        <br>
-                        <br>
-                        <h6>Marquises e viadutos</h6>
-                        <p class="designer">${element.marqViaCad}</p>
+                        <p class="designer">${element.localCad}</p>
                     </div>
-                    <br>
-                    <div>
-                        <h6>Frente de prédios privados e públicos</h6>
-                        <p class="designer">${element.predioCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Parques, praças</h6>
-                        <p class="designer">${element.parqueCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Estações de trem, rodoviárias</h6>
-                        <p class="designer">${element.tremCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Margem de rodovias</h6>
-                        <p class="designer">${element.rodoCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Dentro de construções com áreas internas ocupáveis</h6>
-                        <p class="designer">${element.construCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Galerias subterrâneas</h6>
-                        <p class="designer">${element.galeriaCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Casas e prédios abandonados</h6>
-                        <p class="designer">${element.casaAbanCad}</p>
-                    </div>
-                    <br> 
-                    <div>
-                        <h6>Outros locais</h6>
-                        <p class="designer">${element.outrosLocaisCad}</p>
-                    </div>
-                    <br>
                     <br>
                     <div>
                         <h4>Frequentou/Frequenta algum albergue, abrigo ou Casa de Passagem?</h4>
@@ -399,60 +301,6 @@ function viewCadastro(id){
                         <h4>Quanto tempo vive na rua?</h4>
                         <p class="designer">${element.viveRuaCad}</p>
                     </div>
-                    <br>
-                    <div>
-                        <h4>Quais os principais motivos pelos quais passou a morar na rua, albergue ou outro local?</h4>
-                        <br>
-                        <br>
-                        <h6>Perda de moradia</h6>
-                        <p class="designer">${element.moradiaCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Ameaça/ violência</h6>
-                        <p class="designer">${element.ameacaCad}</p>
-                    </div>
-                    <br> 
-                    <div>
-                        <h6>Alcoolismo/ drogas</h6>
-                        <p class="designer">${element.drogasCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Problemas com familiares/ companheiro(a)</h6>
-                        <p class="designer">${element.familiaCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Desemprego</h6>
-                        <p class="designer">${element.desemCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Trabalho</h6>
-                        <p class="designer">${element.trabalhoCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Tratamento de saúde</h6>
-                        <p class="designer">${element.saudeCad}</p>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Preferência/opção própria</h6>
-                        <p class="designer">${element.opcaoCad}</p>
-                    </div>
-                    <br> 
-                    <div>
-                        <h6>Não sabe/não lembra</h6>
-                        <p class="designer">${element.nsabeCad}</p>
-                    </div>
-                    <br> 
-                    <div>
-                        <h6>Outro</h6>
-                        <p class="designer">${element.outroMotiCad}</p>
-                    </div>
-                    <br>
                     <br>
                     <div>
                         <h4>Há quanto tempo mora nesta cidade?</h4>
@@ -629,62 +477,10 @@ function editCadastro2(id){
                     </div>
                     <br>
                     <div>
-                        <<h4>Rua / Locais:</h4>
-                        <br>
-                        <br>
-                        <h6>Marquises e viadutos</h6>
-                        <input disabled onfocusout="disablitaredit(34)" class="form-control" type="text" id="inputcad34" placeholder="${element.marqViaCad}" value="${element.marqViaCad}">
-                        <button onclick="edit(34)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
+                        <h4>Rua / Locais:</h4>
+                        <input disabled onfocusout="disablitaredit(7)" class="form-control" type="text" id="inputcad7" placeholder="${element.localCad}" value="${element.localCad}">
+                        <button onclick="edit(7)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
                     </div>
-                    <br>
-                    <div>
-                        <h6>Frente de prédios privados e públicos</h6>
-                        <input disabled onfocusout="disablitaredit(35)" class="form-control" type="text" id="inputcad35" placeholder="${element.predioCad}" value="${element.predioCad}">
-                        <button onclick="edit(35)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Parques, praças</h6>
-                        <input disabled onfocusout="disablitaredit(36)" class="form-control" type="text" id="inputcad36" placeholder="${element.parqueCad}" value="${element.parqueCad}">
-                        <button onclick="edit(36)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Estações de trem, rodoviárias</h6>
-                        <input disabled onfocusout="disablitaredit(37)" class="form-control" type="text" id="inputcad37" placeholder="${element.tremCad}" value="${element.tremCad}">
-                        <button onclick="edit(37)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Margem de rodovias</h6>
-                        <input disabled onfocusout="disablitaredit(38)" class="form-control" type="text" id="inputcad38" placeholder="${element.rodoCad}" value="${element.rodoCad}">
-                        <button onclick="edit(38)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Dentro de construções com áreas internas ocupáveis</h6>
-                        <input disabled onfocusout="disablitaredit(39)" class="form-control" type="text" id="inputcad39" placeholder="${element.construCad}" value="${element.construCad}">
-                        <button onclick="edit(39)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Galerias subterrâneas</h6>
-                        <input disabled onfocusout="disablitaredit(40)" class="form-control" type="text" id="inputcad40" placeholder="${element.galeriaCad}" value="${element.galeriaCad}">
-                        <button onclick="edit(40)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Casas e prédios abandonados</h6>
-                        <input disabled onfocusout="disablitaredit(41)" class="form-control" type="text" id="inputcad41" placeholder="${element.casaAbanCad}" value="${element.casaAbanCad}">
-                        <button onclick="edit(41)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Outros locais</h6>
-                        <input disabled onfocusout="disablitaredit(42)" class="form-control" type="text" id="inputcad42" placeholder="${element.outrosLocaisCad}" value="${element.outrosLocaisCad}">
-                        <button onclick="edit(42)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
                     <br>
                     <div>
                         <h4>Frequentou/Frequenta algum albergue, abrigo ou Casa de Passagem?</h4>
@@ -729,71 +525,6 @@ function editCadastro2(id){
                         <input disabled onfocusout="disablitaredit(14)" class="form-control" type="text" id="inputcad14" placeholder="${element.viveRuaCad}" value="${element.viveRuaCad}">
                         <button onclick="edit(14)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
                     </div>
-                    <br>
-                    <br>
-                    <div>
-                        <h4>Quais os principais motivos pelos quais passou a morar na rua, albergue ou outro local?</h4>
-                        <br>
-                        <br>
-                        <h6>Perda de moradia</h6>
-                        <input disabled onfocusout="disablitaredit(43)" class="form-control" type="text" id="inputcad43" placeholder="${element.moradiaCad}" value="${element.moradiaCad}">
-                        <button onclick="edit(43)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Ameaça/ violência</h6>
-                        <input disabled onfocusout="disablitaredit(44)" class="form-control" type="text" id="inputcad44" placeholder="${element.ameacaCad}" value="${element.ameacaCad}">
-                        <button onclick="edit(44)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Alcoolismo/ drogas</h6>
-                        <input disabled onfocusout="disablitaredit(45)" class="form-control" type="text" id="inputcad45" placeholder="${element.drogasCad}" value="${element.drogasCad}">
-                        <button onclick="edit(45)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Problemas com familiares/ companheiro(a)</h6>
-                        <input disabled onfocusout="disablitaredit(46)" class="form-control" type="text" id="inputcad46" placeholder="${element.familiaCad}" value="${element.familiaCad}">
-                        <button onclick="edit(46)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Desemprego</h6>
-                        <input disabled onfocusout="disablitaredit(47)" class="form-control" type="text" id="inputcad47" placeholder="${element.desemCad}" value="${element.desemCad}">
-                        <button onclick="edit(47)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Trabalho</h6>
-                        <input disabled onfocusout="disablitaredit(48)" class="form-control" type="text" id="inputcad48" placeholder="${element.trabalhoCad}" value="${element.trabalhoCad}">
-                        <button onclick="edit(48)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Tratamento de saúde</h6>
-                        <input disabled onfocusout="disablitaredit(49)" class="form-control" type="text" id="inputcad49" placeholder="${element.saudeCad}" value="${element.saudeCad}">
-                        <button onclick="edit(49)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Preferência/opção própria</h6>
-                        <input disabled onfocusout="disablitaredit(50)" class="form-control" type="text" id="inputcad50" placeholder="${element.opcaoCad}" value="${element.opcaoCad}">
-                        <button onclick="edit(50)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Não sabe/não lembra</h6>
-                        <input disabled onfocusout="disablitaredit(51)" class="form-control" type="text" id="inputcad51" placeholder="${element.nsabeCad}" value="${element.nsabeCad}">
-                        <button onclick="edit(51)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
-                    <div>
-                        <h6>Outro</h6>
-                        <input disabled onfocusout="disablitaredit(52)" class="form-control" type="text" id="inputcad52" placeholder="${element.outroMotiCad}" value="${element.outroMotiCad}">
-                        <button onclick="edit(52)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                    </div>
-                    <br>
                     <br>
                     <div>
                         <h4>Há quanto tempo mora nesta cidade?</h4>
@@ -955,6 +686,7 @@ function saveEditCad(id){
     var inputcad4 = document.getElementById('inputcad4').value;
     var inputcad5 = document.getElementById('inputcad5').value;
     var inputcad6 = document.getElementById('inputcad6').value;
+    var inputcad7 = document.getElementById('inputcad7').value;
     var inputcad8 = document.getElementById('inputcad8').value;
     var inputcad9 = document.getElementById('inputcad9').value;
     var inputcad10 = document.getElementById('inputcad10').value;
@@ -981,30 +713,11 @@ function saveEditCad(id){
     var inputcad31 = document.getElementById('inputcad31').value;
     var inputcad32 = document.getElementById('inputcad32').value;
     var inputcad33 = document.getElementById('inputcad33').value;
-    var inputcad34 = document.getElementById('inputcad34').value;
-    var inputcad35 = document.getElementById('inputcad35').value;
-    var inputcad36 = document.getElementById('inputcad36').value;
-    var inputcad37 = document.getElementById('inputcad37').value;
-    var inputcad38 = document.getElementById('inputcad38').value;
-    var inputcad39 = document.getElementById('inputcad39').value;
-    var inputcad40 = document.getElementById('inputcad40').value;
-    var inputcad41 = document.getElementById('inputcad41').value;
-    var inputcad42 = document.getElementById('inputcad42').value;
-    var inputcad43 = document.getElementById('inputcad43').value;
-    var inputcad44 = document.getElementById('inputcad44').value;
-    var inputcad45 = document.getElementById('inputcad45').value;
-    var inputcad46 = document.getElementById('inputcad46').value;
-    var inputcad47 = document.getElementById('inputcad47').value;
-    var inputcad48 = document.getElementById('inputcad48').value;
-    var inputcad49 = document.getElementById('inputcad49').value;
-    var inputcad50 = document.getElementById('inputcad50').value;
-    var inputcad51 = document.getElementById('inputcad51').value;
-    var inputcad52 = document.getElementById('inputcad52').value;
 
     $.ajax({
         type: 'POST',
         url: 'http://127.0.0.1:3081/cadastroupdate',
-        data: {IDCadastro: id, nomeCad: inputcad1, chamadoCad: inputcad2, docCad: inputcad3, rgCad: inputcad4, cpfCad: inputcad5, nascimentoCad: inputcad6, marqViaCad: inputcad34, predioCad: inputcad35, parqueCad: inputcad36, tremCad: inputcad37, rodoCad: inputcad38, construCad: inputcad39, galeriaCad: inputcad40, casaAbanCad: inputcad41, outrosLocaisCad: inputcad42, abrigoCad: inputcad8, domPartCad: inputcad9, ruaVezCad: inputcad10, albVezCad: inputcad11, dompartvezCad: inputcad12,  dompartQual: inputcad13, viveRuaCad: inputcad14, moradiaCad: inputcad43, ameacaCad: inputcad44, drogasCad: inputcad45, familiaCad: inputcad46, desemCad: inputcad47, trabalhoCad: inputcad48, saudeCad: inputcad49, opcaoCad: inputcad50, nsabeCad: inputcad51, outroMotiCad: inputcad52, moraCidaCad: inputcad15, viveFamCad: inputcad16, parenteCad: inputcad17, attcomCad: inputcad18, atendLuCad:inputcad19, centroCad: inputcad20, centrorefCad: inputcad21, instacolhiCad: inputcad22, hospiCad: inputcad23, trabaCad: inputcad24, dinheiroCad: inputcad25, dinheiroCad2: inputcad26, dinheiroCad3: inputcad27, dinheiroCad4: inputcad28,  dinheiroCad5: inputcad29, dinheiroCad6: inputcad30, dinheiroCad7: inputcad31, benefCad: inputcad32, qualBenefCad: inputcad33},
+        data: {IDCadastro: id, nomeCad: inputcad1, chamadoCad: inputcad2, docCad: inputcad3, rgCad: inputcad4, cpfCad: inputcad5, nascimentoCad: inputcad6, localCad: inputcad7, abrigoCad: inputcad8, domPartCad: inputcad9, ruaVezCad: inputcad10, albVezCad: inputcad11, dompartvezCad: inputcad12,  dompartQual: inputcad13, viveRuaCad: inputcad14, moraCidaCad: inputcad15, viveFamCad: inputcad16, parenteCad: inputcad17, attcomCad: inputcad18, atendLuCad:inputcad19, centroCad: inputcad20, centrorefCad: inputcad21, instacolhiCad: inputcad22, hospiCad: inputcad23, trabaCad: inputcad24, dinheiroCad: inputcad25, dinheiroCad2: inputcad26, dinheiroCad3: inputcad27, dinheiroCad4: inputcad28,  dinheiroCad5: inputcad29, dinheiroCad6: inputcad30, dinheiroCad7: inputcad31, benefCad: inputcad32, qualBenefCad: inputcad33},
     }).done(function () {
         // console.log("aq")
     }).fail(function (msg) {

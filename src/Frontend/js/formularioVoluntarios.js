@@ -3,12 +3,6 @@ $("document").ready(function(){
     $("#header").load("menu.html", function() {
         $("#btn").on('click', showmenu);
     });
-
-    $('#teste').on('submit', function(e) {
-        // console.log("oi");
-        e.preventDefault();
-        e.stopPropagation();
-    });
     
 });
 
@@ -45,6 +39,7 @@ $.ajax({
         <tr>
                 <th scope="row">${element.IDform}</th>
                 <td>${element.Nome}</td>
+                <td>${element.TelefoneEmail}</td>
                 <td>${element.IDFuncao}</td>
                 <td>
                 <button onclick="editform(${element.IDform})" class="buttonEdit"><i class="bi bi-plus-lg"></i></button>
@@ -52,9 +47,9 @@ $.ajax({
                 <button onclick="deleteForm(${element.IDform})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                 </td>
                 <td><select id="select-btn" class="form-select alinhamento" aria-label="Default select example">
-                <option selected class="white">Selecionar</option>
-                <option class="white">Realizado</option>
-                <option class="white">Pendente</option>
+                <option selected>Selecionar</option>
+                <option>Realizado</option>
+                <option>Pendente</option>
                 </select></td>
                 
         </tr>
@@ -89,7 +84,6 @@ $.ajax({
 
 
 
-
 function salvarAssAbo() {
 
     Swal.fire(
@@ -97,6 +91,7 @@ function salvarAssAbo() {
         'Formulário enviado',
         'success'
     )
+    
 
    const Nome = document.getElementById("Nome").value;
    const TelefoneEmail  = document.getElementById("TelefoneEmail").value;
@@ -116,7 +111,6 @@ function salvarAssAbo() {
       
     $.ajax(settings).done(response => {
         console.log(response)
-        // alert("foi");
     });
 }
 
@@ -168,6 +162,31 @@ function deleteAssistido(id){
       });
     
 }
+
+
+
+function searchFilter() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("inputSearchID");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+}
+
+
+
+
 
 
 // EDIÇÃO

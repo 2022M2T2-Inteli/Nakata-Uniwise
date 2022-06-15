@@ -15,7 +15,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.post('/logininsert', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
-  sql = "INSERT INTO login (email, senha, nome) VALUES ('" + req.body.email + "', '" + req.body.senha + "', '" + req.body.nome + "')";
+  sql = "INSERT INTO login (email, senha) VALUES ('" + req.body.email + "', '" + req.body.senha + "')";
   var db = new sqlite3.Database(DBPATH); // Abre o banco
   db.run(sql, [],  err => {
       if (err) {
@@ -74,23 +74,6 @@ app.post('/loginselect', urlencodedParser, (req, res) => {
     if(rows.length > 0 && rows[0].senha == req.body.senha) res.json(true) 
     else res.json(false);
 
-  });
-  db.close();
-});
-
-
-
-app.get('/addloginselect', (req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Access-Control-Allow-Origin', '*');
-
-  var db = new sqlite3.Database(DBPATH);
-var sql = 'SELECT * FROM login ORDER BY IDlogin COLLATE NOCASE';
-  db.all(sql, [],  (err, rows ) => {
-      if (err) {
-          throw err;
-      }
-      res.json(rows);
   });
   db.close();
 });
