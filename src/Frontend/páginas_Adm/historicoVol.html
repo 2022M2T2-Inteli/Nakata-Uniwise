@@ -22,7 +22,7 @@
         Launch demo modal
       </button>  -->
   
-      <!-- Modal -->
+      <!-- Essa parte é um Modal que permite inserir o histórico dos voluntários -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -30,7 +30,7 @@
               <h5 class="modal-title" id="exampleModalLabel">Histórico voluntários</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body"> <!-- essa div possui todos os campos para inserção dentro do modal -->
               <div class="mb-1">
                 <label for="exampleInputEmail1" class="form-label"></label>Título:
                 <input type="text" class="form-control" name="tituloHisVol">
@@ -44,7 +44,7 @@
                 <input type="text" class="form-control" name="duracaoHisVol">
               </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer"> <!-- div com os botões de fechar o modal e de salvar suas informações -->
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
   
               <button type="button" onclick="saveHisVol()" class="btn btn-primary">Save changes</button>
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-    <div class="sidebar">
+    <div class="sidebar"> <!-- essa div contêm a barra lateral de navegação entre as páginas do site-->
         <div class="logo-details">
             <div class="logo_name">ReVirar</div>
             <i class="bi bi-list" id="btn"></i>
@@ -131,22 +131,23 @@
          </li>
         </ul>
       </div>
-      <section class="home-section">
-          <div class="text">Revirar</div>          
+      <section class="home-section"> <!-- essa section contêm o título, campo de pesquisa e tabela de histórico voluntários -->
+          <div class="text">Histórico Voluntários</div>          
           <br>
           <div class="novoUsuario">
            <form class="inputSearchDiv">
-          <i class="bi bi-search"></i>
+          <i class="bi bi-search"></i> <!-- essa parte possui a barra de pesquisa dentro da tabela de histórico voluntários -->
               <input onkeyup="searchFilter()" class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Histórico">
            </form>
+           <!-- essa parte é o botão que abre o modal para adicionar um novo histórico-->
           <button onclick="newHisVol()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>Novo Histórico</p></button>
           </div>
           <br>
-
+      <!-- essa div contêm a tabela que mostra os histórico dos voluntários  -->
       <div class="tabela-encam">
         <table class="table" id="table">
             <thead>
-            <tr>
+            <tr> <!-- colunas da tabela-->
                 <th scope="col">ID</th>
                 <th scope="col">Título</th>
                 <th scope="col">Data</th>
