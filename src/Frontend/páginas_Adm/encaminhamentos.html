@@ -22,7 +22,7 @@
     Launch demo modal
   </button> -->
 
-  <!-- Modal -->
+  <!-- Essa parte é um Modal que permite inserir um novo encaminhamento-->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -30,7 +30,7 @@
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body"> <!-- essa parte possui todos os campos para inserção dentro do modal -->
           <div class="mb-1">
             <label for="exampleInputEmail1" class="form-label"></label>Serviço:
             <input type="text" class="form-control" name="servEnca">
@@ -44,7 +44,7 @@
             <input type="text" class="form-control" name="obsEnca">
           </div>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer"> <!-- div com os botões de fechar o modal e de salvar suas informações -->
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
           <button type="button" onclick="saveEnca()" class="btn btn-primary">Save changes</button>
@@ -53,7 +53,7 @@
     </div>
   </div>
 
-    <div class="sidebar">
+    <div class="sidebar"> <!-- essa div contêm a barra lateral de navegação entre as páginas do site-->
         <div class="logo-details">
             <div class="logo_name">ReVirar</div>
             <i class="bi bi-list" id="btn"></i>
@@ -131,23 +131,24 @@
          </li>
         </ul>
       </div>
-      <section class="home-section">
+      <section class="home-section"> <!-- essa section contêm o título, campo de pesquisa e tabela de encaminhamento -->
           <div class="text">Encaminhamentos</div>
           <br>
-          <div class="novoUsuario">
+          <div class="novoUsuario"> 
            <form class="inputSearchDiv">
-          <i class="bi bi-search"></i>
+          <i class="bi bi-search"></i> <!-- essa parte possui a barra de pesquisa dentro da tabela de encaminhamento -->
               <input onkeyup="searchFilter()" class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Encaminhamento">
            </form>
+           <!-- essa parte é o botão para adicionar um novo encaminhamento -->
           <button onclick="newEnca()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo Encaminhamento</p></button>
           </div>
           <br>
         
-
+      <!-- essa div contêm a tabela que mostra os encaminhamentos -->
     <div class="tabela-encam" id="table">
         <table class="table">
             <thead>
-            <tr>
+            <tr> <!-- divisões da tabela-->
                 <th scope="col">ID</th>
                 <th scope="col">Serviço</th>
                 <th scope="col">Data</th>
