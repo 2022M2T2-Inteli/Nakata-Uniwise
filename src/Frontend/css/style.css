@@ -904,6 +904,13 @@ header{
     height: auto;
   }
 
+.responsive-sobre2 {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+  
+
 /* Para a imagem aumentar de tamanho ao passar o mouse por cima */
 .grow-sobre { 
 	transition: all .2s ease-in-out; 
