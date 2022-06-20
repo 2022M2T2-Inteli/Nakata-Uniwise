@@ -258,36 +258,45 @@
        </div>
       </section>
       </section>
-      <section class="text-home-sobre container">
-        <center>
-        <div>
-          <h1>Encontrou algum assistido?</h1>
-          <h4>Nos envie a localização dele no formulário abaixo:</h4>
-          <br>
-        </div>
-      </center>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="campo">
-                  <label for="contato"> Endereço* </label>
-                  <input type="text" id="endeMap" required>
-                </div>
-                
-                <div class="campo">
-                    <label for="contato"> Observação* </label>
-                    <input type="text" id="descricaoMap" required>
-                </div>
-                
-                <div class="buttonDiv">
-                    <button class="botão" onclick="Mapform()">Enviar</button>
-                </div>
-            </div>
-        </div>
-      </section>
-      <section>
-        <div class="space">
-        </div>
-      </section>
+
+
+      <section class="text-home-Vol2"> <!-- essa section possui o código de um formulário de inscrição geral (para os voluntários que não se ) -->
+        <div class="container my-5">
+
+          <div class="titles">
+              <h2 id="title">Deparou-se com um assistido precisando de ajuda? </h2>
+              <br>
+              <h5 id="caption"> Nos envie a localização dele no formulário abaixo: </h5>
+              <br>
+          </div>
+          
+          <div class="row">
+              <div class="col-md-8 offset-md-2">
+                      <div class="campos">
+                          <div class="campo">
+                              <label for="nomeCompleto"> Endereço* </label>
+                              <input type="text" name="endeMap" id="endeMap" required>
+                          </div>
+                          
+                          <div class="campo">
+                              <label for="contato"> Observação* </label>
+                              <textarea row="6" id="descricaoMap" required></textarea>
+                          </div>
+                          <br>
+                          <div class="buttonDiv3"> <!-- esse botão serve para a pessoa enviar o formulário, e, em seguida, um modal aparece para confirmar o envio -->
+                              <button type="button" class="btn botão">
+                                  Enviar
+                              </button>
+                          </div>
+                      </div>
+              </div>
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
   </section>
 
     <footer id="myFooter"> <!-- esse footer está o rodapé da página -->
