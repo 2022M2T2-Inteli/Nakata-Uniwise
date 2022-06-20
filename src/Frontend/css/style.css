@@ -976,7 +976,12 @@ input, button{
 .buttonDiv {
     display: flex;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 50px;
+}
+
+.buttonDiv3 {
+    display: flex;
+    width: 100%;
 }
 
 .buttonVol{
@@ -1049,23 +1054,30 @@ input, button{
 /* formulário voluntário*/
 
 .button2{
-    font-size: 1.2em;
+    font-size: 20px;
     background: #FAF806;
-    border: 0;
-    margin-bottom: 1em;
+    border: none;
     padding: 0.2em 0.6em;
     margin: 0 auto;
     width: 25vh;
     transition: 0.5s;
     color: black;
     justify-content: center;
-    margin-top: 20px;
+    text-decoration: none;
 }
+
 .button2:hover{
     background: black;
     color: white;
     font-size: 1.3em;
 }
+
+/* .remove-gray {
+    margin-top: 20px;
+    border: none;
+    background-color: #FAF806;
+} */
+
 .buttonDiv2 {
     display: flex;
     width: 100%;
@@ -1899,9 +1911,6 @@ input, button{
     background: #25d366;
 }
 .wrapper .button:nth-child(4):hover .icon {
-    background: #0072b1;
-}
-.wrapper .button:nth-child(5):hover .icon {
     background: #ff0000;
 }
 .wrapper .button .icon .i {
@@ -1919,20 +1928,21 @@ input, button{
     margin-left: 10px;
     transition: all 0.3s ease-out;
 }
-.wrapper .button:nth-child(1) span {
+.wrapper .button:nth-child(1) a {
     color: #4267b2;
+    text-decoration: none;
 }
-.wrapper .button:nth-child(2) span {
+.wrapper .button:nth-child(2) a {
     color: #d6249f;
+    text-decoration: none;
 }
-.wrapper .button:nth-child(3) span {
+.wrapper .button:nth-child(3) a {
     color: #25d366;
+    text-decoration: none;
 }
-.wrapper .button:nth-child(4) span {
-    color: #0072b1;
-}
-.wrapper .button:nth-child(5) span {
+.wrapper .button:nth-child(4) a {
     color: #ff0000;
+    text-decoration: none;
 }
 
 /* --- AJUSTE DE TELAS --- */
