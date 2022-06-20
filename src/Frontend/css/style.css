@@ -1899,9 +1899,6 @@ input, button{
     background: #25d366;
 }
 .wrapper .button:nth-child(4):hover .icon {
-    background: #0072b1;
-}
-.wrapper .button:nth-child(5):hover .icon {
     background: #ff0000;
 }
 .wrapper .button .icon .i {
@@ -1919,20 +1916,21 @@ input, button{
     margin-left: 10px;
     transition: all 0.3s ease-out;
 }
-.wrapper .button:nth-child(1) span {
+.wrapper .button:nth-child(1) a {
     color: #4267b2;
+    text-decoration: none;
 }
-.wrapper .button:nth-child(2) span {
+.wrapper .button:nth-child(2) a {
     color: #d6249f;
+    text-decoration: none;
 }
-.wrapper .button:nth-child(3) span {
+.wrapper .button:nth-child(3) a {
     color: #25d366;
+    text-decoration: none;
 }
-.wrapper .button:nth-child(4) span {
-    color: #0072b1;
-}
-.wrapper .button:nth-child(5) span {
+.wrapper .button:nth-child(4) a {
     color: #ff0000;
+    text-decoration: none;
 }
 
 /* --- AJUSTE DE TELAS --- */
