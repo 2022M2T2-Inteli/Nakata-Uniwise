@@ -451,6 +451,7 @@ header{
 .text-relatos1{
     margin: 0 auto;
     padding-top: 5%;
+    text-align: left !important;
 }
 
 .atendidos-image-home{
@@ -2206,7 +2207,7 @@ input, button{
     font-size: 40px;
 }
 .text-home-eventos p{
-    text-align: center;
+    text-align: left;
     font-size: 20px;
 }
 .eventos-colum{
@@ -2408,6 +2409,11 @@ input, button{
 .botaoeventos a{
     text-decoration: none !important;
     color: white !important;
+}
+
+.image-reports-event{
+    border-radius: 0%;
+    width: 120% !important;
 }
 
 /* PÁGINA ERRO */
