@@ -21,6 +21,7 @@ if(sidebar.classList.contains("open")){
 }
 }
 
-var map = L.map('map').setView([0, 0], 1)
+// var map = L.map('map').setView([0, 0], 1)
+var map = L.map('map').setView([-23.578811057501508, -46.565881116593985], 13);
 
-L.tittleLayer('https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=HdZFsisrWXnYbxg8tdAh')
+L.tittleLayer('https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=HdZFsisrWXnYbxg8tdAh', {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',}).addTo(map);
