@@ -214,7 +214,7 @@ header{
 
 #myFooter .btn {
     color: rgb(0, 0, 0);
-    background-color: #FAF806;
+    background-color: #FAF806 !important;
     border-radius: 20px;
     border: none;
     width: 150px;
@@ -2299,6 +2299,10 @@ input, button{
     color: #ffffff;
     font-size: 60px;
     margin-bottom: 20px;
+}
+
+.space{
+    margin-bottom: 50px;
 }
 
 .fa-plus{
