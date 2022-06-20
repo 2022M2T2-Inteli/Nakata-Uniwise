@@ -16,7 +16,7 @@
 <body>
 
   <!-- Modal da caixa para inserir novo atendimento com integração do Backend-->
-  <div id="myModalAtendi"class="modal customizar">
+  <div id="myModalAttendance"class="modal customizar">
     <div class="modal-dialog" role="document">
       <div class="modal-content customize">
         <div class="modal-header">
@@ -48,8 +48,8 @@
 
         <!-- botoes pra salvar e cancelar insercao de dados no banco de dados -->
         <div class="modal-footer">
-          <button onclick="salvarAss()" type="button" class="btn btn-primary">Salvar Atendimento</button>
-          <button onclick="fecharModalAtendi()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar Atendimento</button>
+          <button onclick="saveAttend()" type="button" class="btn btn-primary">Salvar Atendimento</button>
+          <button onclick="closeModalAttendance()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar Atendimento</button>
         </div>
       </div>
     </div>
@@ -145,7 +145,7 @@
       <i class="bi bi-search"></i>
           <input class="inputSearch" type="search" id="inputSearchID" placeholder="Pesquisar Atendimento">
         </form>
-        <button onclick="buttonNewAssAtendi()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo atendimento</p></button>
+        <button onclick="buttonNewAssAttendance()" id="buttonnew" class="buttonNew"><p><i class="bi bi-plus-circle-fill"></i>  Novo atendimento</p></button>
       </div>
       <br>
       <table class="table">
@@ -159,7 +159,7 @@
             <th scope="col">Edição</th>
           </tr>
         </thead>
-        <tbody id="table-body-atendimento">
+        <tbody id="table-body-attendance">
 
         </tbody>
       </table>
