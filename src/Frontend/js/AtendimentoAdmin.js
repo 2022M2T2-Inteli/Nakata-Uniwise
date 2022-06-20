@@ -1,10 +1,10 @@
 //PÁGINA DE ATENDIMENTOS
 
 $(document).ready( function() {
-    habilitarSimTextInputAtendimento();
+    enableSimTextInputAttendance();
 });
 
-function habilitarSimTextInputAtendimento(){
+function enableSimTextInputAttendance(){
     if (document.getElementById("flexRadioDefault2").checked){
         $("#fieldsetDisabled").prop("disabled",false);
     }else{
@@ -13,10 +13,10 @@ function habilitarSimTextInputAtendimento(){
 }
 
 $(document).ready( function() {
-    habilitarSimQuandoTextInputAtendimento();
+    enableSimWhenTextInputAttendance();
 });
 
-function habilitarSimQuandoTextInputAtendimento(){
+function enableSimWhenTextInputAttendance(){
     if (document.getElementById("flexRadioDefault2.0").checked){
         $("#fieldsetDisabled2").prop("disabled",false);
     }else{
@@ -24,7 +24,7 @@ function habilitarSimQuandoTextInputAtendimento(){
     }
 }
 
-function habilitarSimTextInputAtendimento3(){
+function enableSimTextInputAttendance3(){
     if (document.getElementById("flexRadioDefault3").checked){
         $("#fieldsetDisabled3").prop("disabled",false);
     }else{
@@ -32,7 +32,7 @@ function habilitarSimTextInputAtendimento3(){
     }
 }
 
-function habilitarSimTextInputAtendimento4(){
+function enableSimTextInputAttendance4(){
     if (document.getElementById("inlineCheckbox1").checked){
         $("#fieldsetDisabled4").prop("disabled",false);
     }else{
@@ -40,7 +40,7 @@ function habilitarSimTextInputAtendimento4(){
     }
 }
 
-function habilitarSimTextInputAtendimento5(){
+function enableSimTextInputAttendance5(){
     if (document.getElementById("inlineCheckbox2").checked){
         $("#fieldsetDisabled5").prop("disabled",false);
     }else{
@@ -48,7 +48,7 @@ function habilitarSimTextInputAtendimento5(){
     }
 }
 
-function habilitarSimTextInputAtendimento6(){
+function enableSimTextInputAttendance6(){
     if (document.getElementById("inlineCheckbox3").checked){
         $("#fieldsetDisabled6").prop("disabled",false);
     }else{
@@ -56,7 +56,7 @@ function habilitarSimTextInputAtendimento6(){
     }
 }
 
-function habilitarSimTextInputAtendimento7(){
+function enableSimTextInputAttendance7(){
     if (document.getElementById("inlineCheckbox4").checked){
         $("#fieldsetDisabled7").prop("disabled",false);
     }else{
@@ -64,7 +64,7 @@ function habilitarSimTextInputAtendimento7(){
     }
 }
 
-function habilitarSimTextInputAtendimento8(){
+function enableSimTextInputAttendance8(){
     if (document.getElementById("inlineCheckbox5").checked){
         $("#fieldsetDisabled8").prop("disabled",false);
     }else{
@@ -72,7 +72,7 @@ function habilitarSimTextInputAtendimento8(){
     }
 }
 
-function habilitarSimTextInputAtendimento9(){
+function enableSimTextInputAttendance9(){
     if (document.getElementById("inlineCheckbox6").checked){
         $("#fieldsetDisabled9").prop("disabled",false);
     }else{
@@ -80,7 +80,7 @@ function habilitarSimTextInputAtendimento9(){
     }
 }
 
-function habilitarSimTextInputAtendimento10(){
+function enableSimTextInputAttendance10(){
     if (document.getElementById("inlineCheckbox7").checked){
         $("#fieldsetDisabled10").prop("disabled",false);
     }else{
@@ -88,7 +88,7 @@ function habilitarSimTextInputAtendimento10(){
     }
 }
 
-function habilitarSimTextInputAtendimento11(){
+function enableSimTextInputAttendance11(){
     if (document.getElementById("inlineCheckbox8").checked){
         $("#fieldsetDisabled11").prop("disabled",false);
     }else{
@@ -96,7 +96,7 @@ function habilitarSimTextInputAtendimento11(){
     }
 }
 
-function habilitarSimTextInputAtendimento12(){
+function enableSimTextInputAttendance12(){
     if (document.getElementById("inlineCheckbox9").checked){
         $("#fieldsetDisabled12").prop("disabled",false);
     }else{
@@ -104,7 +104,7 @@ function habilitarSimTextInputAtendimento12(){
     }
 }
 
-function habilitarSimTextInputAtendimento13(){
+function enableSimTextInputAttendance13(){
     if (document.getElementById("inlineCheckbox13").checked){
         $("#fieldsetDisabled13").prop("disabled",false);
     }else{
@@ -112,7 +112,7 @@ function habilitarSimTextInputAtendimento13(){
     }
 }
 
-function habilitarSimTextInputAtendimento14(){
+function enableSimTextInputAttendance14(){
     if (document.getElementById("inlineCheckbox14").checked){
         $("#fieldsetDisabled14").prop("disabled",false);
     }else{
@@ -120,7 +120,7 @@ function habilitarSimTextInputAtendimento14(){
     }
 }
 
-function habilitarSimTextInputAtendimento15(){
+function enableSimTextInputAttendance15(){
     if (document.getElementById("inlineCheckbox15").checked){
         $("#fieldsetDisabled15").prop("disabled",false);
     }else{
@@ -128,7 +128,7 @@ function habilitarSimTextInputAtendimento15(){
     }
 }
 
-function habilitarSimTextInputAtendimento16(){
+function enableSimTextInputAttendance16(){
     if (document.getElementById("inlineCheckbox16").checked){
         $("#fieldsetDisabled16").prop("disabled",false);
         $("#fieldsetDisabled17").prop("disabled",false);
@@ -138,7 +138,7 @@ function habilitarSimTextInputAtendimento16(){
     }
 }
 
-function habilitarSimTextInputAtendimento18(){
+function enableSimTextInputAttendance18(){
     if (document.getElementById("inlineCheckbox18").checked){
         $("#fieldsetDisabled18").prop("disabled",false);
     }else{
@@ -146,7 +146,7 @@ function habilitarSimTextInputAtendimento18(){
     }
 }
 
-function habilitarSimTextInputAtendimento19(){
+function enableSimTextInputAttendance19(){
     if (document.getElementById("flexRadioDefault19").checked){
         $("#fieldsetDisabled19").prop("disabled",true);
     }else{
@@ -175,9 +175,9 @@ window.addEventListener('DOMContentLoaded', event => {
 // INSERIR ATENDIMENTOS
 
 
-const tableBodyAtendimento = document.querySelector("#table-body-atendimento");
+const tableBodyAttendance = document.querySelector("#table-body-attendance");
 
-var settingsAtendimento = {
+var settingsAttendance = {
     "url":  "http://127.0.0.1:3081/atendimentoselect",
     "method": "GET",
     "timeout": 0,
@@ -196,23 +196,23 @@ $.ajax({
                 <td>${element.observacaoAtendi}</td>
                 <td>${element.dataAtendi}</td>
                 <td>${element.horaAtendi}</td>
-                <td><button class="buttonEdit" onclick="editarAtendimento(${element.IDAtendimento})"><i class="bi bi-pencil-fill"></i></button>
-                  <button class="buttonDelete" onclick="buttonNewAssAtendi2(${element.IDAtendimento})"><i class="bi bi-trash-fill"></i></button>
+                <td><button class="buttonEdit" onclick="editAttendance(${element.IDAtendimento})"><i class="bi bi-pencil-fill"></i></button>
+                  <button class="buttonDelete" onclick="buttonNewAssAttendance2(${element.IDAtendimento})"><i class="bi bi-trash-fill"></i></button>
                 </td>
         </tr>
 
         `
-        tableBodyAtendimento.appendChild(trr);
+        tableBodyAttendance.appendChild(trr);
         });
     }
 });
 
-function buttonNewAssAtendi() {
-    $('#myModalAtendi').modal('show');
+function buttonNewAssAttendance() {
+    $('#myModalAttendance').modal('show');
 }
 
-function fecharModalAtendi() {
-    $('#myModalAtendi').modal('hide');
+function closeModalAttendance() {
+    $('#myModalAttendance').modal('hide');
 }
 
 
@@ -225,13 +225,13 @@ function fecharModalAtendi() {
 
 // VISUALIZAR ATENDIMENTOS NA TABELA
 
-function salvarAss() {
+function saveAttend() {
     const inputTituloAtendimento = document.querySelector("input[name='titulo']").value;
     const inputDescricaoAtendimento = document.querySelector("input[name='observacao']").value;
     const inputDataAtendimento = document.querySelector("input[name='data']").value;
     const inputhoraAtendimento = document.querySelector("input[name='hora']").value;
 
-    var settingsAtendimento = {
+    var settingsAttendance = {
         "url": "http://127.0.0.1:3081/atendimentoinsert",
         "method": "POST",
         "timeout": 0,
@@ -243,7 +243,7 @@ function salvarAss() {
         }
       };
       
-      $.ajax(settingsAtendimento).done(response => {
+      $.ajax(settingsAttendance).done(response => {
           console.log(response)
       });
 
@@ -257,21 +257,21 @@ function salvarAss() {
 
 // DELETE ATENDIMENTOS
 
-function buttonNewAssAtendi2(id) {
+function buttonNewAssAttendance2(id) {
 
     console.log("foi delete")
-    const deleteAtend = document.createElement("div");
-    deleteAtend.innerHTML = `
+    const deleteAttend = document.createElement("div");
+    deleteAttend.innerHTML = `
     
-    <div id="myModalAtendi2"class="modal customizar">
+    <div id="myModalAttendance2"class="modal customizar">
         <div class="modal-dialog" role="document">
         <div class="modal-content customize">
             <div class="modal-body">
             <p>Tem certeza que deseja excluir o atendimento com id ${id}?</p>
             </div>
             <div class="modal-footer">
-            <button onclick="deleteAtendimento(${id})" type="button" class="btn btn-primary">Excluir Atendimento</button>
-            <button onclick="fecharModalAtendi2()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar Exclusão</button>
+            <button onclick="deleteAttendance(${id})" type="button" class="btn btn-primary">Excluir Atendimento</button>
+            <button onclick="closeModalAttendance2()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar Exclusão</button>
             </div>
         </div>
         </div>
@@ -279,26 +279,26 @@ function buttonNewAssAtendi2(id) {
 
     `
 
-    document.body.appendChild(deleteAtend);
+    document.body.appendChild(deleteAttend);
 
-    $('#myModalAtendi2').modal('show');
+    $('#myModalAttendance2').modal('show');
 }
 
-function fecharModalAtendi2() {
-    $('#myModalAtendi2').modal('hide');
-    $('#myModalAtendi2').remove();
+function closeModalAttendance2() {
+    $('#myModalAttendance2').modal('hide');
+    $('#myModalAttendance2').remove();
 }
 
-function deleteAtendimento(id){
+function deleteAttendance(id){
     console.log("o id é ", id)
-    var settingsAtendii = {
+    var settingsAttendii = {
         "url": "http://127.0.0.1:3081/atendimentodelete",
         "method": "POST",
         "timeout": 0,
         "data": {"IDAtendimento": id},
       };
       
-      $.ajax(settingsAtendii).done(function (response) {
+      $.ajax(settingsAttendii).done(function (response) {
         console.log(response);
       });
     
@@ -310,10 +310,10 @@ function deleteAtendimento(id){
 
 // UPDATE ATENDIMENTOS
 
-function editarAtendimento(id) {
-    const updateAtend = document.createElement("div");
-    updateAtend.innerHTML = `
-    <div id="myModalAtendi10"class="modal customizar">
+function editAttendance(id) {
+    const updateAttend = document.createElement("div");
+    updateAttend.innerHTML = `
+    <div id="myModalAttendance10"class="modal customizar">
         <div class="modal-dialog" role="document">
         <div class="modal-content customize">
             <div class="modal-body">
@@ -360,22 +360,22 @@ function editarAtendimento(id) {
         </div>
     </div>
     `
-    document.body.appendChild(updateAtend);
-    $('#myModalAtendi10').modal('show');
+    document.body.appendChild(updateAttend);
+    $('#myModalAttendance10').modal('show');
 };
 function fecharValAtendi() {
-    $('#myModalAtendi10').modal('hide');
-    $('#myModalAtendi10').remove();
+    $('#myModalAttendance10').modal('hide');
+    $('#myModalAttendance10').remove();
 };
 function editAtendimento(id) {
-    var EditarOsAtendimentos = document.getElementById('inputEditAtendi1').value;
+    var editAttendances = document.getElementById('inputEditAtendi1').value;
     // var newObservacao = document.getElementById('inputEditAtendi2').value
     // var newDataAtendi = document.getElementById('inputEditAtendi3').value
     // var newHoraAtendi = document.getElementById('inputEditAtendi4').value
     $.ajax({
         type: 'POST',
         url: 'http://127.0.0.1:3081/atendimentoupdate',
-        data: {IDAtendimento: id, tituloAtendi: EditarOsAtendimentos}
+        data: {IDAtendimento: id, tituloAtendi: editAttendances}
     }).done(function () {
         console.log("aq")
     }).fail(function (msg) {
@@ -383,8 +383,8 @@ function editAtendimento(id) {
     }).always(function (msg) {
         //console.log('ALWAYS');
     });
-    $('#myModalAtendi10').modal('hide');
-    $('#myModalAtendi10').remove();
+    $('#myModalAttendance10').modal('hide');
+    $('#myModalAttendance10').remove();
 };
 
 
@@ -399,7 +399,7 @@ function editAtendimento(id) {
 //         data.forEach(element => {
 //             const trr = document.createElement("tr");
 //         trr.innerHTML = `
-//         <div id="myModalAtendi10"class="modal customizar">
+//         <div id="myModalAttendance10"class="modal customizar">
 //         <div class="modal-dialog" role="document">
 //         <div class="modal-content customize">
 //             <div class="modal-body">
@@ -445,13 +445,13 @@ function editAtendimento(id) {
 //         </div>
 //     </div>
 //         `
-//         tableBodyAtendimento.appendChild(trr);
+//         tableBodyAttendance.appendChild(trr);
 //         });
 //     }
 // });
 
 
-// // function buttonNewAssAtendi3(id) {
+// // function buttonNewAssAttendance3(id) {
 //     $.ajax({
 //         url:  "http://127.0.0.1:3081/atendimentoselect",
 //         type: 'GET',
@@ -459,7 +459,7 @@ function editAtendimento(id) {
 //             data.forEach(element => {
 //                 const trr = document.createElement("tr");
 //             trr.innerHTML = `
-//             <div id="myModalAtendi10"class="modal customizar">
+//             <div id="myModalAttendance10"class="modal customizar">
 //             <div class="modal-dialog" role="document">
 //             <div class="modal-content customize">
 //                 <div class="modal-body">
@@ -505,7 +505,7 @@ function editAtendimento(id) {
 //             </div>
 //         </div>
 //             `
-//             tableBodyAtendimento.appendChild(trr);
+//             tableBodyAttendance.appendChild(trr);
 //             });
 //         }
 //     });
