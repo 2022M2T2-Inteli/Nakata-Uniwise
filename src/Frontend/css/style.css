@@ -955,7 +955,7 @@ input, button{
     margin-bottom: 1.5rem;
 }
 
-#fullName, #contact, #IDFuncao, #TelefoneEmail, #Nome{
+#nome, #contato, #IDFuncao, #TelefoneEmail, #Nome, #parceiro{
     border-radius: 0;
     border: 0;
     border-bottom: 1px solid grey;
@@ -2243,16 +2243,61 @@ input, button{
     visibility: visible; 
     animation-delay: 0.1s; 
     animation-name: fadeInUp;
-    background-color: #dfdfdf;
+    background-color: #4493CF;
     padding: 2%;
     border-radius: 20px;
     border: none;
-    box-shadow: 1px 1px 4px 4px rgb(134, 133, 133);
+    box-shadow: 1px 1px 4px 4px rgb(218, 218, 218);
     margin: 20px;
+    width: 250px;
+    height: 200px;
+    cursor: pointer;
 }
 
-.fa-calendar-days{
-    font-size: 80px;
+.texteventos1{
+    background-image: url(../assets/img/fichas.png);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+} 
+.texteventos2{
+    background-image: url(../assets/img/formulários.png);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
+} 
+.texteventos3{
+    background-image: url(../assets/img/DOAÇÕES.png);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
+} 
+.texteventos4{
+    background-image: url(../assets/img/EVENTOS.png);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
+} 
+.texteventos5{
+    background-image: url(../assets/img/relatórios.png);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
+} 
+.texteventos6{
+    background-image: url(../assets/img/MAPA.png);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
+} 
+.texteventos7{
+    background-image: url(../assets/img/config.png);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
+} 
+.texteventos8{
+    background-image: url(../assets/img/revirar.png);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
+}
+
+.fa-calendar-days, .fa-sheet-plastic, .fa-wpforms, .fa-hand-holding-dollar, .bi-clipboard-data, .bi-geo-alt, .bi-gear-fill, .bi-laptop, .bi-box2-heart, .bi-telephone, .bi-coin, .bi-envelope-paper-heart, .bi-hourglass-bottom, .bi-clipboard-heart, .bi-clipboard, .bi-file-earmark-arrow-up, .bi-ticket{
+    color: #ffffff;
+    font-size: 60px;
     margin-bottom: 20px;
 }
 
@@ -2261,84 +2306,75 @@ input, button{
 }
 
 .texteventos1:hover{
-    background-image: url(../assets/img/bazareventos.jpg);
+    background-image: url(../assets/img/fichas.png);
     color: white;
     background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
 }
 
 .texteventos2:hover{
-    background-image: url(../assets/img/kiteventos.jpg);
+    background-image: url(../assets/img/formulários.png);
     color: white;
     background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
 }
 
 .texteventos3:hover{
-    background-image: url(../assets/img/abordagemeventos.jpg);
+    background-image: url(../assets/img/DOAÇÕES.png);
     color: white;
     background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
 }
 
 .texteventos4:hover{
-    background-image: url(../assets/img/discussaoeventos.jpg);
+    background-image: url(../assets/img/EVENTOS.png);
     color: white;
     background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
 }
 
 .texteventos5:hover{
-    background-image: url(../assets/img/bazareventos.jpg);
+    background-image: url(../assets/img/relatórios.png);
     color: white;
     background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
 }
 
 .texteventos6:hover{
-    background-image: url(../assets/img/abordagemeventos.jpg);
+    background-image: url(../assets/img/MAPA.png);
     color: white;
     background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
 }
 
 .texteventos7:hover{
-    background-image: url(../assets/img/festajuninaeventos.jpg);
+    background-image: url(../assets/img/config.png);
     color: white;
     background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
+}
+
+.texteventos8:hover{
+    background-image: url(../assets/img/revirar.png);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
 }
 
 
-.texteventos1:hover h3, .texteventos2:hover h3, .texteventos3:hover h3, .texteventos4:hover h3, .texteventos5:hover h3, .texteventos6:hover h3, .texteventos7:hover h3{
-    color: white !important;
-    text-decoration: none !important;
-}
-
-.texteventos1:hover h5, .texteventos2:hover h5, .texteventos3:hover h5, .texteventos4:hover h5, .texteventos5:hover h5, .texteventos6:hover h5, .texteventos7:hover h5{
-    color: white !important;
-    text-decoration: none !important;
-}
-
-.texteventos1 h3, .texteventos2 h3, .texteventos3 h3, .texteventos4 h3, .texteventos5 h3, .texteventos6 h3, .texteventos7 h3{
-    color: rgb(0, 0, 0) !important;
-    text-decoration: none !important;
-}
-
-.texteventos1:hover a, .texteventos2:hover a, .texteventos3:hover a, .texteventos4:hover a, .texteventos5:hover a, .texteventos6:hover a, .texteventos7:hover a{
-    width: 120px;
-    color: rgb(0, 0, 0);
+.texteventos1 h3, .texteventos2 h3, .texteventos3 h3, .texteventos4 h3, .texteventos5 h3, .texteventos6 h3, .texteventos7 h3,  .texteventos8 h3{
+    color: rgb(255, 255, 255) !important;
     text-decoration: none !important;
 }
 
 .btneventos {
-    width: 35px;
-    height: 40px;
+    width: 10px;
+    height: 20px;
     margin-bottom: 20px;
     display: inline-flex;
     align-items: center;
     color: var(--dark);
-    background: #FFFFFF;
+    background: #000000;
     white-space: nowrap;
     overflow: hidden;
     transition: .5s;

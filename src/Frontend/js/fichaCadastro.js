@@ -1,16 +1,3 @@
-// $(document).ready( function() {
-//     habilitarSimTextInput();
-// });
-
-// function habilitarSimTextInput(){
-//     if (document.getElementById("flexRadioDefault2").checked){
-//         $("#fieldsetDisabled").prop("disabled",false);
-//     }else{
-//         $("#fieldsetDisabled").prop("disabled",true);
-//     }
-// }
-
-
 function buttonNewCad(){
     $('#myModal20').modal('show');
 }

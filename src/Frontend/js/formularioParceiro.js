@@ -26,10 +26,10 @@ btn.addEventListener('touchstart', menu);
 // funções 
 
 
-const tableBody = document.querySelector("#table-body-form");
+const tableBody = document.querySelector("#table-body-parceiro");
 
 $.ajax({
-    url: "http://127.0.0.1:3094/formselect",
+    url: "http://127.0.0.1:3094/formparceiroselect",
     type: 'GET',
     success: data => {
         data.forEach(element => {
@@ -37,19 +37,17 @@ $.ajax({
         tr.innerHTML = `
         
         <tr>
-                <th scope="row">${element.IDform}</th>
-                <td>${element.Nome}</td>
-                <td>${element.TelefoneEmail}</td>
-                <td>${element.IDFuncao}</td>
+                <th scope="row">${element.IDParceiro}</th>
+                <td>${element.nome}</td>
+                <td>${element.parceiro}</td>
                 <td>
-                <button onclick="editform(${element.IDform})" class="buttonEdit"><i class="bi bi-plus-lg"></i></button>
-                <button onclick="viewform(${element.IDform})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
-                <button onclick="deleteForm(${element.IDform})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
+                <button onclick="viewform(${element.IDParceiro})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
+                <button onclick="deleteForm(${element.IDParceiro})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                 </td>
                 <td><select id="select-btn" class="form-select alinhamento" aria-label="Default select example">
-                <option selected>Selecionar</option>
-                <option>Realizado</option>
-                <option>Pendente</option>
+                <option selected class="white">Selecionar</option>
+                <option class="white">Realizado</option>
+                <option class="white">Pendente</option>
                 </select></td>
                 
         </tr>
@@ -84,7 +82,7 @@ $.ajax({
 
 
 
-function salvarAssAbo() {
+function parceiros() {
 
     Swal.fire(
         'Enviado!',
@@ -93,19 +91,21 @@ function salvarAssAbo() {
     )
     
 
-   const Nome = document.getElementById("Nome").value;
-   const TelefoneEmail  = document.getElementById("TelefoneEmail").value;
-   const IDFuncao  = document.getElementById("IDFuncao").value;
+   const nome = document.getElementById("nome").value;
+   const contato  = document.getElementById("contato").value;
+   const parceiro  = document.getElementById("parceiro").value;
+   const assunto  = document.getElementById("mensagem").value;
 
     var settings = {
-        "url": "http://127.0.0.1:3094/forminsert",
+        "url": "http://127.0.0.1:3094/formparceiroinsert",
         "method": "POST",
         "timeout": 0,
         "data": {
 
-            "Nome": Nome,
-            "TelefoneEmail": TelefoneEmail,
-            "IDFuncao": IDFuncao,
+            "nome": nome,
+            "contato": contato,
+            "parceiro": parceiro,
+            "assunto": assunto,
         }
       };
       
@@ -126,10 +126,10 @@ function deleteForm(id){
             <div class="modal-dialog" role="document">
             <div class="modal-content customize">
                 <div class="modal-body">
-                <p>Tem certeza que deseja excluir o formulario com id `+ id +`?</p>
+                <p>Tem certeza que deseja excluir o contato com id `+ id +`?</p>
                 </div>
                 <div class="modal-footer">
-                <button onclick="deleteAssistido(${id})" type="button" class="btn btn-primary">Excluir formulário</button>
+                <button onclick="deleteAssistido(${id})" type="button" class="btn btn-primary">Excluir Contato</button>
                 <button onclick="fecharModal(${id})" type="button" class="btn btn-secondary">Cancelar Exclusão</button>
                 </div>
             </div>
@@ -149,11 +149,11 @@ function fecharModal(id){
 function deleteAssistido(id){
     
     var settings = {
-        "url": "http://127.0.0.1:3094/formdelete",
+        "url": "http://127.0.0.1:3094/formparceirodelete",
         "method": "POST",
         "timeout": 0,
         "data": {
-          "IDform": id, 
+          "IDParceiro": id, 
         }
       };
       
@@ -163,104 +163,11 @@ function deleteAssistido(id){
     
 }
 
-
-
-function searchFilter() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("inputSearchID");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("table");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }
-    }
-}
-
-
-
-
-
-
-// EDIÇÃO
-
-function editform(id) {
-    console.log(id);
-    $.ajax({
-        url: "http://127.0.0.1:3094/formselect",
-        type: 'GET',
-        success: data => {
-            data.forEach(element => {
-                var editarform = `
-                    <div id="myModal`+id+`"class="modal customizar">
-                        <div class="modal-dialog" role="document">
-                        <div class="modal-content customize">
-                            <div class="modal-body">
-                            <div class="mb-1" id="teste23">
-                            <h5 for="exampleInputEmail1" class="form-label">Observação:</h5>
-                            <br>
-                            <div id="displaytt">
-                                <input class="form-control" type="text" id="inputEdit1" placeholder="${element.obsForm}" value="${element.obsForm}"></input>
-                            </div>
-                            <br>
-                            <div class="modal-footer">
-                            <button onclick="editVal(${id})" type="button" class="btn btn-primary">Confirmar edição</button>
-                            <button onclick="fecharVal(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    `
-                if(element.IDform == id){
-                    document.getElementById("modalForm").innerHTML = editarform;
-                    $('#myModal' + id).modal('show');
-                }
-            });
-        }
-    });
-};
-
-function fecharVal(id) {
-    $('#myModal' + id).modal('hide');
-    $('#myModal' + id).remove();
-};
-
-function editVal(id) {
-    var editform = document.getElementById('inputEdit1').value;
-
-    $.ajax({
-        type: 'POST',
-        url: 'http://127.0.0.1:3094/formupdate',
-        data: {IDform: id, obsForm: editform},
-    }).done(function () {
-        console.log("aq")
-    }).fail(function (msg) {
-        //console.log('FAIL');
-    }).always(function (msg) {
-        //console.log('ALWAYS');
-    });
-    
-    $('#myModal' + id).modal('hide');
-    $('#myModal' + id).remove();
-};
-
-
-
-// VISUALIZAR
-
-
 // Visualizar form Total
 
 function viewform(id){
     $.ajax({
-        url: "http://127.0.0.1:3094/formselect",
+        url: "http://127.0.0.1:3094/formparceiroselect",
         type: 'GET',
         success: data => {
          data.forEach(element => {
@@ -276,22 +183,23 @@ function viewform(id){
                     <br>
                     <div>
                         <h4>Nome:</h4>
-                        <p class="designer">${element.Nome}</p>
+                        <p class="designer">${element.nome}</p>
                     </div>
                     <br>
                     <div>
                         <h4>Contato:</h4>
-                        <p class="designer">${element.TelefoneEmail}</p>
+                        <p class="designer">${element.contato}</p>
                     </div>
                     <br>
                     <div>
-                        <h4>Função Desejada:</h4>
-                        <p class="designer">${element.IDFuncao}</p>
+                        <h4>Parceiro:</h4>
+                        <p class="designer">${element.parceiro}</p>
                     </div>
                     <br>
+                    <br>
                     <div>
-                        <h4>Observação:</h4>
-                        <p class="designer">${element.obsForm}</p>
+                        <h4>Assunto:</h4>
+                        <p class="designer">${element.assunto}</p>
                     </div>
                     <br>
                     <div>
@@ -303,7 +211,7 @@ function viewform(id){
             </div>
             `
 
-            if (element.IDform == id){
+            if (element.IDParceiro == id){
                 document.body.appendChild(dive);
                 $('#myModal' + id).modal('show');
             }

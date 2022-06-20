@@ -154,6 +154,115 @@ var sql = 'SELECT * FROM forms ORDER BY IDform COLLATE NOCASE';
   db.close();
 });
 
+
+
+// FORMULÁRIO DE CONTATO
+
+// Insere um registro (é o C do CRUD - Create)
+app.post('/formcontatoinsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "INSERT INTO contato (nome, contato, assunto) VALUES (  '" + req.body.nome + "','" + req.body.contato + "','" + req.body.assunto + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+
+
+
+// Exclui um registro (é o D do CRUD - Delete)
+app.post('/formcontatodelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+  sql = "DELETE FROM contato WHERE IDContato = '" + req.body.IDContato + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+
+app.get('/formcontatoselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM contato ORDER BY IDContato COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
+
+
+
+// FORMULÁRIO DE PARCEIRO
+
+// Insere um registro (é o C do CRUD - Create)
+app.post('/formparceiroinsert', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+  sql = "INSERT INTO parceiros (nome, contato, parceiro, assunto) VALUES (  '" + req.body.nome + "','" + req.body.contato + "','" + req.body.parceiro + "', '" + req.body.assunto + "')";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+  });
+  db.close(); // Fecha o banco
+  res.end();
+});
+
+
+
+// Exclui um registro (é o D do CRUD - Delete)
+app.post('/formparceirodelete', urlencodedParser, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+  sql = "DELETE FROM parceiros WHERE IDParceiro = '" + req.body.IDParceiro + "'";
+  var db = new sqlite3.Database(DBPATH); // Abre o banco
+  db.run(sql, [],  err => {
+      if (err) {
+          throw err;
+      }
+      res.end();
+  });
+  db.close(); // Fecha o banco
+});
+
+
+
+app.get('/formparceiroselect', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM parceiros ORDER BY IDParceiro COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
+
+
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
