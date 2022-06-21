@@ -36,8 +36,8 @@ const tableBodyy = document.querySelector("#table-body-frequencia"); //Cria uma 
 $.ajax({ //Sintax do AJAX Jquery
     url: "http://127.0.0.1:3081/fichafrequenciaselect", // URL definido no endpoint do node(node app_xx.js)
     type: 'GET', // Tipo de requisição do endpoint
-    success: data => { // Sucesso do get pega a data do banco de dados
-        data.forEach(element => { // pega o tamanho do banco de dados e cria o parametro element
+    success: data => {// Sucesso do get pega a data do banco de dados
+        data.data.forEach(element => { // pega o tamanho do banco de dados e cria o parametro element
             const tr = document.createElement("tr"); // Criado uma constante para criar na tabela vazia linhas do banco de dados dependendo do tamanho do banco
         tr.innerHTML = `
         <tr>
@@ -45,8 +45,9 @@ $.ajax({ //Sintax do AJAX Jquery
                 <td>${element.dataFreq}</td>
                 <td>${element.horarioFreq}</td>
                 <td>${element.nomeFreq}</td>
-                <td><button onclick="editDoacao(${element.IDFrequencia})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
-                  <button onclick="deleteDoacao(${element.IDFrequencia})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
+                <td><button onclick="viewCadastro(${element.IDFrequencia})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
+                    <button onclick="editDoacao(${element.IDFrequencia})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
+                    <button onclick="deleteDoacao(${element.IDFrequencia})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                 </td>
         </tr>
         ` // constante. innerHTML é para escrever no HTML (O elemement é o parametro e o que vem depois é o nome de cada coluna do seu banco, nos botoes como parametro da função onclick é passado o id paar identificar de qual ele vai excluir e atualizar)
@@ -125,23 +126,26 @@ function disableField(number){ // Função que desabilita para editar (No seu cu
     document.getElementById("inputEdit" + number).disabled = true;
 }
 
-function editDoacao(id) { // funçaõ do botão criado no primeiro select do sql
-    $.ajax({ //definição dos metodos
+function editDoacao(id) {
+    console.log(id);
+    $.ajax({
         url: "http://127.0.0.1:3081/fichafrequenciaselect",
         type: 'GET',
         success: data => {
-            data.forEach(element => {
-                const editarDo = `
+            data.data.forEach(element => {
+                var editarDo = `
                     <div id="myModal`+id+`"class="modal customizar">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content customize">
                             <div class="modal-body">
                             <div class="mb-1" id="teste23">
                             <label for="exampleInputEmail1" class="form-label"></label>Nome:
+
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(1)" class="form-control" type="text" id="inputEdit1" placeholder="${element.nomeFreq}" value="${element.nomeFreq}"></input>
-                            <button onclick="enableField(1)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                                <input disabled onfocusout="disableField(1)" class="form-control" type="text" id="inputEdit1" placeholder="${element.nomeFreq}" value="${element.nomeFreq}"></input>
+                                <button onclick="enableField(1)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
+
                             </div>
                             <div class="mb-2">
                             <label for="exampleInputEmail1" class="form-label"></label>Data:
@@ -149,11 +153,13 @@ function editDoacao(id) { // funçaõ do botão criado no primeiro select do sql
                             <input disabled onfocusout="disableField(2)" class="form-control" type="text" id="inputEdit2" placeholder="${element.dataFreq}" value="${element.dataFreq}"></input>
                             <button onclick="enableField(2)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
+                            </div>
                             <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label"></label>Horário:
                             <div id="displaytt">
                             <input disabled onfocusout="disableField(3)" class="form-control" type="text" id="inputEdit3" placeholder="${element.horarioFreq}" value="${element.horarioFreq}"></input>
                             <button onclick="enableField(3)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            </div>
                             </div>
                             <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label"></label>Banho:
@@ -161,14 +167,16 @@ function editDoacao(id) { // funçaõ do botão criado no primeiro select do sql
                             <input disabled onfocusout="disableField(4)" class="form-control" type="text" id="inputEdit4" placeholder="${element.banhoFreq}" value="${element.banhoFreq}"></input>
                             <button onclick="enableField(4)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
-                            <div class="mb-5">
+                            </div>
+                            <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label"></label>Lanche:
                             <div id="displaytt">
                             <input disabled onfocusout="disableField(5)" class="form-control" type="text" id="inputEdit5" placeholder="${element.lancheFreq}" value="${element.lancheFreq}"></input>
                             <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
+                            </div>
                             <div class="mb-6">
-                            <label for="exampleInputEmail1" class="form-label"></label>Data:
+                            <label for="exampleInputEmail1" class="form-label"></label>Roupa:
                             <div id="displaytt">
                             <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.roupaFreq}" value="${element.roupaFreq}"></input>
                             <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
@@ -182,29 +190,33 @@ function editDoacao(id) { // funçaõ do botão criado no primeiro select do sql
                         </div>
                         </div>
                     </div>
-    ` //Criação de uma constante com o conteudo para add no html
-    if(element.IDFrequencia == id){ //condição para não criar varios modais
-        document.getElementById("modal").innerHTML = editarDo; // pega o id de uma div vazia no html e coloca o modal la
-        $('#myModal' + id).modal('show'); // mostra o modal
+                    `
+    if(element.IDFrequencia == id){
+        document.getElementById("modalFrequencia").innerHTML = editarDo;
+        $('#myModal' + id).modal('show');
     }
             });
         }
     });
 };
 
-function fecharVal(id) { // função dentro do modal criado de editar
-    $('#myModal' + id).modal('hide');// esconde o modal
-    $('#myModal' + id).remove(); // remove o modal
+function fecharVal(id) {
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
-function editVal(id) {// função de editar no modal criado acima
-    var edit1 = document.getElementById('inputEdit1').value; // criar uma variavel para cada campo que deseja que seja alterado, pegando pelo id dos inputs dentro do modal de edição
+function editVal(id) {
+    var edit1 = document.getElementById('inputEdit1').value;
     var edit2 = document.getElementById('inputEdit2').value;
+    var edit3 = document.getElementById('inputEdit3').value;
+    var edit4 = document.getElementById('inputEdit4').value;
+    var edit5 = document.getElementById('inputEdit5').value;
+    var edit6 = document.getElementById('inputEdit6').value;
 
-    $.ajax({ // ajax com metodos do endpoint de update
+    $.ajax({
         type: 'POST',
         url: 'http://127.0.0.1:3081/fichafrequenciaupdate',
-        data: {IDFrequencia: id, nomeFreq: edit1, dataFreq: edit2, horarioFreq: edit3, banhoFreq: edit4, lancheFreq: edit5, roupaFreq: edit6}, // primeiro vem o nome da coluna do sql e depois o nome do var criado acima
+        data: {IDFrequencia: id, nomeFreq: edit1, dataFreq: edit2, horarioFreq: edit3, banhoFreq: edit4, lancheFreq: edit5, roupaFreq: edit6},
     }).done(function () {
         console.log("aq")
     }).fail(function (msg) {
@@ -213,8 +225,67 @@ function editVal(id) {// função de editar no modal criado acima
         //console.log('ALWAYS');
     });
     
-    $('#myModal' + id).modal('hide'); // esconde o modal
-    $('#myModal' + id).remove(); // remove o modal
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
+};
+
+
+
+function viewCadastro(id) {
+    $.ajax({
+        url: "http://127.0.0.1:3081/fichafrequenciaselect",
+        type: 'GET',
+        success: data => {
+            data.data.forEach(element => {
+                const divvv = `
+                    <div id="myModal`+id+`"class="modal customizar">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content customize">
+                        <div class="modal-body">
+                        <div class="mb-1">
+                        <label for="exampleInputEmail1" class="form-label"></label>Nome:
+                        <p class="textAA">${element.nomeFreq}</p>
+                    </div>
+                    <div class="mb-2">
+                        <label for="exampleInputEmail1" class="form-label"></label>Data:
+                        <p class="textAA">${element.dataFreq}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label"></label>Horário:
+                        <p class="textAA">${element.horarioFreq}</p>
+                    </div>
+                    <div class="mb-4">
+                        <label for="exampleInputEmail1" class="form-label"></label>Banho:
+                        <p class="textAA">${element.banhoFreq}</p>
+                    </div>
+                    <div class="mb-4">
+                        <label for="exampleInputEmail1" class="form-label"></label>Lanche:
+                        <p class="textAA">${element.lancheFreq}</p>
+                    </div>
+                    <div class="mb-6">
+                        <label for="exampleInputEmail1" class="form-label"></label>Roupa:
+                        <p class="textAA">${element.roupaFreq}</p>
+                    </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button onclick="fecharform(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Fechar formulário</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                `
+        if(element.IDFrequencia == id){
+            document.getElementById("modalFrequencia").innerHTML = divvv;
+            $('#myModal' + id).modal('show');
+        }
+                });
+            }
+        });
+};
+
+function fecharform(id) {
+    $('#myModal' + id).modal('hide');
+    $('#myModal' + id).remove();
 };
 
 function searchFilter() { //Função para filtrar os valores atraves de pesquisa (não é pedido que coloque no seu curriculo, mas caso queira me avisa que eu te explico)

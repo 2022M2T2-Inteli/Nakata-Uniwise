@@ -927,7 +927,7 @@ app.post('/fichafrequenciaupdate', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-  sql = "UPDATE FichaFrequencia SET dataFreq = '" + req.body.dataFreq + "' WHERE IDFrequencia = '" + req.body.IDFrequencia + "'";
+  sql = "UPDATE FichaFrequencia SET nomeFreq = '" + req.body.nomeFreq + "', dataFreq = '" + req.body.dataFreq + "', horarioFreq = '" + req.body.horarioFreq + "', lancheFreq = '" + req.body.lancheFreq + "', roupaFreq = '" + req.body.roupaFreq + "', banhoFreq = '" + req.body.banhoFreq + "' WHERE IDFrequencia = '" + req.body.IDFrequencia + "'";
   var db = new sqlite3.Database(DBPATH); // Abre o banco
   db.run(sql, [],  err => {
       if (err) {
