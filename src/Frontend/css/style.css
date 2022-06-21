@@ -91,12 +91,14 @@ header{
     justify-content: right;
     border: none;
     text-decoration: none;
+    padding: 3px;
 }
 .menu-give-button:hover{
     background-color: white;
     color: #141313;
     justify-content: right;
     border: none;
+    padding: 3px;
 }
 
 #header{
@@ -1033,7 +1035,7 @@ input, button{
     font-size: 40px;
 }
 .text-home-Vol p{
-    text-align: center;
+    text-align: left;
     font-size: 20px;
 }
 
@@ -2457,7 +2459,7 @@ input, button{
 
 .image-reports-event{
     border-radius: 0%;
-    width: 120% !important;
+    width: 100% !important;
 }
 
 /* PÁGINA ERRO */

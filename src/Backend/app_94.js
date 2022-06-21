@@ -1,6 +1,8 @@
 
 const express = require('express'); 
+const cors = require("cors");
 const app = express();
+app.use(cors());
 app.use(express.static("../../../frontend/"));
 
 const hostname = '127.0.0.1';
@@ -82,7 +84,20 @@ app.post('/loginselect', urlencodedParser, (req, res) => {
 });
 
 
+app.get('/loginselect2', (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Access-Control-Allow-Origin', '*');
 
+  var db = new sqlite3.Database(DBPATH);
+var sql = 'SELECT * FROM login ORDER BY IDlogin COLLATE NOCASE';
+  db.all(sql, [],  (err, rows ) => {
+      if (err) {
+          throw err;
+      }
+      res.json(rows);
+  });
+  db.close();
+});
 
 
 

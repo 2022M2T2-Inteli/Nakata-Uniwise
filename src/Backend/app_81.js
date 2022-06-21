@@ -571,7 +571,7 @@ app.post('/doacaoinsert', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  var sql = "INSERT INTO Doacao (tituloDoacao, descricaoDoacao, dataDoacao, horarioDoacao, valorDoacao, comproDoacao) VALUES ('"+ req.body.tituloDoacao +"', '"+ req.body.descricaoDoacao +"', '"+ req.body.dataDoacao +"', '"+ req.body.horarioDoacao +"', '"+ req.body.valorDoacao +"', '"+ req.body.comproDoacao +"')";
+  var sql = "INSERT INTO Doacao (tituloDoacao, descricaoDoacao, dataDoacao, valorDoacao, comproDoacao, nomeDoador, cpfDoador, telefoneDoador) VALUES ('"+ req.body.tituloDoacao +"', '"+ req.body.descricaoDoacao +"', '"+ req.body.dataDoacao +"', '"+ req.body.valorDoacao +"', '"+ req.body.comproDoacao +"', '"+ req.body.nomeDoador +"', '"+ req.body.cpfDoador +"', '"+ req.body.telefoneDoador +"')";
   var db = new sqlite3.Database(DBPATH);
   db.run(sql, [],  err => {
       if (err) {
@@ -603,7 +603,7 @@ app.post('/doacaoupdate', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  sql = "UPDATE Doacao SET tituloDoacao = '" + req.body.tituloDoacao + "', descricaoDoacao = '" + req.body.descricaoDoacao + "', dataDoacao = '" + req.body.dataDoacao + "', horarioDoacao = '" + req.body.horarioDoacao + "', valorDoacao = '" + req.body.valorDoacao + "', comproDoacao = '" + req.body.comproDoacao + "' WHERE IDDoacao = " + req.body.IDDoacao;
+  sql = "UPDATE Doacao SET tituloDoacao = '" + req.body.tituloDoacao + "', descricaoDoacao = '" + req.body.descricaoDoacao + "', dataDoacao = '" + req.body.dataDoacao + "', valorDoacao = '" + req.body.valorDoacao + "', comproDoacao = '" + req.body.comproDoacao + "', nomeDoador = '" + req.body.nomeDoador + "', cpfDoador = '" + req.body.cpfDoador + "', telefoneDoador = '" + req.body.telefoneDoador +  "' WHERE IDDoacao = " + req.body.IDDoacao;
   
   var db = new sqlite3.Database(DBPATH);
   db.run(sql, [],  err => {
@@ -894,7 +894,7 @@ app.post('/fichafrequenciainsert', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-  sql = "INSERT INTO FichaFrequencia (dataFreq, horarioFreq, nomeFreq, banhoFreq, lancheFreq, roupaFreq, cestaBaFreq, TransFreq) VALUES ('" + req.body.dataFreq + "', '" + req.body.horarioFreq + "', '" + req.body.nomeFreq + "', '" + req.body.banhoFreq + "', '" + req.body.lancheFreq + "', '" + req.body.roupaFreq + "', '" + req.body.cestaBaFreq + "', '" + req.body.TransFreq + "')";
+  sql = "INSERT INTO FichaFrequencia (dataFreq, horarioFreq, nomeFreq, banhoFreq, lancheFreq, roupaFreq) VALUES ('" + req.body.dataFreq + "', '" + req.body.horarioFreq + "', '" + req.body.nomeFreq + "', '" + req.body.banhoFreq + "', '" + req.body.lancheFreq + "', '" + req.body.roupaFreq + "')";
   var db = new sqlite3.Database(DBPATH); // Abre o banco
   db.run(sql, [],  err => {
       if (err) {
@@ -1164,6 +1164,10 @@ app.post('/usuariosadmupdate', urlencodedParser, (req, res) => {
   });
   db.close(); // Fecha o banco
 });
+
+
+
+
 
 
 app.listen(port, hostname, () => {
