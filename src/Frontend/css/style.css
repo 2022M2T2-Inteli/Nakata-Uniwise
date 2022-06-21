@@ -393,6 +393,10 @@ header{
     width: 40%;
 }
 
+.plusHome{
+    font-size: 50px;
+}
+
 .text-home{
     width: 70%;
     margin: 0 auto;
