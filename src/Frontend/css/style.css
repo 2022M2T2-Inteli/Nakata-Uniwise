@@ -91,14 +91,14 @@ header{
     justify-content: right;
     border: none;
     text-decoration: none;
-    padding: 4px;
+    padding: 3px;
 }
 .menu-give-button:hover{
     background-color: white;
     color: #141313;
     justify-content: right;
     border: none;
-    padding: 4px;
+    padding: 3px;
 }
 
 #header{
