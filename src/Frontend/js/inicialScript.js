@@ -140,8 +140,11 @@ $.ajax({
                 <th scope="row">${element.IDDoacao}</th>
                 <td>${element.tituloDoacao}</td>
                 <td>${element.dataDoacao}</td>
-                <td>${element.horarioDoacao}</td>
                 <td>${element.valorDoacao}</td>
+                <td>${element.nomeDoador}</td>
+                <td>${element.cpfDoador}</td>
+                <td>${element.telefoneDoador}</td>
+
                 <td><button onclick="editDoacao(${element.IDDoacao})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
                   <button onclick="deleteDoacao(${element.IDDoacao})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                   <button onclick="viewDoacao(${element.IDDoacao})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
@@ -158,9 +161,12 @@ function salvarAss() {
     const inputTitulo = document.querySelector("input[name='titulo']").value;
     const inputDescricao = document.querySelector("input[name='descricao']").value;
     const inputData = document.querySelector("input[name='data']").value;
-    const inputHora = document.querySelector("input[name='horario']").value;
     const inputValor = document.querySelector("input[name='valor']").value;
     const inputCompro = document.querySelector("input[name='compro']").value;
+    const inputNomeDoa = document.querySelector("input[name='nomeDoa']").value;
+    const inputCpfDoa = document.querySelector("input[name='cpfDoa']").value;
+    const inputTelefoneDoa = document.querySelector("input[name='telefoneDoa']").value;
+
 
 
     var settings = {
@@ -171,9 +177,12 @@ function salvarAss() {
             "tituloDoacao": inputTitulo,
             "descricaoDoacao": inputDescricao,
             "dataDoacao": inputData,
-            "horarioDoacao": inputHora,
             "valorDoacao": inputValor,
             "comproDoacao": inputCompro,
+            "nomeDoador": inputNomeDoa,
+            "cpfDoador": inputCpfDoa,
+            "telefoneDoador": inputTelefoneDoa,
+
 
         }
       };
@@ -291,12 +300,20 @@ function viewDoacao(id) {
             <p class="textAA">${element.dataDoacao}</p>
           </div>
           <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label"></label>Horário:
-            <p class="textAA">${element.horarioDoacao}</p>
+            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+            <p class="textAA">${element.comproDoacao}</p>
           </div>
           <div class="mb-6">
             <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
-            <p class="textAA">${element.comproDoacao}</p>
+            <p class="textAA">${element.nomeDoador}</p>
+          </div>
+          <div class="mb-6">
+            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+            <p class="textAA">${element.cpfDoador}</p>
+          </div>
+          <div class="mb-6">
+            label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+            <p class="textAA">${element.telefoneDoador}</p>
           </div>
             </div>
             <div class="modal-footer">

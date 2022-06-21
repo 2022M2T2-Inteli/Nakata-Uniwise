@@ -25,19 +25,16 @@ if(sidebar.classList.contains("open")){
 // MAPA
 
 var revirarIcon = L.icon({
-    iconUrl: 'leaf-green.png',
-    // shadowUrl: 'leaf-shadow.png',
+    iconUrl: '../assets/img/locationrevirar.png',
 
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    iconSize:     [45, 70],
+    iconAnchor:   [22, 54],
 });
 // var map = L.map('map').setView([0, 0], 1)
-var map = L.map('map').setView([-23.578811057501508, -46.565881116593985], 30);
+var map = L.map('map').setView([-23.5789808994088, -46.566464301338655], 30);
 
 L.tileLayer('https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=HdZFsisrWXnYbxg8tdAh', {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',}).addTo(map);
+L.Control.geocoder().addTo(map);
 
-const REVIRAR = L.marker([-23.578811057501508, -46.565881116593985], {icon: revirarIcon}).addTo(map).bindPopup("<b>Projeto REVIRAR<br/>Rua Nhengaibas, 356 - Água Rasa.");
-// L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map);
+
+const REVIRAR = L.marker([-23.5789808994088, -46.566464301338655], {icon: revirarIcon}).addTo(map).bindPopup("<b>Projeto REVIRAR<br/>Rua Nhengaibas, 356 - Água Rasa");

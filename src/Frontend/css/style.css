@@ -1110,21 +1110,60 @@ input, button{
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
 
+.fvalor {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid green;
+    border-radius: 4px;
+}
+
 .videoInicio {
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+    /* right: 0;
+    bottom: 0; */
+    /* width: 100%;
+    height: 100%; */
+    width:100%; 
+    height:100%
   }
   
+.card-footerr{
+
+}
+
+.card-bodyy{
+    
+}
+
+.alert {
+    border-radius: 5px;
+    width: 50%;
+}
+
+.card2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: none;
+}
+
+.card-img-top{
+    /* width: 50%; */
+}
+.videospende{
+    position: relative;
+}
+
 .conteudoDoacao {
     position: absolute;
-    bottom: 0;
+    top: 5%;
     color: #f1f1f1;
     width: 100%;
-    padding: 20vh;
+    padding: 10vh;
     display: flex;
-    height: 100vh;
+    /* height: 100vh; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -1151,7 +1190,7 @@ input, button{
 .iconeSetaInicio {
     bottom: 0;
     color: #f1f1f1;
-    display: inline-flex;
+    display: none;
     justify-content: center;
   }
 
@@ -1167,9 +1206,6 @@ input, button{
     animation: smooth 1s ease-out;
   }
 
-.textoTituloDoacao {
-    margin-top: 40vh;
-  }
 
 /* Primeiro texto doação */
 
@@ -1263,13 +1299,15 @@ input, button{
     width: 30%;
     height: 50%;
 }
+
 .tituloDoacaoFixo {
     text-align: center;
 }
 
+
 .card-img-house {
-    width: 20%;
-    height: 20%;
+    width: 25%;
+    /* height: 20%; */
 }
 .geralColunas {
     display: flex;
@@ -1285,7 +1323,6 @@ input, button{
 
   /* Espaço de texto para outro valor */
 .form__group {
-    margin-left: 73vh;
     display: flex;
     position: relative;
     justify-content: center;
@@ -1294,6 +1331,8 @@ input, button{
     padding: 15px 0 0;
     margin-top: 10px;
     width: 20%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .form__field {
     font-family: inherit;
@@ -1306,6 +1345,8 @@ input, button{
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
+    text-align: center;
+    justify-content: center;
     text-align: center;
 }
 .form__field::placeholder {
@@ -1351,8 +1392,13 @@ input, button{
     display: flex;
 }
 
-.lugar {
+.tittleSpendes {
     text-align: center;
+}
+
+
+.card-footer {
+    color: white;
 }
 
 .mensalorindi {
@@ -2406,8 +2452,6 @@ input, button{
     display: flex;
 }
 
-
-
 .botaoeventos a{
     text-decoration: none !important;
     color: white !important;
@@ -2462,3 +2506,26 @@ input, button{
     background-color: #FAF806;
 }
 
+.textoTituloDoacao h1 {
+    font-size: 14px;
+}
+
+.textoTituloDoacao h4 {
+    font-size: 14px;
+}
+
+@media only screen and (min-width: 768px){
+    .conteudoDoacao{
+        top: 20%;
+    }
+    .iconeSetaInicio {
+        display: inline-flex;
+    }
+    .textoTituloDoacao h1 {
+        font-size: 50px;
+    }
+    
+    .textoTituloDoacao h4 {
+        font-size: 30px;
+    }
+  }

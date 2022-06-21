@@ -45,8 +45,10 @@ $.ajax({
                 <th scope="row">${element.IDDoacao}</th>
                 <td>${element.tituloDoacao}</td>
                 <td>${element.dataDoacao}</td>
-                <td>${element.horarioDoacao}</td>
                 <td>${element.valorDoacao}</td>
+                <td>${element.nomeDoador}</td>
+                <td>${element.cpfDoador}</td>
+                <td>${element.telefoneDoador}</td>
                 <td><button onclick="editDoacao(${element.IDDoacao})" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
                   <button onclick="deleteDoacao(${element.IDDoacao})" class="buttonDelete"><i class="bi bi-trash-fill"></i></button>
                   <button onclick="viewDoacao(${element.IDDoacao})" class="buttonView"><i class="bi bi-eye-fill"></i></button>
@@ -63,9 +65,12 @@ function salvarAss() {
     const inputTitulo = document.querySelector("input[name='titulo']").value;
     const inputDescricao = document.querySelector("input[name='descricao']").value;
     const inputData = document.querySelector("input[name='data']").value;
-    const inputHora = document.querySelector("input[name='horario']").value;
     const inputValor = document.querySelector("input[name='valor']").value;
     const inputCompro = document.querySelector("input[name='compro']").value;
+    const inputNomeDoa = document.querySelector("input[name='nomeDoa']").value;
+    const inputCpfDoa = document.querySelector("input[name='cpfDoa']").value;
+    const inputTelefoneDoa = document.querySelector("input[name='telefoneDoa']").value;
+
 
 
     var settings = {
@@ -76,9 +81,12 @@ function salvarAss() {
             "tituloDoacao": inputTitulo,
             "descricaoDoacao": inputDescricao,
             "dataDoacao": inputData,
-            "horarioDoacao": inputHora,
             "valorDoacao": inputValor,
             "comproDoacao": inputCompro,
+            "nomeDoador": inputNomeDoa,
+            "cpfDoador": inputCpfDoa,
+            "telefoneDoador": inputTelefoneDoa,
+
 
         }
       };
@@ -172,16 +180,30 @@ function editDoacao(id) {
                             </div>
                             </div>
                             <div class="mb-4">
-                            <label for="exampleInputEmail1" class="form-label"></label>Horário:
+                            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(5)" class="form-control" type="text" id="inputEdit5" placeholder="${element.horarioDoacao}" value="${element.horarioDoacao}"></input>
-                            <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            <input disabled onfocusout="disableField(4)" class="form-control" type="text" id="inputEdit6" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
+                            <button onclick="enableField(4)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-6">
                             <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
+                            <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.nomeDoador}" value="${element.nomeDoador}"></input>
+                            <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            </div>
+                            </div>
+                            <div class="mb-6">
+                            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+                            <div id="displaytt">
+                            <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.cpfDoador}" value="${element.cpfDoador}"></input>
+                            <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            </div>
+                            </div>
+                            <div class="mb-6">
+                            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+                            <div id="displaytt">
+                            <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.telefoneDoador}" value="${element.telefoneDoador}"></input>
                             <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
@@ -215,11 +237,13 @@ function editVal(id) {
     var edit4 = document.getElementById('inputEdit4').value;
     var edit5 = document.getElementById('inputEdit5').value;
     var edit6 = document.getElementById('inputEdit6').value;
+    var edit7 = document.getElementById('inputEdit6').value;
+    var edit8 = document.getElementById('inputEdit6').value;
 
     $.ajax({
         type: 'POST',
         url: 'http://127.0.0.1:3081/doacaoupdate',
-        data: {IDDoacao: id, tituloDoacao: edit1, descricaoDoacao: edit2, valorDoacao: edit3, dataDoacao: edit4, horarioDoacao: edit5, comproDoacao: edit6},
+        data: {IDDoacao: id, tituloDoacao: edit1, descricaoDoacao: edit2, valorDoacao: edit3, dataDoacao: edit4, comproDoacao: edit5, nomeDoador: edit6, cpfDoador: edit7, telefoneDoador: edit8},
     }).done(function () {
         console.log("aq")
     }).fail(function (msg) {
@@ -262,12 +286,20 @@ function viewDoacao(id) {
             <p class="textAA">${element.dataDoacao}</p>
           </div>
           <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label"></label>Horário:
-            <p class="textAA">${element.horarioDoacao}</p>
+            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+            <p class="textAA">${element.comproDoacao}</p>
           </div>
           <div class="mb-6">
             <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
-            <p class="textAA">${element.comproDoacao}</p>
+            <p class="textAA">${element.nomeDoador}</p>
+          </div>
+          <div class="mb-6">
+            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+            <p class="textAA">${element.cpfDoador}</p>
+          </div>
+          <div class="mb-6">
+            label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+            <p class="textAA">${element.telefoneDoador}</p>
           </div>
             </div>
             <div class="modal-footer">
