@@ -894,7 +894,7 @@ app.post('/fichafrequenciainsert', urlencodedParser, (req, res) => {
   res.statusCode = 200;
   res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-  sql = "INSERT INTO FichaFrequencia (dataFreq, horarioFreq, nomeFreq, banhoFreq, lancheFreq, roupaFreq, cestaBaFreq, TransFreq) VALUES ('" + req.body.dataFreq + "', '" + req.body.horarioFreq + "', '" + req.body.nomeFreq + "', '" + req.body.banhoFreq + "', '" + req.body.lancheFreq + "', '" + req.body.roupaFreq + "', '" + req.body.cestaBaFreq + "', '" + req.body.TransFreq + "')";
+  sql = "INSERT INTO FichaFrequencia (dataFreq, horarioFreq, nomeFreq, banhoFreq, lancheFreq, roupaFreq) VALUES ('" + req.body.dataFreq + "', '" + req.body.horarioFreq + "', '" + req.body.nomeFreq + "', '" + req.body.banhoFreq + "', '" + req.body.lancheFreq + "', '" + req.body.roupaFreq + "')";
   var db = new sqlite3.Database(DBPATH); // Abre o banco
   db.run(sql, [],  err => {
       if (err) {
@@ -1164,6 +1164,10 @@ app.post('/usuariosadmupdate', urlencodedParser, (req, res) => {
   });
   db.close(); // Fecha o banco
 });
+
+
+
+
 
 
 app.listen(port, hostname, () => {
