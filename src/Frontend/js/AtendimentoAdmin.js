@@ -388,125 +388,22 @@ function editAtendimento(id) {
 };
 
 
-
-
-
-
-// $.ajax({
-//     url:  "http://127.0.0.1:3081/atendimentoselect",
-//     type: 'GET',
-//     success: data => {
-//         data.forEach(element => {
-//             const trr = document.createElement("tr");
-//         trr.innerHTML = `
-//         <div id="myModalAttendance10"class="modal customizar">
-//         <div class="modal-dialog" role="document">
-//         <div class="modal-content customize">
-//             <div class="modal-body">
-//             <div class="mb-1">
-//             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-//             <div id="displaytt">
-//             <input disabled onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi1" placeholder="${elemnt.tituloAtendi}" value=""></input>
-//             </div>
-//             </div>
-
-//             <div class="modal-body">
-//             <div class="mb-1">
-//             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-//             <div id="displaytt">
-//             <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi2" placeholder="" value=""></input>
-//             <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
-//             </div>
-//             </div>
-
-//             <div class="modal-body">
-//             <div class="mb-1">
-//             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-//             <div id="displaytt">
-//             <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi3" placeholder="" value=""></input>
-//             <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
-//             </div>
-//             </div>
-
-//             <div class="modal-body">
-//             <div class="mb-1">
-//             <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-//             <div id="displaytt">
-//             <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi4" placeholder="" value=""></input>
-//             <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
-//             </div>
-//             </div>
-//             </div>
-//             <div class="modal-footer">
-//             <button onclick="editAtendimento(${id})" type="button" class="btn btn-primary">Confirmar edição</button>
-//             <button onclick="fecharValAtendi()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
-//             </div>
-//         </div>
-//         </div>
-//     </div>
-//         `
-//         tableBodyAttendance.appendChild(trr);
-//         });
-//     }
-// });
-
-
-// // function buttonNewAssAttendance3(id) {
-//     $.ajax({
-//         url:  "http://127.0.0.1:3081/atendimentoselect",
-//         type: 'GET',
-//         success: data => {
-//             data.forEach(element => {
-//                 const trr = document.createElement("tr");
-//             trr.innerHTML = `
-//             <div id="myModalAttendance10"class="modal customizar">
-//             <div class="modal-dialog" role="document">
-//             <div class="modal-content customize">
-//                 <div class="modal-body">
-//                 <div class="mb-1">
-//                 <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-//                 <div id="displaytt">
-//                 <input disabled onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi1" placeholder="${element.tituloAtendi}" value=""></input>
-//                 </div>
-//                 </div>
-    
-//                 <div class="modal-body">
-//                 <div class="mb-1">
-//                 <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-//                 <div id="displaytt">
-//                 <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi2" placeholder="" value=""></input>
-//                 <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
-//                 </div>
-//                 </div>
-    
-//                 <div class="modal-body">
-//                 <div class="mb-1">
-//                 <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-//                 <div id="displaytt">
-//                 <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi3" placeholder="" value=""></input>
-//                 <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
-//                 </div>
-//                 </div>
-    
-//                 <div class="modal-body">
-//                 <div class="mb-1">
-//                 <label for="exampleInputEmail1" class="form-label"></label>Titulo:
-//                 <div id="displaytt">
-//                 <input onfocusout="disableField(5)" class="editInput" type="text" id="inputEditAtendi4" placeholder="" value=""></input>
-//                 <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
-//                 </div>
-//                 </div>
-//                 </div>
-//                 <div class="modal-footer">
-//                 <button onclick="editAtendimento(${id})" type="button" class="btn btn-primary">Confirmar edição</button>
-//                 <button onclick="fecharValAtendi()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar edição</button>
-//                 </div>
-//             </div>
-//             </div>
-//         </div>
-//             `
-//             tableBodyAttendance.appendChild(trr);
-//             });
-//         }
-//     });
-// }
+let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bi-search");
+    closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+    });
+    searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+    });
+    // following are the code to change sidebar button(optional)
+function menuBtnChange() {
+    if(sidebar.classList.contains("open")){
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+    }else {
+        closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+    }
+}
