@@ -42,13 +42,24 @@
             <label for="exampleInputEmail1" class="form-label"></label>Data:
             <input  type="date" id="inputdateDoac" name="data">
           </div>
-          <div class="mb-5">
-            <label for="exampleInputEmail1" class="form-label"></label>Horário:
-            <input  type="time" id="inputdateDoac" name="horario">
-          </div>
-          <div class="mb-6">
+          <div class="mb-4">
             <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
             <input  type="file" id="inputcompro" name="compro">
+          </div>
+          <div class="mb-5">
+            <label for="exampleInputEmail1" class="form-label"></label>Nome do Doador:
+            <!-- <input  type="time" id="inputdateDoac" name="horario"> -->
+             <input type="text" class="form-control" name="nomeDoa">
+          </div>
+          <div class="mb-5">
+            <label for="exampleInputEmail1" class="form-label"></label>CPF do Doador:
+            <!-- <input  type="time" id="inputdateDoac" name="horario"> -->
+             <input type="text" class="form-control" name="cpfDoa">
+          </div>
+          <div class="mb-5">
+            <label for="exampleInputEmail1" class="form-label"></label>Telefone do Doador:
+            <!-- <input  type="time" id="inputdateDoac" name="horario"> -->
+             <input type="text" class="form-control" name="telefoneDoa">
           </div>
         </form>
         <div class="modal-footer">
@@ -154,8 +165,11 @@
                 <th scope="col">#</th>
                 <th scope="col">Titulo</th>
                 <th scope="col">Data</th>
-                <th scope="col">Horário</th>
+                <!-- <th scope="col">Horário</th> -->
                 <th scope="col">Valor</th>
+                <th scope="col">Nome do Doador</th>
+                <th scope="col">CPF do Doador</th>
+                <th scope="col">Telefone do Doador</th>
                 <th scope="col">Edição</th>
               </tr>
             </thead>

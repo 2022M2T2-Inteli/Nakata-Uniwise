@@ -192,29 +192,29 @@ function editDoacao(id) {
                             <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(4)" class="form-control" type="text" id="inputEdit6" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
-                            <button onclick="enableField(4)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            <input disabled onfocusout="disableField(5)" class="form-control" type="text" id="inputEdit5" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
+                            <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-6">
-                            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+                            <label for="exampleInputEmail1" class="form-label"></label>Nome do Doador:
                             <div id="displaytt">
                             <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.nomeDoador}" value="${element.nomeDoador}"></input>
                             <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-6">
-                            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+                            <label for="exampleInputEmail1" class="form-label"></label>CPF do Doador:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.cpfDoador}" value="${element.cpfDoador}"></input>
-                            <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            <input disabled onfocusout="disableField(7)" class="form-control" type="text" id="inputEdit7" placeholder="${element.cpfDoador}" value="${element.cpfDoador}"></input>
+                            <button onclick="enableField(7)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-6">
-                            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+                            <label for="exampleInputEmail1" class="form-label"></label>Telefone do Doador:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.telefoneDoador}" value="${element.telefoneDoador}"></input>
-                            <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            <input disabled onfocusout="disableField(8)" class="form-control" type="text" id="inputEdit8" placeholder="${element.telefoneDoador}" value="${element.telefoneDoador}"></input>
+                            <button onclick="enableField(8)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             </div>
@@ -247,8 +247,8 @@ function editVal(id) {
     var edit4 = document.getElementById('inputEdit4').value;
     var edit5 = document.getElementById('inputEdit5').value;
     var edit6 = document.getElementById('inputEdit6').value;
-    var edit7 = document.getElementById('inputEdit6').value;
-    var edit8 = document.getElementById('inputEdit6').value;
+    var edit7 = document.getElementById('inputEdit7').value;
+    var edit8 = document.getElementById('inputEdit8').value;
 
     $.ajax({
         type: 'POST',
