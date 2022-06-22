@@ -158,7 +158,6 @@ function salvarAss() {
     const inputDescricao = document.querySelector("input[name='descricao']").value;
     const inputData = document.querySelector("input[name='data']").value;
     const inputValor = document.querySelector("input[name='valor']").value;
-    const inputCompro = document.querySelector("input[name='compro']").value;
     const inputNomeDoa = document.querySelector("input[name='nomeDoa']").value;
     const inputCpfDoa = document.querySelector("input[name='cpfDoa']").value;
     const inputTelefoneDoa = document.querySelector("input[name='telefoneDoa']").value;
@@ -174,7 +173,6 @@ function salvarAss() {
             "descricaoDoacao": inputDescricao,
             "dataDoacao": inputData,
             "valorDoacao": inputValor,
-            "comproDoacao": inputCompro,
             "nomeDoador": inputNomeDoa,
             "cpfDoador": inputCpfDoa,
             "telefoneDoador": inputTelefoneDoa,
@@ -296,10 +294,6 @@ function viewDoacao(id) {
             <p class="textAA">${element.dataDoacao}</p>
           </div>
           <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
-            <p class="textAA">${element.comproDoacao}</p>
-          </div>
-          <div class="mb-6">
             <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
             <p class="textAA">${element.nomeDoador}</p>
           </div>

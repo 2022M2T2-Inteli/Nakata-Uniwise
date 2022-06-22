@@ -66,7 +66,6 @@ function salvarAss() {
     const inputDescricao = document.querySelector("input[name='descricao']").value;
     const inputData = document.querySelector("input[name='data']").value;
     const inputValor = document.querySelector("input[name='valor']").value;
-    const inputCompro = document.querySelector("input[name='compro']").value;
     const inputNomeDoa = document.querySelector("input[name='nomeDoa']").value;
     const inputCpfDoa = document.querySelector("input[name='cpfDoa']").value;
     const inputTelefoneDoa = document.querySelector("input[name='telefoneDoa']").value;
@@ -82,7 +81,6 @@ function salvarAss() {
             "descricaoDoacao": inputDescricao,
             "dataDoacao": inputData,
             "valorDoacao": inputValor,
-            "comproDoacao": inputCompro,
             "nomeDoador": inputNomeDoa,
             "cpfDoador": inputCpfDoa,
             "telefoneDoador": inputTelefoneDoa,
@@ -190,31 +188,24 @@ function editDoacao(id) {
                             </div>
                             </div>
                             <div class="mb-4">
-                            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
-                            <div id="displaytt">
-                            <input disabled onfocusout="disableField(5)" class="form-control" type="text" id="inputEdit5" placeholder="${element.comproDoacao}" value="${element.comproDoacao}"></input>
-                            <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
-                            </div>
-                            </div>
-                            <div class="mb-6">
                             <label for="exampleInputEmail1" class="form-label"></label>Nome do Doador:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.nomeDoador}" value="${element.nomeDoador}"></input>
-                            <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            <input disabled onfocusout="disableField(5)" class="form-control" type="text" id="inputEdit5" placeholder="${element.nomeDoador}" value="${element.nomeDoador}"></input>
+                            <button onclick="enableField(5)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-6">
                             <label for="exampleInputEmail1" class="form-label"></label>CPF do Doador:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(7)" class="form-control" type="text" id="inputEdit7" placeholder="${element.cpfDoador}" value="${element.cpfDoador}"></input>
-                            <button onclick="enableField(7)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            <input disabled onfocusout="disableField(6)" class="form-control" type="text" id="inputEdit6" placeholder="${element.cpfDoador}" value="${element.cpfDoador}"></input>
+                            <button onclick="enableField(6)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             <div class="mb-6">
                             <label for="exampleInputEmail1" class="form-label"></label>Telefone do Doador:
                             <div id="displaytt">
-                            <input disabled onfocusout="disableField(8)" class="form-control" type="text" id="inputEdit8" placeholder="${element.telefoneDoador}" value="${element.telefoneDoador}"></input>
-                            <button onclick="enableField(8)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
+                            <input disabled onfocusout="disableField(7)" class="form-control" type="text" id="inputEdit7" placeholder="${element.telefoneDoador}" value="${element.telefoneDoador}"></input>
+                            <button onclick="enableField(7)" class="buttonEdi"><i class="bi bi-pencil-fill"></i></button>
                             </div>
                             </div>
                             </div>
@@ -248,12 +239,11 @@ function editVal(id) {
     var edit5 = document.getElementById('inputEdit5').value;
     var edit6 = document.getElementById('inputEdit6').value;
     var edit7 = document.getElementById('inputEdit7').value;
-    var edit8 = document.getElementById('inputEdit8').value;
 
     $.ajax({
         type: 'POST',
         url: 'http://127.0.0.1:3081/doacaoupdate',
-        data: {IDDoacao: id, tituloDoacao: edit1, descricaoDoacao: edit2, valorDoacao: edit3, dataDoacao: edit4, comproDoacao: edit5, nomeDoador: edit6, cpfDoador: edit7, telefoneDoador: edit8},
+        data: {IDDoacao: id, tituloDoacao: edit1, descricaoDoacao: edit2, valorDoacao: edit3, dataDoacao: edit4, nomeDoador: edit5, cpfDoador: edit6, telefoneDoador: edit7},
     }).done(function () {
         console.log("aq")
     }).fail(function (msg) {
@@ -296,19 +286,15 @@ function viewDoacao(id) {
             <p class="textAA">${element.dataDoacao}</p>
           </div>
           <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
-            <p class="textAA">${element.comproDoacao}</p>
-          </div>
-          <div class="mb-6">
-            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+            <label for="exampleInputEmail1" class="form-label"></label>Nome do Doador:
             <p class="textAA">${element.nomeDoador}</p>
           </div>
           <div class="mb-6">
-            <label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+            <label for="exampleInputEmail1" class="form-label"></label>CPF do Doador:
             <p class="textAA">${element.cpfDoador}</p>
           </div>
           <div class="mb-6">
-            label for="exampleInputEmail1" class="form-label"></label>Comprovante:
+            <label for="exampleInputEmail1" class="form-label"></label>Telefone do Doador:
             <p class="textAA">${element.telefoneDoador}</p>
           </div>
             </div>
