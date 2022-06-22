@@ -182,24 +182,33 @@ function salvarAss() {
 }
 
 function deleteDoacao(id) {
-    var div = document.createElement("div");
-    div.innerHTML = `
-    <div id="myModal`+ id +`"class="modal customizar">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content customize">
-            <div class="modal-body">
-            <p>Tem certeza que deseja excluir a ficha com o ` + id + `?</p>
-            </div>
-            <div class="modal-footer">
-            <button onclick="deletedoc(${id})" type="button" class="btn btn-primary">Confirmar exclusão</button>
-            <button onclick="fecharModall(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar exclusão</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    `
-    document.body.appendChild(div);
-    $('#myModal' + id).modal('show');
+  $.ajax({
+      url: "http://127.0.0.1:3081/piaselect",
+      type: 'GET',
+      success: data => {
+          data.forEach(element => {
+              var excluirPI = `
+              <div id="myModal`+ id +`"class="modal customizar">
+              <div class="modal-dialog" role="document">
+              <div class="modal-content customize">
+                  <div class="modal-body">
+                  <p>Tem certeza que deseja excluir a ficha com o ` + id + `?</p>
+                  </div>
+                  <div class="modal-footer">
+                  <button onclick="deletedoc(${id})" type="button" class="btn btn-primary">Confirmar exclusão</button>
+                  <button onclick="fecharModall(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar exclusão</button>
+                  </div>
+              </div>
+              </div>
+              </div>
+                  `
+  if(element.IDPIA == id){
+      document.getElementById("modalViewPIA").innerHTML = excluirPI;
+      $('#myModal' + id).modal('show');
+  }
+          });
+      }
+  });
 };
 
 function fecharModall(id) {

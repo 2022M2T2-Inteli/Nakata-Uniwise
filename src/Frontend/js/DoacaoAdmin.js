@@ -95,24 +95,34 @@ function salvarAss() {
 }
 
 function deleteDoacao(id) {
-    var div = document.createElement("div");
-    div.innerHTML = `
-    <div id="myModal`+ id +`"class="modal customizar">
-        <div class="modal-dialog" role="document">
-        <div class="modal-content customize">
-            <div class="modal-body">
-            <p>Tem certeza que deseja excluir a doação ` + id + `?</p>
+    console.log(id);
+    $.ajax({
+        url: "http://127.0.0.1:3081/doacaoselect",
+        type: 'GET',
+        success: data => {
+            data.forEach(element => {
+                var excluirDo = `
+                <div id="myModal`+ id +`"class="modal customizar">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content customize">
+                    <div class="modal-body">
+                    <p>Tem certeza que deseja excluir a doação ` + id + `?</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button onclick="deletedoc(${id})" type="button" class="btn btn-primary">Confirmar exclusão</button>
+                    <button onclick="fecharModall(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar exclusão</button>
+                    </div>
+                </div>
+                </div>
             </div>
-            <div class="modal-footer">
-            <button onclick="deletedoc(${id})" type="button" class="btn btn-primary">Confirmar exclusão</button>
-            <button onclick="fecharModall(${id})" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar exclusão</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    `
-    document.body.appendChild(div);
-    $('#myModal' + id).modal('show');
+                    `
+    if(element.IDDoacao == id){
+        document.getElementById("modal").innerHTML = excluirDo;
+        $('#myModal' + id).modal('show');
+    }
+            });
+        }
+    });
 };
 
 function fecharModall(id) {
