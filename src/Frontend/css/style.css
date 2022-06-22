@@ -511,6 +511,11 @@ header{
     justify-content: center;
 }
 
+.see-more-events2 {
+    text-decoration: none;
+    color: black;
+}
+
 /* --- PÁGINA  SOBRE --- */
 
 .flip-card {
@@ -1190,7 +1195,7 @@ input, button{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    object-fit: cover;
 }
 
 .card-img-top-caixa{
@@ -1203,6 +1208,16 @@ input, button{
     width: 50%;
     padding-bottom: 3vh;
     padding-top: 3vh;
+}
+
+.card-img-top-pix{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .videospende{
@@ -1934,6 +1949,10 @@ input, button{
     background: black;
     color: white;
     font-size: 1.3em;
+}
+
+.botão:hover a{
+    color: white;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
