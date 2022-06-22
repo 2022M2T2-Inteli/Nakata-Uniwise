@@ -48,7 +48,6 @@ function inputValue(){
 // Script Copiar doação
 var buttonPix = document.getElementById("buttonPix");
 var buttonCaixa = document.getElementById("buttonCaixa");
-var buttonPaypal = document.getElementById("buttonPaypal");
 
 buttonPix.addEventListener("click", function(e) {
     e.preventDefault();
@@ -69,17 +68,6 @@ this.innerHTML = "Caixa Copiado"
 setTimeout(function() {
     buttonCaixa.classList.toggle("buttontst2");
     buttonCaixa.innerHTML = "Copiar Caixa";
-}, 1000)
-});
-
-buttonPaypal.addEventListener("click", function(e) {
-    e.preventDefault();
-    navigator.clipboard.writeText("@projetorevirar");
-this.classList.toggle("buttontst2");
-this.innerHTML = "Paypal Copiado"
-setTimeout(function() {
-    buttonPaypal.classList.toggle("buttontst2");
-    buttonPaypal.innerHTML = "Copiar Paypal";
 }, 1000)
 });
 // FIM SCRIPT PAGINA DE DOAÇÃO
