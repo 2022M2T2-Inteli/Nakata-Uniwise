@@ -1706,7 +1706,7 @@ input, button{
     margin: 0 auto;
     z-index: 1;
     background-color: white;
-    padding: 10%;
+    padding-top: 10%;
     line-height: 1.7rem;
     font-size: 18px;
 }
