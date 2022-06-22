@@ -81,18 +81,27 @@ deve possuir o valor "node app.js".
 
 ## 🗃 Histórico de lançamentos
 
-* 0.2.1 - 25/01/2022
-    * Atualização de documentos (código do módulo permanece inalterado).
-* 0.2.0 - 15/01/2022
-    * Remove `setDefaultXYZ()`
-    * Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * Crash quando chama `baz()`
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
+* 0.0.1 - 29/04/2022
+    * Criação do wireframe
+    * Análise de indústria
+    * Análise SWOT
+    * Descrição da solução a ser desenvolvida
+    * Value Proposition Canvas do produto
+    * Matriz de risco
+* 0.1.0 - 13/05/2022
+    * Conclusão do frontend do projeto
+* 0.1.1 - 27/05/2022
+    * Conclusão do backend do projeto
+    * Diagrama de entidades e relacionamentos do banco de dados
+    * Documentação da API
+    * Diagrama da arquitetura da solução
+* 0.2.0 - 10/06/2022
+    * Conclusão da integração de frontend e backend do projeto
+    * Realização de testes de usabilidade
+* 0.2.1 - 23/06/2022
+    * Manual do usuário
+    * Conclusão do protótipo 
+    * Construção da apresentação final
 
 ## 📋 Licença/License
 
