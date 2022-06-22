@@ -1090,6 +1090,16 @@ input, button{
     display: flex;
 }
 
+.calendarEventos{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .imgEventos img{
    width: 50vh;
@@ -2276,7 +2286,11 @@ input, button{
     margin-bottom: 5%;
 }
 .title-eventos{
-    text-align: left;
+    text-align: center;
+}
+.background-eventos{
+    background-image: url(../assets/img/Fundo-Atuacao.jpg);
+    padding: 15px;
 }
 .home-eventos{
     text-align: center;
