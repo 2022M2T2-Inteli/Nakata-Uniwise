@@ -1086,6 +1086,16 @@ input, button{
     font-size: 1.3em;
 }
 
+.imgEventos{
+    display: flex;
+}
+
+
+.imgEventos img{
+   width: 50vh;
+   margin-bottom: 20px;
+}
+
 /* .remove-gray {
     margin-top: 20px;
     border: none;
