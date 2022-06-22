@@ -4,9 +4,9 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# Nome do projeto
+# Projeto Revirar
 
-## Nome do grupo
+## Nakata Uniwise
 
 ## Integrantes: 
 - <a href="https://www.linkedin.com/in/bruno-meira-75419918b/">Bruno Otavio Bezerra de Meira</a>
@@ -88,16 +88,20 @@ deve possuir o valor "node app.js".
     * Descrição da solução a ser desenvolvida
     * Value Proposition Canvas do produto
     * Matriz de risco
+<br>
 * 0.1.0 - 13/05/2022
     * Conclusão do frontend do projeto
+<br>
 * 0.1.1 - 27/05/2022
     * Conclusão do backend do projeto
     * Diagrama de entidades e relacionamentos do banco de dados
     * Documentação da API
     * Diagrama da arquitetura da solução
+<br>
 * 0.2.0 - 10/06/2022
     * Conclusão da integração de frontend e backend do projeto
     * Realização de testes de usabilidade
+<br>
 * 0.2.1 - 23/06/2022
     * Manual do usuário
     * Conclusão do protótipo 
