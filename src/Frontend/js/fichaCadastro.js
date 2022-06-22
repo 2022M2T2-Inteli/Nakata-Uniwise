@@ -106,6 +106,7 @@ function salvarAss() {
    const opcaoCad = document.getElementById("opcaoCad").value;
    const nsabeCad = document.getElementById("nsabeCad").value;
    const outroMotiCad = document.getElementById("outroMotiCad").value;
+   const toalha = document.getElementById("toalha").value;
 
 
     var settings = {
@@ -215,6 +216,8 @@ function salvarAss() {
             "nsabeCad": nsabeCad,
 
             "outroMotiCad": outroMotiCad,
+
+            "toalha": toalha,
 
         }
       };
@@ -557,7 +560,11 @@ function viewCadastro(id){
                         <h4>Sim, qual?</h4>
                         <p class="designer">${element.qualBenefCad}</p>
                     </div>
-
+                    <br>
+                    <div>
+                        <h4>Número da toalha</h4>
+                        <p class="designer">${element.toalha}</p>
+                    </div>
                     
                     </div>
                     <div class="modal-footer">
@@ -917,7 +924,12 @@ function editCadastro2(id){
                         <input disabled onfocusout="disablitaredit(33)" class="form-control" type="text" id="inputcad33" placeholder="${element.qualBenefCad}" value="${element.qualBenefCad}">
                         <button onclick="edit(33)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
                     </div>
-
+                    <br>
+                    <div>
+                        <h4>Número da toalha</h4>
+                        <input disabled onfocusout="disablitaredit(53)" class="form-control" type="text" id="inputcad53" placeholder="${element.toalha}" value="${element.toalha}">
+                        <button onclick="edit(53)" class="buttonEdit"><i class="bi bi-pencil-fill"></i></button>
+                    </div>
                     
                     </div>
                     <div class="modal-footer">
@@ -1007,11 +1019,12 @@ function saveEditCad(id){
     var inputcad50 = document.getElementById('inputcad50').value;
     var inputcad51 = document.getElementById('inputcad51').value;
     var inputcad52 = document.getElementById('inputcad52').value;
+    var inputcad53 = document.getElementById('inputcad53').value;
 
     $.ajax({
         type: 'POST',
         url: 'http://127.0.0.1:3081/cadastroupdate',
-        data: {IDCadastro: id, nomeCad: inputcad1, chamadoCad: inputcad2, docCad: inputcad3, rgCad: inputcad4, cpfCad: inputcad5, nascimentoCad: inputcad6, marqViaCad: inputcad34, predioCad: inputcad35, parqueCad: inputcad36, tremCad: inputcad37, rodoCad: inputcad38, construCad: inputcad39, galeriaCad: inputcad40, casaAbanCad: inputcad41, outrosLocaisCad: inputcad42, abrigoCad: inputcad8, domPartCad: inputcad9, ruaVezCad: inputcad10, albVezCad: inputcad11, dompartvezCad: inputcad12,  dompartQual: inputcad13, viveRuaCad: inputcad14, moradiaCad: inputcad43, ameacaCad: inputcad44, drogasCad: inputcad45, familiaCad: inputcad46, desemCad: inputcad47, trabalhoCad: inputcad48, saudeCad: inputcad49, opcaoCad: inputcad50, nsabeCad: inputcad51, outroMotiCad: inputcad52, moraCidaCad: inputcad15, viveFamCad: inputcad16, parenteCad: inputcad17, attcomCad: inputcad18, atendLuCad:inputcad19, centroCad: inputcad20, centrorefCad: inputcad21, instacolhiCad: inputcad22, hospiCad: inputcad23, trabaCad: inputcad24, dinheiroCad: inputcad25, dinheiroCad2: inputcad26, dinheiroCad3: inputcad27, dinheiroCad4: inputcad28,  dinheiroCad5: inputcad29, dinheiroCad6: inputcad30, dinheiroCad7: inputcad31, benefCad: inputcad32, qualBenefCad: inputcad33},
+        data: {IDCadastro: id, nomeCad: inputcad1, chamadoCad: inputcad2, docCad: inputcad3, rgCad: inputcad4, cpfCad: inputcad5, nascimentoCad: inputcad6, marqViaCad: inputcad34, predioCad: inputcad35, parqueCad: inputcad36, tremCad: inputcad37, rodoCad: inputcad38, construCad: inputcad39, galeriaCad: inputcad40, casaAbanCad: inputcad41, outrosLocaisCad: inputcad42, abrigoCad: inputcad8, domPartCad: inputcad9, ruaVezCad: inputcad10, albVezCad: inputcad11, dompartvezCad: inputcad12,  dompartQual: inputcad13, viveRuaCad: inputcad14, moradiaCad: inputcad43, ameacaCad: inputcad44, drogasCad: inputcad45, familiaCad: inputcad46, desemCad: inputcad47, trabalhoCad: inputcad48, saudeCad: inputcad49, opcaoCad: inputcad50, nsabeCad: inputcad51, outroMotiCad: inputcad52, moraCidaCad: inputcad15, viveFamCad: inputcad16, parenteCad: inputcad17, attcomCad: inputcad18, atendLuCad:inputcad19, centroCad: inputcad20, centrorefCad: inputcad21, instacolhiCad: inputcad22, hospiCad: inputcad23, trabaCad: inputcad24, dinheiroCad: inputcad25, dinheiroCad2: inputcad26, dinheiroCad3: inputcad27, dinheiroCad4: inputcad28,  dinheiroCad5: inputcad29, dinheiroCad6: inputcad30, dinheiroCad7: inputcad31, benefCad: inputcad32, qualBenefCad: inputcad33, toalha: inputcad53},
     }).done(function () {
         // console.log("aq")
     }).fail(function (msg) {
