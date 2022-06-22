@@ -2290,7 +2290,7 @@ input, button{
 }
 .background-eventos{
     background-image: url(../assets/img/Fundo-Atuacao.jpg);
-    padding: 15px;
+    padding: 50px !important;
 }
 .home-eventos{
     text-align: center;
