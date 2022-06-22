@@ -10,7 +10,7 @@
 
 ## Integrantes: 
 - <a href="https://www.linkedin.com/in/bruno-meira-75419918b/">Bruno Otavio Bezerra de Meira</a>
-- <a href="#">Daniel Quintão Dávila</a>
+- <a href="https://www.linkedin.com/in/pedrosant12/">Daniel Quintão Dávila</a>
 - <a href="https://www.linkedin.com/in/giovanna-furlan-torres-378316182/">Giovanna Furlan Torres</a> 
 - <a href="https://www.linkedin.com/in/gustavo-monteiro-1a499919a/">Gustavo Monteiro</a> 
 - <a href="https://www.linkedin.com/in/mariana-silva-paula/">Mariana Silva de Paula</a>
