@@ -10,7 +10,7 @@
 
 ## Integrantes: 
 - <a href="https://www.linkedin.com/in/bruno-meira-75419918b/">Bruno Otavio Bezerra de Meira</a>
-- <a href="#">Daniel Quintão Dávila</a>
+- <a>Daniel Quintão Dávila</a>
 - <a href="https://www.linkedin.com/in/giovanna-furlan-torres-378316182/">Giovanna Furlan Torres</a> 
 - <a href="https://www.linkedin.com/in/gustavo-monteiro-1a499919a/">Gustavo Monteiro</a> 
 - <a href="https://www.linkedin.com/in/mariana-silva-paula/">Mariana Silva de Paula</a>
@@ -106,4 +106,4 @@ Aqui estão as referências usadas no projeto:
 2. <https://www.canva.com>
 3. <https://www.figma.com>
 4. <https://getbootstrap.com>
-5. <https://pixabay.com >
+5. <https://pixabay.com>
