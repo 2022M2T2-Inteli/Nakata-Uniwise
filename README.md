@@ -9,36 +9,24 @@
 ## Nome do grupo
 
 ## Integrantes: 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 4</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 5</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 6</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 7</a>
+- <a href="https://www.linkedin.com/in/bruno-meira-75419918b/">Bruno Otavio Bezerra de Meira</a>
+- <a href="#">Daniel Quintão Dávila</a>
+- <a href="https://www.linkedin.com/in/giovanna-furlan-torres-378316182/">Giovanna Furlan Torres</a> 
+- <a href="https://www.linkedin.com/in/gustavo-monteiro-1a499919a/">Gustavo Monteiro</a> 
+- <a href="https://www.linkedin.com/in/mariana-silva-paula/">Mariana Silva de Paula</a>
+- <a href="hhttps://www.linkedin.com/in/pedrosant12/">Pedro Henrique Sant'Anna Oliveira</a> 
+- <a href="https://www.linkedin.com/in/sofia-moreiras-pimazzoni/">Sofia Moreiras Pimazzoni</a>
 
 ## 📝 Descrição
 
-Curta descrição sobre o que o seu projeto faz (problema a ser resolvido e solução proposta).
+O projeto re virar, encontrava problemas de captação de recursos financeiros e parceiros, tanto como voluntários que desejassem realizar atividades com o público atendido. Buscando solucionar a problemática, foi desenvolvido um WebApp que colabora com a divulgação do projeto e conta com a captação de doadores, voluntários e formas diretas de contato com os organizadores do projeto, além de possuir uma área administrativa que permite o cadastro, edição, visualização e exclusão de um atendido. Podendo também, comtabilizar a quantidade de doações, lanches, banhos, roupas e atendimentos realizados na instituição. 
 
 ## 📁 Estrutura de pastas
 
-```
-Alunos inteli (remover essa observação do readme.md após leitura e execução):
-
-Supondo que você é da Turma 4 e Projeto 5, substitua:
-
-T(NUMERO_DA_TURMA)_G(NUMERO_DO_GRUPO)_V(VERSÃO)_Web_application_document.pdf
-por
-T4_G5_V01_Web_application_document.pdf
-
-Faça o mesmo para a documentação em formato DOCX.
-```
-
 |--> documentos<br>
   &emsp;| --> outros <br>
-  &emsp;| T(NUMERO_DA_TURMA)_G(NUMERO_DO_GRUPO)_V(VERSÃO)_Web_application_document.pdf<br>
-  &emsp;| T(NUMERO_DA_TURMA)_G(NUMERO_DO_GRUPO)_V(VERSÃO)_Web_application_document.docx<br>
+  &emsp;| T2_G4_V01_Web_application_document.pdf<br>
+  &emsp;| T2_G4_V01_Web_application_document.docx<br>
 |--> imagens<br>
 |--> src<br>
   &emsp;|--> Backend<br>
@@ -108,7 +96,7 @@ deve possuir o valor "node app.js".
 
 ## 📋 Licença/License
 
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Spidus/Teste_Final_1">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">Inteli, Nome do integrante 1, Nome do integrante 2, Nome do integrante 3, Nome do integrante 4, Nome do integrante 5, Nome do integrante 6, Nome do integrante 7</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Spidus/Teste_Final_1">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">Inteli, Bruno Otavio Bezerra de Meira, Daniel Quintão Dávila, Giovanna Furlan Torres, Gustavo Monteiro, Mariana Silva de Paula, Pedro Henrique Sant'Anna Oliveira, Sofia Moreiras Pimazzoni</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
 
 ## 🎓 Referências
 
