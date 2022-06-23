@@ -30,11 +30,11 @@ var revirarIcon = L.icon({
     iconSize:     [45, 70],
     iconAnchor:   [22, 54],
 });
-// var map = L.map('map').setView([0, 0], 1)
+
 var map = L.map('map').setView([-23.5789808994088, -46.566464301338655], 30);
 
 L.tileLayer('https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=HdZFsisrWXnYbxg8tdAh', {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',}).addTo(map);
-L.Control.geocoder().addTo(map);
 
+L.Control.geocoder().addTo(map);
 
 const REVIRAR = L.marker([-23.5789808994088, -46.566464301338655], {icon: revirarIcon}).addTo(map).bindPopup("<b>Projeto REVIRAR<br/>Rua Nhengaibas, 356 - Água Rasa");
