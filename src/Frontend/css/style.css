@@ -2350,6 +2350,25 @@ input, button{
     cursor: pointer;
 }
 
+.texteventos9, .texteventos10, .texteventos11, .texteventos12{
+    visibility: visible; 
+    animation-delay: 0.1s; 
+    animation-name: fadeInUp;
+    background-color: #4493CF;
+    padding: 2%;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 1px 1px 4px 4px rgb(218, 218, 218);
+    margin: 20px;
+    width: 250px;
+    height: 270px;
+    cursor: pointer;
+}
+
+.sizeRela{
+    font-size: 50px;
+}
+
 .texteventos1{
     background-image: url(../assets/img/fichas.png);
     background-size: cover;
@@ -2390,8 +2409,28 @@ input, button{
     background-size: cover;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
 }
+.texteventos9{
+    background-image: url(../assets/img/águarelatório.jpg);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
+}
+.texteventos10{
+    background-image: url(../assets/img/comidarelatório.jpg);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
+}
+.texteventos11{
+    background-image: url(../assets/img/rouparelatório.jpg);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
+}
+.texteventos12{
+    background-image: url(../assets/img/peoplerelatório.jpg);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6)
+}
 
-.fa-calendar-days, .fa-sheet-plastic, .fa-wpforms, .fa-hand-holding-dollar, .bi-clipboard-data, .bi-geo-alt, .bi-gear-fill, .bi-laptop, .bi-box2-heart, .bi-telephone, .bi-coin, .bi-envelope-paper-heart, .bi-hourglass-bottom, .bi-clipboard-heart, .bi-clipboard, .bi-file-earmark-arrow-up, .bi-ticket{
+.fa-calendar-days, .fa-sheet-plastic, .fa-wpforms, .fa-hand-holding-dollar, .bi-clipboard-data, .bi-geo-alt, .bi-gear-fill, .bi-laptop, .bi-box2-heart, .bi-telephone, .bi-coin, .bi-envelope-paper-heart, .bi-hourglass-bottom, .bi-clipboard-heart, .bi-clipboard, .bi-file-earmark-arrow-up, .bi-ticket, .bi-egg, .bi-droplet-half, .bi-person-badge, .bi-person{
     color: #ffffff;
     font-size: 60px;
     margin-bottom: 20px;
@@ -2461,8 +2500,33 @@ input, button{
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
 }
 
+.texteventos9:hover{
+    background-image: url(../assets/img/revirar.png);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
+}
+.texteventos10:hover{
+    background-image: url(../assets/img/revirar.png);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
+}
+.texteventos11:hover{
+    background-image: url(../assets/img/revirar.png);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
+}
+.texteventos12:hover{
+    background-image: url(../assets/img/revirar.png);
+    color: white;
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
+}
 
-.texteventos1 h3, .texteventos2 h3, .texteventos3 h3, .texteventos4 h3, .texteventos5 h3, .texteventos6 h3, .texteventos7 h3,  .texteventos8 h3{
+
+.texteventos1 h3, .texteventos2 h3, .texteventos3 h3, .texteventos4 h3, .texteventos5 h3, .texteventos6 h3, .texteventos7 h3,  .texteventos8 h3,  .texteventos9 h3,   .texteventos10 h3,  .texteventos11 h3,  .texteventos12 h3{
     color: rgb(255, 255, 255) !important;
     text-decoration: none !important;
 }
